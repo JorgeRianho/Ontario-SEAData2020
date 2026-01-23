@@ -1,222 +1,141 @@
-version: '2.3'
-
 services:
+
   mysql_affymetrix_idx:
+    image: mysql:8.4
     container_name: prohde_lslod_mysql_affymetrix_idx
-    image: mysql:5.7
-    volumes:
-      - type: bind
-        source: ./config
-        target: /etc/mysql/conf.d
-      - type: bind
-        source: ../tsv
-        target: /data/prohde/lslod/tsv
-      - type: bind
-        source: ./volumes/affymetrix
-        target: /var/lib/mysql
-      - type: bind
-        source: ./sql/affymetrix
-        target: /docker-entrypoint-initdb.d/
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: 1234
     ports:
       - "9000:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+    volumes:
+      - ./config:/etc/mysql/conf.d
+      - ../tsv:/data/prohde/lslod/tsv
+      - ./volumes/affymetrix:/var/lib/mysql
+      - ./sql/affymetrix:/docker-entrypoint-initdb.d
+    restart: always
 
   mysql_chebi_idx:
+    image: mysql:8.4
     container_name: prohde_lslod_mysql_chebi_idx
-    image: mysql:5.7
-    volumes:
-      - type: bind
-        source: ./config
-        target: /etc/mysql/conf.d
-      - type: bind
-        source: ../tsv
-        target: /data/prohde/lslod/tsv
-      - type: bind
-        source: ./volumes/chebi
-        target: /var/lib/mysql
-      - type: bind
-        source: ./sql/chebi
-        target: /docker-entrypoint-initdb.d/
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: 1234
     ports:
       - "9001:3306"
-        
-  mysql_dailymed_idx:
-    container_name: prohde_lslod_mysql_dailymed_idx
-    image: mysql:5.7
-    volumes:
-      - type: bind
-        source: ./config
-        target: /etc/mysql/conf.d
-      - type: bind
-        source: ../tsv
-        target: /data/prohde/lslod/tsv
-      - type: bind
-        source: ./volumes/dailymed
-        target: /var/lib/mysql
-      - type: bind
-        source: ./sql/dailymed
-        target: /docker-entrypoint-initdb.d/
-    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 1234
+    volumes:
+      - ./config:/etc/mysql/conf.d
+      - ../tsv:/data/prohde/lslod/tsv
+      - ./volumes/chebi:/var/lib/mysql
+      - ./sql/chebi:/docker-entrypoint-initdb.d
+    restart: always
+
+  mysql_dailymed_idx:
+    image: mysql:8.4
+    container_name: prohde_lslod_mysql_dailymed_idx
     ports:
       - "9002:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+    volumes:
+      - ./config:/etc/mysql/conf.d
+      - ../tsv:/data/prohde/lslod/tsv
+      - ./volumes/dailymed:/var/lib/mysql
+      - ./sql/dailymed:/docker-entrypoint-initdb.d
+    restart: always
 
   mysql_diseasome_idx:
+    image: mysql:8.4
     container_name: prohde_lslod_mysql_diseasome_idx
-    image: mysql:5.7
-    volumes:
-      - type: bind
-        source: ./config
-        target: /etc/mysql/conf.d
-      - type: bind
-        source: ../tsv
-        target: /data/prohde/lslod/tsv
-      - type: bind
-        source: ./volumes/diseasome
-        target: /var/lib/mysql
-      - type: bind
-        source: ./sql/diseasome
-        target: /docker-entrypoint-initdb.d/
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: 1234
     ports:
       - "9003:3306"
-        
-  mysql_drugbank_idx:
-    container_name: prohde_lslod_mysql_drugbank_idx
-    image: mysql:5.7
-    volumes:
-      - type: bind
-        source: ./config
-        target: /etc/mysql/conf.d
-      - type: bind
-        source: ../tsv
-        target: /data/prohde/lslod/tsv
-      - type: bind
-        source: ./volumes/drugbank
-        target: /var/lib/mysql
-      - type: bind
-        source: ./sql/drugbank
-        target: /docker-entrypoint-initdb.d/
-    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 1234
+    volumes:
+      - ./config:/etc/mysql/conf.d
+      - ../tsv:/data/prohde/lslod/tsv
+      - ./volumes/diseasome:/var/lib/mysql
+      - ./sql/diseasome:/docker-entrypoint-initdb.d
+    restart: always
+
+  mysql_drugbank_idx:
+    image: mysql:8.4
+    container_name: prohde_lslod_mysql_drugbank_idx
     ports:
       - "9004:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+    volumes:
+      - ./config:/etc/mysql/conf.d
+      - ../tsv:/data/prohde/lslod/tsv
+      - ./volumes/drugbank:/var/lib/mysql
+      - ./sql/drugbank:/docker-entrypoint-initdb.d
+    restart: always
 
   mysql_kegg_idx:
+    image: mysql:8.4
     container_name: prohde_lslod_mysql_kegg_idx
-    image: mysql:5.7
-    volumes:
-      - type: bind
-        source: ./config
-        target: /etc/mysql/conf.d
-      - type: bind
-        source: ../tsv
-        target: /data/prohde/lslod/tsv
-      - type: bind
-        source: ./volumes/kegg
-        target: /var/lib/mysql
-      - type: bind
-        source: ./sql/kegg
-        target: /docker-entrypoint-initdb.d/
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: 1234
     ports:
       - "9005:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+    volumes:
+      - ./config:/etc/mysql/conf.d
+      - ../tsv:/data/prohde/lslod/tsv
+      - ./volumes/kegg:/var/lib/mysql
+      - ./sql/kegg:/docker-entrypoint-initdb.d
+    restart: always
 
   mysql_linkedct_idx:
+    image: mysql:8.4
     container_name: prohde_lslod_mysql_linkedct_idx
-    image: mysql:5.7
-    volumes:
-      - type: bind
-        source: ./config
-        target: /etc/mysql/conf.d
-      - type: bind
-        source: ../tsv
-        target: /data/prohde/lslod/tsv
-      - type: bind
-        source: ./volumes/linkedct
-        target: /var/lib/mysql
-      - type: bind
-        source: ./sql/linkedct
-        target: /docker-entrypoint-initdb.d/
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: 1234
     ports:
       - "9006:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+    volumes:
+      - ./config:/etc/mysql/conf.d
+      - ../tsv:/data/prohde/lslod/tsv
+      - ./volumes/linkedct:/var/lib/mysql
+      - ./sql/linkedct:/docker-entrypoint-initdb.d
+    restart: always
 
   mysql_medicare_idx:
+    image: mysql:8.4
     container_name: prohde_lslod_mysql_medicare_idx
-    image: mysql:5.7
-    volumes:
-      - type: bind
-        source: ./config
-        target: /etc/mysql/conf.d
-      - type: bind
-        source: ../tsv
-        target: /data/prohde/lslod/tsv
-      - type: bind
-        source: ./volumes/medicare
-        target: /var/lib/mysql
-      - type: bind
-        source: ./sql/medicare
-        target: /docker-entrypoint-initdb.d/
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: 1234
     ports:
       - "9007:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+    volumes:
+      - ./config:/etc/mysql/conf.d
+      - ../tsv:/data/prohde/lslod/tsv
+      - ./volumes/medicare:/var/lib/mysql
+      - ./sql/medicare:/docker-entrypoint-initdb.d
+    restart: always
 
   mysql_sider_idx:
+    image: mysql:8.4
     container_name: prohde_lslod_mysql_sider_idx
-    image: mysql:5.7
-    volumes:
-      - type: bind
-        source: ./config
-        target: /etc/mysql/conf.d
-      - type: bind
-        source: ../tsv
-        target: /data/prohde/lslod/tsv
-      - type: bind
-        source: ./volumes/sider
-        target: /var/lib/mysql
-      - type: bind
-        source: ./sql/sider
-        target: /docker-entrypoint-initdb.d/
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: 1234
     ports:
       - "9008:3306"
-
-  mysql_tcga_idx:
-    container_name: prohde_lslod_mysql_tcga_idx
-    image: mysql:5.7
-    volumes:
-      - type: bind
-        source: ./config
-        target: /etc/mysql/conf.d
-      - type: bind
-        source: ../tsv
-        target: /data/prohde/lslod/tsv
-      - type: bind
-        source: ./volumes/tcga
-        target: /var/lib/mysql
-      - type: bind
-        source: ./sql/tcga
-        target: /docker-entrypoint-initdb.d/
-    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 1234
+    volumes:
+      - ./config:/etc/mysql/conf.d
+      - ../tsv:/data/prohde/lslod/tsv
+      - ./volumes/sider:/var/lib/mysql
+      - ./sql/sider:/docker-entrypoint-initdb.d
+    restart: always
+
+  mysql_tcga_idx:
+    image: mysql:8.4
+    container_name: prohde_lslod_mysql_tcga_idx
     ports:
       - "9009:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+    volumes:
+      - ./config:/etc/mysql/conf.d
+      - ../tsv:/data/prohde/lslod/tsv
+      - ./volumes/tcga:/var/lib/mysql
+      - ./sql/tcga:/docker-entrypoint-initdb.d
+    restart: always
