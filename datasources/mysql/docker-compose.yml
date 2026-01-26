@@ -11,7 +11,7 @@ services:
       - ./config:/etc/mysql/conf.d
       - ../tsv:/data/prohde/lslod/tsv
       - ./volumes/affymetrix:/var/lib/mysql
-      - ./sql/affymetrix:/docker-entrypoint-initdb.d
+      - ./sql/affymetrix.sql:/docker-entrypoint-initdb.d/init.sql:ro
     restart: always
 
   mysql_chebi_idx:
@@ -25,7 +25,7 @@ services:
       - ./config:/etc/mysql/conf.d
       - ../tsv:/data/prohde/lslod/tsv
       - ./volumes/chebi:/var/lib/mysql
-      - ./sql/chebi:/docker-entrypoint-initdb.d
+      - ./sql/chebi.sql:/docker-entrypoint-initdb.d/init.sql:ro
     restart: always
 
   mysql_dailymed_idx:
@@ -39,7 +39,7 @@ services:
       - ./config:/etc/mysql/conf.d
       - ../tsv:/data/prohde/lslod/tsv
       - ./volumes/dailymed:/var/lib/mysql
-      - ./sql/dailymed:/docker-entrypoint-initdb.d
+      - ./sql/dailymed.sql:/docker-entrypoint-initdb.d/init.sql:ro
     restart: always
 
   mysql_diseasome_idx:
@@ -53,7 +53,7 @@ services:
       - ./config:/etc/mysql/conf.d
       - ../tsv:/data/prohde/lslod/tsv
       - ./volumes/diseasome:/var/lib/mysql
-      - ./sql/diseasome:/docker-entrypoint-initdb.d
+      - ./sql/diseasome.sql:/docker-entrypoint-initdb.d/init.sql:ro
     restart: always
 
   mysql_drugbank_idx:
@@ -67,7 +67,7 @@ services:
       - ./config:/etc/mysql/conf.d
       - ../tsv:/data/prohde/lslod/tsv
       - ./volumes/drugbank:/var/lib/mysql
-      - ./sql/drugbank:/docker-entrypoint-initdb.d
+      - ./sql/drugbank.sql:/docker-entrypoint-initdb.d/init.sql:ro
     restart: always
 
   mysql_kegg_idx:
@@ -81,7 +81,7 @@ services:
       - ./config:/etc/mysql/conf.d
       - ../tsv:/data/prohde/lslod/tsv
       - ./volumes/kegg:/var/lib/mysql
-      - ./sql/kegg:/docker-entrypoint-initdb.d
+      - ./sql/kegg.sql:/docker-entrypoint-initdb.d/init.sql:ro
     restart: always
 
   mysql_linkedct_idx:
@@ -95,7 +95,7 @@ services:
       - ./config:/etc/mysql/conf.d
       - ../tsv:/data/prohde/lslod/tsv
       - ./volumes/linkedct:/var/lib/mysql
-      - ./sql/linkedct:/docker-entrypoint-initdb.d
+      - ./sql/linkedct.sql:/docker-entrypoint-initdb.d/init.sql:ro
     restart: always
 
   mysql_medicare_idx:
@@ -109,7 +109,7 @@ services:
       - ./config:/etc/mysql/conf.d
       - ../tsv:/data/prohde/lslod/tsv
       - ./volumes/medicare:/var/lib/mysql
-      - ./sql/medicare:/docker-entrypoint-initdb.d
+      - ./sql/medicare.sql:/docker-entrypoint-initdb.d/init.sql:ro
     restart: always
 
   mysql_sider_idx:
@@ -123,7 +123,7 @@ services:
       - ./config:/etc/mysql/conf.d
       - ../tsv:/data/prohde/lslod/tsv
       - ./volumes/sider:/var/lib/mysql
-      - ./sql/sider:/docker-entrypoint-initdb.d
+      - ./sql/sider.sql:/docker-entrypoint-initdb.d/init.sql:ro
     restart: always
 
   mysql_tcga_idx:
@@ -137,5 +137,5 @@ services:
       - ./config:/etc/mysql/conf.d
       - ../tsv:/data/prohde/lslod/tsv
       - ./volumes/tcga:/var/lib/mysql
-      - ./sql/tcga:/docker-entrypoint-initdb.d
+      - ./sql/tcga.sql:/docker-entrypoint-initdb.d/init.sql:ro
     restart: always
