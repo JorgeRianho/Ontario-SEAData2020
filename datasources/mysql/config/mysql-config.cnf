@@ -3,8 +3,13 @@ secure-file-priv=""
 max_allowed_packet=256M
 
 innodb_file_per_table=ON
-innodb_buffer_pool_size=512M
+innodb_buffer_pool_size=1G
+innodb_buffer_pool_instances = 1
+innodb_log_file_size = 256M
 innodb_redo_log_capacity=1G
 
 character-set-server=utf8mb4
 collation-server=utf8mb4_unicode_ci
+mysqlx=0
+pid-file=/tmp/mysqld.pid
+require_secure_transport=OFF
