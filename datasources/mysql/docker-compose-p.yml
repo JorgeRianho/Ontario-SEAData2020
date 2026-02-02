@@ -1,0 +1,140 @@
+services:
+
+  postgres_affymetrix_idx:
+    image: postgres:16
+    container_name: prohde_lslod_postgres_affymetrix_idx
+    ports:
+      - "9100:5432"
+    environment:
+      POSTGRES_DB: affymetrix
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    volumes:
+      - ./volumes/affymetrix:/var/lib/postgresql/data
+      - ./sql/affymetrix.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    restart: always
+
+  postgres_chebi_idx:
+    image: postgres:16
+    container_name: prohde_lslod_postgres_chebi_idx
+    ports:
+      - "9101:5432"
+    environment:
+      POSTGRES_DB: chebi
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    volumes:
+      - ./volumes/chebi:/var/lib/postgresql/data
+      - ./sql/chebi.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    restart: always
+
+  postgres_dailymed_idx:
+    image: postgres:16
+    container_name: prohde_lslod_postgres_dailymed_idx
+    ports:
+      - "9102:5432"
+    environment:
+      POSTGRES_DB: dailymed
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    volumes:
+      - ./volumes/dailymed:/var/lib/postgresql/data
+      - ./sql/dailymed.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    restart: always
+
+  postgres_diseasome_idx:
+    image: postgres:16
+    container_name: prohde_lslod_postgres_diseasome_idx
+    ports:
+      - "9103:5432"
+    environment:
+      POSTGRES_DB: diseasome
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    volumes:
+      - ./volumes/diseasome:/var/lib/postgresql/data
+      - ./sql/diseasome.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    restart: always
+  postgres_drugbank_idx:
+    image: postgres:16
+    container_name: prohde_lslod_postgres_drugbank_idx
+    ports:
+      - "9104:5432"
+    environment:
+      POSTGRES_DB: drugbank
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    volumes:
+      - ./volumes/drugbank:/var/lib/postgresql/data
+      - ./sql/drugbank.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    restart: always
+
+  postgres_kegg_idx:
+    image: postgres:16
+    container_name: prohde_lslod_postgres_kegg_idx
+    ports:
+      - "9105:5432"
+    environment:
+      POSTGRES_DB: kegg
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    volumes:
+      - ./volumes/kegg:/var/lib/postgresql/data
+      - ./sql/kegg.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    restart: always
+
+  postgres_linkedct_idx:
+    image: postgres:16
+    container_name: prohde_lslod_postgres_linkedct_idx
+    ports:
+      - "9106:5432"
+    environment:
+      POSTGRES_DB: linkedct
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    volumes:
+      - ./volumes/linkedct:/var/lib/postgresql/data
+      - ./sql/linkedct.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    restart: always
+
+  postgres_medicare_idx:
+    image: postgres:16
+    container_name: prohde_lslod_postgres_medicare_idx
+    ports:
+      - "9107:5432"
+    environment:
+      POSTGRES_DB: medicare
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    volumes:
+      - ./volumes/medicare:/var/lib/postgresql/data
+      - ./sql/medicare.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    restart: always
+
+  postgres_sider_idx:
+    image: postgres:16
+    container_name: prohde_lslod_postgres_sider_idx
+    ports:
+      - "9108:5432"
+    environment:
+      POSTGRES_DB: sider
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    volumes:
+      - ./volumes/sider:/var/lib/postgresql/data
+      - ./sql/sider.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    restart: always
+
+  postgres_tcga_idx:
+    image: postgres:16
+    container_name: prohde_lslod_postgres_tcga_idx
+    ports:
+      - "9109:5432"
+    environment:
+      POSTGRES_DB: tcga
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    volumes:
+      - ./volumes/tcga:/var/lib/postgresql/data
+      - ./sql/tcga.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    restart: always
