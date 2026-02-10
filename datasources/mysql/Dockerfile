@@ -1,0 +1,17 @@
+FROM eclipse-temurin:17-jdk
+
+WORKDIR /app
+
+COPY ontop/ontop-cli-5.4.0 /app/ontop
+COPY jdbc/mysql-connector-j-8.3.0.jar /app/ontop/jdbc/
+COPY ontology.owl /app/ontology.owl
+COPY mapping.ttl /app/mapping.ttl
+COPY ontop.properties /app/ontop.properties
+
+
+ENTRYPOINT ["/app/ontop/ontop"]
+CMD ["endpoint", \
+     "--ontology=/app/ontology.owl", \
+     "--mapping=/app/mapping.ttl", \
+     "--properties=/app/ontop.properties", \
+     "--port=8080"]

@@ -6,12 +6,34 @@ services:
     ports:
       - "9000:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: affymetrix
+      MYSQL_USER: ontop
+      MYSQL_PASSWORD: ontop123
     volumes:
       - ./config:/etc/mysql/conf.d
       - ../tsv:/data/prohde/lslod/tsv
       - ./volumes/affymetrix:/var/lib/mysql
-      - ./sql/affymetrix.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./sql/affymetrix.sql:/docker-entrypoint-initdb.d/affymetrix.sql
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mysql -uontop -pontop123 -h localhost -e 'SELECT 1' affymetrix || exit 1"
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+
+  ontop:
+    build: .
+    container_name: ontop_affymetrix
+    depends_on:
+      mysql_affymetrix_idx:
+        condition: service_healthy
+    ports:
+    - "8080:8080"
     restart: always
 
   mysql_chebi_idx:
