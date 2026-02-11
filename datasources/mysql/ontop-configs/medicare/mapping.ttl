@@ -1,0 +1,35 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix : <http://example.org/medicare#> .
+
+# --- drugs_main ---
+<#DrugsMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/medicare/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :drugType ; rr:objectMap [ rr:column "drugType" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :medicareId ; rr:objectMap [ rr:column "medicareId" ] ] .
+
+# --- drugs_name ---
+<#DrugsNameMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_name" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/medicare/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :name ; rr:objectMap [ rr:column "name" ] ] .
+
+# --- drugs_sameAs ---
+<#DrugsSameasMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_sameAs" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/medicare/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :sameAs ; rr:objectMap [ rr:column "sameAs" ] ] .
+

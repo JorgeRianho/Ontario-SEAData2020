@@ -1,0 +1,441 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix : <http://example.org/drugbank#> .
+
+# --- drug_interactions_main ---
+<#DrugInteractionsMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drug_interactions_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/drug_interactions/{drug_interactions}" ;
+        rr:class :drug_interactions ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :interactionDrug1 ; rr:objectMap [ rr:column "interactionDrug1" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :interactionDrug2 ; rr:objectMap [ rr:column "interactionDrug2" ] ] .
+
+# --- drugs_main ---
+<#DrugsMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :predictedWaterSolubility ; rr:objectMap [ rr:column "predictedWaterSolubility" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :updateDate ; rr:objectMap [ rr:column "updateDate" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :casRegistryNumber ; rr:objectMap [ rr:column "casRegistryNumber" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :structure ; rr:objectMap [ rr:column "structure" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :chemicalIupacName ; rr:objectMap [ rr:column "chemicalIupacName" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :indication ; rr:objectMap [ rr:column "indication" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :chemicalFormula ; rr:objectMap [ rr:column "chemicalFormula" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :keggCompoundId ; rr:objectMap [ rr:column "keggCompoundId" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :inchiKey ; rr:objectMap [ rr:column "inchiKey" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :massSpecFile ; rr:objectMap [ rr:column "massSpecFile" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :predictedLogpHydrophobicity ; rr:objectMap [ rr:column "predictedLogpHydrophobicity" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :proteinBinding ; rr:objectMap [ rr:column "proteinBinding" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :pubchemCompoundId ; rr:objectMap [ rr:column "pubchemCompoundId" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :mechanismOfAction ; rr:objectMap [ rr:column "mechanismOfAction" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :molecularWeightAverage ; rr:objectMap [ rr:column "molecularWeightAverage" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :limsDrugId ; rr:objectMap [ rr:column "limsDrugId" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :pharmgkbId ; rr:objectMap [ rr:column "pharmgkbId" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :description ; rr:objectMap [ rr:column "description" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :contraindicationInsert ; rr:objectMap [ rr:column "contraindicationInsert" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :pharmacology ; rr:objectMap [ rr:column "pharmacology" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :smilesStringCanonical ; rr:objectMap [ rr:column "smilesStringCanonical" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :smilesStringIsomeric ; rr:objectMap [ rr:column "smilesStringIsomeric" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :creationDate ; rr:objectMap [ rr:column "creationDate" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :primaryAccessionNo ; rr:objectMap [ rr:column "primaryAccessionNo" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :biotransformation ; rr:objectMap [ rr:column "biotransformation" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :genericName ; rr:objectMap [ rr:column "genericName" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :molecularWeightMono ; rr:objectMap [ rr:column "molecularWeightMono" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :rxlistLink ; rr:objectMap [ rr:column "rxlistLink" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :pubchemSubstanceId ; rr:objectMap [ rr:column "pubchemSubstanceId" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :state ; rr:objectMap [ rr:column "state" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :interactionInsert ; rr:objectMap [ rr:column "interactionInsert" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :predictedLogs ; rr:objectMap [ rr:column "predictedLogs" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :inchiIdentifier ; rr:objectMap [ rr:column "inchiIdentifier" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :fdaLabelFiles ; rr:objectMap [ rr:column "fdaLabelFiles" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :keggDrugId ; rr:objectMap [ rr:column "keggDrugId" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :experimentalLogpHydrophobicity ; rr:objectMap [ rr:column "experimentalLogpHydrophobicity" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :synthesisReference ; rr:objectMap [ rr:column "synthesisReference" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :dpdDrugIdNumber ; rr:objectMap [ rr:column "dpdDrugIdNumber" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :experimentalWaterSolubility ; rr:objectMap [ rr:column "experimentalWaterSolubility" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :msdsFiles ; rr:objectMap [ rr:column "msdsFiles" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :halfLife ; rr:objectMap [ rr:column "halfLife" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :pdbHomologyId ; rr:objectMap [ rr:column "pdbHomologyId" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :meltingPoint ; rr:objectMap [ rr:column "meltingPoint" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :absorption ; rr:objectMap [ rr:column "absorption" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :pdrhealthLink ; rr:objectMap [ rr:column "pdrhealthLink" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :patientInformationInsert ; rr:objectMap [ rr:column "patientInformationInsert" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :experimentalCaco2Permeability ; rr:objectMap [ rr:column "experimentalCaco2Permeability" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :toxicity ; rr:objectMap [ rr:column "toxicity" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :reference ; rr:objectMap [ rr:column "reference" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :swissprotId ; rr:objectMap [ rr:column "swissprotId" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :genbankId ; rr:objectMap [ rr:column "genbankId" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :swissprotName ; rr:objectMap [ rr:column "swissprotName" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :pdbExperimentalId ; rr:objectMap [ rr:column "pdbExperimentalId" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :pkaIsoelectricPoint ; rr:objectMap [ rr:column "pkaIsoelectricPoint" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :chemicalStructure ; rr:objectMap [ rr:column "chemicalStructure" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :swissprotPage ; rr:objectMap [ rr:column "swissprotPage" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :hetId ; rr:objectMap [ rr:column "hetId" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :experimentalLogs ; rr:objectMap [ rr:column "experimentalLogs" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :chebiId ; rr:objectMap [ rr:column "chebiId" ] ] .
+
+# --- enzymes_main ---
+<#EnzymesMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "enzymes_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/enzymes/{enzymes}" ;
+        rr:class :enzymes ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :geneName ; rr:objectMap [ rr:column "geneName" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :name ; rr:objectMap [ rr:column "name" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :proteinSequence ; rr:objectMap [ rr:column "proteinSequence" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :swissprotId ; rr:objectMap [ rr:column "swissprotId" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :swissprotPage ; rr:objectMap [ rr:column "swissprotPage" ] ] .
+
+# --- references_main ---
+<#ReferencesMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "references_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/references/{references}" ;
+        rr:class :references ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :sameAs ; rr:objectMap [ rr:column "sameAs" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :page ; rr:objectMap [ rr:column "page" ] ] .
+
+# --- targets_main ---
+<#TargetsMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "targets_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/targets/{targets}" ;
+        rr:class :targets ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :bio2rdfSymbol ; rr:objectMap [ rr:column "bio2rdfSymbol" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :chromosomeLocation ; rr:objectMap [ rr:column "chromosomeLocation" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :essentiality ; rr:objectMap [ rr:column "essentiality" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :genatlasId ; rr:objectMap [ rr:column "genatlasId" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :genbankIdGene ; rr:objectMap [ rr:column "genbankIdGene" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :genbankIdGenePage ; rr:objectMap [ rr:column "genbankIdGenePage" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :genbankIdProtein ; rr:objectMap [ rr:column "genbankIdProtein" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :genbankIdProteinPage ; rr:objectMap [ rr:column "genbankIdProteinPage" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :geneName ; rr:objectMap [ rr:column "geneName" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :geneSequence ; rr:objectMap [ rr:column "geneSequence" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :genecardId ; rr:objectMap [ rr:column "genecardId" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :generalFunction ; rr:objectMap [ rr:column "generalFunction" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :hgncId ; rr:objectMap [ rr:column "hgncId" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :hgncIdPage ; rr:objectMap [ rr:column "hgncIdPage" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :hprdId ; rr:objectMap [ rr:column "hprdId" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :locus ; rr:objectMap [ rr:column "locus" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :molecularWeight ; rr:objectMap [ rr:column "molecularWeight" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :name ; rr:objectMap [ rr:column "name" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :numberOfResidues ; rr:objectMap [ rr:column "numberOfResidues" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :pathway ; rr:objectMap [ rr:column "pathway" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :pdbId ; rr:objectMap [ rr:column "pdbId" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :pdbIdPage ; rr:objectMap [ rr:column "pdbIdPage" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :proteinSequence ; rr:objectMap [ rr:column "proteinSequence" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :reaction ; rr:objectMap [ rr:column "reaction" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :signal ; rr:objectMap [ rr:column "signal" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :specificFunction ; rr:objectMap [ rr:column "specificFunction" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :swissprotId ; rr:objectMap [ rr:column "swissprotId" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :swissprotName ; rr:objectMap [ rr:column "swissprotName" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :swissprotPage ; rr:objectMap [ rr:column "swissprotPage" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :theoreticalPi ; rr:objectMap [ rr:column "theoreticalPi" ] ] .
+
+# --- drug_interactions_text ---
+<#DrugInteractionsTextMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drug_interactions_text" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/drug_interactions/{drug_interactions}" ;
+        rr:class :drug_interactions ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :text ; rr:objectMap [ rr:column "text" ] ] .
+
+# --- drugs_affectedOrganism ---
+<#DrugsAffectedorganismMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_affectedOrganism" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :affectedOrganism ; rr:objectMap [ rr:column "affectedOrganism" ] ] .
+
+# --- drugs_ahfsCode ---
+<#DrugsAhfscodeMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_ahfsCode" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :ahfsCode ; rr:objectMap [ rr:column "ahfsCode" ] ] .
+
+# --- drugs_atcCode ---
+<#DrugsAtccodeMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_atcCode" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :atcCode ; rr:objectMap [ rr:column "atcCode" ] ] .
+
+# --- drugs_brandMixture ---
+<#DrugsBrandmixtureMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_brandMixture" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :brandMixture ; rr:objectMap [ rr:column "brandMixture" ] ] .
+
+# --- drugs_brandName ---
+<#DrugsBrandnameMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_brandName" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :brandName ; rr:objectMap [ rr:column "brandName" ] ] .
+
+# --- drugs_brandedDrug ---
+<#DrugsBrandeddrugMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_brandedDrug" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :brandedDrug ; rr:objectMap [ rr:column "brandedDrug" ] ] .
+
+# --- drugs_dosageForm ---
+<#DrugsDosageformMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_dosageForm" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :dosageForm ; rr:objectMap [ rr:column "dosageForm" ] ] .
+
+# --- drugs_drugCategory ---
+<#DrugsDrugcategoryMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_drugCategory" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :drugCategory ; rr:objectMap [ rr:column "drugCategory" ] ] .
+
+# --- drugs_drugType ---
+<#DrugsDrugtypeMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_drugType" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :drugType ; rr:objectMap [ rr:column "drugType" ] ] .
+
+# --- drugs_enzyme ---
+<#DrugsEnzymeMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_enzyme" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :enzyme ; rr:objectMap [ rr:column "enzyme" ] ] .
+
+# --- drugs_foodInteraction ---
+<#DrugsFoodinteractionMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_foodInteraction" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :foodInteraction ; rr:objectMap [ rr:column "foodInteraction" ] ] .
+
+# --- drugs_page ---
+<#DrugsPageMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_page" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :page ; rr:objectMap [ rr:column "page" ] ] .
+
+# --- drugs_possibleDiseaseTarget ---
+<#DrugsPossiblediseasetargetMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_possibleDiseaseTarget" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :possibleDiseaseTarget ; rr:objectMap [ rr:column "possibleDiseaseTarget" ] ] .
+
+# --- drugs_sameAs ---
+<#DrugsSameasMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_sameAs" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :sameAs ; rr:objectMap [ rr:column "sameAs" ] ] .
+
+# --- drugs_secondaryAccessionNumber ---
+<#DrugsSecondaryaccessionnumberMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_secondaryAccessionNumber" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :secondaryAccessionNumber ; rr:objectMap [ rr:column "secondaryAccessionNumber" ] ] .
+
+# --- drugs_synonym ---
+<#DrugsSynonymMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_synonym" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :synonym ; rr:objectMap [ rr:column "synonym" ] ] .
+
+# --- drugs_target ---
+<#DrugsTargetMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_target" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :target ; rr:objectMap [ rr:column "target" ] ] .
+
+# --- targets_cellularLocation ---
+<#TargetsCellularlocationMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "targets_cellularLocation" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/targets/{targets}" ;
+        rr:class :targets ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :cellularLocation ; rr:objectMap [ rr:column "cellularLocation" ] ] .
+
+# --- targets_drugReference ---
+<#TargetsDrugreferenceMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "targets_drugReference" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/targets/{targets}" ;
+        rr:class :targets ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :drugReference ; rr:objectMap [ rr:column "drugReference" ] ] .
+
+# --- targets_generalReference ---
+<#TargetsGeneralreferenceMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "targets_generalReference" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/targets/{targets}" ;
+        rr:class :targets ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :generalReference ; rr:objectMap [ rr:column "generalReference" ] ] .
+
+# --- targets_goClassificationComponent ---
+<#TargetsGoclassificationcomponentMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "targets_goClassificationComponent" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/targets/{targets}" ;
+        rr:class :targets ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :goClassificationComponent ; rr:objectMap [ rr:column "goClassificationComponent" ] ] .
+
+# --- targets_goClassificationFunction ---
+<#TargetsGoclassificationfunctionMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "targets_goClassificationFunction" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/targets/{targets}" ;
+        rr:class :targets ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :goClassificationFunction ; rr:objectMap [ rr:column "goClassificationFunction" ] ] .
+
+# --- targets_goClassificationProcess ---
+<#TargetsGoclassificationprocessMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "targets_goClassificationProcess" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/targets/{targets}" ;
+        rr:class :targets ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :goClassificationProcess ; rr:objectMap [ rr:column "goClassificationProcess" ] ] .
+
+# --- targets_pfamDomainFunction ---
+<#TargetsPfamdomainfunctionMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "targets_pfamDomainFunction" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/targets/{targets}" ;
+        rr:class :targets ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :pfamDomainFunction ; rr:objectMap [ rr:column "pfamDomainFunction" ] ] .
+
+# --- targets_pfamDomainFunctionPage ---
+<#TargetsPfamdomainfunctionpageMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "targets_pfamDomainFunctionPage" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/targets/{targets}" ;
+        rr:class :targets ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :pfamDomainFunctionPage ; rr:objectMap [ rr:column "pfamDomainFunctionPage" ] ] .
+
+# --- targets_sameAs ---
+<#TargetsSameasMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "targets_sameAs" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/targets/{targets}" ;
+        rr:class :targets ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :sameAs ; rr:objectMap [ rr:column "sameAs" ] ] .
+
+# --- targets_synonym ---
+<#TargetsSynonymMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "targets_synonym" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/targets/{targets}" ;
+        rr:class :targets ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :synonym ; rr:objectMap [ rr:column "synonym" ] ] .
+
+# --- targets_transmembraneRegions ---
+<#TargetsTransmembraneregionsMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "targets_transmembraneRegions" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/drugbank/targets/{targets}" ;
+        rr:class :targets ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :transmembraneRegions ; rr:objectMap [ rr:column "transmembraneRegions" ] ] .
+

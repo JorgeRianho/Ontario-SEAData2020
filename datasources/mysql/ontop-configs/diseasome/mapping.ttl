@@ -1,0 +1,76 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix : <http://example.org/diseasome#> .
+
+# --- diseases_main ---
+<#DiseasesMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "diseases_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/diseasome/diseases/{diseases}" ;
+        rr:class :diseases ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :chromosomalLocation ; rr:objectMap [ rr:column "chromosomalLocation" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :class ; rr:objectMap [ rr:column "class" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :classDegree ; rr:objectMap [ rr:column "classDegree" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :degree ; rr:objectMap [ rr:column "degree" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :diseaseSubtypeOf ; rr:objectMap [ rr:column "diseaseSubtypeOf" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :name ; rr:objectMap [ rr:column "name" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :omim ; rr:objectMap [ rr:column "omim" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :omimPage ; rr:objectMap [ rr:column "omimPage" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :size ; rr:objectMap [ rr:column "size" ] ] .
+
+# --- genes_main ---
+<#GenesMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "genes_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/diseasome/genes/{genes}" ;
+        rr:class :genes ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :bio2rdfSymbol ; rr:objectMap [ rr:column "bio2rdfSymbol" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :geneId ; rr:objectMap [ rr:column "geneId" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :hgncId ; rr:objectMap [ rr:column "hgncId" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :hgncIdPage ; rr:objectMap [ rr:column "hgncIdPage" ] ] .
+
+# --- diseases_associatedGene ---
+<#DiseasesAssociatedgeneMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "diseases_associatedGene" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/diseasome/diseases/{diseases}" ;
+        rr:class :diseases ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :associatedGene ; rr:objectMap [ rr:column "associatedGene" ] ] .
+
+# --- diseases_possibleDrug ---
+<#DiseasesPossibledrugMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "diseases_possibleDrug" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/diseasome/diseases/{diseases}" ;
+        rr:class :diseases ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :possibleDrug ; rr:objectMap [ rr:column "possibleDrug" ] ] .
+
+# --- diseases_sameAs ---
+<#DiseasesSameasMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "diseases_sameAs" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/diseasome/diseases/{diseases}" ;
+        rr:class :diseases ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :sameAs ; rr:objectMap [ rr:column "sameAs" ] ] .
+
+# --- genes_sameAs ---
+<#GenesSameasMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "genes_sameAs" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/diseasome/genes/{genes}" ;
+        rr:class :genes ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :sameAs ; rr:objectMap [ rr:column "sameAs" ] ] .
+

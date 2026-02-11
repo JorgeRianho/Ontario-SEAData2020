@@ -1,0 +1,375 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix : <http://example.org/affymetrix#> .
+
+# --- Probeset_main ---
+<#ProbesetMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :inDataset ; rr:objectMap [ rr:column "inDataset" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :probeSetId ; rr:objectMap [ rr:column "probe_set_id" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :xRGD ; rr:objectMap [ rr:column "x_rgd" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :xMGI ; rr:objectMap [ rr:column "x_mgi" ] ] .
+
+# --- Probeset_alignments ---
+<#ProbesetAlignmentsMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_alignments" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :alignments ; rr:objectMap [ rr:column "alignments" ] ] .
+
+# --- Probeset_annotation_date ---
+<#ProbesetAnnotationDateMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_annotation_date" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :annotationDate ; rr:objectMap [ rr:column "annotation_date" ] ] .
+
+# --- Probeset_annotation_description ---
+<#ProbesetAnnotationDescriptionMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_annotation_description" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :annotationDescription ; rr:objectMap [ rr:column "annotation_description" ] ] .
+
+# --- Probeset_annotation_notes ---
+<#ProbesetAnnotationNotesMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_annotation_notes" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :annotationNotes ; rr:objectMap [ rr:column "annotation_notes" ] ] .
+
+# --- Probeset_chromosomal_location ---
+<#ProbesetChromosomalLocationMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_chromosomal_location" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :chromosomalLocation ; rr:objectMap [ rr:column "chromosomal_location" ] ] .
+
+# --- Probeset_function ---
+<#ProbesetFunctionMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_function" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :function ; rr:objectMap [ rr:column "function" ] ] .
+
+# --- Probeset_gene_title ---
+<#ProbesetGeneTitleMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_gene_title" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :geneTitle ; rr:objectMap [ rr:column "gene_title" ] ] .
+
+# --- Probeset_genechip_array ---
+<#ProbesetGenechipArrayMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_genechip_array" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :genechipArray ; rr:objectMap [ rr:column "genechip_array" ] ] .
+
+# --- Probeset_genome_version ---
+<#ProbesetGenomeVersionMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_genome_version" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :genomeVersion ; rr:objectMap [ rr:column "genome_version" ] ] .
+
+# --- Probeset_label ---
+<#ProbesetLabelMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_label" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] .
+
+# --- Probeset_location ---
+<#ProbesetLocationMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_location" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :location ; rr:objectMap [ rr:column "location" ] ] .
+
+# --- Probeset_pathway ---
+<#ProbesetPathwayMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_pathway" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :pathway ; rr:objectMap [ rr:column "pathway" ] ] .
+
+# --- Probeset_process ---
+<#ProbesetProcessMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_process" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :process ; rr:objectMap [ rr:column "process" ] ] .
+
+# --- Probeset_qtl ---
+<#ProbesetQtlMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_qtl" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :qtl ; rr:objectMap [ rr:column "qtl" ] ] .
+
+# --- Probeset_representative_public_id ---
+<#ProbesetRepresentativePublicIdMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_representative_public_id" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :representativePublicId ; rr:objectMap [ rr:column "representative_public_id" ] ] .
+
+# --- Probeset_sequence_source ---
+<#ProbesetSequenceSourceMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_sequence_source" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :sequenceSource ; rr:objectMap [ rr:column "sequence_source" ] ] .
+
+# --- Probeset_sequence_type ---
+<#ProbesetSequenceTypeMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_sequence_type" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :sequenceType ; rr:objectMap [ rr:column "sequence_type" ] ] .
+
+# --- Probeset_species_scientific_name ---
+<#ProbesetSpeciesScientificNameMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_species_scientific_name" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :speciesScientificName ; rr:objectMap [ rr:column "species_scientific_name" ] ] .
+
+# --- Probeset_target_description ---
+<#ProbesetTargetDescriptionMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_target_description" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :targetDescription ; rr:objectMap [ rr:column "target_description" ] ] .
+
+# --- Probeset_trans_membrane ---
+<#ProbesetTransMembraneMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_trans_membrane" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :transMembrane ; rr:objectMap [ rr:column "trans_membrane" ] ] .
+
+# --- Probeset_transcript ---
+<#ProbesetTranscriptMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_transcript" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :transcript ; rr:objectMap [ rr:column "transcript" ] ] .
+
+# --- Probeset_transcript_assignment ---
+<#ProbesetTranscriptAssignmentMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_transcript_assignment" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :transcriptAssignment ; rr:objectMap [ rr:column "transcript_assignment" ] ] .
+
+# --- Probeset_unigene_cluster_type ---
+<#ProbesetUnigeneClusterTypeMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_unigene_cluster_type" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :unigeneClusterType ; rr:objectMap [ rr:column "unigene_cluster_type" ] ] .
+
+# --- Probeset_x_agi ---
+<#ProbesetXAgiMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_x_agi" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xAGI ; rr:objectMap [ rr:column "x_agi" ] ] .
+
+# --- Probeset_x_ec ---
+<#ProbesetXEcMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_x_ec" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xEC ; rr:objectMap [ rr:column "x_ec" ] ] .
+
+# --- Probeset_x_ensembl ---
+<#ProbesetXEnsemblMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_x_ensembl" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xEnsembl ; rr:objectMap [ rr:column "x_ensembl" ] ] .
+
+# --- Probeset_x_flybase ---
+<#ProbesetXFlybaseMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_x_flybase" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xFlybase ; rr:objectMap [ rr:column "x_flybase" ] ] .
+
+# --- Probeset_x_geneid ---
+<#ProbesetXGeneidMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_x_geneid" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xGeneid ; rr:objectMap [ rr:column "x_geneid" ] ] .
+
+# --- Probeset_x_interpro ---
+<#ProbesetXInterproMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_x_interpro" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xInterpro ; rr:objectMap [ rr:column "x_interpro" ] ] .
+
+# --- Probeset_x_omim ---
+<#ProbesetXOmimMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_x_omim" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xOmim ; rr:objectMap [ rr:column "x_omim" ] ] .
+
+# --- Probeset_x_refseq ---
+<#ProbesetXRefseqMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_x_refseq" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xRefseq ; rr:objectMap [ rr:column "x_refseq" ] ] .
+
+# --- Probeset_x_sgd ---
+<#ProbesetXSgdMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_x_sgd" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xSGD ; rr:objectMap [ rr:column "x_sgd" ] ] .
+
+# --- Probeset_x_symbol ---
+<#ProbesetXSymbolMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_x_symbol" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xSymbol ; rr:objectMap [ rr:column "x_symbol" ] ] .
+
+# --- Probeset_x_unigene ---
+<#ProbesetXUnigeneMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_x_unigene" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xUnigene ; rr:objectMap [ rr:column "x_unigene" ] ] .
+
+# --- Probeset_x_uniprot ---
+<#ProbesetXUniprotMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_x_uniprot" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xUniprot ; rr:objectMap [ rr:column "x_uniprot" ] ] .
+
+# --- Probeset_x_wormbase ---
+<#ProbesetXWormbaseMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Probeset_x_wormbase" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/affymetrix/probeset/{Probeset}" ;
+        rr:class :Probeset ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xWormbase ; rr:objectMap [ rr:column "x_wormbase" ] ] .

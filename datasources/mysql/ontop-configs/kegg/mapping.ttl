@@ -1,0 +1,209 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix : <http://example.org/kegg#> .
+
+# --- Compound_main ---
+<#CompoundMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Compound_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/kegg/compound/{Compound}" ;
+        rr:class :Compound ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :sameAs ; rr:objectMap [ rr:column "sameAs" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :identifier ; rr:objectMap [ rr:column "identifier" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :title ; rr:objectMap [ rr:column "title" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :formula ; rr:objectMap [ rr:column "formula" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :mass ; rr:objectMap [ rr:column "mass" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :url ; rr:objectMap [ rr:column "url" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :urlImage ; rr:objectMap [ rr:column "urlImage" ] ] .
+
+# --- Drug_main ---
+<#DrugMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Drug_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/kegg/drug/{Drug}" ;
+        rr:class :Drug ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :sameAs ; rr:objectMap [ rr:column "sameAs" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :identifier ; rr:objectMap [ rr:column "identifier" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :title ; rr:objectMap [ rr:column "title" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :formula ; rr:objectMap [ rr:column "formula" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :mass ; rr:objectMap [ rr:column "mass" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :url ; rr:objectMap [ rr:column "url" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :urlImage ; rr:objectMap [ rr:column "urlImage" ] ] .
+
+# --- Enzyme_main ---
+<#EnzymeMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Enzyme_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/kegg/enzyme/{Enzyme}" ;
+        rr:class :Enzyme ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :comment ; rr:objectMap [ rr:column "comment" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :identifier ; rr:objectMap [ rr:column "identifier" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :title ; rr:objectMap [ rr:column "title" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :url ; rr:objectMap [ rr:column "url" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :systematicName ; rr:objectMap [ rr:column "systematicName" ] ] .
+
+# --- Reaction_main ---
+<#ReactionMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Reaction_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/kegg/reaction/{Reaction}" ;
+        rr:class :Reaction ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :comment ; rr:objectMap [ rr:column "comment" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :sameAs ; rr:objectMap [ rr:column "sameAs" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :identifier ; rr:objectMap [ rr:column "identifier" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :title ; rr:objectMap [ rr:column "title" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :url ; rr:objectMap [ rr:column "url" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :urlImage ; rr:objectMap [ rr:column "urlImage" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :equation ; rr:objectMap [ rr:column "equation" ] ] .
+
+# --- Compound_synonym ---
+<#CompoundSynonymMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Compound_synonym" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/kegg/compound/{Compound}" ;
+        rr:class :Compound ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :synonym ; rr:objectMap [ rr:column "synonym" ] ] .
+
+# --- Compound_xRef ---
+<#CompoundXrefMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Compound_xRef" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/kegg/compound/{Compound}" ;
+        rr:class :Compound ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xRef ; rr:objectMap [ rr:column "xRef" ] ] .
+
+# --- Drug_synonym ---
+<#DrugSynonymMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Drug_synonym" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/kegg/drug/{Drug}" ;
+        rr:class :Drug ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :synonym ; rr:objectMap [ rr:column "synonym" ] ] .
+
+# --- Drug_xRef ---
+<#DrugXrefMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Drug_xRef" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/kegg/drug/{Drug}" ;
+        rr:class :Drug ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xRef ; rr:objectMap [ rr:column "xRef" ] ] .
+
+# --- Enzyme_isA ---
+<#EnzymeIsaMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Enzyme_isA" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/kegg/enzyme/{Enzyme}" ;
+        rr:class :Enzyme ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :isA ; rr:objectMap [ rr:column "isA" ] ] .
+
+# --- Enzyme_synonym ---
+<#EnzymeSynonymMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Enzyme_synonym" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/kegg/enzyme/{Enzyme}" ;
+        rr:class :Enzyme ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :synonym ; rr:objectMap [ rr:column "synonym" ] ] .
+
+# --- Enzyme_xCofactor ---
+<#EnzymeXcofactorMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Enzyme_xCofactor" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/kegg/enzyme/{Enzyme}" ;
+        rr:class :Enzyme ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xCofactor ; rr:objectMap [ rr:column "xCofactor" ] ] .
+
+# --- Enzyme_xGene ---
+<#EnzymeXgeneMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Enzyme_xGene" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/kegg/enzyme/{Enzyme}" ;
+        rr:class :Enzyme ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xGene ; rr:objectMap [ rr:column "xGene" ] ] .
+
+# --- Enzyme_xProduct ---
+<#EnzymeXproductMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Enzyme_xProduct" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/kegg/enzyme/{Enzyme}" ;
+        rr:class :Enzyme ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xProduct ; rr:objectMap [ rr:column "xProduct" ] ] .
+
+# --- Enzyme_xSubstrate ---
+<#EnzymeXsubstrateMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Enzyme_xSubstrate" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/kegg/enzyme/{Enzyme}" ;
+        rr:class :Enzyme ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xSubstrate ; rr:objectMap [ rr:column "xSubstrate" ] ] .
+
+# --- Reaction_xEnzyme ---
+<#ReactionXenzymeMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Reaction_xEnzyme" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/kegg/reaction/{Reaction}" ;
+        rr:class :Reaction ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xEnzyme ; rr:objectMap [ rr:column "xEnzyme" ] ] .
+
+# --- Reaction_xPathway ---
+<#ReactionXpathwayMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Reaction_xPathway" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/kegg/reaction/{Reaction}" ;
+        rr:class :Reaction ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xPathway ; rr:objectMap [ rr:column "xPathway" ] ] .
+
+# --- Reaction_xProduct ---
+<#ReactionXproductMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Reaction_xProduct" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/kegg/reaction/{Reaction}" ;
+        rr:class :Reaction ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xProduct ; rr:objectMap [ rr:column "xProduct" ] ] .
+
+# --- Reaction_xSubstrate ---
+<#ReactionXsubstrateMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Reaction_xSubstrate" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/kegg/reaction/{Reaction}" ;
+        rr:class :Reaction ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xSubstrate ; rr:objectMap [ rr:column "xSubstrate" ] ] .
+

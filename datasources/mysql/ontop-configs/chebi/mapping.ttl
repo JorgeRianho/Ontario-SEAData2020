@@ -1,0 +1,174 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix : <http://example.org/chebi#> .
+
+# --- Compound_main ---
+<#CompoundMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Compound_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/chebi/compound/{Compound}" ;
+        rr:class :Compound ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :identifier ; rr:objectMap [ rr:column "identifier" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :modified ; rr:objectMap [ rr:column "modified" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :title ; rr:objectMap [ rr:column "title" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :url ; rr:objectMap [ rr:column "url" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :Status ; rr:objectMap [ rr:column "Status" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :image ; rr:objectMap [ rr:column "image" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :xSource ; rr:objectMap [ rr:column "xSource" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :isEnantiomerOf ; rr:objectMap [ rr:column "is_enantiomer_of" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :inchi ; rr:objectMap [ rr:column "inchi" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :smiles ; rr:objectMap [ rr:column "smiles" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :seeAlso ; rr:objectMap [ rr:column "seeAlso" ] ] .
+
+# --- Compound_comment ---
+<#CompoundCommentMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Compound_comment" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/chebi/compound/{Compound}" ;
+        rr:class :Compound ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :comment ; rr:objectMap [ rr:column "comment" ] ] .
+
+# --- Compound_formula ---
+<#CompoundFormulaMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Compound_formula" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/chebi/compound/{Compound}" ;
+        rr:class :Compound ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :formula ; rr:objectMap [ rr:column "formula" ] ] .
+
+# --- Compound_has_functional_parent ---
+<#CompoundHasFunctionalParentMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Compound_has_functional_parent" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/chebi/compound/{Compound}" ;
+        rr:class :Compound ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :hasFunctionalParent ; rr:objectMap [ rr:column "has_functional_parent" ] ] .
+
+# --- Compound_has_parent_hydride ---
+<#CompoundHasParentHydrideMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Compound_has_parent_hydride" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/chebi/compound/{Compound}" ;
+        rr:class :Compound ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :hasParentHydride ; rr:objectMap [ rr:column "has_parent_hydride" ] ] .
+
+# --- Compound_has_part ---
+<#CompoundHasPartMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Compound_has_part" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/chebi/compound/{Compound}" ;
+        rr:class :Compound ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :hasPart ; rr:objectMap [ rr:column "has_part" ] ] .
+
+# --- Compound_has_role ---
+<#CompoundHasRoleMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Compound_has_role" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/chebi/compound/{Compound}" ;
+        rr:class :Compound ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :hasRole ; rr:objectMap [ rr:column "has_role" ] ] .
+
+# --- Compound_is_a ---
+<#CompoundIsAMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Compound_is_a" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/chebi/compound/{Compound}" ;
+        rr:class :Compound ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :isA ; rr:objectMap [ rr:column "is_a" ] ] .
+
+# --- Compound_is_conjugate_acid_of ---
+<#CompoundIsConjugateAcidOfMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Compound_is_conjugate_acid_of" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/chebi/compound/{Compound}" ;
+        rr:class :Compound ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :isConjugateAcidOf ; rr:objectMap [ rr:column "is_conjugate_acid_of" ] ] .
+
+# --- Compound_is_conjugate_base_of ---
+<#CompoundIsConjugateBaseOfMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Compound_is_conjugate_base_of" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/chebi/compound/{Compound}" ;
+        rr:class :Compound ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :isConjugateBaseOf ; rr:objectMap [ rr:column "is_conjugate_base_of" ] ] .
+
+# --- Compound_is_substituent_group_from ---
+<#CompoundIsSubstituentGroupFromMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Compound_is_substituent_group_from" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/chebi/compound/{Compound}" ;
+        rr:class :Compound ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :isSubstituentGroupFrom ; rr:objectMap [ rr:column "is_substituent_group_from" ] ] .
+
+# --- Compound_is_tautomer_of ---
+<#CompoundIsTautomerOfMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Compound_is_tautomer_of" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/chebi/compound/{Compound}" ;
+        rr:class :Compound ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :isTautomerOf ; rr:objectMap [ rr:column "is_tautomer_of" ] ] .
+
+# --- Compound_iupacName ---
+<#CompoundIupacnameMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Compound_iupacName" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/chebi/compound/{Compound}" ;
+        rr:class :Compound ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :iupacName ; rr:objectMap [ rr:column "iupacName" ] ] .
+
+# --- Compound_synonym ---
+<#CompoundSynonymMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Compound_synonym" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/chebi/compound/{Compound}" ;
+        rr:class :Compound ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :synonym ; rr:objectMap [ rr:column "synonym" ] ] .
+
+# --- Compound_xRef ---
+<#CompoundXrefMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Compound_xRef" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/chebi/compound/{Compound}" ;
+        rr:class :Compound ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xRef ; rr:objectMap [ rr:column "xRef" ] ] .
+
+# --- Compound_xReferencedBy ---
+<#CompoundXreferencedbyMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "Compound_xReferencedBy" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/chebi/compound/{Compound}" ;
+        rr:class :Compound ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :xReferencedBy ; rr:objectMap [ rr:column "xReferencedBy" ] ] .
+

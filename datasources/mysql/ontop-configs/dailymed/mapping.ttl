@@ -1,0 +1,124 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix : <http://example.org/dailymed#> .
+
+# --- drugs_main ---
+<#DrugsMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/dailymed/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :activeIngredient ; rr:objectMap [ rr:column "activeIngredient" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :activeMoiety ; rr:objectMap [ rr:column "activeMoiety" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :adverseReaction ; rr:objectMap [ rr:column "adverseReaction" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :boxedWarning ; rr:objectMap [ rr:column "boxedWarning" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :clinicalPharmacology ; rr:objectMap [ rr:column "clinicalPharmacology" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :contraindication ; rr:objectMap [ rr:column "contraindication" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :description ; rr:objectMap [ rr:column "description" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :dosage ; rr:objectMap [ rr:column "dosage" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :fullName ; rr:objectMap [ rr:column "fullName" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :genericDrug ; rr:objectMap [ rr:column "genericDrug" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :genericMedicine ; rr:objectMap [ rr:column "genericMedicine" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :indication ; rr:objectMap [ rr:column "indication" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :name ; rr:objectMap [ rr:column "name" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :overdosage ; rr:objectMap [ rr:column "overdosage" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :precaution ; rr:objectMap [ rr:column "precaution" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :representedOrganization ; rr:objectMap [ rr:column "representedOrganization" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :routeOfAdministration ; rr:objectMap [ rr:column "routeOfAdministration" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :supply ; rr:objectMap [ rr:column "supply" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :warning ; rr:objectMap [ rr:column "warning" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :supplementalPatientMaterial ; rr:objectMap [ rr:column "supplementalPatientMaterial" ] ] .
+
+# --- ingredients_main ---
+<#IngredientsMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "ingredients_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/dailymed/ingredients/{ingredients}" ;
+        rr:class :ingredients ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :sameAs ; rr:objectMap [ rr:column "sameAs" ] ] .
+
+# --- organization_main ---
+<#OrganizationMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "organization_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/dailymed/organization/{organization}" ;
+        rr:class :organization ;
+    ] ;
+.
+
+# --- drugs_inactiveIngredient ---
+<#DrugsInactiveingredientMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_inactiveIngredient" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/dailymed/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :inactiveIngredient ; rr:objectMap [ rr:column "inactiveIngredient" ] ] .
+
+# --- drugs_possibleDiseaseTarget ---
+<#DrugsPossiblediseasetargetMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_possibleDiseaseTarget" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/dailymed/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :possibleDiseaseTarget ; rr:objectMap [ rr:column "possibleDiseaseTarget" ] ] .
+
+# --- drugs_sameAs ---
+<#DrugsSameasMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_sameAs" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/dailymed/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :sameAs ; rr:objectMap [ rr:column "sameAs" ] ] .
+
+# --- drugs_sideEffect ---
+<#DrugsSideeffectMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_sideEffect" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/dailymed/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :sideEffect ; rr:objectMap [ rr:column "sideEffect" ] ] .
+
+# --- organization_label ---
+<#OrganizationLabelMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "organization_label" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/dailymed/organization/{organization}" ;
+        rr:class :organization ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] .
+
+# --- organization_producesDrug ---
+<#OrganizationProducesdrugMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "organization_producesDrug" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/dailymed/organization/{organization}" ;
+        rr:class :organization ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :producesDrug ; rr:objectMap [ rr:column "producesDrug" ] ] .
+
+# --- organization_sameAs ---
+<#OrganizationSameasMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "organization_sameAs" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/dailymed/organization/{organization}" ;
+        rr:class :organization ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :sameAs ; rr:objectMap [ rr:column "sameAs" ] ] .
+

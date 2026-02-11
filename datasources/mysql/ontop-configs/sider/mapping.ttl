@@ -1,0 +1,97 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix : <http://example.org/sider#> .
+
+# --- drugs_main ---
+<#DrugsMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/sider/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :siderDrugId ; rr:objectMap [ rr:column "siderDrugId" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :stitchId ; rr:objectMap [ rr:column "stitchId" ] ] .
+
+# --- side_effects_main ---
+<#SideEffectsMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "side_effects_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/sider/side_effects/{side_effects}" ;
+        rr:class :side_effects ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :page ; rr:objectMap [ rr:column "page" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :sideEffectId ; rr:objectMap [ rr:column "sideEffectId" ] ] .
+
+# --- drugs_drugName ---
+<#DrugsDrugnameMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_drugName" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/sider/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :drugName ; rr:objectMap [ rr:column "drugName" ] ] .
+
+# --- drugs_page ---
+<#DrugsPageMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_page" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/sider/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :page ; rr:objectMap [ rr:column "page" ] ] .
+
+# --- drugs_sameAs ---
+<#DrugsSameasMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_sameAs" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/sider/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :sameAs ; rr:objectMap [ rr:column "sameAs" ] ] .
+
+# --- drugs_seeAlso ---
+<#DrugsSeealsoMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_seeAlso" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/sider/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :seeAlso ; rr:objectMap [ rr:column "seeAlso" ] ] .
+
+# --- drugs_sideEffect ---
+<#DrugsSideeffectMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "drugs_sideEffect" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/sider/drugs/{drugs}" ;
+        rr:class :drugs ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :sideEffect ; rr:objectMap [ rr:column "sideEffect" ] ] .
+
+# --- side_effects_sameAs ---
+<#SideEffectsSameasMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "side_effects_sameAs" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/sider/side_effects/{side_effects}" ;
+        rr:class :side_effects ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :sameAs ; rr:objectMap [ rr:column "sameAs" ] ] .
+
+# --- side_effects_sideEffectName ---
+<#SideEffectsSideeffectnameMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "side_effects_sideEffectName" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/sider/side_effects/{side_effects}" ;
+        rr:class :side_effects ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :sideEffectName ; rr:objectMap [ rr:column "sideEffectName" ] ] .
+

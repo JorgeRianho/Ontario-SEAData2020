@@ -1,0 +1,386 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix : <http://example.org/linkedct#> .
+
+# --- agency_main ---
+<#AgencyMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "agency_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/agency/{agency}" ;
+        rr:class :agency ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :agencyId ; rr:objectMap [ rr:column "agency_id" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :agencyName ; rr:objectMap [ rr:column "agency_name" ] ] .
+
+# --- collaborator_agency_main ---
+<#CollaboratorAgencyMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "collaborator_agency_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/collaborator_agency/{collaborator_agency}" ;
+        rr:class :collaborator_agency ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :collaboratorAgencyName ; rr:objectMap [ rr:column "collaborator_agency_name" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :collaboratorAgencyId ; rr:objectMap [ rr:column "collaborator_agency_id" ] ] .
+
+# --- condition_main ---
+<#ConditionMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "condition_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/condition/{condition}" ;
+        rr:class :condition ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :conditionId ; rr:objectMap [ rr:column "condition_id" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :conditionName ; rr:objectMap [ rr:column "condition_name" ] ] .
+
+# --- intervention_main ---
+<#InterventionMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "intervention_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/intervention/{intervention}" ;
+        rr:class :intervention ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :interventionId ; rr:objectMap [ rr:column "intervention_id" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :interventionName ; rr:objectMap [ rr:column "intervention_name" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :interventionType ; rr:objectMap [ rr:column "intervention_type" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :description ; rr:objectMap [ rr:column "description" ] ] .
+
+# --- location_main ---
+<#LocationMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "location_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/location/{location}" ;
+        rr:class :location ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :facilityAddressZip ; rr:objectMap [ rr:column "facility_address_zip" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :locationId ; rr:objectMap [ rr:column "location_id" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :facilityName ; rr:objectMap [ rr:column "facility_name" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :facilityAddressCountry ; rr:objectMap [ rr:column "facility_address_country" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :facilityAddressCity ; rr:objectMap [ rr:column "facility_address_city" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :facilityAddressState ; rr:objectMap [ rr:column "facility_address_state" ] ] .
+
+# --- overall_official_main ---
+<#OverallOfficialMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "overall_official_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/overall_official/{overall_official}" ;
+        rr:class :overall_official ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :lastName ; rr:objectMap [ rr:column "last_name" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :overallOfficialId ; rr:objectMap [ rr:column "overall_official_id" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :affiliation ; rr:objectMap [ rr:column "affiliation" ] ] .
+
+# --- oversight_main ---
+<#OversightMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "oversight_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/oversight/{oversight}" ;
+        rr:class :oversight ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :oversightOversightInfoAuthority ; rr:objectMap [ rr:column "oversight_oversight_info_authority" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :oversightId ; rr:objectMap [ rr:column "oversight_id" ] ] .
+
+# --- primary_outcomes_main ---
+<#PrimaryOutcomesMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "primary_outcomes_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/primary_outcomes/{primary_outcomes}" ;
+        rr:class :primary_outcomes ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :primaryOutcomesId ; rr:objectMap [ rr:column "primary_outcomes_id" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :measure ; rr:objectMap [ rr:column "measure" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :safetyIssue ; rr:objectMap [ rr:column "safety_issue" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :timeFrame ; rr:objectMap [ rr:column "time_frame" ] ] .
+
+# --- reference_main ---
+<#ReferenceMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "reference_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/reference/{reference}" ;
+        rr:class :reference ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :sameAs ; rr:objectMap [ rr:column "sameAs" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :page ; rr:objectMap [ rr:column "page" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :PMid ; rr:objectMap [ rr:column "PMid" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :referenceId ; rr:objectMap [ rr:column "reference_id" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :citation ; rr:objectMap [ rr:column "citation" ] ] .
+
+# --- results_reference_main ---
+<#ResultsReferenceMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "results_reference_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/results_reference/{results_reference}" ;
+        rr:class :results_reference ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :sameAs ; rr:objectMap [ rr:column "sameAs" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :page ; rr:objectMap [ rr:column "page" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :PMid ; rr:objectMap [ rr:column "PMid" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :citation ; rr:objectMap [ rr:column "citation" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :resultsReferenceId ; rr:objectMap [ rr:column "results_reference_id" ] ] .
+
+# --- secondary_outcomes_main ---
+<#SecondaryOutcomesMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "secondary_outcomes_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/secondary_outcomes/{secondary_outcomes}" ;
+        rr:class :secondary_outcomes ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :safetyIssue ; rr:objectMap [ rr:column "safety_issue" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :timeFrame ; rr:objectMap [ rr:column "time_frame" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :measure ; rr:objectMap [ rr:column "measure" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :secondaryOutcomesId ; rr:objectMap [ rr:column "secondary_outcomes_id" ] ] .
+
+# --- trial_arm_group_main ---
+<#TrialArmGroupMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "trial_arm_group_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/trial_arm_group/{trial_arm_group}" ;
+        rr:class :trial_arm_group ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :armGroupType ; rr:objectMap [ rr:column "arm_group_type" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :armGroupLabel ; rr:objectMap [ rr:column "arm_group_label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :armGroupId ; rr:objectMap [ rr:column "arm_group_id" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :description ; rr:objectMap [ rr:column "description" ] ] .
+
+# --- trials_main ---
+<#TrialsMainMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "trials_main" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/trials/{trials}" ;
+        rr:class :trials ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :label ; rr:objectMap [ rr:column "label" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :page ; rr:objectMap [ rr:column "page" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :leadSponsorAgency ; rr:objectMap [ rr:column "lead_sponsor_agency" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :eligibilityMinimumAge ; rr:objectMap [ rr:column "eligibility_minimum_age" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :briefTitle ; rr:objectMap [ rr:column "brief_title" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :nctId ; rr:objectMap [ rr:column "nct_id" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :numberOfArms ; rr:objectMap [ rr:column "number_of_arms" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :numberOfGroups ; rr:objectMap [ rr:column "number_of_groups" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :id ; rr:objectMap [ rr:column "id" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :downloadDate ; rr:objectMap [ rr:column "download_date" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :enrollment ; rr:objectMap [ rr:column "enrollment" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :firstreceivedDate ; rr:objectMap [ rr:column "firstreceived_date" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :eligibilityHealthyVolunteers ; rr:objectMap [ rr:column "eligibility_healthy_volunteers" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :overallStatus ; rr:objectMap [ rr:column "overall_status" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :summary ; rr:objectMap [ rr:column "summary" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :endDate ; rr:objectMap [ rr:column "end_date" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :officialTitle ; rr:objectMap [ rr:column "official_title" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :source ; rr:objectMap [ rr:column "source" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :verificationDate ; rr:objectMap [ rr:column "verification_date" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :eligibilityGender ; rr:objectMap [ rr:column "eligibility_gender" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :orgStudyId ; rr:objectMap [ rr:column "org_study_id" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :criteria ; rr:objectMap [ rr:column "criteria" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :studyDesign ; rr:objectMap [ rr:column "study_design" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :startDate ; rr:objectMap [ rr:column "start_date" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :studyType ; rr:objectMap [ rr:column "study_type" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :phase ; rr:objectMap [ rr:column "phase" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :description ; rr:objectMap [ rr:column "description" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :lastchangedDate ; rr:objectMap [ rr:column "lastchanged_date" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :eligibilityMaximumAge ; rr:objectMap [ rr:column "eligibility_maximum_age" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :primaryCompletionDate ; rr:objectMap [ rr:column "primary_completion_date" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :overallContactLastName ; rr:objectMap [ rr:column "overall_contact_last_name" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :overallContactPhone ; rr:objectMap [ rr:column "overall_contact_phone" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :hasDmc ; rr:objectMap [ rr:column "has_dmc" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :overallContactEmail ; rr:objectMap [ rr:column "overall_contact_email" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :acronym ; rr:objectMap [ rr:column "acronym" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :whyStopped ; rr:objectMap [ rr:column "why_stopped" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :eligibilityStudyPop ; rr:objectMap [ rr:column "eligibility_study_pop" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :biospec ; rr:objectMap [ rr:column "biospec" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :biospecRetention ; rr:objectMap [ rr:column "biospec_retention" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :eligibilitySamplingMethod ; rr:objectMap [ rr:column "eligibility_sampling_method" ] ] ;
+    rr:predicateObjectMap [ rr:predicate :overallContactPhoneExt ; rr:objectMap [ rr:column "overall_contact_phone_ext" ] ] .
+
+# --- condition_sameAs ---
+<#ConditionSameasMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "condition_sameAs" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/condition/{condition}" ;
+        rr:class :condition ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :sameAs ; rr:objectMap [ rr:column "sameAs" ] ] .
+
+# --- condition_seeAlso ---
+<#ConditionSeealsoMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "condition_seeAlso" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/condition/{condition}" ;
+        rr:class :condition ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :seeAlso ; rr:objectMap [ rr:column "seeAlso" ] ] .
+
+# --- intervention_seeAlso ---
+<#InterventionSeealsoMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "intervention_seeAlso" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/intervention/{intervention}" ;
+        rr:class :intervention ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :seeAlso ; rr:objectMap [ rr:column "seeAlso" ] ] .
+
+# --- location_based_near ---
+<#LocationBasedNearMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "location_based_near" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/location/{location}" ;
+        rr:class :location ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :basedNear ; rr:objectMap [ rr:column "based_near" ] ] .
+
+# --- trials_arm_group ---
+<#TrialsArmGroupMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "trials_arm_group" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/trials/{trials}" ;
+        rr:class :trials ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :armGroup ; rr:objectMap [ rr:column "arm_group" ] ] .
+
+# --- trials_collaborator_agency ---
+<#TrialsCollaboratorAgencyMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "trials_collaborator_agency" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/trials/{trials}" ;
+        rr:class :trials ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :collaboratorAgency ; rr:objectMap [ rr:column "collaborator_agency" ] ] .
+
+# --- trials_condition ---
+<#TrialsConditionMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "trials_condition" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/trials/{trials}" ;
+        rr:class :trials ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :condition ; rr:objectMap [ rr:column "condition" ] ] .
+
+# --- trials_intervention ---
+<#TrialsInterventionMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "trials_intervention" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/trials/{trials}" ;
+        rr:class :trials ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :intervention ; rr:objectMap [ rr:column "intervention" ] ] .
+
+# --- trials_location ---
+<#TrialsLocationMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "trials_location" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/trials/{trials}" ;
+        rr:class :trials ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :location ; rr:objectMap [ rr:column "location" ] ] .
+
+# --- trials_nct_alias ---
+<#TrialsNctAliasMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "trials_nct_alias" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/trials/{trials}" ;
+        rr:class :trials ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :nctAlias ; rr:objectMap [ rr:column "nct_alias" ] ] .
+
+# --- trials_overall_official ---
+<#TrialsOverallOfficialMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "trials_overall_official" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/trials/{trials}" ;
+        rr:class :trials ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :overallOfficial ; rr:objectMap [ rr:column "overall_official" ] ] .
+
+# --- trials_oversight ---
+<#TrialsOversightMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "trials_oversight" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/trials/{trials}" ;
+        rr:class :trials ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :oversight ; rr:objectMap [ rr:column "oversight" ] ] .
+
+# --- trials_primary_outcomes ---
+<#TrialsPrimaryOutcomesMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "trials_primary_outcomes" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/trials/{trials}" ;
+        rr:class :trials ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :primaryOutcomes ; rr:objectMap [ rr:column "primary_outcomes" ] ] .
+
+# --- trials_reference ---
+<#TrialsReferenceMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "trials_reference" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/trials/{trials}" ;
+        rr:class :trials ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :reference ; rr:objectMap [ rr:column "reference" ] ] .
+
+# --- trials_results_reference ---
+<#TrialsResultsReferenceMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "trials_results_reference" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/trials/{trials}" ;
+        rr:class :trials ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :resultsReference ; rr:objectMap [ rr:column "results_reference" ] ] .
+
+# --- trials_secondary_id ---
+<#TrialsSecondaryIdMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "trials_secondary_id" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/trials/{trials}" ;
+        rr:class :trials ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :secondaryId ; rr:objectMap [ rr:column "secondary_id" ] ] .
+
+# --- trials_secondary_outcomes ---
+<#TrialsSecondaryOutcomesMapping>
+    a rr:TriplesMap ;
+    rr:logicalTable [ rr:tableName "trials_secondary_outcomes" ] ;
+    rr:subjectMap [
+        rr:template "http://example.org/linkedct/trials/{trials}" ;
+        rr:class :trials ;
+    ] ;
+    rr:predicateObjectMap [ rr:predicate :secondaryOutcomes ; rr:objectMap [ rr:column "secondary_outcomes" ] ] .
+
