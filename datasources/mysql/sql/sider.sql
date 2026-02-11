@@ -5,7 +5,7 @@ USE `sider`;
 
 DROP TABLE IF EXISTS `drugs_main`;
 CREATE TABLE `drugs_main` (
-	drugs varchar(1000) PRIMARY KEY,
+	drugs varchar(254) PRIMARY KEY,
 	label text,
 	siderDrugId text,
 	stitchId text
@@ -16,7 +16,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `side_effects_main`;
 CREATE TABLE `side_effects_main` (
-	side_effects varchar(1000) PRIMARY KEY,
+	side_effects varchar(254) PRIMARY KEY,
 	label text,
 	page text,
 	sideEffectId text
@@ -27,9 +27,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_drugName`;
 CREATE TABLE `drugs_drugName` (
-	drugs varchar(128),
-	drugName varchar(2944),
-	CONSTRAINT pk_drugs_drugName PRIMARY KEY(drugs,drugName),
+	drugs varchar(254),
+	drugName varchar(2048),
 	CONSTRAINT fk_drugs_drugName FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_drugName` WRITE;
@@ -38,9 +37,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_page`;
 CREATE TABLE `drugs_page` (
-	drugs varchar(128),
-	page varchar(2944),
-	CONSTRAINT pk_drugs_page PRIMARY KEY(drugs,page),
+	drugs varchar(254),
+	page varchar(2048),
 	CONSTRAINT fk_drugs_page FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_page` WRITE;
@@ -49,9 +47,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_sameAs`;
 CREATE TABLE `drugs_sameAs` (
-	drugs varchar(128),
-	sameAs varchar(2944),
-	CONSTRAINT pk_drugs_sameAs PRIMARY KEY(drugs,sameAs),
+	drugs varchar(254),
+	sameAs varchar(2048),
 	CONSTRAINT fk_drugs_sameAs FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_sameAs` WRITE;
@@ -60,9 +57,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_seeAlso`;
 CREATE TABLE `drugs_seeAlso` (
-	drugs varchar(128),
-	seeAlso varchar(2944),
-	CONSTRAINT pk_drugs_seeAlso PRIMARY KEY(drugs,seeAlso),
+	drugs varchar(254),
+	seeAlso varchar(2048),
 	CONSTRAINT fk_drugs_seeAlso FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_seeAlso` WRITE;
@@ -71,9 +67,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_sideEffect`;
 CREATE TABLE `drugs_sideEffect` (
-	drugs varchar(128),
-	sideEffect varchar(2944),
-	CONSTRAINT pk_drugs_sideEffect PRIMARY KEY(drugs,sideEffect),
+	drugs varchar(254),
+	sideEffect varchar(2048),
 	CONSTRAINT fk_drugs_sideEffect FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_sideEffect` WRITE;
@@ -82,9 +77,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `side_effects_sameAs`;
 CREATE TABLE `side_effects_sameAs` (
-	side_effects varchar(128),
-	sameAs varchar(2944),
-	CONSTRAINT pk_side_effects_sameAs PRIMARY KEY(side_effects,sameAs),
+	side_effects varchar(254),
+	sameAs varchar(2048),
 	CONSTRAINT fk_side_effects_sameAs FOREIGN KEY(side_effects) REFERENCES `side_effects_main`(side_effects)
 );
 LOCK TABLES `side_effects_sameAs` WRITE;
@@ -93,9 +87,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `side_effects_sideEffectName`;
 CREATE TABLE `side_effects_sideEffectName` (
-	side_effects varchar(128),
-	sideEffectName varchar(2944),
-	CONSTRAINT pk_side_effects_sideEffectName PRIMARY KEY(side_effects,sideEffectName),
+	side_effects varchar(254),
+	sideEffectName varchar(2048),
 	CONSTRAINT fk_side_effects_sideEffectName FOREIGN KEY(side_effects) REFERENCES `side_effects_main`(side_effects)
 );
 LOCK TABLES `side_effects_sideEffectName` WRITE;

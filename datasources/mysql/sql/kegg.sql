@@ -5,7 +5,7 @@ USE `kegg`;
 
 DROP TABLE IF EXISTS `Compound_main`;
 CREATE TABLE `Compound_main` (
-	Compound varchar(1000) PRIMARY KEY,
+	Compound varchar(254) PRIMARY KEY,
 	label text,
 	sameAs text,
 	identifier text,
@@ -21,7 +21,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Drug_main`;
 CREATE TABLE `Drug_main` (
-	Drug varchar(1000) PRIMARY KEY,
+	Drug varchar(254) PRIMARY KEY,
 	label text,
 	sameAs text,
 	identifier text,
@@ -37,7 +37,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Enzyme_main`;
 CREATE TABLE `Enzyme_main` (
-	Enzyme varchar(1000) PRIMARY KEY,
+	Enzyme varchar(254) PRIMARY KEY,
 	label text,
 	comment text,
 	identifier text,
@@ -51,7 +51,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Reaction_main`;
 CREATE TABLE `Reaction_main` (
-	Reaction varchar(1000) PRIMARY KEY,
+	Reaction varchar(254) PRIMARY KEY,
 	label text,
 	comment text,
 	sameAs text,
@@ -67,9 +67,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Compound_synonym`;
 CREATE TABLE `Compound_synonym` (
-	Compound varchar(128),
-	synonym varchar(2944),
-	CONSTRAINT pk_Compound_synonym PRIMARY KEY(Compound,synonym),
+	Compound varchar(254),
+	synonym varchar(2048),
 	CONSTRAINT fk_Compound_synonym FOREIGN KEY(Compound) REFERENCES `Compound_main`(Compound)
 );
 LOCK TABLES `Compound_synonym` WRITE;
@@ -78,9 +77,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Compound_xRef`;
 CREATE TABLE `Compound_xRef` (
-	Compound varchar(128),
-	xRef varchar(2944),
-	CONSTRAINT pk_Compound_xRef PRIMARY KEY(Compound,xRef),
+	Compound varchar(254),
+	xRef varchar(2048),
 	CONSTRAINT fk_Compound_xRef FOREIGN KEY(Compound) REFERENCES `Compound_main`(Compound)
 );
 LOCK TABLES `Compound_xRef` WRITE;
@@ -89,9 +87,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Drug_synonym`;
 CREATE TABLE `Drug_synonym` (
-	Drug varchar(128),
-	synonym varchar(2944),
-	CONSTRAINT pk_Drug_synonym PRIMARY KEY(Drug,synonym),
+	Drug varchar(254),
+	synonym varchar(2048),
 	CONSTRAINT fk_Drug_synonym FOREIGN KEY(Drug) REFERENCES `Drug_main`(Drug)
 );
 LOCK TABLES `Drug_synonym` WRITE;
@@ -100,9 +97,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Drug_xRef`;
 CREATE TABLE `Drug_xRef` (
-	Drug varchar(128),
-	xRef varchar(2944),
-	CONSTRAINT pk_Drug_xRef PRIMARY KEY(Drug,xRef),
+	Drug varchar(254),
+	xRef varchar(2048),
 	CONSTRAINT fk_Drug_xRef FOREIGN KEY(Drug) REFERENCES `Drug_main`(Drug)
 );
 LOCK TABLES `Drug_xRef` WRITE;
@@ -111,9 +107,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Enzyme_isA`;
 CREATE TABLE `Enzyme_isA` (
-	Enzyme varchar(128),
-	isA varchar(2944),
-	CONSTRAINT pk_Enzyme_isA PRIMARY KEY(Enzyme,isA),
+	Enzyme varchar(254),
+	isA varchar(2048),
 	CONSTRAINT fk_Enzyme_isA FOREIGN KEY(Enzyme) REFERENCES `Enzyme_main`(Enzyme)
 );
 LOCK TABLES `Enzyme_isA` WRITE;
@@ -122,9 +117,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Enzyme_synonym`;
 CREATE TABLE `Enzyme_synonym` (
-	Enzyme varchar(128),
-	synonym varchar(2944),
-	CONSTRAINT pk_Enzyme_synonym PRIMARY KEY(Enzyme,synonym),
+	Enzyme varchar(254),
+	synonym varchar(2048),
 	CONSTRAINT fk_Enzyme_synonym FOREIGN KEY(Enzyme) REFERENCES `Enzyme_main`(Enzyme)
 );
 LOCK TABLES `Enzyme_synonym` WRITE;
@@ -133,9 +127,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Enzyme_xCofactor`;
 CREATE TABLE `Enzyme_xCofactor` (
-	Enzyme varchar(128),
-	xCofactor varchar(2944),
-	CONSTRAINT pk_Enzyme_xCofactor PRIMARY KEY(Enzyme,xCofactor),
+	Enzyme varchar(254),
+	xCofactor varchar(2048),
 	CONSTRAINT fk_Enzyme_xCofactor FOREIGN KEY(Enzyme) REFERENCES `Enzyme_main`(Enzyme)
 );
 LOCK TABLES `Enzyme_xCofactor` WRITE;
@@ -144,9 +137,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Enzyme_xGene`;
 CREATE TABLE `Enzyme_xGene` (
-	Enzyme varchar(128),
-	xGene varchar(2944),
-	CONSTRAINT pk_Enzyme_xGene PRIMARY KEY(Enzyme,xGene),
+	Enzyme varchar(254),
+	xGene varchar(2048),
 	CONSTRAINT fk_Enzyme_xGene FOREIGN KEY(Enzyme) REFERENCES `Enzyme_main`(Enzyme)
 );
 LOCK TABLES `Enzyme_xGene` WRITE;
@@ -155,9 +147,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Enzyme_xProduct`;
 CREATE TABLE `Enzyme_xProduct` (
-	Enzyme varchar(128),
-	xProduct varchar(2944),
-	CONSTRAINT pk_Enzyme_xProduct PRIMARY KEY(Enzyme,xProduct),
+	Enzyme varchar(254),
+	xProduct varchar(2048),
 	CONSTRAINT fk_Enzyme_xProduct FOREIGN KEY(Enzyme) REFERENCES `Enzyme_main`(Enzyme)
 );
 LOCK TABLES `Enzyme_xProduct` WRITE;
@@ -166,9 +157,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Enzyme_xSubstrate`;
 CREATE TABLE `Enzyme_xSubstrate` (
-	Enzyme varchar(128),
-	xSubstrate varchar(2944),
-	CONSTRAINT pk_Enzyme_xSubstrate PRIMARY KEY(Enzyme,xSubstrate),
+	Enzyme varchar(254),
+	xSubstrate varchar(2048),
 	CONSTRAINT fk_Enzyme_xSubstrate FOREIGN KEY(Enzyme) REFERENCES `Enzyme_main`(Enzyme)
 );
 LOCK TABLES `Enzyme_xSubstrate` WRITE;
@@ -177,9 +167,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Reaction_xEnzyme`;
 CREATE TABLE `Reaction_xEnzyme` (
-	Reaction varchar(128),
-	xEnzyme varchar(2944),
-	CONSTRAINT pk_Reaction_xEnzyme PRIMARY KEY(Reaction,xEnzyme),
+	Reaction varchar(254),
+	xEnzyme varchar(2048),
 	CONSTRAINT fk_Reaction_xEnzyme FOREIGN KEY(Reaction) REFERENCES `Reaction_main`(Reaction)
 );
 LOCK TABLES `Reaction_xEnzyme` WRITE;
@@ -188,9 +177,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Reaction_xPathway`;
 CREATE TABLE `Reaction_xPathway` (
-	Reaction varchar(128),
-	xPathway varchar(2944),
-	CONSTRAINT pk_Reaction_xPathway PRIMARY KEY(Reaction,xPathway),
+	Reaction varchar(254),
+	xPathway varchar(2048),
 	CONSTRAINT fk_Reaction_xPathway FOREIGN KEY(Reaction) REFERENCES `Reaction_main`(Reaction)
 );
 LOCK TABLES `Reaction_xPathway` WRITE;
@@ -199,9 +187,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Reaction_xProduct`;
 CREATE TABLE `Reaction_xProduct` (
-	Reaction varchar(128),
-	xProduct varchar(2944),
-	CONSTRAINT pk_Reaction_xProduct PRIMARY KEY(Reaction,xProduct),
+	Reaction varchar(254),
+	xProduct varchar(2048),
 	CONSTRAINT fk_Reaction_xProduct FOREIGN KEY(Reaction) REFERENCES `Reaction_main`(Reaction)
 );
 LOCK TABLES `Reaction_xProduct` WRITE;
@@ -210,9 +197,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `Reaction_xSubstrate`;
 CREATE TABLE `Reaction_xSubstrate` (
-	Reaction varchar(128),
-	xSubstrate varchar(2944),
-	CONSTRAINT pk_Reaction_xSubstrate PRIMARY KEY(Reaction,xSubstrate),
+	Reaction varchar(254),
+	xSubstrate varchar(2048),
 	CONSTRAINT fk_Reaction_xSubstrate FOREIGN KEY(Reaction) REFERENCES `Reaction_main`(Reaction)
 );
 LOCK TABLES `Reaction_xSubstrate` WRITE;

@@ -5,7 +5,7 @@ USE `diseasome`;
 
 DROP TABLE IF EXISTS `diseases_main`;
 CREATE TABLE `diseases_main` (
-	diseases varchar(1000) PRIMARY KEY,
+	diseases varchar(254) PRIMARY KEY,
 	label text,
 	chromosomalLocation text,
 	class text,
@@ -24,7 +24,7 @@ CREATE INDEX disease_name ON `diseases_main`(name(1000));
 
 DROP TABLE IF EXISTS `genes_main`;
 CREATE TABLE `genes_main` (
-	genes varchar(1000) PRIMARY KEY,
+	genes varchar(254) PRIMARY KEY,
 	label text,
 	bio2rdfSymbol text,
 	geneId text,
@@ -37,9 +37,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `diseases_associatedGene`;
 CREATE TABLE `diseases_associatedGene` (
-	diseases varchar(128),
-	associatedGene varchar(2944),
-	CONSTRAINT pk_diseases_associatedGene PRIMARY KEY(diseases,associatedGene),
+	diseases varchar(254),
+	associatedGene varchar(2048),
 	CONSTRAINT fk_diseases_associatedGene FOREIGN KEY(diseases) REFERENCES `diseases_main`(diseases)
 );
 LOCK TABLES `diseases_associatedGene` WRITE;
@@ -49,9 +48,8 @@ CREATE INDEX associatedgene ON `diseases_associatedGene`(associatedGene(1000));
 
 DROP TABLE IF EXISTS `diseases_possibleDrug`;
 CREATE TABLE `diseases_possibleDrug` (
-	diseases varchar(128),
-	possibleDrug varchar(2944),
-	CONSTRAINT pk_diseases_possibleDrug PRIMARY KEY(diseases,possibleDrug),
+	diseases varchar(254),
+	possibleDrug varchar(2048),
 	CONSTRAINT fk_diseases_possibleDrug FOREIGN KEY(diseases) REFERENCES `diseases_main`(diseases)
 );
 LOCK TABLES `diseases_possibleDrug` WRITE;
@@ -60,9 +58,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `diseases_sameAs`;
 CREATE TABLE `diseases_sameAs` (
-	diseases varchar(128),
-	sameAs varchar(2944),
-	CONSTRAINT pk_diseases_sameAs PRIMARY KEY(diseases,sameAs),
+	diseases varchar(254),
+	sameAs varchar(2048),
 	CONSTRAINT fk_diseases_sameAs FOREIGN KEY(diseases) REFERENCES `diseases_main`(diseases)
 );
 LOCK TABLES `diseases_sameAs` WRITE;
@@ -71,9 +68,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `genes_sameAs`;
 CREATE TABLE `genes_sameAs` (
-	genes varchar(128),
-	sameAs varchar(2944),
-	CONSTRAINT pk_genes_sameAs PRIMARY KEY(genes,sameAs),
+	genes varchar(254),
+	sameAs varchar(2048),
 	CONSTRAINT fk_genes_sameAs FOREIGN KEY(genes) REFERENCES `genes_main`(genes)
 );
 LOCK TABLES `genes_sameAs` WRITE;

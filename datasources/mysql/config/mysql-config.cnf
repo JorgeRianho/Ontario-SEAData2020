@@ -8,8 +8,8 @@ innodb_buffer_pool_instances = 1
 innodb_log_file_size = 256M
 innodb_redo_log_capacity=1G
 
-character-set-server=utf8mb4
-collation-server=utf8mb4_unicode_ci
+character-set-server=latin1
+collation-server=latin1_general_cs
 mysqlx=0
 pid-file=/tmp/mysqld.pid
 require_secure_transport=OFF

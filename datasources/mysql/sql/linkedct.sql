@@ -5,7 +5,7 @@ USE `linkedct`;
 
 DROP TABLE IF EXISTS `agency_main`;
 CREATE TABLE `agency_main` (
-	agency varchar(1000) PRIMARY KEY,
+	agency varchar(254) PRIMARY KEY,
 	label text,
 	agency_id text,
 	agency_name text
@@ -16,7 +16,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `collaborator_agency_main`;
 CREATE TABLE `collaborator_agency_main` (
-	collaborator_agency varchar(1000) PRIMARY KEY,
+	collaborator_agency varchar(254) PRIMARY KEY,
 	label text,
 	collaborator_agency_name text,
 	collaborator_agency_id text
@@ -27,7 +27,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `condition_main`;
 CREATE TABLE `condition_main` (
-	`condition` varchar(1000) PRIMARY KEY,
+	`condition` varchar(254) PRIMARY KEY,
 	label text,
 	condition_id text,
 	condition_name text
@@ -38,7 +38,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `intervention_main`;
 CREATE TABLE `intervention_main` (
-	intervention varchar(1000) PRIMARY KEY,
+	intervention varchar(254) PRIMARY KEY,
 	label text,
 	intervention_id text,
 	intervention_name text,
@@ -51,7 +51,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `location_main`;
 CREATE TABLE `location_main` (
-	location varchar(1000) PRIMARY KEY,
+	location varchar(254) PRIMARY KEY,
 	label text,
 	facility_address_zip text,
 	location_id text,
@@ -66,7 +66,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `overall_official_main`;
 CREATE TABLE `overall_official_main` (
-	overall_official varchar(1000) PRIMARY KEY,
+	overall_official varchar(254) PRIMARY KEY,
 	label text,
 	last_name text,
 	overall_official_id text,
@@ -78,7 +78,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `oversight_main`;
 CREATE TABLE `oversight_main` (
-	oversight varchar(1000) PRIMARY KEY,
+	oversight varchar(254) PRIMARY KEY,
 	label text,
 	oversight_oversight_info_authority text,
 	oversight_id text
@@ -89,7 +89,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `primary_outcomes_main`;
 CREATE TABLE `primary_outcomes_main` (
-	primary_outcomes varchar(1000) PRIMARY KEY,
+	primary_outcomes varchar(254) PRIMARY KEY,
 	label text,
 	primary_outcomes_id text,
 	measure text,
@@ -102,7 +102,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `reference_main`;
 CREATE TABLE `reference_main` (
-	reference varchar(1000) PRIMARY KEY,
+	reference varchar(254) PRIMARY KEY,
 	label text,
 	sameAs text,
 	page text,
@@ -116,7 +116,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `results_reference_main`;
 CREATE TABLE `results_reference_main` (
-	results_reference varchar(1000) PRIMARY KEY,
+	results_reference varchar(254) PRIMARY KEY,
 	label text,
 	sameAs text,
 	page text,
@@ -130,7 +130,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `secondary_outcomes_main`;
 CREATE TABLE `secondary_outcomes_main` (
-	secondary_outcomes varchar(1000) PRIMARY KEY,
+	secondary_outcomes varchar(254) PRIMARY KEY,
 	label text,
 	safety_issue text,
 	time_frame text,
@@ -143,7 +143,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `trial_arm_group_main`;
 CREATE TABLE `trial_arm_group_main` (
-	trial_arm_group varchar(1000) PRIMARY KEY,
+	trial_arm_group varchar(254) PRIMARY KEY,
 	label text,
 	arm_group_type text,
 	arm_group_label text,
@@ -156,7 +156,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `trials_main`;
 CREATE TABLE `trials_main` (
-	trials varchar(1000) PRIMARY KEY,
+	trials varchar(254) PRIMARY KEY,
 	label text,
 	page text,
 	lead_sponsor_agency text,
@@ -205,9 +205,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `condition_sameAs`;
 CREATE TABLE `condition_sameAs` (
-	`condition` varchar(128),
-	sameAs varchar(2944),
-	CONSTRAINT pk_condition_sameAs PRIMARY KEY(`condition`,sameAs),
+	`condition` varchar(254),
+	sameAs varchar(2048),
 	CONSTRAINT fk_condition_sameAs FOREIGN KEY(`condition`) REFERENCES `condition_main`(`condition`)
 );
 LOCK TABLES `condition_sameAs` WRITE;
@@ -216,9 +215,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `condition_seeAlso`;
 CREATE TABLE `condition_seeAlso` (
-	`condition` varchar(128),
-	seeAlso varchar(2944),
-	CONSTRAINT pk_condition_seeAlso PRIMARY KEY(`condition`,seeAlso),
+	`condition` varchar(254),
+	seeAlso varchar(2048),
 	CONSTRAINT fk_condition_seeAlso FOREIGN KEY(`condition`) REFERENCES `condition_main`(`condition`)
 );
 LOCK TABLES `condition_seeAlso` WRITE;
@@ -227,9 +225,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `intervention_seeAlso`;
 CREATE TABLE `intervention_seeAlso` (
-	intervention varchar(128),
-	seeAlso varchar(2944),
-	CONSTRAINT pk_intervention_seeAlso PRIMARY KEY(intervention,seeAlso),
+	intervention varchar(254),
+	seeAlso varchar(2048),
 	CONSTRAINT fk_intervention_seeAlso FOREIGN KEY(intervention) REFERENCES `intervention_main`(intervention)
 );
 LOCK TABLES `intervention_seeAlso` WRITE;
@@ -239,9 +236,8 @@ CREATE INDEX intervention_seeAlso ON intervention_seeAlso(seeAlso(1000));
 
 DROP TABLE IF EXISTS `location_based_near`;
 CREATE TABLE `location_based_near` (
-	location varchar(128),
-	based_near varchar(2944),
-	CONSTRAINT pk_location_based_near PRIMARY KEY(location,based_near),
+	location varchar(254),
+	based_near varchar(2048),
 	CONSTRAINT fk_location_based_near FOREIGN KEY(location) REFERENCES `location_main`(location)
 );
 LOCK TABLES `location_based_near` WRITE;
@@ -250,9 +246,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `trials_arm_group`;
 CREATE TABLE `trials_arm_group` (
-	trials varchar(128),
-	arm_group varchar(2944),
-	CONSTRAINT pk_trials_arm_group PRIMARY KEY(trials,arm_group),
+	trials varchar(254),
+	arm_group varchar(2048),
 	CONSTRAINT fk_trials_arm_group FOREIGN KEY(trials) REFERENCES `trials_main`(trials)
 );
 LOCK TABLES `trials_arm_group` WRITE;
@@ -261,9 +256,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `trials_collaborator_agency`;
 CREATE TABLE `trials_collaborator_agency` (
-	trials varchar(128),
-	collaborator_agency varchar(2944),
-	CONSTRAINT pk_trials_collaborator_agency PRIMARY KEY(trials,collaborator_agency),
+	trials varchar(254),
+	collaborator_agency varchar(2048),
 	CONSTRAINT fk_trials_collaborator_agency FOREIGN KEY(trials) REFERENCES `trials_main`(trials)
 );
 LOCK TABLES `trials_collaborator_agency` WRITE;
@@ -272,9 +266,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `trials_condition`;
 CREATE TABLE `trials_condition` (
-	trials varchar(128),
-	`condition` varchar(2944),
-	CONSTRAINT pk_trials_condition PRIMARY KEY(trials,`condition`),
+	trials varchar(254),
+	`condition` varchar(2048),
 	CONSTRAINT fk_trials_condition FOREIGN KEY(trials) REFERENCES `trials_main`(trials)
 );
 LOCK TABLES `trials_condition` WRITE;
@@ -283,9 +276,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `trials_intervention`;
 CREATE TABLE `trials_intervention` (
-	trials varchar(128),
-	intervention varchar(2944),
-	CONSTRAINT pk_trials_intervention PRIMARY KEY(trials,intervention),
+	trials varchar(254),
+	intervention varchar(2048),
 	CONSTRAINT fk_trials_intervention FOREIGN KEY(trials) REFERENCES `trials_main`(trials)
 );
 LOCK TABLES `trials_intervention` WRITE;
@@ -294,9 +286,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `trials_location`;
 CREATE TABLE `trials_location` (
-	trials varchar(128),
-	location varchar(2944),
-	CONSTRAINT pk_trials_location PRIMARY KEY(trials,location),
+	trials varchar(254),
+	location varchar(2048),
 	CONSTRAINT fk_trials_location FOREIGN KEY(trials) REFERENCES `trials_main`(trials)
 );
 LOCK TABLES `trials_location` WRITE;
@@ -305,9 +296,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `trials_nct_alias`;
 CREATE TABLE `trials_nct_alias` (
-	trials varchar(128),
-	nct_alias varchar(2944),
-	CONSTRAINT pk_trials_nct_alias PRIMARY KEY(trials,nct_alias),
+	trials varchar(254),
+	nct_alias varchar(2048),
 	CONSTRAINT fk_trials_nct_alias FOREIGN KEY(trials) REFERENCES `trials_main`(trials)
 );
 LOCK TABLES `trials_nct_alias` WRITE;
@@ -316,9 +306,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `trials_overall_official`;
 CREATE TABLE `trials_overall_official` (
-	trials varchar(128),
-	overall_official varchar(2944),
-	CONSTRAINT pk_trials_overall_official PRIMARY KEY(trials,overall_official),
+	trials varchar(254),
+	overall_official varchar(2048),
 	CONSTRAINT fk_trials_overall_official FOREIGN KEY(trials) REFERENCES `trials_main`(trials)
 );
 LOCK TABLES `trials_overall_official` WRITE;
@@ -327,9 +316,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `trials_oversight`;
 CREATE TABLE `trials_oversight` (
-	trials varchar(128),
-	oversight varchar(2944),
-	CONSTRAINT pk_trials_oversight PRIMARY KEY(trials,oversight),
+	trials varchar(254),
+	oversight varchar(2048),
 	CONSTRAINT fk_trials_oversight FOREIGN KEY(trials) REFERENCES `trials_main`(trials)
 );
 LOCK TABLES `trials_oversight` WRITE;
@@ -338,9 +326,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `trials_primary_outcomes`;
 CREATE TABLE `trials_primary_outcomes` (
-	trials varchar(128),
-	primary_outcomes varchar(2944),
-	CONSTRAINT pk_trials_primary_outcomes PRIMARY KEY(trials,primary_outcomes),
+	trials varchar(254),
+	primary_outcomes varchar(2048),
 	CONSTRAINT fk_trials_primary_outcomes FOREIGN KEY(trials) REFERENCES `trials_main`(trials)
 );
 LOCK TABLES `trials_primary_outcomes` WRITE;
@@ -349,9 +336,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `trials_reference`;
 CREATE TABLE `trials_reference` (
-	trials varchar(128),
-	reference varchar(2944),
-	CONSTRAINT pk_trials_reference PRIMARY KEY(trials,reference),
+	trials varchar(254),
+	reference varchar(2048),
 	CONSTRAINT fk_trials_reference FOREIGN KEY(trials) REFERENCES `trials_main`(trials)
 );
 LOCK TABLES `trials_reference` WRITE;
@@ -360,9 +346,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `trials_results_reference`;
 CREATE TABLE `trials_results_reference` (
-	trials varchar(128),
-	results_reference varchar(2944),
-	CONSTRAINT pk_trials_results_reference PRIMARY KEY(trials,results_reference),
+	trials varchar(254),
+	results_reference varchar(2048),
 	CONSTRAINT fk_trials_results_reference FOREIGN KEY(trials) REFERENCES `trials_main`(trials)
 );
 LOCK TABLES `trials_results_reference` WRITE;
@@ -371,9 +356,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `trials_secondary_id`;
 CREATE TABLE `trials_secondary_id` (
-	trials varchar(128),
-	secondary_id varchar(2944),
-	CONSTRAINT pk_trials_secondary_id PRIMARY KEY(trials,secondary_id),
+	trials varchar(254),
+	secondary_id varchar(2048),
 	CONSTRAINT fk_trials_secondary_id FOREIGN KEY(trials) REFERENCES `trials_main`(trials)
 );
 LOCK TABLES `trials_secondary_id` WRITE;
@@ -382,9 +366,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `trials_secondary_outcomes`;
 CREATE TABLE `trials_secondary_outcomes` (
-	trials varchar(128),
-	secondary_outcomes varchar(2944),
-	CONSTRAINT pk_trials_secondary_outcomes PRIMARY KEY(trials,secondary_outcomes),
+	trials varchar(254),
+	secondary_outcomes varchar(2048),
 	CONSTRAINT fk_trials_secondary_outcomes FOREIGN KEY(trials) REFERENCES `trials_main`(trials)
 );
 LOCK TABLES `trials_secondary_outcomes` WRITE;

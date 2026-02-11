@@ -5,7 +5,7 @@ USE `tcga`;
 
 DROP TABLE IF EXISTS `aliquot_main`;
 CREATE TABLE `aliquot_main` (
-	aliquot varchar(1000) PRIMARY KEY,
+	aliquot varchar(254) PRIMARY KEY,
 	amount text,
 	bcr_aliquot_barcode text,
 	bcr_aliquot_uuid text,
@@ -26,7 +26,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `analyte_main`;
 CREATE TABLE `analyte_main` (
-	analyte varchar(1000) PRIMARY KEY,
+	analyte varchar(254) PRIMARY KEY,
 	amount text,
 	bcr_sample_barcode text,
 	concentration text,
@@ -50,7 +50,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_main`;
 CREATE TABLE `biospecimen_cqcf_main` (
-	biospecimen_cqcf varchar(1000) PRIMARY KEY,
+	biospecimen_cqcf varchar(254) PRIMARY KEY,
 	country text,
 	country1 text,
 	ethnicity text,
@@ -251,7 +251,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_main`;
 CREATE TABLE `clinical_cqcf_main` (
-	clinical_cqcf varchar(1000) PRIMARY KEY,
+	clinical_cqcf varchar(254) PRIMARY KEY,
 	country text,
 	country1 text,
 	ethnicity text,
@@ -451,7 +451,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_main`;
 CREATE TABLE `clinical_nte_main` (
-	clinical_nte varchar(1000) PRIMARY KEY,
+	clinical_nte varchar(254) PRIMARY KEY,
 	country text,
 	ethnicity text,
 	race text,
@@ -655,7 +655,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_main`;
 CREATE TABLE `clinical_omf_main` (
-	clinical_omf varchar(1000) PRIMARY KEY,
+	clinical_omf varchar(254) PRIMARY KEY,
 	country text,
 	country1 text,
 	ethnicity text,
@@ -820,7 +820,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `copy_number_result_main`;
 CREATE TABLE `copy_number_result_main` (
-	copy_number_result varchar(1000) PRIMARY KEY,
+	copy_number_result varchar(254) PRIMARY KEY,
 	chromosome text,
 	seg_mean text,
 	start text,
@@ -832,7 +832,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drug_main`;
 CREATE TABLE `drug_main` (
-	drug varchar(1000) PRIMARY KEY,
+	drug varchar(254) PRIMARY KEY,
 	bcr_drug_barcode text,
 	bcr_drug_uuid text,
 	clinical_trial_drug_classification text,
@@ -925,7 +925,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `expression_gene_lookup_main`;
 CREATE TABLE `expression_gene_lookup_main` (
-	expression_gene_lookup varchar(1000) PRIMARY KEY,
+	expression_gene_lookup varchar(254) PRIMARY KEY,
 	chromosome text,
 	start text,
 	stop text,
@@ -944,7 +944,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `expression_gene_result_main`;
 CREATE TABLE `expression_gene_result_main` (
-	expression_gene_result varchar(1000) PRIMARY KEY,
+	expression_gene_result varchar(254) PRIMARY KEY,
 	scaled_estimate text,
 	chromosome text,
 	start text,
@@ -956,7 +956,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `expression_protein_result_main`;
 CREATE TABLE `expression_protein_result_main` (
-	expression_protein_result varchar(1000) PRIMARY KEY,
+	expression_protein_result varchar(254) PRIMARY KEY,
 	protein_expression_value text,
 	chromosome text,
 	start text,
@@ -968,7 +968,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `follow_up_main`;
 CREATE TABLE `follow_up_main` (
-	follow_up varchar(1000) PRIMARY KEY,
+	follow_up varchar(254) PRIMARY KEY,
 	bcr_drug_barcode text,
 	bcr_drug_uuid text,
 	clinical_trial_drug_classification text,
@@ -1066,7 +1066,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `miRNA_result_main`;
 CREATE TABLE `miRNA_result_main` (
-	miRNA_result varchar(1000) PRIMARY KEY,
+	miRNA_result varchar(254) PRIMARY KEY,
 	chromosome text,
 	start text,
 	stop text,
@@ -1078,7 +1078,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_main`;
 CREATE TABLE `normal_control_main` (
-	normal_control varchar(1000) PRIMARY KEY,
+	normal_control varchar(254) PRIMARY KEY,
 	country text,
 	ethnicity text,
 	race text,
@@ -1279,7 +1279,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_main`;
 CREATE TABLE `patient_main` (
-	patient varchar(1000) PRIMARY KEY,
+	patient varchar(254) PRIMARY KEY,
 	country text,
 	country1 text,
 	ethnicity text,
@@ -1479,7 +1479,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `portion_main`;
 CREATE TABLE `portion_main` (
-	portion varchar(1000) PRIMARY KEY,
+	portion varchar(254) PRIMARY KEY,
 	bcr_sample_barcode text,
 	LCE text,
 	bcr_portion_barcode text,
@@ -1495,7 +1495,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `protocol_main`;
 CREATE TABLE `protocol_main` (
-	protocol varchar(1000) PRIMARY KEY,
+	protocol varchar(254) PRIMARY KEY,
 	bcr_sample_barcode text,
 	days_to_sample_procurement text,
 	method_of_sample_procurement text,
@@ -1526,7 +1526,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `radiation_main`;
 CREATE TABLE `radiation_main` (
-	radiation varchar(1000) PRIMARY KEY,
+	radiation varchar(254) PRIMARY KEY,
 	bcr_patient_barcode text,
 	bcr_drug_barcode text,
 	bcr_drug_uuid text,
@@ -1617,7 +1617,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sample_main`;
 CREATE TABLE `sample_main` (
-	sample varchar(1000) PRIMARY KEY,
+	sample varchar(254) PRIMARY KEY,
 	bcr_sample_barcode text,
 	days_to_sample_procurement text,
 	method_of_sample_procurement text,
@@ -1648,7 +1648,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `shipment_main`;
 CREATE TABLE `shipment_main` (
-	shipment varchar(1000) PRIMARY KEY,
+	shipment varchar(254) PRIMARY KEY,
 	bcr_sample_barcode text,
 	center_id text,
 	plate_id text,
@@ -1666,7 +1666,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `slide_main`;
 CREATE TABLE `slide_main` (
-	slide varchar(1000) PRIMARY KEY,
+	slide varchar(254) PRIMARY KEY,
 	bcr_sample_barcode text,
 	is_derived_from_ffpe text,
 	bcr_slide_barcode text,
@@ -1687,7 +1687,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `snp_result_main`;
 CREATE TABLE `snp_result_main` (
-	snp_result varchar(1000) PRIMARY KEY,
+	snp_result varchar(254) PRIMARY KEY,
 	chromosome text,
 	seg_mean text,
 	start text,
@@ -1699,7 +1699,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_main`;
 CREATE TABLE `tumor_sample_main` (
-	tumor_sample varchar(1000) PRIMARY KEY,
+	tumor_sample varchar(254) PRIMARY KEY,
 	country text,
 	ethnicity text,
 	race text,
@@ -1900,9 +1900,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_anatomic_neoplasm_subdivision`;
 CREATE TABLE `biospecimen_cqcf_anatomic_neoplasm_subdivision` (
-	biospecimen_cqcf varchar(128),
-	anatomic_neoplasm_subdivision varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_anatomic_neoplasm_subdivision PRIMARY KEY(biospecimen_cqcf,anatomic_neoplasm_subdivision),
+	biospecimen_cqcf varchar(254),
+	anatomic_neoplasm_subdivision varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_anatomic_neoplasm_subdivision FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_anatomic_neoplasm_subdivision` WRITE;
@@ -1911,9 +1910,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_bcr_aliquot_barcode`;
 CREATE TABLE `biospecimen_cqcf_bcr_aliquot_barcode` (
-	biospecimen_cqcf varchar(128),
-	bcr_aliquot_barcode varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_bcr_aliquot_barcode PRIMARY KEY(biospecimen_cqcf,bcr_aliquot_barcode),
+	biospecimen_cqcf varchar(254),
+	bcr_aliquot_barcode varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_bcr_aliquot_barcode FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_bcr_aliquot_barcode` WRITE;
@@ -1922,9 +1920,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_bcr_analyte_barcode`;
 CREATE TABLE `biospecimen_cqcf_bcr_analyte_barcode` (
-	biospecimen_cqcf varchar(128),
-	bcr_analyte_barcode varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_bcr_analyte_barcode PRIMARY KEY(biospecimen_cqcf,bcr_analyte_barcode),
+	biospecimen_cqcf varchar(254),
+	bcr_analyte_barcode varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_bcr_analyte_barcode FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_bcr_analyte_barcode` WRITE;
@@ -1933,9 +1930,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_bcr_drug_barcode`;
 CREATE TABLE `biospecimen_cqcf_bcr_drug_barcode` (
-	biospecimen_cqcf varchar(128),
-	bcr_drug_barcode varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_bcr_drug_barcode PRIMARY KEY(biospecimen_cqcf,bcr_drug_barcode),
+	biospecimen_cqcf varchar(254),
+	bcr_drug_barcode varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_bcr_drug_barcode FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_bcr_drug_barcode` WRITE;
@@ -1944,9 +1940,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_bcr_followup_barcode`;
 CREATE TABLE `biospecimen_cqcf_bcr_followup_barcode` (
-	biospecimen_cqcf varchar(128),
-	bcr_followup_barcode varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_bcr_followup_barcode PRIMARY KEY(biospecimen_cqcf,bcr_followup_barcode),
+	biospecimen_cqcf varchar(254),
+	bcr_followup_barcode varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_bcr_followup_barcode FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_bcr_followup_barcode` WRITE;
@@ -1955,9 +1950,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_bcr_omf_barcode`;
 CREATE TABLE `biospecimen_cqcf_bcr_omf_barcode` (
-	biospecimen_cqcf varchar(128),
-	bcr_omf_barcode varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_bcr_omf_barcode PRIMARY KEY(biospecimen_cqcf,bcr_omf_barcode),
+	biospecimen_cqcf varchar(254),
+	bcr_omf_barcode varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_bcr_omf_barcode FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_bcr_omf_barcode` WRITE;
@@ -1966,9 +1960,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_bcr_omf_uuid`;
 CREATE TABLE `biospecimen_cqcf_bcr_omf_uuid` (
-	biospecimen_cqcf varchar(128),
-	bcr_omf_uuid varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_bcr_omf_uuid PRIMARY KEY(biospecimen_cqcf,bcr_omf_uuid),
+	biospecimen_cqcf varchar(254),
+	bcr_omf_uuid varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_bcr_omf_uuid FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_bcr_omf_uuid` WRITE;
@@ -1977,9 +1970,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_bcr_radiation_barcode`;
 CREATE TABLE `biospecimen_cqcf_bcr_radiation_barcode` (
-	biospecimen_cqcf varchar(128),
-	bcr_radiation_barcode varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_bcr_radiation_barcode PRIMARY KEY(biospecimen_cqcf,bcr_radiation_barcode),
+	biospecimen_cqcf varchar(254),
+	bcr_radiation_barcode varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_bcr_radiation_barcode FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_bcr_radiation_barcode` WRITE;
@@ -1988,9 +1980,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_bcr_sample_barcode`;
 CREATE TABLE `biospecimen_cqcf_bcr_sample_barcode` (
-	biospecimen_cqcf varchar(128),
-	bcr_sample_barcode varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_bcr_sample_barcode PRIMARY KEY(biospecimen_cqcf,bcr_sample_barcode),
+	biospecimen_cqcf varchar(254),
+	bcr_sample_barcode varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_bcr_sample_barcode FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_bcr_sample_barcode` WRITE;
@@ -1999,9 +1990,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_bcr_sample_uuid`;
 CREATE TABLE `biospecimen_cqcf_bcr_sample_uuid` (
-	biospecimen_cqcf varchar(128),
-	bcr_sample_uuid varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_bcr_sample_uuid PRIMARY KEY(biospecimen_cqcf,bcr_sample_uuid),
+	biospecimen_cqcf varchar(254),
+	bcr_sample_uuid varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_bcr_sample_uuid FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_bcr_sample_uuid` WRITE;
@@ -2010,9 +2000,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_bcr_shipment_barcode`;
 CREATE TABLE `biospecimen_cqcf_bcr_shipment_barcode` (
-	biospecimen_cqcf varchar(128),
-	bcr_shipment_barcode varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_bcr_shipment_barcode PRIMARY KEY(biospecimen_cqcf,bcr_shipment_barcode),
+	biospecimen_cqcf varchar(254),
+	bcr_shipment_barcode varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_bcr_shipment_barcode FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_bcr_shipment_barcode` WRITE;
@@ -2021,9 +2010,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_bcr_slide_barcode`;
 CREATE TABLE `biospecimen_cqcf_bcr_slide_barcode` (
-	biospecimen_cqcf varchar(128),
-	bcr_slide_barcode varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_bcr_slide_barcode PRIMARY KEY(biospecimen_cqcf,bcr_slide_barcode),
+	biospecimen_cqcf varchar(254),
+	bcr_slide_barcode varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_bcr_slide_barcode FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_bcr_slide_barcode` WRITE;
@@ -2032,9 +2020,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_consent_or_death_status`;
 CREATE TABLE `biospecimen_cqcf_consent_or_death_status` (
-	biospecimen_cqcf varchar(128),
-	consent_or_death_status varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_consent_or_death_status PRIMARY KEY(biospecimen_cqcf,consent_or_death_status),
+	biospecimen_cqcf varchar(254),
+	consent_or_death_status varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_consent_or_death_status FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_consent_or_death_status` WRITE;
@@ -2043,9 +2030,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_days_to_death`;
 CREATE TABLE `biospecimen_cqcf_days_to_death` (
-	biospecimen_cqcf varchar(128),
-	days_to_death varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_days_to_death PRIMARY KEY(biospecimen_cqcf,days_to_death),
+	biospecimen_cqcf varchar(254),
+	days_to_death varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_days_to_death FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_days_to_death` WRITE;
@@ -2054,9 +2040,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_days_to_normal_sample_procurement`;
 CREATE TABLE `biospecimen_cqcf_days_to_normal_sample_procurement` (
-	biospecimen_cqcf varchar(128),
-	days_to_normal_sample_procurement varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_days_to_normal_sample_procurement PRIMARY KEY(biospecimen_cqcf,days_to_normal_sample_procurement),
+	biospecimen_cqcf varchar(254),
+	days_to_normal_sample_procurement varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_days_to_normal_sample_procurement FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_days_to_normal_sample_procurement` WRITE;
@@ -2065,9 +2050,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_ethnicity1`;
 CREATE TABLE `biospecimen_cqcf_ethnicity1` (
-	biospecimen_cqcf varchar(128),
-	ethnicity1 varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_ethnicity1 PRIMARY KEY(biospecimen_cqcf,ethnicity1),
+	biospecimen_cqcf varchar(254),
+	ethnicity1 varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_ethnicity1 FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_ethnicity1` WRITE;
@@ -2076,9 +2060,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_form_completion_date`;
 CREATE TABLE `biospecimen_cqcf_form_completion_date` (
-	biospecimen_cqcf varchar(128),
-	form_completion_date varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_form_completion_date PRIMARY KEY(biospecimen_cqcf,form_completion_date),
+	biospecimen_cqcf varchar(254),
+	form_completion_date varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_form_completion_date FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_form_completion_date` WRITE;
@@ -2087,9 +2070,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_histologic_diagnosis`;
 CREATE TABLE `biospecimen_cqcf_histologic_diagnosis` (
-	biospecimen_cqcf varchar(128),
-	histologic_diagnosis varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_histologic_diagnosis PRIMARY KEY(biospecimen_cqcf,histologic_diagnosis),
+	biospecimen_cqcf varchar(254),
+	histologic_diagnosis varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_histologic_diagnosis FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_histologic_diagnosis` WRITE;
@@ -2098,9 +2080,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_histological_type`;
 CREATE TABLE `biospecimen_cqcf_histological_type` (
-	biospecimen_cqcf varchar(128),
-	histological_type varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_histological_type PRIMARY KEY(biospecimen_cqcf,histological_type),
+	biospecimen_cqcf varchar(254),
+	histological_type varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_histological_type FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_histological_type` WRITE;
@@ -2109,9 +2090,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_history_neoadjuvant_treatment`;
 CREATE TABLE `biospecimen_cqcf_history_neoadjuvant_treatment` (
-	biospecimen_cqcf varchar(128),
-	history_neoadjuvant_treatment varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_history_neoadjuvant_treatment PRIMARY KEY(biospecimen_cqcf,history_neoadjuvant_treatment),
+	biospecimen_cqcf varchar(254),
+	history_neoadjuvant_treatment varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_history_neoadjuvant_treatment FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_history_neoadjuvant_treatment` WRITE;
@@ -2120,9 +2100,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_history_of_neoadjuvant_treatment`;
 CREATE TABLE `biospecimen_cqcf_history_of_neoadjuvant_treatment` (
-	biospecimen_cqcf varchar(128),
-	history_of_neoadjuvant_treatment varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_history_of_neoadjuvant_treatment PRIMARY KEY(biospecimen_cqcf,history_of_neoadjuvant_treatment),
+	biospecimen_cqcf varchar(254),
+	history_of_neoadjuvant_treatment varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_history_of_neoadjuvant_treatment FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_history_of_neoadjuvant_treatment` WRITE;
@@ -2131,9 +2110,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_history_other_malignancy`;
 CREATE TABLE `biospecimen_cqcf_history_other_malignancy` (
-	biospecimen_cqcf varchar(128),
-	history_other_malignancy varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_history_other_malignancy PRIMARY KEY(biospecimen_cqcf,history_other_malignancy),
+	biospecimen_cqcf varchar(254),
+	history_other_malignancy varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_history_other_malignancy FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_history_other_malignancy` WRITE;
@@ -2142,9 +2120,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_method_of_normal_sample_procurement`;
 CREATE TABLE `biospecimen_cqcf_method_of_normal_sample_procurement` (
-	biospecimen_cqcf varchar(128),
-	method_of_normal_sample_procurement varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_method_of_normal_sample_procurement PRIMARY KEY(biospecimen_cqcf,method_of_normal_sample_procurement),
+	biospecimen_cqcf varchar(254),
+	method_of_normal_sample_procurement varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_method_of_normal_sample_procurement FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_method_of_normal_sample_procurement` WRITE;
@@ -2153,9 +2130,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_ncedna_dna_conc`;
 CREATE TABLE `biospecimen_cqcf_ncedna_dna_conc` (
-	biospecimen_cqcf varchar(128),
-	ncedna_dna_conc varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_ncedna_dna_conc PRIMARY KEY(biospecimen_cqcf,ncedna_dna_conc),
+	biospecimen_cqcf varchar(254),
+	ncedna_dna_conc varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_ncedna_dna_conc FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_ncedna_dna_conc` WRITE;
@@ -2164,9 +2140,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_ncedna_dna_qm`;
 CREATE TABLE `biospecimen_cqcf_ncedna_dna_qm` (
-	biospecimen_cqcf varchar(128),
-	ncedna_dna_qm varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_ncedna_dna_qm PRIMARY KEY(biospecimen_cqcf,ncedna_dna_qm),
+	biospecimen_cqcf varchar(254),
+	ncedna_dna_qm varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_ncedna_dna_qm FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_ncedna_dna_qm` WRITE;
@@ -2175,9 +2150,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_ncedna_dna_qty`;
 CREATE TABLE `biospecimen_cqcf_ncedna_dna_qty` (
-	biospecimen_cqcf varchar(128),
-	ncedna_dna_qty varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_ncedna_dna_qty PRIMARY KEY(biospecimen_cqcf,ncedna_dna_qty),
+	biospecimen_cqcf varchar(254),
+	ncedna_dna_qty varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_ncedna_dna_qty FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_ncedna_dna_qty` WRITE;
@@ -2186,9 +2160,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_ncedna_dna_vol`;
 CREATE TABLE `biospecimen_cqcf_ncedna_dna_vol` (
-	biospecimen_cqcf varchar(128),
-	ncedna_dna_vol varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_ncedna_dna_vol PRIMARY KEY(biospecimen_cqcf,ncedna_dna_vol),
+	biospecimen_cqcf varchar(254),
+	ncedna_dna_vol varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_ncedna_dna_vol FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_ncedna_dna_vol` WRITE;
@@ -2197,9 +2170,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_new_non_melanoma_event_histologic_type_text`;
 CREATE TABLE `biospecimen_cqcf_new_non_melanoma_event_histologic_type_text` (
-	biospecimen_cqcf varchar(128),
-	new_non_melanoma_event_histologic_type_text varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_new_non_melanoma_event_histologic_type_text PRIMARY KEY(biospecimen_cqcf,new_non_melanoma_event_histologic_type_text),
+	biospecimen_cqcf varchar(254),
+	new_non_melanoma_event_histologic_type_text varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_new_non_melanoma_event_histologic_type_text FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_new_non_melanoma_event_histologic_type_text` WRITE;
@@ -2208,9 +2180,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_new_tumor_event_dx_days_to`;
 CREATE TABLE `biospecimen_cqcf_new_tumor_event_dx_days_to` (
-	biospecimen_cqcf varchar(128),
-	new_tumor_event_dx_days_to varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_new_tumor_event_dx_days_to PRIMARY KEY(biospecimen_cqcf,new_tumor_event_dx_days_to),
+	biospecimen_cqcf varchar(254),
+	new_tumor_event_dx_days_to varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_new_tumor_event_dx_days_to FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_new_tumor_event_dx_days_to` WRITE;
@@ -2219,9 +2190,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_new_tumor_event_melanoma_count`;
 CREATE TABLE `biospecimen_cqcf_new_tumor_event_melanoma_count` (
-	biospecimen_cqcf varchar(128),
-	new_tumor_event_melanoma_count varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_new_tumor_event_melanoma_count PRIMARY KEY(biospecimen_cqcf,new_tumor_event_melanoma_count),
+	biospecimen_cqcf varchar(254),
+	new_tumor_event_melanoma_count varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_new_tumor_event_melanoma_count FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_new_tumor_event_melanoma_count` WRITE;
@@ -2230,9 +2200,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_new_tumor_event_melanoma_location`;
 CREATE TABLE `biospecimen_cqcf_new_tumor_event_melanoma_location` (
-	biospecimen_cqcf varchar(128),
-	new_tumor_event_melanoma_location varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_new_tumor_event_melanoma_location PRIMARY KEY(biospecimen_cqcf,new_tumor_event_melanoma_location),
+	biospecimen_cqcf varchar(254),
+	new_tumor_event_melanoma_location varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_new_tumor_event_melanoma_location FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_new_tumor_event_melanoma_location` WRITE;
@@ -2241,9 +2210,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_new_tumor_event_met_site`;
 CREATE TABLE `biospecimen_cqcf_new_tumor_event_met_site` (
-	biospecimen_cqcf varchar(128),
-	new_tumor_event_met_site varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_new_tumor_event_met_site PRIMARY KEY(biospecimen_cqcf,new_tumor_event_met_site),
+	biospecimen_cqcf varchar(254),
+	new_tumor_event_met_site varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_new_tumor_event_met_site FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_new_tumor_event_met_site` WRITE;
@@ -2252,9 +2220,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_new_tumor_event_met_site_other`;
 CREATE TABLE `biospecimen_cqcf_new_tumor_event_met_site_other` (
-	biospecimen_cqcf varchar(128),
-	new_tumor_event_met_site_other varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_new_tumor_event_met_site_other PRIMARY KEY(biospecimen_cqcf,new_tumor_event_met_site_other),
+	biospecimen_cqcf varchar(254),
+	new_tumor_event_met_site_other varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_new_tumor_event_met_site_other FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_new_tumor_event_met_site_other` WRITE;
@@ -2263,9 +2230,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_new_tumor_event_pharmaceutical_tx`;
 CREATE TABLE `biospecimen_cqcf_new_tumor_event_pharmaceutical_tx` (
-	biospecimen_cqcf varchar(128),
-	new_tumor_event_pharmaceutical_tx varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_new_tumor_event_pharmaceutical_tx PRIMARY KEY(biospecimen_cqcf,new_tumor_event_pharmaceutical_tx),
+	biospecimen_cqcf varchar(254),
+	new_tumor_event_pharmaceutical_tx varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_new_tumor_event_pharmaceutical_tx FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_new_tumor_event_pharmaceutical_tx` WRITE;
@@ -2274,9 +2240,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_new_tumor_event_radiation_tx`;
 CREATE TABLE `biospecimen_cqcf_new_tumor_event_radiation_tx` (
-	biospecimen_cqcf varchar(128),
-	new_tumor_event_radiation_tx varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_new_tumor_event_radiation_tx PRIMARY KEY(biospecimen_cqcf,new_tumor_event_radiation_tx),
+	biospecimen_cqcf varchar(254),
+	new_tumor_event_radiation_tx varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_new_tumor_event_radiation_tx FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_new_tumor_event_radiation_tx` WRITE;
@@ -2285,9 +2250,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_new_tumor_event_site`;
 CREATE TABLE `biospecimen_cqcf_new_tumor_event_site` (
-	biospecimen_cqcf varchar(128),
-	new_tumor_event_site varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_new_tumor_event_site PRIMARY KEY(biospecimen_cqcf,new_tumor_event_site),
+	biospecimen_cqcf varchar(254),
+	new_tumor_event_site varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_new_tumor_event_site FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_new_tumor_event_site` WRITE;
@@ -2296,9 +2260,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_new_tumor_event_surgery`;
 CREATE TABLE `biospecimen_cqcf_new_tumor_event_surgery` (
-	biospecimen_cqcf varchar(128),
-	new_tumor_event_surgery varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_new_tumor_event_surgery PRIMARY KEY(biospecimen_cqcf,new_tumor_event_surgery),
+	biospecimen_cqcf varchar(254),
+	new_tumor_event_surgery varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_new_tumor_event_surgery FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_new_tumor_event_surgery` WRITE;
@@ -2307,9 +2270,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_new_tumor_event_surgery_days_to`;
 CREATE TABLE `biospecimen_cqcf_new_tumor_event_surgery_days_to` (
-	biospecimen_cqcf varchar(128),
-	new_tumor_event_surgery_days_to varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_new_tumor_event_surgery_days_to PRIMARY KEY(biospecimen_cqcf,new_tumor_event_surgery_days_to),
+	biospecimen_cqcf varchar(254),
+	new_tumor_event_surgery_days_to varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_new_tumor_event_surgery_days_to FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_new_tumor_event_surgery_days_to` WRITE;
@@ -2318,9 +2280,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_new_tumor_event_type`;
 CREATE TABLE `biospecimen_cqcf_new_tumor_event_type` (
-	biospecimen_cqcf varchar(128),
-	new_tumor_event_type varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_new_tumor_event_type PRIMARY KEY(biospecimen_cqcf,new_tumor_event_type),
+	biospecimen_cqcf varchar(254),
+	new_tumor_event_type varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_new_tumor_event_type FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_new_tumor_event_type` WRITE;
@@ -2329,9 +2290,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_normal_tissue_anatomic_site`;
 CREATE TABLE `biospecimen_cqcf_normal_tissue_anatomic_site` (
-	biospecimen_cqcf varchar(128),
-	normal_tissue_anatomic_site varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_normal_tissue_anatomic_site PRIMARY KEY(biospecimen_cqcf,normal_tissue_anatomic_site),
+	biospecimen_cqcf varchar(254),
+	normal_tissue_anatomic_site varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_normal_tissue_anatomic_site FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_normal_tissue_anatomic_site` WRITE;
@@ -2340,9 +2300,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_normal_tissue_proximity`;
 CREATE TABLE `biospecimen_cqcf_normal_tissue_proximity` (
-	biospecimen_cqcf varchar(128),
-	normal_tissue_proximity varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_normal_tissue_proximity PRIMARY KEY(biospecimen_cqcf,normal_tissue_proximity),
+	biospecimen_cqcf varchar(254),
+	normal_tissue_proximity varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_normal_tissue_proximity FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_normal_tissue_proximity` WRITE;
@@ -2351,9 +2310,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_other_malignancy_anatomic_site`;
 CREATE TABLE `biospecimen_cqcf_other_malignancy_anatomic_site` (
-	biospecimen_cqcf varchar(128),
-	other_malignancy_anatomic_site varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_other_malignancy_anatomic_site PRIMARY KEY(biospecimen_cqcf,other_malignancy_anatomic_site),
+	biospecimen_cqcf varchar(254),
+	other_malignancy_anatomic_site varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_other_malignancy_anatomic_site FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_other_malignancy_anatomic_site` WRITE;
@@ -2362,9 +2320,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_other_malignancy_anatomic_site_text`;
 CREATE TABLE `biospecimen_cqcf_other_malignancy_anatomic_site_text` (
-	biospecimen_cqcf varchar(128),
-	other_malignancy_anatomic_site_text varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_other_malignancy_anatomic_site_text PRIMARY KEY(biospecimen_cqcf,other_malignancy_anatomic_site_text),
+	biospecimen_cqcf varchar(254),
+	other_malignancy_anatomic_site_text varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_other_malignancy_anatomic_site_text FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_other_malignancy_anatomic_site_text` WRITE;
@@ -2373,9 +2330,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_other_malignancy_histological_type`;
 CREATE TABLE `biospecimen_cqcf_other_malignancy_histological_type` (
-	biospecimen_cqcf varchar(128),
-	other_malignancy_histological_type varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_other_malignancy_histological_type PRIMARY KEY(biospecimen_cqcf,other_malignancy_histological_type),
+	biospecimen_cqcf varchar(254),
+	other_malignancy_histological_type varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_other_malignancy_histological_type FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_other_malignancy_histological_type` WRITE;
@@ -2384,9 +2340,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_other_malignancy_laterality`;
 CREATE TABLE `biospecimen_cqcf_other_malignancy_laterality` (
-	biospecimen_cqcf varchar(128),
-	other_malignancy_laterality varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_other_malignancy_laterality PRIMARY KEY(biospecimen_cqcf,other_malignancy_laterality),
+	biospecimen_cqcf varchar(254),
+	other_malignancy_laterality varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_other_malignancy_laterality FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_other_malignancy_laterality` WRITE;
@@ -2395,9 +2350,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_prior_dx`;
 CREATE TABLE `biospecimen_cqcf_prior_dx` (
-	biospecimen_cqcf varchar(128),
-	prior_dx varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_prior_dx PRIMARY KEY(biospecimen_cqcf,prior_dx),
+	biospecimen_cqcf varchar(254),
+	prior_dx varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_prior_dx FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_prior_dx` WRITE;
@@ -2406,9 +2360,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_race1`;
 CREATE TABLE `biospecimen_cqcf_race1` (
-	biospecimen_cqcf varchar(128),
-	race1 varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_race1 PRIMARY KEY(biospecimen_cqcf,race1),
+	biospecimen_cqcf varchar(254),
+	race1 varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_race1 FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_race1` WRITE;
@@ -2417,9 +2370,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_result`;
 CREATE TABLE `biospecimen_cqcf_result` (
-	biospecimen_cqcf varchar(128),
-	result varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_result PRIMARY KEY(biospecimen_cqcf,result),
+	biospecimen_cqcf varchar(254),
+	result varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_result FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_result` WRITE;
@@ -2428,9 +2380,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_submitted_tumor_site`;
 CREATE TABLE `biospecimen_cqcf_submitted_tumor_site` (
-	biospecimen_cqcf varchar(128),
-	submitted_tumor_site varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_submitted_tumor_site PRIMARY KEY(biospecimen_cqcf,submitted_tumor_site),
+	biospecimen_cqcf varchar(254),
+	submitted_tumor_site varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_submitted_tumor_site FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_submitted_tumor_site` WRITE;
@@ -2439,9 +2390,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_tumor_necrosis_percent`;
 CREATE TABLE `biospecimen_cqcf_tumor_necrosis_percent` (
-	biospecimen_cqcf varchar(128),
-	tumor_necrosis_percent varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_tumor_necrosis_percent PRIMARY KEY(biospecimen_cqcf,tumor_necrosis_percent),
+	biospecimen_cqcf varchar(254),
+	tumor_necrosis_percent varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_tumor_necrosis_percent FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_tumor_necrosis_percent` WRITE;
@@ -2450,9 +2400,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_tumor_nuclei_percent`;
 CREATE TABLE `biospecimen_cqcf_tumor_nuclei_percent` (
-	biospecimen_cqcf varchar(128),
-	tumor_nuclei_percent varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_tumor_nuclei_percent PRIMARY KEY(biospecimen_cqcf,tumor_nuclei_percent),
+	biospecimen_cqcf varchar(254),
+	tumor_nuclei_percent varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_tumor_nuclei_percent FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_tumor_nuclei_percent` WRITE;
@@ -2461,9 +2410,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_tumor_weight`;
 CREATE TABLE `biospecimen_cqcf_tumor_weight` (
-	biospecimen_cqcf varchar(128),
-	tumor_weight varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_tumor_weight PRIMARY KEY(biospecimen_cqcf,tumor_weight),
+	biospecimen_cqcf varchar(254),
+	tumor_weight varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_tumor_weight FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_tumor_weight` WRITE;
@@ -2472,9 +2420,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `biospecimen_cqcf_vial_number`;
 CREATE TABLE `biospecimen_cqcf_vial_number` (
-	biospecimen_cqcf varchar(128),
-	vial_number varchar(2944),
-	CONSTRAINT pk_biospecimen_cqcf_vial_number PRIMARY KEY(biospecimen_cqcf,vial_number),
+	biospecimen_cqcf varchar(254),
+	vial_number varchar(2048),
 	CONSTRAINT fk_biospecimen_cqcf_vial_number FOREIGN KEY(biospecimen_cqcf) REFERENCES `biospecimen_cqcf_main`(biospecimen_cqcf)
 );
 LOCK TABLES `biospecimen_cqcf_vial_number` WRITE;
@@ -2483,9 +2430,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_anatomic_neoplasm_subdivision`;
 CREATE TABLE `clinical_cqcf_anatomic_neoplasm_subdivision` (
-	clinical_cqcf varchar(128),
-	anatomic_neoplasm_subdivision varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_anatomic_neoplasm_subdivision PRIMARY KEY(clinical_cqcf,anatomic_neoplasm_subdivision),
+	clinical_cqcf varchar(254),
+	anatomic_neoplasm_subdivision varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_anatomic_neoplasm_subdivision FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_anatomic_neoplasm_subdivision` WRITE;
@@ -2494,9 +2440,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_bcr_aliquot_barcode`;
 CREATE TABLE `clinical_cqcf_bcr_aliquot_barcode` (
-	clinical_cqcf varchar(128),
-	bcr_aliquot_barcode varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_bcr_aliquot_barcode PRIMARY KEY(clinical_cqcf,bcr_aliquot_barcode),
+	clinical_cqcf varchar(254),
+	bcr_aliquot_barcode varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_bcr_aliquot_barcode FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_bcr_aliquot_barcode` WRITE;
@@ -2505,9 +2450,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_bcr_analyte_barcode`;
 CREATE TABLE `clinical_cqcf_bcr_analyte_barcode` (
-	clinical_cqcf varchar(128),
-	bcr_analyte_barcode varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_bcr_analyte_barcode PRIMARY KEY(clinical_cqcf,bcr_analyte_barcode),
+	clinical_cqcf varchar(254),
+	bcr_analyte_barcode varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_bcr_analyte_barcode FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_bcr_analyte_barcode` WRITE;
@@ -2516,9 +2460,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_bcr_drug_barcode`;
 CREATE TABLE `clinical_cqcf_bcr_drug_barcode` (
-	clinical_cqcf varchar(128),
-	bcr_drug_barcode varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_bcr_drug_barcode PRIMARY KEY(clinical_cqcf,bcr_drug_barcode),
+	clinical_cqcf varchar(254),
+	bcr_drug_barcode varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_bcr_drug_barcode FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_bcr_drug_barcode` WRITE;
@@ -2527,9 +2470,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_bcr_followup_barcode`;
 CREATE TABLE `clinical_cqcf_bcr_followup_barcode` (
-	clinical_cqcf varchar(128),
-	bcr_followup_barcode varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_bcr_followup_barcode PRIMARY KEY(clinical_cqcf,bcr_followup_barcode),
+	clinical_cqcf varchar(254),
+	bcr_followup_barcode varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_bcr_followup_barcode FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_bcr_followup_barcode` WRITE;
@@ -2538,9 +2480,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_bcr_omf_barcode`;
 CREATE TABLE `clinical_cqcf_bcr_omf_barcode` (
-	clinical_cqcf varchar(128),
-	bcr_omf_barcode varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_bcr_omf_barcode PRIMARY KEY(clinical_cqcf,bcr_omf_barcode),
+	clinical_cqcf varchar(254),
+	bcr_omf_barcode varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_bcr_omf_barcode FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_bcr_omf_barcode` WRITE;
@@ -2549,9 +2490,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_bcr_omf_uuid`;
 CREATE TABLE `clinical_cqcf_bcr_omf_uuid` (
-	clinical_cqcf varchar(128),
-	bcr_omf_uuid varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_bcr_omf_uuid PRIMARY KEY(clinical_cqcf,bcr_omf_uuid),
+	clinical_cqcf varchar(254),
+	bcr_omf_uuid varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_bcr_omf_uuid FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_bcr_omf_uuid` WRITE;
@@ -2560,9 +2500,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_bcr_radiation_barcode`;
 CREATE TABLE `clinical_cqcf_bcr_radiation_barcode` (
-	clinical_cqcf varchar(128),
-	bcr_radiation_barcode varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_bcr_radiation_barcode PRIMARY KEY(clinical_cqcf,bcr_radiation_barcode),
+	clinical_cqcf varchar(254),
+	bcr_radiation_barcode varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_bcr_radiation_barcode FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_bcr_radiation_barcode` WRITE;
@@ -2571,9 +2510,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_bcr_sample_barcode`;
 CREATE TABLE `clinical_cqcf_bcr_sample_barcode` (
-	clinical_cqcf varchar(128),
-	bcr_sample_barcode varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_bcr_sample_barcode PRIMARY KEY(clinical_cqcf,bcr_sample_barcode),
+	clinical_cqcf varchar(254),
+	bcr_sample_barcode varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_bcr_sample_barcode FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_bcr_sample_barcode` WRITE;
@@ -2582,9 +2520,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_bcr_sample_uuid`;
 CREATE TABLE `clinical_cqcf_bcr_sample_uuid` (
-	clinical_cqcf varchar(128),
-	bcr_sample_uuid varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_bcr_sample_uuid PRIMARY KEY(clinical_cqcf,bcr_sample_uuid),
+	clinical_cqcf varchar(254),
+	bcr_sample_uuid varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_bcr_sample_uuid FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_bcr_sample_uuid` WRITE;
@@ -2593,9 +2530,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_bcr_shipment_barcode`;
 CREATE TABLE `clinical_cqcf_bcr_shipment_barcode` (
-	clinical_cqcf varchar(128),
-	bcr_shipment_barcode varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_bcr_shipment_barcode PRIMARY KEY(clinical_cqcf,bcr_shipment_barcode),
+	clinical_cqcf varchar(254),
+	bcr_shipment_barcode varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_bcr_shipment_barcode FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_bcr_shipment_barcode` WRITE;
@@ -2604,9 +2540,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_bcr_slide_barcode`;
 CREATE TABLE `clinical_cqcf_bcr_slide_barcode` (
-	clinical_cqcf varchar(128),
-	bcr_slide_barcode varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_bcr_slide_barcode PRIMARY KEY(clinical_cqcf,bcr_slide_barcode),
+	clinical_cqcf varchar(254),
+	bcr_slide_barcode varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_bcr_slide_barcode FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_bcr_slide_barcode` WRITE;
@@ -2615,9 +2550,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_consent_or_death_status`;
 CREATE TABLE `clinical_cqcf_consent_or_death_status` (
-	clinical_cqcf varchar(128),
-	consent_or_death_status varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_consent_or_death_status PRIMARY KEY(clinical_cqcf,consent_or_death_status),
+	clinical_cqcf varchar(254),
+	consent_or_death_status varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_consent_or_death_status FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_consent_or_death_status` WRITE;
@@ -2626,9 +2560,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_days_to_death`;
 CREATE TABLE `clinical_cqcf_days_to_death` (
-	clinical_cqcf varchar(128),
-	days_to_death varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_days_to_death PRIMARY KEY(clinical_cqcf,days_to_death),
+	clinical_cqcf varchar(254),
+	days_to_death varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_days_to_death FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_days_to_death` WRITE;
@@ -2637,9 +2570,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_days_to_normal_sample_procurement`;
 CREATE TABLE `clinical_cqcf_days_to_normal_sample_procurement` (
-	clinical_cqcf varchar(128),
-	days_to_normal_sample_procurement varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_days_to_normal_sample_procurement PRIMARY KEY(clinical_cqcf,days_to_normal_sample_procurement),
+	clinical_cqcf varchar(254),
+	days_to_normal_sample_procurement varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_days_to_normal_sample_procurement FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_days_to_normal_sample_procurement` WRITE;
@@ -2648,9 +2580,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_disease_acronym`;
 CREATE TABLE `clinical_cqcf_disease_acronym` (
-	clinical_cqcf varchar(128),
-	disease_acronym varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_disease_acronym PRIMARY KEY(clinical_cqcf,disease_acronym),
+	clinical_cqcf varchar(254),
+	disease_acronym varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_disease_acronym FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_disease_acronym` WRITE;
@@ -2659,9 +2590,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_ethnicity1`;
 CREATE TABLE `clinical_cqcf_ethnicity1` (
-	clinical_cqcf varchar(128),
-	ethnicity1 varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_ethnicity1 PRIMARY KEY(clinical_cqcf,ethnicity1),
+	clinical_cqcf varchar(254),
+	ethnicity1 varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_ethnicity1 FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_ethnicity1` WRITE;
@@ -2670,9 +2600,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_form_completion_date`;
 CREATE TABLE `clinical_cqcf_form_completion_date` (
-	clinical_cqcf varchar(128),
-	form_completion_date varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_form_completion_date PRIMARY KEY(clinical_cqcf,form_completion_date),
+	clinical_cqcf varchar(254),
+	form_completion_date varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_form_completion_date FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_form_completion_date` WRITE;
@@ -2681,9 +2610,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_histologic_diagnosis`;
 CREATE TABLE `clinical_cqcf_histologic_diagnosis` (
-	clinical_cqcf varchar(128),
-	histologic_diagnosis varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_histologic_diagnosis PRIMARY KEY(clinical_cqcf,histologic_diagnosis),
+	clinical_cqcf varchar(254),
+	histologic_diagnosis varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_histologic_diagnosis FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_histologic_diagnosis` WRITE;
@@ -2692,9 +2620,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_histological_type`;
 CREATE TABLE `clinical_cqcf_histological_type` (
-	clinical_cqcf varchar(128),
-	histological_type varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_histological_type PRIMARY KEY(clinical_cqcf,histological_type),
+	clinical_cqcf varchar(254),
+	histological_type varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_histological_type FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_histological_type` WRITE;
@@ -2703,9 +2630,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_history_neoadjuvant_treatment`;
 CREATE TABLE `clinical_cqcf_history_neoadjuvant_treatment` (
-	clinical_cqcf varchar(128),
-	history_neoadjuvant_treatment varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_history_neoadjuvant_treatment PRIMARY KEY(clinical_cqcf,history_neoadjuvant_treatment),
+	clinical_cqcf varchar(254),
+	history_neoadjuvant_treatment varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_history_neoadjuvant_treatment FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_history_neoadjuvant_treatment` WRITE;
@@ -2714,9 +2640,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_history_of_neoadjuvant_treatment`;
 CREATE TABLE `clinical_cqcf_history_of_neoadjuvant_treatment` (
-	clinical_cqcf varchar(128),
-	history_of_neoadjuvant_treatment varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_history_of_neoadjuvant_treatment PRIMARY KEY(clinical_cqcf,history_of_neoadjuvant_treatment),
+	clinical_cqcf varchar(254),
+	history_of_neoadjuvant_treatment varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_history_of_neoadjuvant_treatment FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_history_of_neoadjuvant_treatment` WRITE;
@@ -2725,9 +2650,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_history_other_malignancy`;
 CREATE TABLE `clinical_cqcf_history_other_malignancy` (
-	clinical_cqcf varchar(128),
-	history_other_malignancy varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_history_other_malignancy PRIMARY KEY(clinical_cqcf,history_other_malignancy),
+	clinical_cqcf varchar(254),
+	history_other_malignancy varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_history_other_malignancy FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_history_other_malignancy` WRITE;
@@ -2736,9 +2660,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_method_of_normal_sample_procurement`;
 CREATE TABLE `clinical_cqcf_method_of_normal_sample_procurement` (
-	clinical_cqcf varchar(128),
-	method_of_normal_sample_procurement varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_method_of_normal_sample_procurement PRIMARY KEY(clinical_cqcf,method_of_normal_sample_procurement),
+	clinical_cqcf varchar(254),
+	method_of_normal_sample_procurement varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_method_of_normal_sample_procurement FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_method_of_normal_sample_procurement` WRITE;
@@ -2747,9 +2670,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_ncedna_dna_conc`;
 CREATE TABLE `clinical_cqcf_ncedna_dna_conc` (
-	clinical_cqcf varchar(128),
-	ncedna_dna_conc varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_ncedna_dna_conc PRIMARY KEY(clinical_cqcf,ncedna_dna_conc),
+	clinical_cqcf varchar(254),
+	ncedna_dna_conc varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_ncedna_dna_conc FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_ncedna_dna_conc` WRITE;
@@ -2758,9 +2680,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_ncedna_dna_qm`;
 CREATE TABLE `clinical_cqcf_ncedna_dna_qm` (
-	clinical_cqcf varchar(128),
-	ncedna_dna_qm varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_ncedna_dna_qm PRIMARY KEY(clinical_cqcf,ncedna_dna_qm),
+	clinical_cqcf varchar(254),
+	ncedna_dna_qm varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_ncedna_dna_qm FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_ncedna_dna_qm` WRITE;
@@ -2769,9 +2690,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_ncedna_dna_qty`;
 CREATE TABLE `clinical_cqcf_ncedna_dna_qty` (
-	clinical_cqcf varchar(128),
-	ncedna_dna_qty varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_ncedna_dna_qty PRIMARY KEY(clinical_cqcf,ncedna_dna_qty),
+	clinical_cqcf varchar(254),
+	ncedna_dna_qty varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_ncedna_dna_qty FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_ncedna_dna_qty` WRITE;
@@ -2780,9 +2700,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_ncedna_dna_vol`;
 CREATE TABLE `clinical_cqcf_ncedna_dna_vol` (
-	clinical_cqcf varchar(128),
-	ncedna_dna_vol varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_ncedna_dna_vol PRIMARY KEY(clinical_cqcf,ncedna_dna_vol),
+	clinical_cqcf varchar(254),
+	ncedna_dna_vol varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_ncedna_dna_vol FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_ncedna_dna_vol` WRITE;
@@ -2791,9 +2710,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_new_non_melanoma_event_histologic_type_text`;
 CREATE TABLE `clinical_cqcf_new_non_melanoma_event_histologic_type_text` (
-	clinical_cqcf varchar(128),
-	new_non_melanoma_event_histologic_type_text varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_new_non_melanoma_event_histologic_type_text PRIMARY KEY(clinical_cqcf,new_non_melanoma_event_histologic_type_text),
+	clinical_cqcf varchar(254),
+	new_non_melanoma_event_histologic_type_text varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_new_non_melanoma_event_histologic_type_text FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_new_non_melanoma_event_histologic_type_text` WRITE;
@@ -2802,9 +2720,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_new_tumor_event_dx_days_to`;
 CREATE TABLE `clinical_cqcf_new_tumor_event_dx_days_to` (
-	clinical_cqcf varchar(128),
-	new_tumor_event_dx_days_to varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_new_tumor_event_dx_days_to PRIMARY KEY(clinical_cqcf,new_tumor_event_dx_days_to),
+	clinical_cqcf varchar(254),
+	new_tumor_event_dx_days_to varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_new_tumor_event_dx_days_to FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_new_tumor_event_dx_days_to` WRITE;
@@ -2813,9 +2730,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_new_tumor_event_melanoma_count`;
 CREATE TABLE `clinical_cqcf_new_tumor_event_melanoma_count` (
-	clinical_cqcf varchar(128),
-	new_tumor_event_melanoma_count varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_new_tumor_event_melanoma_count PRIMARY KEY(clinical_cqcf,new_tumor_event_melanoma_count),
+	clinical_cqcf varchar(254),
+	new_tumor_event_melanoma_count varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_new_tumor_event_melanoma_count FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_new_tumor_event_melanoma_count` WRITE;
@@ -2824,9 +2740,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_new_tumor_event_melanoma_location`;
 CREATE TABLE `clinical_cqcf_new_tumor_event_melanoma_location` (
-	clinical_cqcf varchar(128),
-	new_tumor_event_melanoma_location varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_new_tumor_event_melanoma_location PRIMARY KEY(clinical_cqcf,new_tumor_event_melanoma_location),
+	clinical_cqcf varchar(254),
+	new_tumor_event_melanoma_location varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_new_tumor_event_melanoma_location FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_new_tumor_event_melanoma_location` WRITE;
@@ -2835,9 +2750,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_new_tumor_event_met_site`;
 CREATE TABLE `clinical_cqcf_new_tumor_event_met_site` (
-	clinical_cqcf varchar(128),
-	new_tumor_event_met_site varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_new_tumor_event_met_site PRIMARY KEY(clinical_cqcf,new_tumor_event_met_site),
+	clinical_cqcf varchar(254),
+	new_tumor_event_met_site varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_new_tumor_event_met_site FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_new_tumor_event_met_site` WRITE;
@@ -2846,9 +2760,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_new_tumor_event_met_site_other`;
 CREATE TABLE `clinical_cqcf_new_tumor_event_met_site_other` (
-	clinical_cqcf varchar(128),
-	new_tumor_event_met_site_other varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_new_tumor_event_met_site_other PRIMARY KEY(clinical_cqcf,new_tumor_event_met_site_other),
+	clinical_cqcf varchar(254),
+	new_tumor_event_met_site_other varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_new_tumor_event_met_site_other FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_new_tumor_event_met_site_other` WRITE;
@@ -2857,9 +2770,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_new_tumor_event_pharmaceutical_tx`;
 CREATE TABLE `clinical_cqcf_new_tumor_event_pharmaceutical_tx` (
-	clinical_cqcf varchar(128),
-	new_tumor_event_pharmaceutical_tx varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_new_tumor_event_pharmaceutical_tx PRIMARY KEY(clinical_cqcf,new_tumor_event_pharmaceutical_tx),
+	clinical_cqcf varchar(254),
+	new_tumor_event_pharmaceutical_tx varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_new_tumor_event_pharmaceutical_tx FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_new_tumor_event_pharmaceutical_tx` WRITE;
@@ -2868,9 +2780,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_new_tumor_event_radiation_tx`;
 CREATE TABLE `clinical_cqcf_new_tumor_event_radiation_tx` (
-	clinical_cqcf varchar(128),
-	new_tumor_event_radiation_tx varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_new_tumor_event_radiation_tx PRIMARY KEY(clinical_cqcf,new_tumor_event_radiation_tx),
+	clinical_cqcf varchar(254),
+	new_tumor_event_radiation_tx varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_new_tumor_event_radiation_tx FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_new_tumor_event_radiation_tx` WRITE;
@@ -2879,9 +2790,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_new_tumor_event_site`;
 CREATE TABLE `clinical_cqcf_new_tumor_event_site` (
-	clinical_cqcf varchar(128),
-	new_tumor_event_site varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_new_tumor_event_site PRIMARY KEY(clinical_cqcf,new_tumor_event_site),
+	clinical_cqcf varchar(254),
+	new_tumor_event_site varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_new_tumor_event_site FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_new_tumor_event_site` WRITE;
@@ -2890,9 +2800,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_new_tumor_event_surgery`;
 CREATE TABLE `clinical_cqcf_new_tumor_event_surgery` (
-	clinical_cqcf varchar(128),
-	new_tumor_event_surgery varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_new_tumor_event_surgery PRIMARY KEY(clinical_cqcf,new_tumor_event_surgery),
+	clinical_cqcf varchar(254),
+	new_tumor_event_surgery varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_new_tumor_event_surgery FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_new_tumor_event_surgery` WRITE;
@@ -2901,9 +2810,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_new_tumor_event_surgery_days_to`;
 CREATE TABLE `clinical_cqcf_new_tumor_event_surgery_days_to` (
-	clinical_cqcf varchar(128),
-	new_tumor_event_surgery_days_to varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_new_tumor_event_surgery_days_to PRIMARY KEY(clinical_cqcf,new_tumor_event_surgery_days_to),
+	clinical_cqcf varchar(254),
+	new_tumor_event_surgery_days_to varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_new_tumor_event_surgery_days_to FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_new_tumor_event_surgery_days_to` WRITE;
@@ -2912,9 +2820,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_new_tumor_event_type`;
 CREATE TABLE `clinical_cqcf_new_tumor_event_type` (
-	clinical_cqcf varchar(128),
-	new_tumor_event_type varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_new_tumor_event_type PRIMARY KEY(clinical_cqcf,new_tumor_event_type),
+	clinical_cqcf varchar(254),
+	new_tumor_event_type varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_new_tumor_event_type FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_new_tumor_event_type` WRITE;
@@ -2923,9 +2830,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_normal_tissue_anatomic_site`;
 CREATE TABLE `clinical_cqcf_normal_tissue_anatomic_site` (
-	clinical_cqcf varchar(128),
-	normal_tissue_anatomic_site varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_normal_tissue_anatomic_site PRIMARY KEY(clinical_cqcf,normal_tissue_anatomic_site),
+	clinical_cqcf varchar(254),
+	normal_tissue_anatomic_site varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_normal_tissue_anatomic_site FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_normal_tissue_anatomic_site` WRITE;
@@ -2934,9 +2840,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_normal_tissue_proximity`;
 CREATE TABLE `clinical_cqcf_normal_tissue_proximity` (
-	clinical_cqcf varchar(128),
-	normal_tissue_proximity varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_normal_tissue_proximity PRIMARY KEY(clinical_cqcf,normal_tissue_proximity),
+	clinical_cqcf varchar(254),
+	normal_tissue_proximity varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_normal_tissue_proximity FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_normal_tissue_proximity` WRITE;
@@ -2945,9 +2850,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_other_malignancy_anatomic_site`;
 CREATE TABLE `clinical_cqcf_other_malignancy_anatomic_site` (
-	clinical_cqcf varchar(128),
-	other_malignancy_anatomic_site varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_other_malignancy_anatomic_site PRIMARY KEY(clinical_cqcf,other_malignancy_anatomic_site),
+	clinical_cqcf varchar(254),
+	other_malignancy_anatomic_site varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_other_malignancy_anatomic_site FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_other_malignancy_anatomic_site` WRITE;
@@ -2956,9 +2860,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_other_malignancy_anatomic_site_text`;
 CREATE TABLE `clinical_cqcf_other_malignancy_anatomic_site_text` (
-	clinical_cqcf varchar(128),
-	other_malignancy_anatomic_site_text varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_other_malignancy_anatomic_site_text PRIMARY KEY(clinical_cqcf,other_malignancy_anatomic_site_text),
+	clinical_cqcf varchar(254),
+	other_malignancy_anatomic_site_text varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_other_malignancy_anatomic_site_text FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_other_malignancy_anatomic_site_text` WRITE;
@@ -2967,9 +2870,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_other_malignancy_histological_type`;
 CREATE TABLE `clinical_cqcf_other_malignancy_histological_type` (
-	clinical_cqcf varchar(128),
-	other_malignancy_histological_type varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_other_malignancy_histological_type PRIMARY KEY(clinical_cqcf,other_malignancy_histological_type),
+	clinical_cqcf varchar(254),
+	other_malignancy_histological_type varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_other_malignancy_histological_type FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_other_malignancy_histological_type` WRITE;
@@ -2978,9 +2880,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_other_malignancy_laterality`;
 CREATE TABLE `clinical_cqcf_other_malignancy_laterality` (
-	clinical_cqcf varchar(128),
-	other_malignancy_laterality varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_other_malignancy_laterality PRIMARY KEY(clinical_cqcf,other_malignancy_laterality),
+	clinical_cqcf varchar(254),
+	other_malignancy_laterality varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_other_malignancy_laterality FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_other_malignancy_laterality` WRITE;
@@ -2989,9 +2890,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_prior_dx`;
 CREATE TABLE `clinical_cqcf_prior_dx` (
-	clinical_cqcf varchar(128),
-	prior_dx varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_prior_dx PRIMARY KEY(clinical_cqcf,prior_dx),
+	clinical_cqcf varchar(254),
+	prior_dx varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_prior_dx FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_prior_dx` WRITE;
@@ -3000,9 +2900,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_race1`;
 CREATE TABLE `clinical_cqcf_race1` (
-	clinical_cqcf varchar(128),
-	race1 varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_race1 PRIMARY KEY(clinical_cqcf,race1),
+	clinical_cqcf varchar(254),
+	race1 varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_race1 FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_race1` WRITE;
@@ -3011,9 +2910,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_result`;
 CREATE TABLE `clinical_cqcf_result` (
-	clinical_cqcf varchar(128),
-	result varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_result PRIMARY KEY(clinical_cqcf,result),
+	clinical_cqcf varchar(254),
+	result varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_result FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_result` WRITE;
@@ -3022,9 +2920,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_submitted_tumor_site`;
 CREATE TABLE `clinical_cqcf_submitted_tumor_site` (
-	clinical_cqcf varchar(128),
-	submitted_tumor_site varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_submitted_tumor_site PRIMARY KEY(clinical_cqcf,submitted_tumor_site),
+	clinical_cqcf varchar(254),
+	submitted_tumor_site varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_submitted_tumor_site FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_submitted_tumor_site` WRITE;
@@ -3033,9 +2930,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_tumor_necrosis_percent`;
 CREATE TABLE `clinical_cqcf_tumor_necrosis_percent` (
-	clinical_cqcf varchar(128),
-	tumor_necrosis_percent varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_tumor_necrosis_percent PRIMARY KEY(clinical_cqcf,tumor_necrosis_percent),
+	clinical_cqcf varchar(254),
+	tumor_necrosis_percent varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_tumor_necrosis_percent FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_tumor_necrosis_percent` WRITE;
@@ -3044,9 +2940,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_tumor_nuclei_percent`;
 CREATE TABLE `clinical_cqcf_tumor_nuclei_percent` (
-	clinical_cqcf varchar(128),
-	tumor_nuclei_percent varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_tumor_nuclei_percent PRIMARY KEY(clinical_cqcf,tumor_nuclei_percent),
+	clinical_cqcf varchar(254),
+	tumor_nuclei_percent varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_tumor_nuclei_percent FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_tumor_nuclei_percent` WRITE;
@@ -3055,9 +2950,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_tumor_weight`;
 CREATE TABLE `clinical_cqcf_tumor_weight` (
-	clinical_cqcf varchar(128),
-	tumor_weight varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_tumor_weight PRIMARY KEY(clinical_cqcf,tumor_weight),
+	clinical_cqcf varchar(254),
+	tumor_weight varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_tumor_weight FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_tumor_weight` WRITE;
@@ -3066,9 +2960,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_cqcf_vial_number`;
 CREATE TABLE `clinical_cqcf_vial_number` (
-	clinical_cqcf varchar(128),
-	vial_number varchar(2944),
-	CONSTRAINT pk_clinical_cqcf_vial_number PRIMARY KEY(clinical_cqcf,vial_number),
+	clinical_cqcf varchar(254),
+	vial_number varchar(2048),
 	CONSTRAINT fk_clinical_cqcf_vial_number FOREIGN KEY(clinical_cqcf) REFERENCES `clinical_cqcf_main`(clinical_cqcf)
 );
 LOCK TABLES `clinical_cqcf_vial_number` WRITE;
@@ -3077,9 +2970,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_anatomic_neoplasm_subdivision`;
 CREATE TABLE `clinical_nte_anatomic_neoplasm_subdivision` (
-	clinical_nte varchar(128),
-	anatomic_neoplasm_subdivision varchar(2944),
-	CONSTRAINT pk_clinical_nte_anatomic_neoplasm_subdivision PRIMARY KEY(clinical_nte,anatomic_neoplasm_subdivision),
+	clinical_nte varchar(254),
+	anatomic_neoplasm_subdivision varchar(2048),
 	CONSTRAINT fk_clinical_nte_anatomic_neoplasm_subdivision FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_anatomic_neoplasm_subdivision` WRITE;
@@ -3088,9 +2980,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_bcr_aliquot_barcode`;
 CREATE TABLE `clinical_nte_bcr_aliquot_barcode` (
-	clinical_nte varchar(128),
-	bcr_aliquot_barcode varchar(2944),
-	CONSTRAINT pk_clinical_nte_bcr_aliquot_barcode PRIMARY KEY(clinical_nte,bcr_aliquot_barcode),
+	clinical_nte varchar(254),
+	bcr_aliquot_barcode varchar(2048),
 	CONSTRAINT fk_clinical_nte_bcr_aliquot_barcode FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_bcr_aliquot_barcode` WRITE;
@@ -3099,9 +2990,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_bcr_analyte_barcode`;
 CREATE TABLE `clinical_nte_bcr_analyte_barcode` (
-	clinical_nte varchar(128),
-	bcr_analyte_barcode varchar(2944),
-	CONSTRAINT pk_clinical_nte_bcr_analyte_barcode PRIMARY KEY(clinical_nte,bcr_analyte_barcode),
+	clinical_nte varchar(254),
+	bcr_analyte_barcode varchar(2048),
 	CONSTRAINT fk_clinical_nte_bcr_analyte_barcode FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_bcr_analyte_barcode` WRITE;
@@ -3110,9 +3000,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_bcr_drug_barcode`;
 CREATE TABLE `clinical_nte_bcr_drug_barcode` (
-	clinical_nte varchar(128),
-	bcr_drug_barcode varchar(2944),
-	CONSTRAINT pk_clinical_nte_bcr_drug_barcode PRIMARY KEY(clinical_nte,bcr_drug_barcode),
+	clinical_nte varchar(254),
+	bcr_drug_barcode varchar(2048),
 	CONSTRAINT fk_clinical_nte_bcr_drug_barcode FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_bcr_drug_barcode` WRITE;
@@ -3121,9 +3010,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_bcr_omf_barcode`;
 CREATE TABLE `clinical_nte_bcr_omf_barcode` (
-	clinical_nte varchar(128),
-	bcr_omf_barcode varchar(2944),
-	CONSTRAINT pk_clinical_nte_bcr_omf_barcode PRIMARY KEY(clinical_nte,bcr_omf_barcode),
+	clinical_nte varchar(254),
+	bcr_omf_barcode varchar(2048),
 	CONSTRAINT fk_clinical_nte_bcr_omf_barcode FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_bcr_omf_barcode` WRITE;
@@ -3132,9 +3020,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_bcr_omf_uuid`;
 CREATE TABLE `clinical_nte_bcr_omf_uuid` (
-	clinical_nte varchar(128),
-	bcr_omf_uuid varchar(2944),
-	CONSTRAINT pk_clinical_nte_bcr_omf_uuid PRIMARY KEY(clinical_nte,bcr_omf_uuid),
+	clinical_nte varchar(254),
+	bcr_omf_uuid varchar(2048),
 	CONSTRAINT fk_clinical_nte_bcr_omf_uuid FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_bcr_omf_uuid` WRITE;
@@ -3143,9 +3030,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_bcr_radiation_barcode`;
 CREATE TABLE `clinical_nte_bcr_radiation_barcode` (
-	clinical_nte varchar(128),
-	bcr_radiation_barcode varchar(2944),
-	CONSTRAINT pk_clinical_nte_bcr_radiation_barcode PRIMARY KEY(clinical_nte,bcr_radiation_barcode),
+	clinical_nte varchar(254),
+	bcr_radiation_barcode varchar(2048),
 	CONSTRAINT fk_clinical_nte_bcr_radiation_barcode FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_bcr_radiation_barcode` WRITE;
@@ -3154,9 +3040,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_bcr_sample_barcode`;
 CREATE TABLE `clinical_nte_bcr_sample_barcode` (
-	clinical_nte varchar(128),
-	bcr_sample_barcode varchar(2944),
-	CONSTRAINT pk_clinical_nte_bcr_sample_barcode PRIMARY KEY(clinical_nte,bcr_sample_barcode),
+	clinical_nte varchar(254),
+	bcr_sample_barcode varchar(2048),
 	CONSTRAINT fk_clinical_nte_bcr_sample_barcode FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_bcr_sample_barcode` WRITE;
@@ -3165,9 +3050,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_bcr_sample_uuid`;
 CREATE TABLE `clinical_nte_bcr_sample_uuid` (
-	clinical_nte varchar(128),
-	bcr_sample_uuid varchar(2944),
-	CONSTRAINT pk_clinical_nte_bcr_sample_uuid PRIMARY KEY(clinical_nte,bcr_sample_uuid),
+	clinical_nte varchar(254),
+	bcr_sample_uuid varchar(2048),
 	CONSTRAINT fk_clinical_nte_bcr_sample_uuid FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_bcr_sample_uuid` WRITE;
@@ -3176,9 +3060,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_bcr_shipment_barcode`;
 CREATE TABLE `clinical_nte_bcr_shipment_barcode` (
-	clinical_nte varchar(128),
-	bcr_shipment_barcode varchar(2944),
-	CONSTRAINT pk_clinical_nte_bcr_shipment_barcode PRIMARY KEY(clinical_nte,bcr_shipment_barcode),
+	clinical_nte varchar(254),
+	bcr_shipment_barcode varchar(2048),
 	CONSTRAINT fk_clinical_nte_bcr_shipment_barcode FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_bcr_shipment_barcode` WRITE;
@@ -3187,9 +3070,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_bcr_slide_barcode`;
 CREATE TABLE `clinical_nte_bcr_slide_barcode` (
-	clinical_nte varchar(128),
-	bcr_slide_barcode varchar(2944),
-	CONSTRAINT pk_clinical_nte_bcr_slide_barcode PRIMARY KEY(clinical_nte,bcr_slide_barcode),
+	clinical_nte varchar(254),
+	bcr_slide_barcode varchar(2048),
 	CONSTRAINT fk_clinical_nte_bcr_slide_barcode FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_bcr_slide_barcode` WRITE;
@@ -3198,9 +3080,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_days_to_death`;
 CREATE TABLE `clinical_nte_days_to_death` (
-	clinical_nte varchar(128),
-	days_to_death varchar(2944),
-	CONSTRAINT pk_clinical_nte_days_to_death PRIMARY KEY(clinical_nte,days_to_death),
+	clinical_nte varchar(254),
+	days_to_death varchar(2048),
 	CONSTRAINT fk_clinical_nte_days_to_death FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_days_to_death` WRITE;
@@ -3209,9 +3090,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_days_to_normal_sample_procurement`;
 CREATE TABLE `clinical_nte_days_to_normal_sample_procurement` (
-	clinical_nte varchar(128),
-	days_to_normal_sample_procurement varchar(2944),
-	CONSTRAINT pk_clinical_nte_days_to_normal_sample_procurement PRIMARY KEY(clinical_nte,days_to_normal_sample_procurement),
+	clinical_nte varchar(254),
+	days_to_normal_sample_procurement varchar(2048),
 	CONSTRAINT fk_clinical_nte_days_to_normal_sample_procurement FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_days_to_normal_sample_procurement` WRITE;
@@ -3220,9 +3100,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_disease_acronym`;
 CREATE TABLE `clinical_nte_disease_acronym` (
-	clinical_nte varchar(128),
-	disease_acronym varchar(2944),
-	CONSTRAINT pk_clinical_nte_disease_acronym PRIMARY KEY(clinical_nte,disease_acronym),
+	clinical_nte varchar(254),
+	disease_acronym varchar(2048),
 	CONSTRAINT fk_clinical_nte_disease_acronym FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_disease_acronym` WRITE;
@@ -3231,9 +3110,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_ethnicity1`;
 CREATE TABLE `clinical_nte_ethnicity1` (
-	clinical_nte varchar(128),
-	ethnicity1 varchar(2944),
-	CONSTRAINT pk_clinical_nte_ethnicity1 PRIMARY KEY(clinical_nte,ethnicity1),
+	clinical_nte varchar(254),
+	ethnicity1 varchar(2048),
 	CONSTRAINT fk_clinical_nte_ethnicity1 FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_ethnicity1` WRITE;
@@ -3242,9 +3120,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_form_completion_date`;
 CREATE TABLE `clinical_nte_form_completion_date` (
-	clinical_nte varchar(128),
-	form_completion_date varchar(2944),
-	CONSTRAINT pk_clinical_nte_form_completion_date PRIMARY KEY(clinical_nte,form_completion_date),
+	clinical_nte varchar(254),
+	form_completion_date varchar(2048),
 	CONSTRAINT fk_clinical_nte_form_completion_date FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_form_completion_date` WRITE;
@@ -3253,9 +3130,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_histological_type`;
 CREATE TABLE `clinical_nte_histological_type` (
-	clinical_nte varchar(128),
-	histological_type varchar(2944),
-	CONSTRAINT pk_clinical_nte_histological_type PRIMARY KEY(clinical_nte,histological_type),
+	clinical_nte varchar(254),
+	histological_type varchar(2048),
 	CONSTRAINT fk_clinical_nte_histological_type FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_histological_type` WRITE;
@@ -3264,9 +3140,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_history_neoadjuvant_treatment`;
 CREATE TABLE `clinical_nte_history_neoadjuvant_treatment` (
-	clinical_nte varchar(128),
-	history_neoadjuvant_treatment varchar(2944),
-	CONSTRAINT pk_clinical_nte_history_neoadjuvant_treatment PRIMARY KEY(clinical_nte,history_neoadjuvant_treatment),
+	clinical_nte varchar(254),
+	history_neoadjuvant_treatment varchar(2048),
 	CONSTRAINT fk_clinical_nte_history_neoadjuvant_treatment FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_history_neoadjuvant_treatment` WRITE;
@@ -3275,9 +3150,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_method_of_normal_sample_procurement`;
 CREATE TABLE `clinical_nte_method_of_normal_sample_procurement` (
-	clinical_nte varchar(128),
-	method_of_normal_sample_procurement varchar(2944),
-	CONSTRAINT pk_clinical_nte_method_of_normal_sample_procurement PRIMARY KEY(clinical_nte,method_of_normal_sample_procurement),
+	clinical_nte varchar(254),
+	method_of_normal_sample_procurement varchar(2048),
 	CONSTRAINT fk_clinical_nte_method_of_normal_sample_procurement FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_method_of_normal_sample_procurement` WRITE;
@@ -3286,9 +3160,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_ncedna_dna_conc`;
 CREATE TABLE `clinical_nte_ncedna_dna_conc` (
-	clinical_nte varchar(128),
-	ncedna_dna_conc varchar(2944),
-	CONSTRAINT pk_clinical_nte_ncedna_dna_conc PRIMARY KEY(clinical_nte,ncedna_dna_conc),
+	clinical_nte varchar(254),
+	ncedna_dna_conc varchar(2048),
 	CONSTRAINT fk_clinical_nte_ncedna_dna_conc FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_ncedna_dna_conc` WRITE;
@@ -3297,9 +3170,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_ncedna_dna_qm`;
 CREATE TABLE `clinical_nte_ncedna_dna_qm` (
-	clinical_nte varchar(128),
-	ncedna_dna_qm varchar(2944),
-	CONSTRAINT pk_clinical_nte_ncedna_dna_qm PRIMARY KEY(clinical_nte,ncedna_dna_qm),
+	clinical_nte varchar(254),
+	ncedna_dna_qm varchar(2048),
 	CONSTRAINT fk_clinical_nte_ncedna_dna_qm FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_ncedna_dna_qm` WRITE;
@@ -3308,9 +3180,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_ncedna_dna_qty`;
 CREATE TABLE `clinical_nte_ncedna_dna_qty` (
-	clinical_nte varchar(128),
-	ncedna_dna_qty varchar(2944),
-	CONSTRAINT pk_clinical_nte_ncedna_dna_qty PRIMARY KEY(clinical_nte,ncedna_dna_qty),
+	clinical_nte varchar(254),
+	ncedna_dna_qty varchar(2048),
 	CONSTRAINT fk_clinical_nte_ncedna_dna_qty FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_ncedna_dna_qty` WRITE;
@@ -3319,9 +3190,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_ncedna_dna_vol`;
 CREATE TABLE `clinical_nte_ncedna_dna_vol` (
-	clinical_nte varchar(128),
-	ncedna_dna_vol varchar(2944),
-	CONSTRAINT pk_clinical_nte_ncedna_dna_vol PRIMARY KEY(clinical_nte,ncedna_dna_vol),
+	clinical_nte varchar(254),
+	ncedna_dna_vol varchar(2048),
 	CONSTRAINT fk_clinical_nte_ncedna_dna_vol FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_ncedna_dna_vol` WRITE;
@@ -3330,9 +3200,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_new_non_melanoma_event_histologic_type_text`;
 CREATE TABLE `clinical_nte_new_non_melanoma_event_histologic_type_text` (
-	clinical_nte varchar(128),
-	new_non_melanoma_event_histologic_type_text varchar(2944),
-	CONSTRAINT pk_clinical_nte_new_non_melanoma_event_histologic_type_text PRIMARY KEY(clinical_nte,new_non_melanoma_event_histologic_type_text),
+	clinical_nte varchar(254),
+	new_non_melanoma_event_histologic_type_text varchar(2048),
 	CONSTRAINT fk_clinical_nte_new_non_melanoma_event_histologic_type_text FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_new_non_melanoma_event_histologic_type_text` WRITE;
@@ -3341,9 +3210,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_new_tumor_event_dx_days_to`;
 CREATE TABLE `clinical_nte_new_tumor_event_dx_days_to` (
-	clinical_nte varchar(128),
-	new_tumor_event_dx_days_to varchar(2944),
-	CONSTRAINT pk_clinical_nte_new_tumor_event_dx_days_to PRIMARY KEY(clinical_nte,new_tumor_event_dx_days_to),
+	clinical_nte varchar(254),
+	new_tumor_event_dx_days_to varchar(2048),
 	CONSTRAINT fk_clinical_nte_new_tumor_event_dx_days_to FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_new_tumor_event_dx_days_to` WRITE;
@@ -3352,9 +3220,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_new_tumor_event_melanoma_count`;
 CREATE TABLE `clinical_nte_new_tumor_event_melanoma_count` (
-	clinical_nte varchar(128),
-	new_tumor_event_melanoma_count varchar(2944),
-	CONSTRAINT pk_clinical_nte_new_tumor_event_melanoma_count PRIMARY KEY(clinical_nte,new_tumor_event_melanoma_count),
+	clinical_nte varchar(254),
+	new_tumor_event_melanoma_count varchar(2048),
 	CONSTRAINT fk_clinical_nte_new_tumor_event_melanoma_count FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_new_tumor_event_melanoma_count` WRITE;
@@ -3363,9 +3230,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_new_tumor_event_melanoma_location`;
 CREATE TABLE `clinical_nte_new_tumor_event_melanoma_location` (
-	clinical_nte varchar(128),
-	new_tumor_event_melanoma_location varchar(2944),
-	CONSTRAINT pk_clinical_nte_new_tumor_event_melanoma_location PRIMARY KEY(clinical_nte,new_tumor_event_melanoma_location),
+	clinical_nte varchar(254),
+	new_tumor_event_melanoma_location varchar(2048),
 	CONSTRAINT fk_clinical_nte_new_tumor_event_melanoma_location FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_new_tumor_event_melanoma_location` WRITE;
@@ -3374,9 +3240,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_new_tumor_event_met_site`;
 CREATE TABLE `clinical_nte_new_tumor_event_met_site` (
-	clinical_nte varchar(128),
-	new_tumor_event_met_site varchar(2944),
-	CONSTRAINT pk_clinical_nte_new_tumor_event_met_site PRIMARY KEY(clinical_nte,new_tumor_event_met_site),
+	clinical_nte varchar(254),
+	new_tumor_event_met_site varchar(2048),
 	CONSTRAINT fk_clinical_nte_new_tumor_event_met_site FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_new_tumor_event_met_site` WRITE;
@@ -3385,9 +3250,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_new_tumor_event_met_site_other`;
 CREATE TABLE `clinical_nte_new_tumor_event_met_site_other` (
-	clinical_nte varchar(128),
-	new_tumor_event_met_site_other varchar(2944),
-	CONSTRAINT pk_clinical_nte_new_tumor_event_met_site_other PRIMARY KEY(clinical_nte,new_tumor_event_met_site_other),
+	clinical_nte varchar(254),
+	new_tumor_event_met_site_other varchar(2048),
 	CONSTRAINT fk_clinical_nte_new_tumor_event_met_site_other FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_new_tumor_event_met_site_other` WRITE;
@@ -3396,9 +3260,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_new_tumor_event_pharmaceutical_tx`;
 CREATE TABLE `clinical_nte_new_tumor_event_pharmaceutical_tx` (
-	clinical_nte varchar(128),
-	new_tumor_event_pharmaceutical_tx varchar(2944),
-	CONSTRAINT pk_clinical_nte_new_tumor_event_pharmaceutical_tx PRIMARY KEY(clinical_nte,new_tumor_event_pharmaceutical_tx),
+	clinical_nte varchar(254),
+	new_tumor_event_pharmaceutical_tx varchar(2048),
 	CONSTRAINT fk_clinical_nte_new_tumor_event_pharmaceutical_tx FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_new_tumor_event_pharmaceutical_tx` WRITE;
@@ -3407,9 +3270,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_new_tumor_event_radiation_tx`;
 CREATE TABLE `clinical_nte_new_tumor_event_radiation_tx` (
-	clinical_nte varchar(128),
-	new_tumor_event_radiation_tx varchar(2944),
-	CONSTRAINT pk_clinical_nte_new_tumor_event_radiation_tx PRIMARY KEY(clinical_nte,new_tumor_event_radiation_tx),
+	clinical_nte varchar(254),
+	new_tumor_event_radiation_tx varchar(2048),
 	CONSTRAINT fk_clinical_nte_new_tumor_event_radiation_tx FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_new_tumor_event_radiation_tx` WRITE;
@@ -3418,9 +3280,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_new_tumor_event_site`;
 CREATE TABLE `clinical_nte_new_tumor_event_site` (
-	clinical_nte varchar(128),
-	new_tumor_event_site varchar(2944),
-	CONSTRAINT pk_clinical_nte_new_tumor_event_site PRIMARY KEY(clinical_nte,new_tumor_event_site),
+	clinical_nte varchar(254),
+	new_tumor_event_site varchar(2048),
 	CONSTRAINT fk_clinical_nte_new_tumor_event_site FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_new_tumor_event_site` WRITE;
@@ -3429,9 +3290,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_new_tumor_event_surgery`;
 CREATE TABLE `clinical_nte_new_tumor_event_surgery` (
-	clinical_nte varchar(128),
-	new_tumor_event_surgery varchar(2944),
-	CONSTRAINT pk_clinical_nte_new_tumor_event_surgery PRIMARY KEY(clinical_nte,new_tumor_event_surgery),
+	clinical_nte varchar(254),
+	new_tumor_event_surgery varchar(2048),
 	CONSTRAINT fk_clinical_nte_new_tumor_event_surgery FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_new_tumor_event_surgery` WRITE;
@@ -3440,9 +3300,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_new_tumor_event_surgery_days_to`;
 CREATE TABLE `clinical_nte_new_tumor_event_surgery_days_to` (
-	clinical_nte varchar(128),
-	new_tumor_event_surgery_days_to varchar(2944),
-	CONSTRAINT pk_clinical_nte_new_tumor_event_surgery_days_to PRIMARY KEY(clinical_nte,new_tumor_event_surgery_days_to),
+	clinical_nte varchar(254),
+	new_tumor_event_surgery_days_to varchar(2048),
 	CONSTRAINT fk_clinical_nte_new_tumor_event_surgery_days_to FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_new_tumor_event_surgery_days_to` WRITE;
@@ -3451,9 +3310,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_new_tumor_event_type`;
 CREATE TABLE `clinical_nte_new_tumor_event_type` (
-	clinical_nte varchar(128),
-	new_tumor_event_type varchar(2944),
-	CONSTRAINT pk_clinical_nte_new_tumor_event_type PRIMARY KEY(clinical_nte,new_tumor_event_type),
+	clinical_nte varchar(254),
+	new_tumor_event_type varchar(2048),
 	CONSTRAINT fk_clinical_nte_new_tumor_event_type FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_new_tumor_event_type` WRITE;
@@ -3462,9 +3320,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_normal_tissue_anatomic_site`;
 CREATE TABLE `clinical_nte_normal_tissue_anatomic_site` (
-	clinical_nte varchar(128),
-	normal_tissue_anatomic_site varchar(2944),
-	CONSTRAINT pk_clinical_nte_normal_tissue_anatomic_site PRIMARY KEY(clinical_nte,normal_tissue_anatomic_site),
+	clinical_nte varchar(254),
+	normal_tissue_anatomic_site varchar(2048),
 	CONSTRAINT fk_clinical_nte_normal_tissue_anatomic_site FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_normal_tissue_anatomic_site` WRITE;
@@ -3473,9 +3330,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_normal_tissue_proximity`;
 CREATE TABLE `clinical_nte_normal_tissue_proximity` (
-	clinical_nte varchar(128),
-	normal_tissue_proximity varchar(2944),
-	CONSTRAINT pk_clinical_nte_normal_tissue_proximity PRIMARY KEY(clinical_nte,normal_tissue_proximity),
+	clinical_nte varchar(254),
+	normal_tissue_proximity varchar(2048),
 	CONSTRAINT fk_clinical_nte_normal_tissue_proximity FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_normal_tissue_proximity` WRITE;
@@ -3484,9 +3340,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_other_malignancy_anatomic_site`;
 CREATE TABLE `clinical_nte_other_malignancy_anatomic_site` (
-	clinical_nte varchar(128),
-	other_malignancy_anatomic_site varchar(2944),
-	CONSTRAINT pk_clinical_nte_other_malignancy_anatomic_site PRIMARY KEY(clinical_nte,other_malignancy_anatomic_site),
+	clinical_nte varchar(254),
+	other_malignancy_anatomic_site varchar(2048),
 	CONSTRAINT fk_clinical_nte_other_malignancy_anatomic_site FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_other_malignancy_anatomic_site` WRITE;
@@ -3495,9 +3350,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_other_malignancy_anatomic_site_text`;
 CREATE TABLE `clinical_nte_other_malignancy_anatomic_site_text` (
-	clinical_nte varchar(128),
-	other_malignancy_anatomic_site_text varchar(2944),
-	CONSTRAINT pk_clinical_nte_other_malignancy_anatomic_site_text PRIMARY KEY(clinical_nte,other_malignancy_anatomic_site_text),
+	clinical_nte varchar(254),
+	other_malignancy_anatomic_site_text varchar(2048),
 	CONSTRAINT fk_clinical_nte_other_malignancy_anatomic_site_text FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_other_malignancy_anatomic_site_text` WRITE;
@@ -3506,9 +3360,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_other_malignancy_histological_type`;
 CREATE TABLE `clinical_nte_other_malignancy_histological_type` (
-	clinical_nte varchar(128),
-	other_malignancy_histological_type varchar(2944),
-	CONSTRAINT pk_clinical_nte_other_malignancy_histological_type PRIMARY KEY(clinical_nte,other_malignancy_histological_type),
+	clinical_nte varchar(254),
+	other_malignancy_histological_type varchar(2048),
 	CONSTRAINT fk_clinical_nte_other_malignancy_histological_type FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_other_malignancy_histological_type` WRITE;
@@ -3517,9 +3370,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_other_malignancy_laterality`;
 CREATE TABLE `clinical_nte_other_malignancy_laterality` (
-	clinical_nte varchar(128),
-	other_malignancy_laterality varchar(2944),
-	CONSTRAINT pk_clinical_nte_other_malignancy_laterality PRIMARY KEY(clinical_nte,other_malignancy_laterality),
+	clinical_nte varchar(254),
+	other_malignancy_laterality varchar(2048),
 	CONSTRAINT fk_clinical_nte_other_malignancy_laterality FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_other_malignancy_laterality` WRITE;
@@ -3528,9 +3380,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_prior_dx`;
 CREATE TABLE `clinical_nte_prior_dx` (
-	clinical_nte varchar(128),
-	prior_dx varchar(2944),
-	CONSTRAINT pk_clinical_nte_prior_dx PRIMARY KEY(clinical_nte,prior_dx),
+	clinical_nte varchar(254),
+	prior_dx varchar(2048),
 	CONSTRAINT fk_clinical_nte_prior_dx FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_prior_dx` WRITE;
@@ -3539,9 +3390,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_race1`;
 CREATE TABLE `clinical_nte_race1` (
-	clinical_nte varchar(128),
-	race1 varchar(2944),
-	CONSTRAINT pk_clinical_nte_race1 PRIMARY KEY(clinical_nte,race1),
+	clinical_nte varchar(254),
+	race1 varchar(2048),
 	CONSTRAINT fk_clinical_nte_race1 FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_race1` WRITE;
@@ -3550,9 +3400,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_result`;
 CREATE TABLE `clinical_nte_result` (
-	clinical_nte varchar(128),
-	result varchar(2944),
-	CONSTRAINT pk_clinical_nte_result PRIMARY KEY(clinical_nte,result),
+	clinical_nte varchar(254),
+	result varchar(2048),
 	CONSTRAINT fk_clinical_nte_result FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_result` WRITE;
@@ -3561,9 +3410,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_submitted_tumor_site`;
 CREATE TABLE `clinical_nte_submitted_tumor_site` (
-	clinical_nte varchar(128),
-	submitted_tumor_site varchar(2944),
-	CONSTRAINT pk_clinical_nte_submitted_tumor_site PRIMARY KEY(clinical_nte,submitted_tumor_site),
+	clinical_nte varchar(254),
+	submitted_tumor_site varchar(2048),
 	CONSTRAINT fk_clinical_nte_submitted_tumor_site FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_submitted_tumor_site` WRITE;
@@ -3572,9 +3420,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_tumor_necrosis_percent`;
 CREATE TABLE `clinical_nte_tumor_necrosis_percent` (
-	clinical_nte varchar(128),
-	tumor_necrosis_percent varchar(2944),
-	CONSTRAINT pk_clinical_nte_tumor_necrosis_percent PRIMARY KEY(clinical_nte,tumor_necrosis_percent),
+	clinical_nte varchar(254),
+	tumor_necrosis_percent varchar(2048),
 	CONSTRAINT fk_clinical_nte_tumor_necrosis_percent FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_tumor_necrosis_percent` WRITE;
@@ -3583,9 +3430,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_tumor_nuclei_percent`;
 CREATE TABLE `clinical_nte_tumor_nuclei_percent` (
-	clinical_nte varchar(128),
-	tumor_nuclei_percent varchar(2944),
-	CONSTRAINT pk_clinical_nte_tumor_nuclei_percent PRIMARY KEY(clinical_nte,tumor_nuclei_percent),
+	clinical_nte varchar(254),
+	tumor_nuclei_percent varchar(2048),
 	CONSTRAINT fk_clinical_nte_tumor_nuclei_percent FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_tumor_nuclei_percent` WRITE;
@@ -3594,9 +3440,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_tumor_weight`;
 CREATE TABLE `clinical_nte_tumor_weight` (
-	clinical_nte varchar(128),
-	tumor_weight varchar(2944),
-	CONSTRAINT pk_clinical_nte_tumor_weight PRIMARY KEY(clinical_nte,tumor_weight),
+	clinical_nte varchar(254),
+	tumor_weight varchar(2048),
 	CONSTRAINT fk_clinical_nte_tumor_weight FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_tumor_weight` WRITE;
@@ -3605,9 +3450,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_nte_vial_number`;
 CREATE TABLE `clinical_nte_vial_number` (
-	clinical_nte varchar(128),
-	vial_number varchar(2944),
-	CONSTRAINT pk_clinical_nte_vial_number PRIMARY KEY(clinical_nte,vial_number),
+	clinical_nte varchar(254),
+	vial_number varchar(2048),
 	CONSTRAINT fk_clinical_nte_vial_number FOREIGN KEY(clinical_nte) REFERENCES `clinical_nte_main`(clinical_nte)
 );
 LOCK TABLES `clinical_nte_vial_number` WRITE;
@@ -3616,9 +3460,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_bcr_aliquot_barcode`;
 CREATE TABLE `clinical_omf_bcr_aliquot_barcode` (
-	clinical_omf varchar(128),
-	bcr_aliquot_barcode varchar(2944),
-	CONSTRAINT pk_clinical_omf_bcr_aliquot_barcode PRIMARY KEY(clinical_omf,bcr_aliquot_barcode),
+	clinical_omf varchar(254),
+	bcr_aliquot_barcode varchar(2048),
 	CONSTRAINT fk_clinical_omf_bcr_aliquot_barcode FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_bcr_aliquot_barcode` WRITE;
@@ -3627,9 +3470,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_bcr_analyte_barcode`;
 CREATE TABLE `clinical_omf_bcr_analyte_barcode` (
-	clinical_omf varchar(128),
-	bcr_analyte_barcode varchar(2944),
-	CONSTRAINT pk_clinical_omf_bcr_analyte_barcode PRIMARY KEY(clinical_omf,bcr_analyte_barcode),
+	clinical_omf varchar(254),
+	bcr_analyte_barcode varchar(2048),
 	CONSTRAINT fk_clinical_omf_bcr_analyte_barcode FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_bcr_analyte_barcode` WRITE;
@@ -3638,9 +3480,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_bcr_drug_barcode`;
 CREATE TABLE `clinical_omf_bcr_drug_barcode` (
-	clinical_omf varchar(128),
-	bcr_drug_barcode varchar(2944),
-	CONSTRAINT pk_clinical_omf_bcr_drug_barcode PRIMARY KEY(clinical_omf,bcr_drug_barcode),
+	clinical_omf varchar(254),
+	bcr_drug_barcode varchar(2048),
 	CONSTRAINT fk_clinical_omf_bcr_drug_barcode FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_bcr_drug_barcode` WRITE;
@@ -3649,9 +3490,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_bcr_followup_barcode`;
 CREATE TABLE `clinical_omf_bcr_followup_barcode` (
-	clinical_omf varchar(128),
-	bcr_followup_barcode varchar(2944),
-	CONSTRAINT pk_clinical_omf_bcr_followup_barcode PRIMARY KEY(clinical_omf,bcr_followup_barcode),
+	clinical_omf varchar(254),
+	bcr_followup_barcode varchar(2048),
 	CONSTRAINT fk_clinical_omf_bcr_followup_barcode FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_bcr_followup_barcode` WRITE;
@@ -3660,9 +3500,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_bcr_omf_barcode`;
 CREATE TABLE `clinical_omf_bcr_omf_barcode` (
-	clinical_omf varchar(128),
-	bcr_omf_barcode varchar(2944),
-	CONSTRAINT pk_clinical_omf_bcr_omf_barcode PRIMARY KEY(clinical_omf,bcr_omf_barcode),
+	clinical_omf varchar(254),
+	bcr_omf_barcode varchar(2048),
 	CONSTRAINT fk_clinical_omf_bcr_omf_barcode FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_bcr_omf_barcode` WRITE;
@@ -3671,9 +3510,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_bcr_omf_uuid`;
 CREATE TABLE `clinical_omf_bcr_omf_uuid` (
-	clinical_omf varchar(128),
-	bcr_omf_uuid varchar(2944),
-	CONSTRAINT pk_clinical_omf_bcr_omf_uuid PRIMARY KEY(clinical_omf,bcr_omf_uuid),
+	clinical_omf varchar(254),
+	bcr_omf_uuid varchar(2048),
 	CONSTRAINT fk_clinical_omf_bcr_omf_uuid FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_bcr_omf_uuid` WRITE;
@@ -3682,9 +3520,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_bcr_sample_barcode`;
 CREATE TABLE `clinical_omf_bcr_sample_barcode` (
-	clinical_omf varchar(128),
-	bcr_sample_barcode varchar(2944),
-	CONSTRAINT pk_clinical_omf_bcr_sample_barcode PRIMARY KEY(clinical_omf,bcr_sample_barcode),
+	clinical_omf varchar(254),
+	bcr_sample_barcode varchar(2048),
 	CONSTRAINT fk_clinical_omf_bcr_sample_barcode FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_bcr_sample_barcode` WRITE;
@@ -3693,9 +3530,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_bcr_sample_uuid`;
 CREATE TABLE `clinical_omf_bcr_sample_uuid` (
-	clinical_omf varchar(128),
-	bcr_sample_uuid varchar(2944),
-	CONSTRAINT pk_clinical_omf_bcr_sample_uuid PRIMARY KEY(clinical_omf,bcr_sample_uuid),
+	clinical_omf varchar(254),
+	bcr_sample_uuid varchar(2048),
 	CONSTRAINT fk_clinical_omf_bcr_sample_uuid FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_bcr_sample_uuid` WRITE;
@@ -3704,9 +3540,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_bcr_slide_barcode`;
 CREATE TABLE `clinical_omf_bcr_slide_barcode` (
-	clinical_omf varchar(128),
-	bcr_slide_barcode varchar(2944),
-	CONSTRAINT pk_clinical_omf_bcr_slide_barcode PRIMARY KEY(clinical_omf,bcr_slide_barcode),
+	clinical_omf varchar(254),
+	bcr_slide_barcode varchar(2048),
 	CONSTRAINT fk_clinical_omf_bcr_slide_barcode FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_bcr_slide_barcode` WRITE;
@@ -3715,9 +3550,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_days_to_normal_sample_procurement`;
 CREATE TABLE `clinical_omf_days_to_normal_sample_procurement` (
-	clinical_omf varchar(128),
-	days_to_normal_sample_procurement varchar(2944),
-	CONSTRAINT pk_clinical_omf_days_to_normal_sample_procurement PRIMARY KEY(clinical_omf,days_to_normal_sample_procurement),
+	clinical_omf varchar(254),
+	days_to_normal_sample_procurement varchar(2048),
 	CONSTRAINT fk_clinical_omf_days_to_normal_sample_procurement FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_days_to_normal_sample_procurement` WRITE;
@@ -3726,9 +3560,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_disease_acronym`;
 CREATE TABLE `clinical_omf_disease_acronym` (
-	clinical_omf varchar(128),
-	disease_acronym varchar(2944),
-	CONSTRAINT pk_clinical_omf_disease_acronym PRIMARY KEY(clinical_omf,disease_acronym),
+	clinical_omf varchar(254),
+	disease_acronym varchar(2048),
 	CONSTRAINT fk_clinical_omf_disease_acronym FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_disease_acronym` WRITE;
@@ -3737,9 +3570,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_form_completion_date`;
 CREATE TABLE `clinical_omf_form_completion_date` (
-	clinical_omf varchar(128),
-	form_completion_date varchar(2944),
-	CONSTRAINT pk_clinical_omf_form_completion_date PRIMARY KEY(clinical_omf,form_completion_date),
+	clinical_omf varchar(254),
+	form_completion_date varchar(2048),
 	CONSTRAINT fk_clinical_omf_form_completion_date FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_form_completion_date` WRITE;
@@ -3748,9 +3580,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_history_neoadjuvant_treatment`;
 CREATE TABLE `clinical_omf_history_neoadjuvant_treatment` (
-	clinical_omf varchar(128),
-	history_neoadjuvant_treatment varchar(2944),
-	CONSTRAINT pk_clinical_omf_history_neoadjuvant_treatment PRIMARY KEY(clinical_omf,history_neoadjuvant_treatment),
+	clinical_omf varchar(254),
+	history_neoadjuvant_treatment varchar(2048),
 	CONSTRAINT fk_clinical_omf_history_neoadjuvant_treatment FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_history_neoadjuvant_treatment` WRITE;
@@ -3759,9 +3590,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_history_other_malignancy`;
 CREATE TABLE `clinical_omf_history_other_malignancy` (
-	clinical_omf varchar(128),
-	history_other_malignancy varchar(2944),
-	CONSTRAINT pk_clinical_omf_history_other_malignancy PRIMARY KEY(clinical_omf,history_other_malignancy),
+	clinical_omf varchar(254),
+	history_other_malignancy varchar(2048),
 	CONSTRAINT fk_clinical_omf_history_other_malignancy FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_history_other_malignancy` WRITE;
@@ -3770,9 +3600,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_method_of_normal_sample_procurement`;
 CREATE TABLE `clinical_omf_method_of_normal_sample_procurement` (
-	clinical_omf varchar(128),
-	method_of_normal_sample_procurement varchar(2944),
-	CONSTRAINT pk_clinical_omf_method_of_normal_sample_procurement PRIMARY KEY(clinical_omf,method_of_normal_sample_procurement),
+	clinical_omf varchar(254),
+	method_of_normal_sample_procurement varchar(2048),
 	CONSTRAINT fk_clinical_omf_method_of_normal_sample_procurement FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_method_of_normal_sample_procurement` WRITE;
@@ -3781,9 +3610,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_ncedna_dna_conc`;
 CREATE TABLE `clinical_omf_ncedna_dna_conc` (
-	clinical_omf varchar(128),
-	ncedna_dna_conc varchar(2944),
-	CONSTRAINT pk_clinical_omf_ncedna_dna_conc PRIMARY KEY(clinical_omf,ncedna_dna_conc),
+	clinical_omf varchar(254),
+	ncedna_dna_conc varchar(2048),
 	CONSTRAINT fk_clinical_omf_ncedna_dna_conc FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_ncedna_dna_conc` WRITE;
@@ -3792,9 +3620,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_new_non_melanoma_event_histologic_type_text`;
 CREATE TABLE `clinical_omf_new_non_melanoma_event_histologic_type_text` (
-	clinical_omf varchar(128),
-	new_non_melanoma_event_histologic_type_text varchar(2944),
-	CONSTRAINT pk_clinical_omf_new_non_melanoma_event_histologic_type_text PRIMARY KEY(clinical_omf,new_non_melanoma_event_histologic_type_text),
+	clinical_omf varchar(254),
+	new_non_melanoma_event_histologic_type_text varchar(2048),
 	CONSTRAINT fk_clinical_omf_new_non_melanoma_event_histologic_type_text FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_new_non_melanoma_event_histologic_type_text` WRITE;
@@ -3803,9 +3630,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_new_tumor_event_dx_days_to`;
 CREATE TABLE `clinical_omf_new_tumor_event_dx_days_to` (
-	clinical_omf varchar(128),
-	new_tumor_event_dx_days_to varchar(2944),
-	CONSTRAINT pk_clinical_omf_new_tumor_event_dx_days_to PRIMARY KEY(clinical_omf,new_tumor_event_dx_days_to),
+	clinical_omf varchar(254),
+	new_tumor_event_dx_days_to varchar(2048),
 	CONSTRAINT fk_clinical_omf_new_tumor_event_dx_days_to FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_new_tumor_event_dx_days_to` WRITE;
@@ -3814,9 +3640,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_new_tumor_event_melanoma_count`;
 CREATE TABLE `clinical_omf_new_tumor_event_melanoma_count` (
-	clinical_omf varchar(128),
-	new_tumor_event_melanoma_count varchar(2944),
-	CONSTRAINT pk_clinical_omf_new_tumor_event_melanoma_count PRIMARY KEY(clinical_omf,new_tumor_event_melanoma_count),
+	clinical_omf varchar(254),
+	new_tumor_event_melanoma_count varchar(2048),
 	CONSTRAINT fk_clinical_omf_new_tumor_event_melanoma_count FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_new_tumor_event_melanoma_count` WRITE;
@@ -3825,9 +3650,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_new_tumor_event_melanoma_location`;
 CREATE TABLE `clinical_omf_new_tumor_event_melanoma_location` (
-	clinical_omf varchar(128),
-	new_tumor_event_melanoma_location varchar(2944),
-	CONSTRAINT pk_clinical_omf_new_tumor_event_melanoma_location PRIMARY KEY(clinical_omf,new_tumor_event_melanoma_location),
+	clinical_omf varchar(254),
+	new_tumor_event_melanoma_location varchar(2048),
 	CONSTRAINT fk_clinical_omf_new_tumor_event_melanoma_location FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_new_tumor_event_melanoma_location` WRITE;
@@ -3836,9 +3660,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_new_tumor_event_met_site`;
 CREATE TABLE `clinical_omf_new_tumor_event_met_site` (
-	clinical_omf varchar(128),
-	new_tumor_event_met_site varchar(2944),
-	CONSTRAINT pk_clinical_omf_new_tumor_event_met_site PRIMARY KEY(clinical_omf,new_tumor_event_met_site),
+	clinical_omf varchar(254),
+	new_tumor_event_met_site varchar(2048),
 	CONSTRAINT fk_clinical_omf_new_tumor_event_met_site FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_new_tumor_event_met_site` WRITE;
@@ -3847,9 +3670,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_new_tumor_event_met_site_other`;
 CREATE TABLE `clinical_omf_new_tumor_event_met_site_other` (
-	clinical_omf varchar(128),
-	new_tumor_event_met_site_other varchar(2944),
-	CONSTRAINT pk_clinical_omf_new_tumor_event_met_site_other PRIMARY KEY(clinical_omf,new_tumor_event_met_site_other),
+	clinical_omf varchar(254),
+	new_tumor_event_met_site_other varchar(2048),
 	CONSTRAINT fk_clinical_omf_new_tumor_event_met_site_other FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_new_tumor_event_met_site_other` WRITE;
@@ -3858,9 +3680,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_new_tumor_event_pharmaceutical_tx`;
 CREATE TABLE `clinical_omf_new_tumor_event_pharmaceutical_tx` (
-	clinical_omf varchar(128),
-	new_tumor_event_pharmaceutical_tx varchar(2944),
-	CONSTRAINT pk_clinical_omf_new_tumor_event_pharmaceutical_tx PRIMARY KEY(clinical_omf,new_tumor_event_pharmaceutical_tx),
+	clinical_omf varchar(254),
+	new_tumor_event_pharmaceutical_tx varchar(2048),
 	CONSTRAINT fk_clinical_omf_new_tumor_event_pharmaceutical_tx FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_new_tumor_event_pharmaceutical_tx` WRITE;
@@ -3869,9 +3690,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_new_tumor_event_radiation_tx`;
 CREATE TABLE `clinical_omf_new_tumor_event_radiation_tx` (
-	clinical_omf varchar(128),
-	new_tumor_event_radiation_tx varchar(2944),
-	CONSTRAINT pk_clinical_omf_new_tumor_event_radiation_tx PRIMARY KEY(clinical_omf,new_tumor_event_radiation_tx),
+	clinical_omf varchar(254),
+	new_tumor_event_radiation_tx varchar(2048),
 	CONSTRAINT fk_clinical_omf_new_tumor_event_radiation_tx FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_new_tumor_event_radiation_tx` WRITE;
@@ -3880,9 +3700,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_new_tumor_event_site`;
 CREATE TABLE `clinical_omf_new_tumor_event_site` (
-	clinical_omf varchar(128),
-	new_tumor_event_site varchar(2944),
-	CONSTRAINT pk_clinical_omf_new_tumor_event_site PRIMARY KEY(clinical_omf,new_tumor_event_site),
+	clinical_omf varchar(254),
+	new_tumor_event_site varchar(2048),
 	CONSTRAINT fk_clinical_omf_new_tumor_event_site FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_new_tumor_event_site` WRITE;
@@ -3891,9 +3710,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_new_tumor_event_surgery`;
 CREATE TABLE `clinical_omf_new_tumor_event_surgery` (
-	clinical_omf varchar(128),
-	new_tumor_event_surgery varchar(2944),
-	CONSTRAINT pk_clinical_omf_new_tumor_event_surgery PRIMARY KEY(clinical_omf,new_tumor_event_surgery),
+	clinical_omf varchar(254),
+	new_tumor_event_surgery varchar(2048),
 	CONSTRAINT fk_clinical_omf_new_tumor_event_surgery FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_new_tumor_event_surgery` WRITE;
@@ -3902,9 +3720,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_new_tumor_event_surgery_days_to`;
 CREATE TABLE `clinical_omf_new_tumor_event_surgery_days_to` (
-	clinical_omf varchar(128),
-	new_tumor_event_surgery_days_to varchar(2944),
-	CONSTRAINT pk_clinical_omf_new_tumor_event_surgery_days_to PRIMARY KEY(clinical_omf,new_tumor_event_surgery_days_to),
+	clinical_omf varchar(254),
+	new_tumor_event_surgery_days_to varchar(2048),
 	CONSTRAINT fk_clinical_omf_new_tumor_event_surgery_days_to FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_new_tumor_event_surgery_days_to` WRITE;
@@ -3913,9 +3730,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_new_tumor_event_type`;
 CREATE TABLE `clinical_omf_new_tumor_event_type` (
-	clinical_omf varchar(128),
-	new_tumor_event_type varchar(2944),
-	CONSTRAINT pk_clinical_omf_new_tumor_event_type PRIMARY KEY(clinical_omf,new_tumor_event_type),
+	clinical_omf varchar(254),
+	new_tumor_event_type varchar(2048),
 	CONSTRAINT fk_clinical_omf_new_tumor_event_type FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_new_tumor_event_type` WRITE;
@@ -3924,9 +3740,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_normal_tissue_anatomic_site`;
 CREATE TABLE `clinical_omf_normal_tissue_anatomic_site` (
-	clinical_omf varchar(128),
-	normal_tissue_anatomic_site varchar(2944),
-	CONSTRAINT pk_clinical_omf_normal_tissue_anatomic_site PRIMARY KEY(clinical_omf,normal_tissue_anatomic_site),
+	clinical_omf varchar(254),
+	normal_tissue_anatomic_site varchar(2048),
 	CONSTRAINT fk_clinical_omf_normal_tissue_anatomic_site FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_normal_tissue_anatomic_site` WRITE;
@@ -3935,9 +3750,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_normal_tissue_proximity`;
 CREATE TABLE `clinical_omf_normal_tissue_proximity` (
-	clinical_omf varchar(128),
-	normal_tissue_proximity varchar(2944),
-	CONSTRAINT pk_clinical_omf_normal_tissue_proximity PRIMARY KEY(clinical_omf,normal_tissue_proximity),
+	clinical_omf varchar(254),
+	normal_tissue_proximity varchar(2048),
 	CONSTRAINT fk_clinical_omf_normal_tissue_proximity FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_normal_tissue_proximity` WRITE;
@@ -3946,9 +3760,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_other_malignancy_anatomic_site`;
 CREATE TABLE `clinical_omf_other_malignancy_anatomic_site` (
-	clinical_omf varchar(128),
-	other_malignancy_anatomic_site varchar(2944),
-	CONSTRAINT pk_clinical_omf_other_malignancy_anatomic_site PRIMARY KEY(clinical_omf,other_malignancy_anatomic_site),
+	clinical_omf varchar(254),
+	other_malignancy_anatomic_site varchar(2048),
 	CONSTRAINT fk_clinical_omf_other_malignancy_anatomic_site FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_other_malignancy_anatomic_site` WRITE;
@@ -3957,9 +3770,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_other_malignancy_anatomic_site_text`;
 CREATE TABLE `clinical_omf_other_malignancy_anatomic_site_text` (
-	clinical_omf varchar(128),
-	other_malignancy_anatomic_site_text varchar(2944),
-	CONSTRAINT pk_clinical_omf_other_malignancy_anatomic_site_text PRIMARY KEY(clinical_omf,other_malignancy_anatomic_site_text),
+	clinical_omf varchar(254),
+	other_malignancy_anatomic_site_text varchar(2048),
 	CONSTRAINT fk_clinical_omf_other_malignancy_anatomic_site_text FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_other_malignancy_anatomic_site_text` WRITE;
@@ -3968,9 +3780,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_other_malignancy_histological_type`;
 CREATE TABLE `clinical_omf_other_malignancy_histological_type` (
-	clinical_omf varchar(128),
-	other_malignancy_histological_type varchar(2944),
-	CONSTRAINT pk_clinical_omf_other_malignancy_histological_type PRIMARY KEY(clinical_omf,other_malignancy_histological_type),
+	clinical_omf varchar(254),
+	other_malignancy_histological_type varchar(2048),
 	CONSTRAINT fk_clinical_omf_other_malignancy_histological_type FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_other_malignancy_histological_type` WRITE;
@@ -3979,9 +3790,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_other_malignancy_laterality`;
 CREATE TABLE `clinical_omf_other_malignancy_laterality` (
-	clinical_omf varchar(128),
-	other_malignancy_laterality varchar(2944),
-	CONSTRAINT pk_clinical_omf_other_malignancy_laterality PRIMARY KEY(clinical_omf,other_malignancy_laterality),
+	clinical_omf varchar(254),
+	other_malignancy_laterality varchar(2048),
 	CONSTRAINT fk_clinical_omf_other_malignancy_laterality FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_other_malignancy_laterality` WRITE;
@@ -3990,9 +3800,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_result`;
 CREATE TABLE `clinical_omf_result` (
-	clinical_omf varchar(128),
-	result varchar(2944),
-	CONSTRAINT pk_clinical_omf_result PRIMARY KEY(clinical_omf,result),
+	clinical_omf varchar(254),
+	result varchar(2048),
 	CONSTRAINT fk_clinical_omf_result FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_result` WRITE;
@@ -4001,9 +3810,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_submitted_tumor_site`;
 CREATE TABLE `clinical_omf_submitted_tumor_site` (
-	clinical_omf varchar(128),
-	submitted_tumor_site varchar(2944),
-	CONSTRAINT pk_clinical_omf_submitted_tumor_site PRIMARY KEY(clinical_omf,submitted_tumor_site),
+	clinical_omf varchar(254),
+	submitted_tumor_site varchar(2048),
 	CONSTRAINT fk_clinical_omf_submitted_tumor_site FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_submitted_tumor_site` WRITE;
@@ -4012,9 +3820,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clinical_omf_vial_number`;
 CREATE TABLE `clinical_omf_vial_number` (
-	clinical_omf varchar(128),
-	vial_number varchar(2944),
-	CONSTRAINT pk_clinical_omf_vial_number PRIMARY KEY(clinical_omf,vial_number),
+	clinical_omf varchar(254),
+	vial_number varchar(2048),
 	CONSTRAINT fk_clinical_omf_vial_number FOREIGN KEY(clinical_omf) REFERENCES `clinical_omf_main`(clinical_omf)
 );
 LOCK TABLES `clinical_omf_vial_number` WRITE;
@@ -4023,9 +3830,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drug_new_tumor_event_surgery`;
 CREATE TABLE `drug_new_tumor_event_surgery` (
-	drug varchar(128),
-	new_tumor_event_surgery varchar(2944),
-	CONSTRAINT pk_drug_new_tumor_event_surgery PRIMARY KEY(drug,new_tumor_event_surgery),
+	drug varchar(254),
+	new_tumor_event_surgery varchar(2048),
 	CONSTRAINT fk_drug_new_tumor_event_surgery FOREIGN KEY(drug) REFERENCES `drug_main`(drug)
 );
 LOCK TABLES `drug_new_tumor_event_surgery` WRITE;
@@ -4034,9 +3840,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `follow_up_new_tumor_event_surgery`;
 CREATE TABLE `follow_up_new_tumor_event_surgery` (
-	follow_up varchar(128),
-	new_tumor_event_surgery varchar(2944),
-	CONSTRAINT pk_follow_up_new_tumor_event_surgery PRIMARY KEY(follow_up,new_tumor_event_surgery),
+	follow_up varchar(254),
+	new_tumor_event_surgery varchar(2048),
 	CONSTRAINT fk_follow_up_new_tumor_event_surgery FOREIGN KEY(follow_up) REFERENCES `follow_up_main`(follow_up)
 );
 LOCK TABLES `follow_up_new_tumor_event_surgery` WRITE;
@@ -4045,9 +3850,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_anatomic_neoplasm_subdivision`;
 CREATE TABLE `normal_control_anatomic_neoplasm_subdivision` (
-	normal_control varchar(128),
-	anatomic_neoplasm_subdivision varchar(2944),
-	CONSTRAINT pk_normal_control_anatomic_neoplasm_subdivision PRIMARY KEY(normal_control,anatomic_neoplasm_subdivision),
+	normal_control varchar(254),
+	anatomic_neoplasm_subdivision varchar(2048),
 	CONSTRAINT fk_normal_control_anatomic_neoplasm_subdivision FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_anatomic_neoplasm_subdivision` WRITE;
@@ -4056,9 +3860,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_bcr_aliquot_barcode`;
 CREATE TABLE `normal_control_bcr_aliquot_barcode` (
-	normal_control varchar(128),
-	bcr_aliquot_barcode varchar(2944),
-	CONSTRAINT pk_normal_control_bcr_aliquot_barcode PRIMARY KEY(normal_control,bcr_aliquot_barcode),
+	normal_control varchar(254),
+	bcr_aliquot_barcode varchar(2048),
 	CONSTRAINT fk_normal_control_bcr_aliquot_barcode FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_bcr_aliquot_barcode` WRITE;
@@ -4067,9 +3870,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_bcr_analyte_barcode`;
 CREATE TABLE `normal_control_bcr_analyte_barcode` (
-	normal_control varchar(128),
-	bcr_analyte_barcode varchar(2944),
-	CONSTRAINT pk_normal_control_bcr_analyte_barcode PRIMARY KEY(normal_control,bcr_analyte_barcode),
+	normal_control varchar(254),
+	bcr_analyte_barcode varchar(2048),
 	CONSTRAINT fk_normal_control_bcr_analyte_barcode FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_bcr_analyte_barcode` WRITE;
@@ -4078,9 +3880,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_bcr_drug_barcode`;
 CREATE TABLE `normal_control_bcr_drug_barcode` (
-	normal_control varchar(128),
-	bcr_drug_barcode varchar(2944),
-	CONSTRAINT pk_normal_control_bcr_drug_barcode PRIMARY KEY(normal_control,bcr_drug_barcode),
+	normal_control varchar(254),
+	bcr_drug_barcode varchar(2048),
 	CONSTRAINT fk_normal_control_bcr_drug_barcode FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_bcr_drug_barcode` WRITE;
@@ -4089,9 +3890,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_bcr_followup_barcode`;
 CREATE TABLE `normal_control_bcr_followup_barcode` (
-	normal_control varchar(128),
-	bcr_followup_barcode varchar(2944),
-	CONSTRAINT pk_normal_control_bcr_followup_barcode PRIMARY KEY(normal_control,bcr_followup_barcode),
+	normal_control varchar(254),
+	bcr_followup_barcode varchar(2048),
 	CONSTRAINT fk_normal_control_bcr_followup_barcode FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_bcr_followup_barcode` WRITE;
@@ -4100,9 +3900,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_bcr_omf_barcode`;
 CREATE TABLE `normal_control_bcr_omf_barcode` (
-	normal_control varchar(128),
-	bcr_omf_barcode varchar(2944),
-	CONSTRAINT pk_normal_control_bcr_omf_barcode PRIMARY KEY(normal_control,bcr_omf_barcode),
+	normal_control varchar(254),
+	bcr_omf_barcode varchar(2048),
 	CONSTRAINT fk_normal_control_bcr_omf_barcode FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_bcr_omf_barcode` WRITE;
@@ -4111,9 +3910,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_bcr_omf_uuid`;
 CREATE TABLE `normal_control_bcr_omf_uuid` (
-	normal_control varchar(128),
-	bcr_omf_uuid varchar(2944),
-	CONSTRAINT pk_normal_control_bcr_omf_uuid PRIMARY KEY(normal_control,bcr_omf_uuid),
+	normal_control varchar(254),
+	bcr_omf_uuid varchar(2048),
 	CONSTRAINT fk_normal_control_bcr_omf_uuid FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_bcr_omf_uuid` WRITE;
@@ -4122,9 +3920,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_bcr_radiation_barcode`;
 CREATE TABLE `normal_control_bcr_radiation_barcode` (
-	normal_control varchar(128),
-	bcr_radiation_barcode varchar(2944),
-	CONSTRAINT pk_normal_control_bcr_radiation_barcode PRIMARY KEY(normal_control,bcr_radiation_barcode),
+	normal_control varchar(254),
+	bcr_radiation_barcode varchar(2048),
 	CONSTRAINT fk_normal_control_bcr_radiation_barcode FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_bcr_radiation_barcode` WRITE;
@@ -4133,9 +3930,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_bcr_sample_barcode`;
 CREATE TABLE `normal_control_bcr_sample_barcode` (
-	normal_control varchar(128),
-	bcr_sample_barcode varchar(2944),
-	CONSTRAINT pk_normal_control_bcr_sample_barcode PRIMARY KEY(normal_control,bcr_sample_barcode),
+	normal_control varchar(254),
+	bcr_sample_barcode varchar(2048),
 	CONSTRAINT fk_normal_control_bcr_sample_barcode FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_bcr_sample_barcode` WRITE;
@@ -4144,9 +3940,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_bcr_sample_uuid`;
 CREATE TABLE `normal_control_bcr_sample_uuid` (
-	normal_control varchar(128),
-	bcr_sample_uuid varchar(2944),
-	CONSTRAINT pk_normal_control_bcr_sample_uuid PRIMARY KEY(normal_control,bcr_sample_uuid),
+	normal_control varchar(254),
+	bcr_sample_uuid varchar(2048),
 	CONSTRAINT fk_normal_control_bcr_sample_uuid FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_bcr_sample_uuid` WRITE;
@@ -4155,9 +3950,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_bcr_shipment_barcode`;
 CREATE TABLE `normal_control_bcr_shipment_barcode` (
-	normal_control varchar(128),
-	bcr_shipment_barcode varchar(2944),
-	CONSTRAINT pk_normal_control_bcr_shipment_barcode PRIMARY KEY(normal_control,bcr_shipment_barcode),
+	normal_control varchar(254),
+	bcr_shipment_barcode varchar(2048),
 	CONSTRAINT fk_normal_control_bcr_shipment_barcode FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_bcr_shipment_barcode` WRITE;
@@ -4166,9 +3960,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_bcr_slide_barcode`;
 CREATE TABLE `normal_control_bcr_slide_barcode` (
-	normal_control varchar(128),
-	bcr_slide_barcode varchar(2944),
-	CONSTRAINT pk_normal_control_bcr_slide_barcode PRIMARY KEY(normal_control,bcr_slide_barcode),
+	normal_control varchar(254),
+	bcr_slide_barcode varchar(2048),
 	CONSTRAINT fk_normal_control_bcr_slide_barcode FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_bcr_slide_barcode` WRITE;
@@ -4177,9 +3970,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_days_to_death`;
 CREATE TABLE `normal_control_days_to_death` (
-	normal_control varchar(128),
-	days_to_death varchar(2944),
-	CONSTRAINT pk_normal_control_days_to_death PRIMARY KEY(normal_control,days_to_death),
+	normal_control varchar(254),
+	days_to_death varchar(2048),
 	CONSTRAINT fk_normal_control_days_to_death FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_days_to_death` WRITE;
@@ -4188,9 +3980,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_days_to_normal_sample_procurement`;
 CREATE TABLE `normal_control_days_to_normal_sample_procurement` (
-	normal_control varchar(128),
-	days_to_normal_sample_procurement varchar(2944),
-	CONSTRAINT pk_normal_control_days_to_normal_sample_procurement PRIMARY KEY(normal_control,days_to_normal_sample_procurement),
+	normal_control varchar(254),
+	days_to_normal_sample_procurement varchar(2048),
 	CONSTRAINT fk_normal_control_days_to_normal_sample_procurement FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_days_to_normal_sample_procurement` WRITE;
@@ -4199,9 +3990,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_ethnicity1`;
 CREATE TABLE `normal_control_ethnicity1` (
-	normal_control varchar(128),
-	ethnicity1 varchar(2944),
-	CONSTRAINT pk_normal_control_ethnicity1 PRIMARY KEY(normal_control,ethnicity1),
+	normal_control varchar(254),
+	ethnicity1 varchar(2048),
 	CONSTRAINT fk_normal_control_ethnicity1 FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_ethnicity1` WRITE;
@@ -4210,9 +4000,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_form_completion_date`;
 CREATE TABLE `normal_control_form_completion_date` (
-	normal_control varchar(128),
-	form_completion_date varchar(2944),
-	CONSTRAINT pk_normal_control_form_completion_date PRIMARY KEY(normal_control,form_completion_date),
+	normal_control varchar(254),
+	form_completion_date varchar(2048),
 	CONSTRAINT fk_normal_control_form_completion_date FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_form_completion_date` WRITE;
@@ -4221,9 +4010,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_histologic_diagnosis`;
 CREATE TABLE `normal_control_histologic_diagnosis` (
-	normal_control varchar(128),
-	histologic_diagnosis varchar(2944),
-	CONSTRAINT pk_normal_control_histologic_diagnosis PRIMARY KEY(normal_control,histologic_diagnosis),
+	normal_control varchar(254),
+	histologic_diagnosis varchar(2048),
 	CONSTRAINT fk_normal_control_histologic_diagnosis FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_histologic_diagnosis` WRITE;
@@ -4232,9 +4020,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_histological_type`;
 CREATE TABLE `normal_control_histological_type` (
-	normal_control varchar(128),
-	histological_type varchar(2944),
-	CONSTRAINT pk_normal_control_histological_type PRIMARY KEY(normal_control,histological_type),
+	normal_control varchar(254),
+	histological_type varchar(2048),
 	CONSTRAINT fk_normal_control_histological_type FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_histological_type` WRITE;
@@ -4243,9 +4030,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_history_neoadjuvant_treatment`;
 CREATE TABLE `normal_control_history_neoadjuvant_treatment` (
-	normal_control varchar(128),
-	history_neoadjuvant_treatment varchar(2944),
-	CONSTRAINT pk_normal_control_history_neoadjuvant_treatment PRIMARY KEY(normal_control,history_neoadjuvant_treatment),
+	normal_control varchar(254),
+	history_neoadjuvant_treatment varchar(2048),
 	CONSTRAINT fk_normal_control_history_neoadjuvant_treatment FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_history_neoadjuvant_treatment` WRITE;
@@ -4254,9 +4040,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_history_of_neoadjuvant_treatment`;
 CREATE TABLE `normal_control_history_of_neoadjuvant_treatment` (
-	normal_control varchar(128),
-	history_of_neoadjuvant_treatment varchar(2944),
-	CONSTRAINT pk_normal_control_history_of_neoadjuvant_treatment PRIMARY KEY(normal_control,history_of_neoadjuvant_treatment),
+	normal_control varchar(254),
+	history_of_neoadjuvant_treatment varchar(2048),
 	CONSTRAINT fk_normal_control_history_of_neoadjuvant_treatment FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_history_of_neoadjuvant_treatment` WRITE;
@@ -4265,9 +4050,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_history_other_malignancy`;
 CREATE TABLE `normal_control_history_other_malignancy` (
-	normal_control varchar(128),
-	history_other_malignancy varchar(2944),
-	CONSTRAINT pk_normal_control_history_other_malignancy PRIMARY KEY(normal_control,history_other_malignancy),
+	normal_control varchar(254),
+	history_other_malignancy varchar(2048),
 	CONSTRAINT fk_normal_control_history_other_malignancy FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_history_other_malignancy` WRITE;
@@ -4276,9 +4060,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_method_of_normal_sample_procurement`;
 CREATE TABLE `normal_control_method_of_normal_sample_procurement` (
-	normal_control varchar(128),
-	method_of_normal_sample_procurement varchar(2944),
-	CONSTRAINT pk_normal_control_method_of_normal_sample_procurement PRIMARY KEY(normal_control,method_of_normal_sample_procurement),
+	normal_control varchar(254),
+	method_of_normal_sample_procurement varchar(2048),
 	CONSTRAINT fk_normal_control_method_of_normal_sample_procurement FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_method_of_normal_sample_procurement` WRITE;
@@ -4287,9 +4070,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_ncedna_dna_conc`;
 CREATE TABLE `normal_control_ncedna_dna_conc` (
-	normal_control varchar(128),
-	ncedna_dna_conc varchar(2944),
-	CONSTRAINT pk_normal_control_ncedna_dna_conc PRIMARY KEY(normal_control,ncedna_dna_conc),
+	normal_control varchar(254),
+	ncedna_dna_conc varchar(2048),
 	CONSTRAINT fk_normal_control_ncedna_dna_conc FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_ncedna_dna_conc` WRITE;
@@ -4298,9 +4080,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_ncedna_dna_qm`;
 CREATE TABLE `normal_control_ncedna_dna_qm` (
-	normal_control varchar(128),
-	ncedna_dna_qm varchar(2944),
-	CONSTRAINT pk_normal_control_ncedna_dna_qm PRIMARY KEY(normal_control,ncedna_dna_qm),
+	normal_control varchar(254),
+	ncedna_dna_qm varchar(2048),
 	CONSTRAINT fk_normal_control_ncedna_dna_qm FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_ncedna_dna_qm` WRITE;
@@ -4309,9 +4090,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_ncedna_dna_qty`;
 CREATE TABLE `normal_control_ncedna_dna_qty` (
-	normal_control varchar(128),
-	ncedna_dna_qty varchar(2944),
-	CONSTRAINT pk_normal_control_ncedna_dna_qty PRIMARY KEY(normal_control,ncedna_dna_qty),
+	normal_control varchar(254),
+	ncedna_dna_qty varchar(2048),
 	CONSTRAINT fk_normal_control_ncedna_dna_qty FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_ncedna_dna_qty` WRITE;
@@ -4320,9 +4100,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_ncedna_dna_vol`;
 CREATE TABLE `normal_control_ncedna_dna_vol` (
-	normal_control varchar(128),
-	ncedna_dna_vol varchar(2944),
-	CONSTRAINT pk_normal_control_ncedna_dna_vol PRIMARY KEY(normal_control,ncedna_dna_vol),
+	normal_control varchar(254),
+	ncedna_dna_vol varchar(2048),
 	CONSTRAINT fk_normal_control_ncedna_dna_vol FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_ncedna_dna_vol` WRITE;
@@ -4331,9 +4110,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_new_non_melanoma_event_histologic_type_text`;
 CREATE TABLE `normal_control_new_non_melanoma_event_histologic_type_text` (
-	normal_control varchar(128),
-	new_non_melanoma_event_histologic_type_text varchar(2944),
-	CONSTRAINT pk_normal_control_new_non_melanoma_event_histologic_type_text PRIMARY KEY(normal_control,new_non_melanoma_event_histologic_type_text),
+	normal_control varchar(254),
+	new_non_melanoma_event_histologic_type_text varchar(2048),
 	CONSTRAINT fk_normal_control_new_non_melanoma_event_histologic_type_text FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_new_non_melanoma_event_histologic_type_text` WRITE;
@@ -4342,9 +4120,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_new_tumor_event_dx_days_to`;
 CREATE TABLE `normal_control_new_tumor_event_dx_days_to` (
-	normal_control varchar(128),
-	new_tumor_event_dx_days_to varchar(2944),
-	CONSTRAINT pk_normal_control_new_tumor_event_dx_days_to PRIMARY KEY(normal_control,new_tumor_event_dx_days_to),
+	normal_control varchar(254),
+	new_tumor_event_dx_days_to varchar(2048),
 	CONSTRAINT fk_normal_control_new_tumor_event_dx_days_to FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_new_tumor_event_dx_days_to` WRITE;
@@ -4353,9 +4130,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_new_tumor_event_melanoma_count`;
 CREATE TABLE `normal_control_new_tumor_event_melanoma_count` (
-	normal_control varchar(128),
-	new_tumor_event_melanoma_count varchar(2944),
-	CONSTRAINT pk_normal_control_new_tumor_event_melanoma_count PRIMARY KEY(normal_control,new_tumor_event_melanoma_count),
+	normal_control varchar(254),
+	new_tumor_event_melanoma_count varchar(2048),
 	CONSTRAINT fk_normal_control_new_tumor_event_melanoma_count FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_new_tumor_event_melanoma_count` WRITE;
@@ -4364,9 +4140,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_new_tumor_event_melanoma_location`;
 CREATE TABLE `normal_control_new_tumor_event_melanoma_location` (
-	normal_control varchar(128),
-	new_tumor_event_melanoma_location varchar(2944),
-	CONSTRAINT pk_normal_control_new_tumor_event_melanoma_location PRIMARY KEY(normal_control,new_tumor_event_melanoma_location),
+	normal_control varchar(254),
+	new_tumor_event_melanoma_location varchar(2048),
 	CONSTRAINT fk_normal_control_new_tumor_event_melanoma_location FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_new_tumor_event_melanoma_location` WRITE;
@@ -4375,9 +4150,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_new_tumor_event_met_site`;
 CREATE TABLE `normal_control_new_tumor_event_met_site` (
-	normal_control varchar(128),
-	new_tumor_event_met_site varchar(2944),
-	CONSTRAINT pk_normal_control_new_tumor_event_met_site PRIMARY KEY(normal_control,new_tumor_event_met_site),
+	normal_control varchar(254),
+	new_tumor_event_met_site varchar(2048),
 	CONSTRAINT fk_normal_control_new_tumor_event_met_site FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_new_tumor_event_met_site` WRITE;
@@ -4386,9 +4160,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_new_tumor_event_met_site_other`;
 CREATE TABLE `normal_control_new_tumor_event_met_site_other` (
-	normal_control varchar(128),
-	new_tumor_event_met_site_other varchar(2944),
-	CONSTRAINT pk_normal_control_new_tumor_event_met_site_other PRIMARY KEY(normal_control,new_tumor_event_met_site_other),
+	normal_control varchar(254),
+	new_tumor_event_met_site_other varchar(2048),
 	CONSTRAINT fk_normal_control_new_tumor_event_met_site_other FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_new_tumor_event_met_site_other` WRITE;
@@ -4397,9 +4170,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_new_tumor_event_pharmaceutical_tx`;
 CREATE TABLE `normal_control_new_tumor_event_pharmaceutical_tx` (
-	normal_control varchar(128),
-	new_tumor_event_pharmaceutical_tx varchar(2944),
-	CONSTRAINT pk_normal_control_new_tumor_event_pharmaceutical_tx PRIMARY KEY(normal_control,new_tumor_event_pharmaceutical_tx),
+	normal_control varchar(254),
+	new_tumor_event_pharmaceutical_tx varchar(2048),
 	CONSTRAINT fk_normal_control_new_tumor_event_pharmaceutical_tx FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_new_tumor_event_pharmaceutical_tx` WRITE;
@@ -4408,9 +4180,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_new_tumor_event_radiation_tx`;
 CREATE TABLE `normal_control_new_tumor_event_radiation_tx` (
-	normal_control varchar(128),
-	new_tumor_event_radiation_tx varchar(2944),
-	CONSTRAINT pk_normal_control_new_tumor_event_radiation_tx PRIMARY KEY(normal_control,new_tumor_event_radiation_tx),
+	normal_control varchar(254),
+	new_tumor_event_radiation_tx varchar(2048),
 	CONSTRAINT fk_normal_control_new_tumor_event_radiation_tx FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_new_tumor_event_radiation_tx` WRITE;
@@ -4419,9 +4190,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_new_tumor_event_site`;
 CREATE TABLE `normal_control_new_tumor_event_site` (
-	normal_control varchar(128),
-	new_tumor_event_site varchar(2944),
-	CONSTRAINT pk_normal_control_new_tumor_event_site PRIMARY KEY(normal_control,new_tumor_event_site),
+	normal_control varchar(254),
+	new_tumor_event_site varchar(2048),
 	CONSTRAINT fk_normal_control_new_tumor_event_site FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_new_tumor_event_site` WRITE;
@@ -4430,9 +4200,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_new_tumor_event_surgery`;
 CREATE TABLE `normal_control_new_tumor_event_surgery` (
-	normal_control varchar(128),
-	new_tumor_event_surgery varchar(2944),
-	CONSTRAINT pk_normal_control_new_tumor_event_surgery PRIMARY KEY(normal_control,new_tumor_event_surgery),
+	normal_control varchar(254),
+	new_tumor_event_surgery varchar(2048),
 	CONSTRAINT fk_normal_control_new_tumor_event_surgery FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_new_tumor_event_surgery` WRITE;
@@ -4441,9 +4210,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_new_tumor_event_surgery_days_to`;
 CREATE TABLE `normal_control_new_tumor_event_surgery_days_to` (
-	normal_control varchar(128),
-	new_tumor_event_surgery_days_to varchar(2944),
-	CONSTRAINT pk_normal_control_new_tumor_event_surgery_days_to PRIMARY KEY(normal_control,new_tumor_event_surgery_days_to),
+	normal_control varchar(254),
+	new_tumor_event_surgery_days_to varchar(2048),
 	CONSTRAINT fk_normal_control_new_tumor_event_surgery_days_to FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_new_tumor_event_surgery_days_to` WRITE;
@@ -4452,9 +4220,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_new_tumor_event_type`;
 CREATE TABLE `normal_control_new_tumor_event_type` (
-	normal_control varchar(128),
-	new_tumor_event_type varchar(2944),
-	CONSTRAINT pk_normal_control_new_tumor_event_type PRIMARY KEY(normal_control,new_tumor_event_type),
+	normal_control varchar(254),
+	new_tumor_event_type varchar(2048),
 	CONSTRAINT fk_normal_control_new_tumor_event_type FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_new_tumor_event_type` WRITE;
@@ -4463,9 +4230,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_normal_tissue_anatomic_site`;
 CREATE TABLE `normal_control_normal_tissue_anatomic_site` (
-	normal_control varchar(128),
-	normal_tissue_anatomic_site varchar(2944),
-	CONSTRAINT pk_normal_control_normal_tissue_anatomic_site PRIMARY KEY(normal_control,normal_tissue_anatomic_site),
+	normal_control varchar(254),
+	normal_tissue_anatomic_site varchar(2048),
 	CONSTRAINT fk_normal_control_normal_tissue_anatomic_site FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_normal_tissue_anatomic_site` WRITE;
@@ -4474,9 +4240,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_normal_tissue_proximity`;
 CREATE TABLE `normal_control_normal_tissue_proximity` (
-	normal_control varchar(128),
-	normal_tissue_proximity varchar(2944),
-	CONSTRAINT pk_normal_control_normal_tissue_proximity PRIMARY KEY(normal_control,normal_tissue_proximity),
+	normal_control varchar(254),
+	normal_tissue_proximity varchar(2048),
 	CONSTRAINT fk_normal_control_normal_tissue_proximity FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_normal_tissue_proximity` WRITE;
@@ -4485,9 +4250,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_other_malignancy_anatomic_site`;
 CREATE TABLE `normal_control_other_malignancy_anatomic_site` (
-	normal_control varchar(128),
-	other_malignancy_anatomic_site varchar(2944),
-	CONSTRAINT pk_normal_control_other_malignancy_anatomic_site PRIMARY KEY(normal_control,other_malignancy_anatomic_site),
+	normal_control varchar(254),
+	other_malignancy_anatomic_site varchar(2048),
 	CONSTRAINT fk_normal_control_other_malignancy_anatomic_site FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_other_malignancy_anatomic_site` WRITE;
@@ -4496,9 +4260,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_other_malignancy_anatomic_site_text`;
 CREATE TABLE `normal_control_other_malignancy_anatomic_site_text` (
-	normal_control varchar(128),
-	other_malignancy_anatomic_site_text varchar(2944),
-	CONSTRAINT pk_normal_control_other_malignancy_anatomic_site_text PRIMARY KEY(normal_control,other_malignancy_anatomic_site_text),
+	normal_control varchar(254),
+	other_malignancy_anatomic_site_text varchar(2048),
 	CONSTRAINT fk_normal_control_other_malignancy_anatomic_site_text FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_other_malignancy_anatomic_site_text` WRITE;
@@ -4507,9 +4270,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_other_malignancy_histological_type`;
 CREATE TABLE `normal_control_other_malignancy_histological_type` (
-	normal_control varchar(128),
-	other_malignancy_histological_type varchar(2944),
-	CONSTRAINT pk_normal_control_other_malignancy_histological_type PRIMARY KEY(normal_control,other_malignancy_histological_type),
+	normal_control varchar(254),
+	other_malignancy_histological_type varchar(2048),
 	CONSTRAINT fk_normal_control_other_malignancy_histological_type FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_other_malignancy_histological_type` WRITE;
@@ -4518,9 +4280,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_other_malignancy_laterality`;
 CREATE TABLE `normal_control_other_malignancy_laterality` (
-	normal_control varchar(128),
-	other_malignancy_laterality varchar(2944),
-	CONSTRAINT pk_normal_control_other_malignancy_laterality PRIMARY KEY(normal_control,other_malignancy_laterality),
+	normal_control varchar(254),
+	other_malignancy_laterality varchar(2048),
 	CONSTRAINT fk_normal_control_other_malignancy_laterality FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_other_malignancy_laterality` WRITE;
@@ -4529,9 +4290,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_prior_dx`;
 CREATE TABLE `normal_control_prior_dx` (
-	normal_control varchar(128),
-	prior_dx varchar(2944),
-	CONSTRAINT pk_normal_control_prior_dx PRIMARY KEY(normal_control,prior_dx),
+	normal_control varchar(254),
+	prior_dx varchar(2048),
 	CONSTRAINT fk_normal_control_prior_dx FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_prior_dx` WRITE;
@@ -4540,9 +4300,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_race1`;
 CREATE TABLE `normal_control_race1` (
-	normal_control varchar(128),
-	race1 varchar(2944),
-	CONSTRAINT pk_normal_control_race1 PRIMARY KEY(normal_control,race1),
+	normal_control varchar(254),
+	race1 varchar(2048),
 	CONSTRAINT fk_normal_control_race1 FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_race1` WRITE;
@@ -4551,9 +4310,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_result`;
 CREATE TABLE `normal_control_result` (
-	normal_control varchar(128),
-	result varchar(2944),
-	CONSTRAINT pk_normal_control_result PRIMARY KEY(normal_control,result),
+	normal_control varchar(254),
+	result varchar(2048),
 	CONSTRAINT fk_normal_control_result FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_result` WRITE;
@@ -4562,9 +4320,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_submitted_tumor_site`;
 CREATE TABLE `normal_control_submitted_tumor_site` (
-	normal_control varchar(128),
-	submitted_tumor_site varchar(2944),
-	CONSTRAINT pk_normal_control_submitted_tumor_site PRIMARY KEY(normal_control,submitted_tumor_site),
+	normal_control varchar(254),
+	submitted_tumor_site varchar(2048),
 	CONSTRAINT fk_normal_control_submitted_tumor_site FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_submitted_tumor_site` WRITE;
@@ -4573,9 +4330,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_tumor_necrosis_percent`;
 CREATE TABLE `normal_control_tumor_necrosis_percent` (
-	normal_control varchar(128),
-	tumor_necrosis_percent varchar(2944),
-	CONSTRAINT pk_normal_control_tumor_necrosis_percent PRIMARY KEY(normal_control,tumor_necrosis_percent),
+	normal_control varchar(254),
+	tumor_necrosis_percent varchar(2048),
 	CONSTRAINT fk_normal_control_tumor_necrosis_percent FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_tumor_necrosis_percent` WRITE;
@@ -4584,9 +4340,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_tumor_nuclei_percent`;
 CREATE TABLE `normal_control_tumor_nuclei_percent` (
-	normal_control varchar(128),
-	tumor_nuclei_percent varchar(2944),
-	CONSTRAINT pk_normal_control_tumor_nuclei_percent PRIMARY KEY(normal_control,tumor_nuclei_percent),
+	normal_control varchar(254),
+	tumor_nuclei_percent varchar(2048),
 	CONSTRAINT fk_normal_control_tumor_nuclei_percent FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_tumor_nuclei_percent` WRITE;
@@ -4595,9 +4350,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_tumor_weight`;
 CREATE TABLE `normal_control_tumor_weight` (
-	normal_control varchar(128),
-	tumor_weight varchar(2944),
-	CONSTRAINT pk_normal_control_tumor_weight PRIMARY KEY(normal_control,tumor_weight),
+	normal_control varchar(254),
+	tumor_weight varchar(2048),
 	CONSTRAINT fk_normal_control_tumor_weight FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_tumor_weight` WRITE;
@@ -4606,9 +4360,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `normal_control_vial_number`;
 CREATE TABLE `normal_control_vial_number` (
-	normal_control varchar(128),
-	vial_number varchar(2944),
-	CONSTRAINT pk_normal_control_vial_number PRIMARY KEY(normal_control,vial_number),
+	normal_control varchar(254),
+	vial_number varchar(2048),
 	CONSTRAINT fk_normal_control_vial_number FOREIGN KEY(normal_control) REFERENCES `normal_control_main`(normal_control)
 );
 LOCK TABLES `normal_control_vial_number` WRITE;
@@ -4617,9 +4370,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_anatomic_neoplasm_subdivision`;
 CREATE TABLE `patient_anatomic_neoplasm_subdivision` (
-	patient varchar(128),
-	anatomic_neoplasm_subdivision varchar(2944),
-	CONSTRAINT pk_patient_anatomic_neoplasm_subdivision PRIMARY KEY(patient,anatomic_neoplasm_subdivision),
+	patient varchar(254),
+	anatomic_neoplasm_subdivision varchar(2048),
 	CONSTRAINT fk_patient_anatomic_neoplasm_subdivision FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_anatomic_neoplasm_subdivision` WRITE;
@@ -4628,9 +4380,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_bcr_aliquot_barcode`;
 CREATE TABLE `patient_bcr_aliquot_barcode` (
-	patient varchar(128),
-	bcr_aliquot_barcode varchar(2944),
-	CONSTRAINT pk_patient_bcr_aliquot_barcode PRIMARY KEY(patient,bcr_aliquot_barcode),
+	patient varchar(254),
+	bcr_aliquot_barcode varchar(2048),
 	CONSTRAINT fk_patient_bcr_aliquot_barcode FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_bcr_aliquot_barcode` WRITE;
@@ -4639,9 +4390,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_bcr_analyte_barcode`;
 CREATE TABLE `patient_bcr_analyte_barcode` (
-	patient varchar(128),
-	bcr_analyte_barcode varchar(2944),
-	CONSTRAINT pk_patient_bcr_analyte_barcode PRIMARY KEY(patient,bcr_analyte_barcode),
+	patient varchar(254),
+	bcr_analyte_barcode varchar(2048),
 	CONSTRAINT fk_patient_bcr_analyte_barcode FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_bcr_analyte_barcode` WRITE;
@@ -4650,9 +4400,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_bcr_drug_barcode`;
 CREATE TABLE `patient_bcr_drug_barcode` (
-	patient varchar(128),
-	bcr_drug_barcode varchar(2944),
-	CONSTRAINT pk_patient_bcr_drug_barcode PRIMARY KEY(patient,bcr_drug_barcode),
+	patient varchar(254),
+	bcr_drug_barcode varchar(2048),
 	CONSTRAINT fk_patient_bcr_drug_barcode FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_bcr_drug_barcode` WRITE;
@@ -4661,9 +4410,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_bcr_followup_barcode`;
 CREATE TABLE `patient_bcr_followup_barcode` (
-	patient varchar(128),
-	bcr_followup_barcode varchar(2944),
-	CONSTRAINT pk_patient_bcr_followup_barcode PRIMARY KEY(patient,bcr_followup_barcode),
+	patient varchar(254),
+	bcr_followup_barcode varchar(2048),
 	CONSTRAINT fk_patient_bcr_followup_barcode FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_bcr_followup_barcode` WRITE;
@@ -4672,9 +4420,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_bcr_omf_barcode`;
 CREATE TABLE `patient_bcr_omf_barcode` (
-	patient varchar(128),
-	bcr_omf_barcode varchar(2944),
-	CONSTRAINT pk_patient_bcr_omf_barcode PRIMARY KEY(patient,bcr_omf_barcode),
+	patient varchar(254),
+	bcr_omf_barcode varchar(2048),
 	CONSTRAINT fk_patient_bcr_omf_barcode FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_bcr_omf_barcode` WRITE;
@@ -4683,9 +4430,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_bcr_omf_uuid`;
 CREATE TABLE `patient_bcr_omf_uuid` (
-	patient varchar(128),
-	bcr_omf_uuid varchar(2944),
-	CONSTRAINT pk_patient_bcr_omf_uuid PRIMARY KEY(patient,bcr_omf_uuid),
+	patient varchar(254),
+	bcr_omf_uuid varchar(2048),
 	CONSTRAINT fk_patient_bcr_omf_uuid FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_bcr_omf_uuid` WRITE;
@@ -4694,9 +4440,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_bcr_radiation_barcode`;
 CREATE TABLE `patient_bcr_radiation_barcode` (
-	patient varchar(128),
-	bcr_radiation_barcode varchar(2944),
-	CONSTRAINT pk_patient_bcr_radiation_barcode PRIMARY KEY(patient,bcr_radiation_barcode),
+	patient varchar(254),
+	bcr_radiation_barcode varchar(2048),
 	CONSTRAINT fk_patient_bcr_radiation_barcode FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_bcr_radiation_barcode` WRITE;
@@ -4705,9 +4450,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_bcr_sample_barcode`;
 CREATE TABLE `patient_bcr_sample_barcode` (
-	patient varchar(128),
-	bcr_sample_barcode varchar(2944),
-	CONSTRAINT pk_patient_bcr_sample_barcode PRIMARY KEY(patient,bcr_sample_barcode),
+	patient varchar(254),
+	bcr_sample_barcode varchar(2048),
 	CONSTRAINT fk_patient_bcr_sample_barcode FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_bcr_sample_barcode` WRITE;
@@ -4716,9 +4460,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_bcr_sample_uuid`;
 CREATE TABLE `patient_bcr_sample_uuid` (
-	patient varchar(128),
-	bcr_sample_uuid varchar(2944),
-	CONSTRAINT pk_patient_bcr_sample_uuid PRIMARY KEY(patient,bcr_sample_uuid),
+	patient varchar(254),
+	bcr_sample_uuid varchar(2048),
 	CONSTRAINT fk_patient_bcr_sample_uuid FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_bcr_sample_uuid` WRITE;
@@ -4727,9 +4470,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_bcr_shipment_barcode`;
 CREATE TABLE `patient_bcr_shipment_barcode` (
-	patient varchar(128),
-	bcr_shipment_barcode varchar(2944),
-	CONSTRAINT pk_patient_bcr_shipment_barcode PRIMARY KEY(patient,bcr_shipment_barcode),
+	patient varchar(254),
+	bcr_shipment_barcode varchar(2048),
 	CONSTRAINT fk_patient_bcr_shipment_barcode FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_bcr_shipment_barcode` WRITE;
@@ -4738,9 +4480,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_bcr_slide_barcode`;
 CREATE TABLE `patient_bcr_slide_barcode` (
-	patient varchar(128),
-	bcr_slide_barcode varchar(2944),
-	CONSTRAINT pk_patient_bcr_slide_barcode PRIMARY KEY(patient,bcr_slide_barcode),
+	patient varchar(254),
+	bcr_slide_barcode varchar(2048),
 	CONSTRAINT fk_patient_bcr_slide_barcode FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_bcr_slide_barcode` WRITE;
@@ -4749,9 +4490,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_consent_or_death_status`;
 CREATE TABLE `patient_consent_or_death_status` (
-	patient varchar(128),
-	consent_or_death_status varchar(2944),
-	CONSTRAINT pk_patient_consent_or_death_status PRIMARY KEY(patient,consent_or_death_status),
+	patient varchar(254),
+	consent_or_death_status varchar(2048),
 	CONSTRAINT fk_patient_consent_or_death_status FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_consent_or_death_status` WRITE;
@@ -4760,9 +4500,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_days_to_death`;
 CREATE TABLE `patient_days_to_death` (
-	patient varchar(128),
-	days_to_death varchar(2944),
-	CONSTRAINT pk_patient_days_to_death PRIMARY KEY(patient,days_to_death),
+	patient varchar(254),
+	days_to_death varchar(2048),
 	CONSTRAINT fk_patient_days_to_death FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_days_to_death` WRITE;
@@ -4771,9 +4510,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_days_to_normal_sample_procurement`;
 CREATE TABLE `patient_days_to_normal_sample_procurement` (
-	patient varchar(128),
-	days_to_normal_sample_procurement varchar(2944),
-	CONSTRAINT pk_patient_days_to_normal_sample_procurement PRIMARY KEY(patient,days_to_normal_sample_procurement),
+	patient varchar(254),
+	days_to_normal_sample_procurement varchar(2048),
 	CONSTRAINT fk_patient_days_to_normal_sample_procurement FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_days_to_normal_sample_procurement` WRITE;
@@ -4782,9 +4520,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_disease_acronym`;
 CREATE TABLE `patient_disease_acronym` (
-	patient varchar(128),
-	disease_acronym varchar(2944),
-	CONSTRAINT pk_patient_disease_acronym PRIMARY KEY(patient,disease_acronym),
+	patient varchar(254),
+	disease_acronym varchar(2048),
 	CONSTRAINT fk_patient_disease_acronym FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_disease_acronym` WRITE;
@@ -4793,9 +4530,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_ethnicity1`;
 CREATE TABLE `patient_ethnicity1` (
-	patient varchar(128),
-	ethnicity1 varchar(2944),
-	CONSTRAINT pk_patient_ethnicity1 PRIMARY KEY(patient,ethnicity1),
+	patient varchar(254),
+	ethnicity1 varchar(2048),
 	CONSTRAINT fk_patient_ethnicity1 FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_ethnicity1` WRITE;
@@ -4804,9 +4540,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_form_completion_date`;
 CREATE TABLE `patient_form_completion_date` (
-	patient varchar(128),
-	form_completion_date varchar(2944),
-	CONSTRAINT pk_patient_form_completion_date PRIMARY KEY(patient,form_completion_date),
+	patient varchar(254),
+	form_completion_date varchar(2048),
 	CONSTRAINT fk_patient_form_completion_date FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_form_completion_date` WRITE;
@@ -4815,9 +4550,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_histologic_diagnosis`;
 CREATE TABLE `patient_histologic_diagnosis` (
-	patient varchar(128),
-	histologic_diagnosis varchar(2944),
-	CONSTRAINT pk_patient_histologic_diagnosis PRIMARY KEY(patient,histologic_diagnosis),
+	patient varchar(254),
+	histologic_diagnosis varchar(2048),
 	CONSTRAINT fk_patient_histologic_diagnosis FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_histologic_diagnosis` WRITE;
@@ -4826,9 +4560,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_histological_type`;
 CREATE TABLE `patient_histological_type` (
-	patient varchar(128),
-	histological_type varchar(2944),
-	CONSTRAINT pk_patient_histological_type PRIMARY KEY(patient,histological_type),
+	patient varchar(254),
+	histological_type varchar(2048),
 	CONSTRAINT fk_patient_histological_type FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_histological_type` WRITE;
@@ -4837,9 +4570,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_history_neoadjuvant_treatment`;
 CREATE TABLE `patient_history_neoadjuvant_treatment` (
-	patient varchar(128),
-	history_neoadjuvant_treatment varchar(2944),
-	CONSTRAINT pk_patient_history_neoadjuvant_treatment PRIMARY KEY(patient,history_neoadjuvant_treatment),
+	patient varchar(254),
+	history_neoadjuvant_treatment varchar(2048),
 	CONSTRAINT fk_patient_history_neoadjuvant_treatment FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_history_neoadjuvant_treatment` WRITE;
@@ -4848,9 +4580,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_history_of_neoadjuvant_treatment`;
 CREATE TABLE `patient_history_of_neoadjuvant_treatment` (
-	patient varchar(128),
-	history_of_neoadjuvant_treatment varchar(2944),
-	CONSTRAINT pk_patient_history_of_neoadjuvant_treatment PRIMARY KEY(patient,history_of_neoadjuvant_treatment),
+	patient varchar(254),
+	history_of_neoadjuvant_treatment varchar(2048),
 	CONSTRAINT fk_patient_history_of_neoadjuvant_treatment FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_history_of_neoadjuvant_treatment` WRITE;
@@ -4859,9 +4590,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_history_other_malignancy`;
 CREATE TABLE `patient_history_other_malignancy` (
-	patient varchar(128),
-	history_other_malignancy varchar(2944),
-	CONSTRAINT pk_patient_history_other_malignancy PRIMARY KEY(patient,history_other_malignancy),
+	patient varchar(254),
+	history_other_malignancy varchar(2048),
 	CONSTRAINT fk_patient_history_other_malignancy FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_history_other_malignancy` WRITE;
@@ -4870,9 +4600,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_method_of_normal_sample_procurement`;
 CREATE TABLE `patient_method_of_normal_sample_procurement` (
-	patient varchar(128),
-	method_of_normal_sample_procurement varchar(2944),
-	CONSTRAINT pk_patient_method_of_normal_sample_procurement PRIMARY KEY(patient,method_of_normal_sample_procurement),
+	patient varchar(254),
+	method_of_normal_sample_procurement varchar(2048),
 	CONSTRAINT fk_patient_method_of_normal_sample_procurement FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_method_of_normal_sample_procurement` WRITE;
@@ -4881,9 +4610,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_ncedna_dna_conc`;
 CREATE TABLE `patient_ncedna_dna_conc` (
-	patient varchar(128),
-	ncedna_dna_conc varchar(2944),
-	CONSTRAINT pk_patient_ncedna_dna_conc PRIMARY KEY(patient,ncedna_dna_conc),
+	patient varchar(254),
+	ncedna_dna_conc varchar(2048),
 	CONSTRAINT fk_patient_ncedna_dna_conc FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_ncedna_dna_conc` WRITE;
@@ -4892,9 +4620,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_ncedna_dna_qm`;
 CREATE TABLE `patient_ncedna_dna_qm` (
-	patient varchar(128),
-	ncedna_dna_qm varchar(2944),
-	CONSTRAINT pk_patient_ncedna_dna_qm PRIMARY KEY(patient,ncedna_dna_qm),
+	patient varchar(254),
+	ncedna_dna_qm varchar(2048),
 	CONSTRAINT fk_patient_ncedna_dna_qm FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_ncedna_dna_qm` WRITE;
@@ -4903,9 +4630,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_ncedna_dna_qty`;
 CREATE TABLE `patient_ncedna_dna_qty` (
-	patient varchar(128),
-	ncedna_dna_qty varchar(2944),
-	CONSTRAINT pk_patient_ncedna_dna_qty PRIMARY KEY(patient,ncedna_dna_qty),
+	patient varchar(254),
+	ncedna_dna_qty varchar(2048),
 	CONSTRAINT fk_patient_ncedna_dna_qty FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_ncedna_dna_qty` WRITE;
@@ -4914,9 +4640,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_ncedna_dna_vol`;
 CREATE TABLE `patient_ncedna_dna_vol` (
-	patient varchar(128),
-	ncedna_dna_vol varchar(2944),
-	CONSTRAINT pk_patient_ncedna_dna_vol PRIMARY KEY(patient,ncedna_dna_vol),
+	patient varchar(254),
+	ncedna_dna_vol varchar(2048),
 	CONSTRAINT fk_patient_ncedna_dna_vol FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_ncedna_dna_vol` WRITE;
@@ -4925,9 +4650,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_new_non_melanoma_event_histologic_type_text`;
 CREATE TABLE `patient_new_non_melanoma_event_histologic_type_text` (
-	patient varchar(128),
-	new_non_melanoma_event_histologic_type_text varchar(2944),
-	CONSTRAINT pk_patient_new_non_melanoma_event_histologic_type_text PRIMARY KEY(patient,new_non_melanoma_event_histologic_type_text),
+	patient varchar(254),
+	new_non_melanoma_event_histologic_type_text varchar(2048),
 	CONSTRAINT fk_patient_new_non_melanoma_event_histologic_type_text FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_new_non_melanoma_event_histologic_type_text` WRITE;
@@ -4936,9 +4660,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_new_tumor_event_dx_days_to`;
 CREATE TABLE `patient_new_tumor_event_dx_days_to` (
-	patient varchar(128),
-	new_tumor_event_dx_days_to varchar(2944),
-	CONSTRAINT pk_patient_new_tumor_event_dx_days_to PRIMARY KEY(patient,new_tumor_event_dx_days_to),
+	patient varchar(254),
+	new_tumor_event_dx_days_to varchar(2048),
 	CONSTRAINT fk_patient_new_tumor_event_dx_days_to FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_new_tumor_event_dx_days_to` WRITE;
@@ -4947,9 +4670,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_new_tumor_event_melanoma_count`;
 CREATE TABLE `patient_new_tumor_event_melanoma_count` (
-	patient varchar(128),
-	new_tumor_event_melanoma_count varchar(2944),
-	CONSTRAINT pk_patient_new_tumor_event_melanoma_count PRIMARY KEY(patient,new_tumor_event_melanoma_count),
+	patient varchar(254),
+	new_tumor_event_melanoma_count varchar(2048),
 	CONSTRAINT fk_patient_new_tumor_event_melanoma_count FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_new_tumor_event_melanoma_count` WRITE;
@@ -4958,9 +4680,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_new_tumor_event_melanoma_location`;
 CREATE TABLE `patient_new_tumor_event_melanoma_location` (
-	patient varchar(128),
-	new_tumor_event_melanoma_location varchar(2944),
-	CONSTRAINT pk_patient_new_tumor_event_melanoma_location PRIMARY KEY(patient,new_tumor_event_melanoma_location),
+	patient varchar(254),
+	new_tumor_event_melanoma_location varchar(2048),
 	CONSTRAINT fk_patient_new_tumor_event_melanoma_location FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_new_tumor_event_melanoma_location` WRITE;
@@ -4969,9 +4690,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_new_tumor_event_met_site`;
 CREATE TABLE `patient_new_tumor_event_met_site` (
-	patient varchar(128),
-	new_tumor_event_met_site varchar(2944),
-	CONSTRAINT pk_patient_new_tumor_event_met_site PRIMARY KEY(patient,new_tumor_event_met_site),
+	patient varchar(254),
+	new_tumor_event_met_site varchar(2048),
 	CONSTRAINT fk_patient_new_tumor_event_met_site FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_new_tumor_event_met_site` WRITE;
@@ -4980,9 +4700,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_new_tumor_event_met_site_other`;
 CREATE TABLE `patient_new_tumor_event_met_site_other` (
-	patient varchar(128),
-	new_tumor_event_met_site_other varchar(2944),
-	CONSTRAINT pk_patient_new_tumor_event_met_site_other PRIMARY KEY(patient,new_tumor_event_met_site_other),
+	patient varchar(254),
+	new_tumor_event_met_site_other varchar(2048),
 	CONSTRAINT fk_patient_new_tumor_event_met_site_other FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_new_tumor_event_met_site_other` WRITE;
@@ -4991,9 +4710,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_new_tumor_event_pharmaceutical_tx`;
 CREATE TABLE `patient_new_tumor_event_pharmaceutical_tx` (
-	patient varchar(128),
-	new_tumor_event_pharmaceutical_tx varchar(2944),
-	CONSTRAINT pk_patient_new_tumor_event_pharmaceutical_tx PRIMARY KEY(patient,new_tumor_event_pharmaceutical_tx),
+	patient varchar(254),
+	new_tumor_event_pharmaceutical_tx varchar(2048),
 	CONSTRAINT fk_patient_new_tumor_event_pharmaceutical_tx FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_new_tumor_event_pharmaceutical_tx` WRITE;
@@ -5002,9 +4720,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_new_tumor_event_radiation_tx`;
 CREATE TABLE `patient_new_tumor_event_radiation_tx` (
-	patient varchar(128),
-	new_tumor_event_radiation_tx varchar(2944),
-	CONSTRAINT pk_patient_new_tumor_event_radiation_tx PRIMARY KEY(patient,new_tumor_event_radiation_tx),
+	patient varchar(254),
+	new_tumor_event_radiation_tx varchar(2048),
 	CONSTRAINT fk_patient_new_tumor_event_radiation_tx FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_new_tumor_event_radiation_tx` WRITE;
@@ -5013,9 +4730,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_new_tumor_event_site`;
 CREATE TABLE `patient_new_tumor_event_site` (
-	patient varchar(128),
-	new_tumor_event_site varchar(2944),
-	CONSTRAINT pk_patient_new_tumor_event_site PRIMARY KEY(patient,new_tumor_event_site),
+	patient varchar(254),
+	new_tumor_event_site varchar(2048),
 	CONSTRAINT fk_patient_new_tumor_event_site FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_new_tumor_event_site` WRITE;
@@ -5024,9 +4740,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_new_tumor_event_surgery`;
 CREATE TABLE `patient_new_tumor_event_surgery` (
-	patient varchar(128),
-	new_tumor_event_surgery varchar(2944),
-	CONSTRAINT pk_patient_new_tumor_event_surgery PRIMARY KEY(patient,new_tumor_event_surgery),
+	patient varchar(254),
+	new_tumor_event_surgery varchar(2048),
 	CONSTRAINT fk_patient_new_tumor_event_surgery FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_new_tumor_event_surgery` WRITE;
@@ -5035,9 +4750,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_new_tumor_event_surgery_days_to`;
 CREATE TABLE `patient_new_tumor_event_surgery_days_to` (
-	patient varchar(128),
-	new_tumor_event_surgery_days_to varchar(2944),
-	CONSTRAINT pk_patient_new_tumor_event_surgery_days_to PRIMARY KEY(patient,new_tumor_event_surgery_days_to),
+	patient varchar(254),
+	new_tumor_event_surgery_days_to varchar(2048),
 	CONSTRAINT fk_patient_new_tumor_event_surgery_days_to FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_new_tumor_event_surgery_days_to` WRITE;
@@ -5046,9 +4760,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_new_tumor_event_type`;
 CREATE TABLE `patient_new_tumor_event_type` (
-	patient varchar(128),
-	new_tumor_event_type varchar(2944),
-	CONSTRAINT pk_patient_new_tumor_event_type PRIMARY KEY(patient,new_tumor_event_type),
+	patient varchar(254),
+	new_tumor_event_type varchar(2048),
 	CONSTRAINT fk_patient_new_tumor_event_type FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_new_tumor_event_type` WRITE;
@@ -5057,9 +4770,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_normal_tissue_anatomic_site`;
 CREATE TABLE `patient_normal_tissue_anatomic_site` (
-	patient varchar(128),
-	normal_tissue_anatomic_site varchar(2944),
-	CONSTRAINT pk_patient_normal_tissue_anatomic_site PRIMARY KEY(patient,normal_tissue_anatomic_site),
+	patient varchar(254),
+	normal_tissue_anatomic_site varchar(2048),
 	CONSTRAINT fk_patient_normal_tissue_anatomic_site FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_normal_tissue_anatomic_site` WRITE;
@@ -5068,9 +4780,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_normal_tissue_proximity`;
 CREATE TABLE `patient_normal_tissue_proximity` (
-	patient varchar(128),
-	normal_tissue_proximity varchar(2944),
-	CONSTRAINT pk_patient_normal_tissue_proximity PRIMARY KEY(patient,normal_tissue_proximity),
+	patient varchar(254),
+	normal_tissue_proximity varchar(2048),
 	CONSTRAINT fk_patient_normal_tissue_proximity FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_normal_tissue_proximity` WRITE;
@@ -5079,9 +4790,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_other_malignancy_anatomic_site`;
 CREATE TABLE `patient_other_malignancy_anatomic_site` (
-	patient varchar(128),
-	other_malignancy_anatomic_site varchar(2944),
-	CONSTRAINT pk_patient_other_malignancy_anatomic_site PRIMARY KEY(patient,other_malignancy_anatomic_site),
+	patient varchar(254),
+	other_malignancy_anatomic_site varchar(2048),
 	CONSTRAINT fk_patient_other_malignancy_anatomic_site FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_other_malignancy_anatomic_site` WRITE;
@@ -5090,9 +4800,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_other_malignancy_anatomic_site_text`;
 CREATE TABLE `patient_other_malignancy_anatomic_site_text` (
-	patient varchar(128),
-	other_malignancy_anatomic_site_text varchar(2944),
-	CONSTRAINT pk_patient_other_malignancy_anatomic_site_text PRIMARY KEY(patient,other_malignancy_anatomic_site_text),
+	patient varchar(254),
+	other_malignancy_anatomic_site_text varchar(2048),
 	CONSTRAINT fk_patient_other_malignancy_anatomic_site_text FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_other_malignancy_anatomic_site_text` WRITE;
@@ -5101,9 +4810,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_other_malignancy_histological_type`;
 CREATE TABLE `patient_other_malignancy_histological_type` (
-	patient varchar(128),
-	other_malignancy_histological_type varchar(2944),
-	CONSTRAINT pk_patient_other_malignancy_histological_type PRIMARY KEY(patient,other_malignancy_histological_type),
+	patient varchar(254),
+	other_malignancy_histological_type varchar(2048),
 	CONSTRAINT fk_patient_other_malignancy_histological_type FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_other_malignancy_histological_type` WRITE;
@@ -5112,9 +4820,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_other_malignancy_laterality`;
 CREATE TABLE `patient_other_malignancy_laterality` (
-	patient varchar(128),
-	other_malignancy_laterality varchar(2944),
-	CONSTRAINT pk_patient_other_malignancy_laterality PRIMARY KEY(patient,other_malignancy_laterality),
+	patient varchar(254),
+	other_malignancy_laterality varchar(2048),
 	CONSTRAINT fk_patient_other_malignancy_laterality FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_other_malignancy_laterality` WRITE;
@@ -5123,9 +4830,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_prior_dx`;
 CREATE TABLE `patient_prior_dx` (
-	patient varchar(128),
-	prior_dx varchar(2944),
-	CONSTRAINT pk_patient_prior_dx PRIMARY KEY(patient,prior_dx),
+	patient varchar(254),
+	prior_dx varchar(2048),
 	CONSTRAINT fk_patient_prior_dx FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_prior_dx` WRITE;
@@ -5134,9 +4840,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_race1`;
 CREATE TABLE `patient_race1` (
-	patient varchar(128),
-	race1 varchar(2944),
-	CONSTRAINT pk_patient_race1 PRIMARY KEY(patient,race1),
+	patient varchar(254),
+	race1 varchar(2048),
 	CONSTRAINT fk_patient_race1 FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_race1` WRITE;
@@ -5145,9 +4850,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_result`;
 CREATE TABLE `patient_result` (
-	patient varchar(128),
-	result varchar(2944),
-	CONSTRAINT pk_patient_result PRIMARY KEY(patient,result),
+	patient varchar(254),
+	result varchar(2048),
 	CONSTRAINT fk_patient_result FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_result` WRITE;
@@ -5156,9 +4860,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_submitted_tumor_site`;
 CREATE TABLE `patient_submitted_tumor_site` (
-	patient varchar(128),
-	submitted_tumor_site varchar(2944),
-	CONSTRAINT pk_patient_submitted_tumor_site PRIMARY KEY(patient,submitted_tumor_site),
+	patient varchar(254),
+	submitted_tumor_site varchar(2048),
 	CONSTRAINT fk_patient_submitted_tumor_site FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_submitted_tumor_site` WRITE;
@@ -5167,9 +4870,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_tumor_necrosis_percent`;
 CREATE TABLE `patient_tumor_necrosis_percent` (
-	patient varchar(128),
-	tumor_necrosis_percent varchar(2944),
-	CONSTRAINT pk_patient_tumor_necrosis_percent PRIMARY KEY(patient,tumor_necrosis_percent),
+	patient varchar(254),
+	tumor_necrosis_percent varchar(2048),
 	CONSTRAINT fk_patient_tumor_necrosis_percent FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_tumor_necrosis_percent` WRITE;
@@ -5178,9 +4880,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_tumor_nuclei_percent`;
 CREATE TABLE `patient_tumor_nuclei_percent` (
-	patient varchar(128),
-	tumor_nuclei_percent varchar(2944),
-	CONSTRAINT pk_patient_tumor_nuclei_percent PRIMARY KEY(patient,tumor_nuclei_percent),
+	patient varchar(254),
+	tumor_nuclei_percent varchar(2048),
 	CONSTRAINT fk_patient_tumor_nuclei_percent FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_tumor_nuclei_percent` WRITE;
@@ -5189,9 +4890,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_tumor_weight`;
 CREATE TABLE `patient_tumor_weight` (
-	patient varchar(128),
-	tumor_weight varchar(2944),
-	CONSTRAINT pk_patient_tumor_weight PRIMARY KEY(patient,tumor_weight),
+	patient varchar(254),
+	tumor_weight varchar(2048),
 	CONSTRAINT fk_patient_tumor_weight FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_tumor_weight` WRITE;
@@ -5200,9 +4900,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `patient_vial_number`;
 CREATE TABLE `patient_vial_number` (
-	patient varchar(128),
-	vial_number varchar(2944),
-	CONSTRAINT pk_patient_vial_number PRIMARY KEY(patient,vial_number),
+	patient varchar(254),
+	vial_number varchar(2048),
 	CONSTRAINT fk_patient_vial_number FOREIGN KEY(patient) REFERENCES `patient_main`(patient)
 );
 LOCK TABLES `patient_vial_number` WRITE;
@@ -5211,9 +4910,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `protocol_bcr_analyte_barcode`;
 CREATE TABLE `protocol_bcr_analyte_barcode` (
-	protocol varchar(128),
-	bcr_analyte_barcode varchar(2944),
-	CONSTRAINT pk_protocol_bcr_analyte_barcode PRIMARY KEY(protocol,bcr_analyte_barcode),
+	protocol varchar(254),
+	bcr_analyte_barcode varchar(2048),
 	CONSTRAINT fk_protocol_bcr_analyte_barcode FOREIGN KEY(protocol) REFERENCES `protocol_main`(protocol)
 );
 LOCK TABLES `protocol_bcr_analyte_barcode` WRITE;
@@ -5222,9 +4920,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `protocol_experimental_protocol_type`;
 CREATE TABLE `protocol_experimental_protocol_type` (
-	protocol varchar(128),
-	experimental_protocol_type varchar(2944),
-	CONSTRAINT pk_protocol_experimental_protocol_type PRIMARY KEY(protocol,experimental_protocol_type),
+	protocol varchar(254),
+	experimental_protocol_type varchar(2048),
 	CONSTRAINT fk_protocol_experimental_protocol_type FOREIGN KEY(protocol) REFERENCES `protocol_main`(protocol)
 );
 LOCK TABLES `protocol_experimental_protocol_type` WRITE;
@@ -5233,9 +4930,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `radiation_new_tumor_event_surgery`;
 CREATE TABLE `radiation_new_tumor_event_surgery` (
-	radiation varchar(128),
-	new_tumor_event_surgery varchar(2944),
-	CONSTRAINT pk_radiation_new_tumor_event_surgery PRIMARY KEY(radiation,new_tumor_event_surgery),
+	radiation varchar(254),
+	new_tumor_event_surgery varchar(2048),
 	CONSTRAINT fk_radiation_new_tumor_event_surgery FOREIGN KEY(radiation) REFERENCES `radiation_main`(radiation)
 );
 LOCK TABLES `radiation_new_tumor_event_surgery` WRITE;
@@ -5244,9 +4940,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sample_bcr_analyte_barcode`;
 CREATE TABLE `sample_bcr_analyte_barcode` (
-	sample varchar(128),
-	bcr_analyte_barcode varchar(2944),
-	CONSTRAINT pk_sample_bcr_analyte_barcode PRIMARY KEY(sample,bcr_analyte_barcode),
+	sample varchar(254),
+	bcr_analyte_barcode varchar(2048),
 	CONSTRAINT fk_sample_bcr_analyte_barcode FOREIGN KEY(sample) REFERENCES `sample_main`(sample)
 );
 LOCK TABLES `sample_bcr_analyte_barcode` WRITE;
@@ -5255,9 +4950,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sample_experimental_protocol_type`;
 CREATE TABLE `sample_experimental_protocol_type` (
-	sample varchar(128),
-	experimental_protocol_type varchar(2944),
-	CONSTRAINT pk_sample_experimental_protocol_type PRIMARY KEY(sample,experimental_protocol_type),
+	sample varchar(254),
+	experimental_protocol_type varchar(2048),
 	CONSTRAINT fk_sample_experimental_protocol_type FOREIGN KEY(sample) REFERENCES `sample_main`(sample)
 );
 LOCK TABLES `sample_experimental_protocol_type` WRITE;
@@ -5266,9 +4960,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_anatomic_neoplasm_subdivision`;
 CREATE TABLE `tumor_sample_anatomic_neoplasm_subdivision` (
-	tumor_sample varchar(128),
-	anatomic_neoplasm_subdivision varchar(2944),
-	CONSTRAINT pk_tumor_sample_anatomic_neoplasm_subdivision PRIMARY KEY(tumor_sample,anatomic_neoplasm_subdivision),
+	tumor_sample varchar(254),
+	anatomic_neoplasm_subdivision varchar(2048),
 	CONSTRAINT fk_tumor_sample_anatomic_neoplasm_subdivision FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_anatomic_neoplasm_subdivision` WRITE;
@@ -5277,9 +4970,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_bcr_aliquot_barcode`;
 CREATE TABLE `tumor_sample_bcr_aliquot_barcode` (
-	tumor_sample varchar(128),
-	bcr_aliquot_barcode varchar(2944),
-	CONSTRAINT pk_tumor_sample_bcr_aliquot_barcode PRIMARY KEY(tumor_sample,bcr_aliquot_barcode),
+	tumor_sample varchar(254),
+	bcr_aliquot_barcode varchar(2048),
 	CONSTRAINT fk_tumor_sample_bcr_aliquot_barcode FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_bcr_aliquot_barcode` WRITE;
@@ -5288,9 +4980,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_bcr_analyte_barcode`;
 CREATE TABLE `tumor_sample_bcr_analyte_barcode` (
-	tumor_sample varchar(128),
-	bcr_analyte_barcode varchar(2944),
-	CONSTRAINT pk_tumor_sample_bcr_analyte_barcode PRIMARY KEY(tumor_sample,bcr_analyte_barcode),
+	tumor_sample varchar(254),
+	bcr_analyte_barcode varchar(2048),
 	CONSTRAINT fk_tumor_sample_bcr_analyte_barcode FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_bcr_analyte_barcode` WRITE;
@@ -5299,9 +4990,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_bcr_drug_barcode`;
 CREATE TABLE `tumor_sample_bcr_drug_barcode` (
-	tumor_sample varchar(128),
-	bcr_drug_barcode varchar(2944),
-	CONSTRAINT pk_tumor_sample_bcr_drug_barcode PRIMARY KEY(tumor_sample,bcr_drug_barcode),
+	tumor_sample varchar(254),
+	bcr_drug_barcode varchar(2048),
 	CONSTRAINT fk_tumor_sample_bcr_drug_barcode FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_bcr_drug_barcode` WRITE;
@@ -5310,9 +5000,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_bcr_followup_barcode`;
 CREATE TABLE `tumor_sample_bcr_followup_barcode` (
-	tumor_sample varchar(128),
-	bcr_followup_barcode varchar(2944),
-	CONSTRAINT pk_tumor_sample_bcr_followup_barcode PRIMARY KEY(tumor_sample,bcr_followup_barcode),
+	tumor_sample varchar(254),
+	bcr_followup_barcode varchar(2048),
 	CONSTRAINT fk_tumor_sample_bcr_followup_barcode FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_bcr_followup_barcode` WRITE;
@@ -5321,9 +5010,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_bcr_omf_barcode`;
 CREATE TABLE `tumor_sample_bcr_omf_barcode` (
-	tumor_sample varchar(128),
-	bcr_omf_barcode varchar(2944),
-	CONSTRAINT pk_tumor_sample_bcr_omf_barcode PRIMARY KEY(tumor_sample,bcr_omf_barcode),
+	tumor_sample varchar(254),
+	bcr_omf_barcode varchar(2048),
 	CONSTRAINT fk_tumor_sample_bcr_omf_barcode FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_bcr_omf_barcode` WRITE;
@@ -5332,9 +5020,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_bcr_omf_uuid`;
 CREATE TABLE `tumor_sample_bcr_omf_uuid` (
-	tumor_sample varchar(128),
-	bcr_omf_uuid varchar(2944),
-	CONSTRAINT pk_tumor_sample_bcr_omf_uuid PRIMARY KEY(tumor_sample,bcr_omf_uuid),
+	tumor_sample varchar(254),
+	bcr_omf_uuid varchar(2048),
 	CONSTRAINT fk_tumor_sample_bcr_omf_uuid FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_bcr_omf_uuid` WRITE;
@@ -5343,9 +5030,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_bcr_radiation_barcode`;
 CREATE TABLE `tumor_sample_bcr_radiation_barcode` (
-	tumor_sample varchar(128),
-	bcr_radiation_barcode varchar(2944),
-	CONSTRAINT pk_tumor_sample_bcr_radiation_barcode PRIMARY KEY(tumor_sample,bcr_radiation_barcode),
+	tumor_sample varchar(254),
+	bcr_radiation_barcode varchar(2048),
 	CONSTRAINT fk_tumor_sample_bcr_radiation_barcode FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_bcr_radiation_barcode` WRITE;
@@ -5354,9 +5040,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_bcr_sample_barcode`;
 CREATE TABLE `tumor_sample_bcr_sample_barcode` (
-	tumor_sample varchar(128),
-	bcr_sample_barcode varchar(2944),
-	CONSTRAINT pk_tumor_sample_bcr_sample_barcode PRIMARY KEY(tumor_sample,bcr_sample_barcode),
+	tumor_sample varchar(254),
+	bcr_sample_barcode varchar(2048),
 	CONSTRAINT fk_tumor_sample_bcr_sample_barcode FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_bcr_sample_barcode` WRITE;
@@ -5365,9 +5050,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_bcr_sample_uuid`;
 CREATE TABLE `tumor_sample_bcr_sample_uuid` (
-	tumor_sample varchar(128),
-	bcr_sample_uuid varchar(2944),
-	CONSTRAINT pk_tumor_sample_bcr_sample_uuid PRIMARY KEY(tumor_sample,bcr_sample_uuid),
+	tumor_sample varchar(254),
+	bcr_sample_uuid varchar(2048),
 	CONSTRAINT fk_tumor_sample_bcr_sample_uuid FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_bcr_sample_uuid` WRITE;
@@ -5376,9 +5060,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_bcr_shipment_barcode`;
 CREATE TABLE `tumor_sample_bcr_shipment_barcode` (
-	tumor_sample varchar(128),
-	bcr_shipment_barcode varchar(2944),
-	CONSTRAINT pk_tumor_sample_bcr_shipment_barcode PRIMARY KEY(tumor_sample,bcr_shipment_barcode),
+	tumor_sample varchar(254),
+	bcr_shipment_barcode varchar(2048),
 	CONSTRAINT fk_tumor_sample_bcr_shipment_barcode FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_bcr_shipment_barcode` WRITE;
@@ -5387,9 +5070,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_bcr_slide_barcode`;
 CREATE TABLE `tumor_sample_bcr_slide_barcode` (
-	tumor_sample varchar(128),
-	bcr_slide_barcode varchar(2944),
-	CONSTRAINT pk_tumor_sample_bcr_slide_barcode PRIMARY KEY(tumor_sample,bcr_slide_barcode),
+	tumor_sample varchar(254),
+	bcr_slide_barcode varchar(2048),
 	CONSTRAINT fk_tumor_sample_bcr_slide_barcode FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_bcr_slide_barcode` WRITE;
@@ -5398,9 +5080,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_days_to_death`;
 CREATE TABLE `tumor_sample_days_to_death` (
-	tumor_sample varchar(128),
-	days_to_death varchar(2944),
-	CONSTRAINT pk_tumor_sample_days_to_death PRIMARY KEY(tumor_sample,days_to_death),
+	tumor_sample varchar(254),
+	days_to_death varchar(2048),
 	CONSTRAINT fk_tumor_sample_days_to_death FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_days_to_death` WRITE;
@@ -5409,9 +5090,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_days_to_normal_sample_procurement`;
 CREATE TABLE `tumor_sample_days_to_normal_sample_procurement` (
-	tumor_sample varchar(128),
-	days_to_normal_sample_procurement varchar(2944),
-	CONSTRAINT pk_tumor_sample_days_to_normal_sample_procurement PRIMARY KEY(tumor_sample,days_to_normal_sample_procurement),
+	tumor_sample varchar(254),
+	days_to_normal_sample_procurement varchar(2048),
 	CONSTRAINT fk_tumor_sample_days_to_normal_sample_procurement FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_days_to_normal_sample_procurement` WRITE;
@@ -5420,9 +5100,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_ethnicity1`;
 CREATE TABLE `tumor_sample_ethnicity1` (
-	tumor_sample varchar(128),
-	ethnicity1 varchar(2944),
-	CONSTRAINT pk_tumor_sample_ethnicity1 PRIMARY KEY(tumor_sample,ethnicity1),
+	tumor_sample varchar(254),
+	ethnicity1 varchar(2048),
 	CONSTRAINT fk_tumor_sample_ethnicity1 FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_ethnicity1` WRITE;
@@ -5431,9 +5110,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_form_completion_date`;
 CREATE TABLE `tumor_sample_form_completion_date` (
-	tumor_sample varchar(128),
-	form_completion_date varchar(2944),
-	CONSTRAINT pk_tumor_sample_form_completion_date PRIMARY KEY(tumor_sample,form_completion_date),
+	tumor_sample varchar(254),
+	form_completion_date varchar(2048),
 	CONSTRAINT fk_tumor_sample_form_completion_date FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_form_completion_date` WRITE;
@@ -5442,9 +5120,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_histologic_diagnosis`;
 CREATE TABLE `tumor_sample_histologic_diagnosis` (
-	tumor_sample varchar(128),
-	histologic_diagnosis varchar(2944),
-	CONSTRAINT pk_tumor_sample_histologic_diagnosis PRIMARY KEY(tumor_sample,histologic_diagnosis),
+	tumor_sample varchar(254),
+	histologic_diagnosis varchar(2048),
 	CONSTRAINT fk_tumor_sample_histologic_diagnosis FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_histologic_diagnosis` WRITE;
@@ -5453,9 +5130,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_histological_type`;
 CREATE TABLE `tumor_sample_histological_type` (
-	tumor_sample varchar(128),
-	histological_type varchar(2944),
-	CONSTRAINT pk_tumor_sample_histological_type PRIMARY KEY(tumor_sample,histological_type),
+	tumor_sample varchar(254),
+	histological_type varchar(2048),
 	CONSTRAINT fk_tumor_sample_histological_type FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_histological_type` WRITE;
@@ -5464,9 +5140,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_history_neoadjuvant_treatment`;
 CREATE TABLE `tumor_sample_history_neoadjuvant_treatment` (
-	tumor_sample varchar(128),
-	history_neoadjuvant_treatment varchar(2944),
-	CONSTRAINT pk_tumor_sample_history_neoadjuvant_treatment PRIMARY KEY(tumor_sample,history_neoadjuvant_treatment),
+	tumor_sample varchar(254),
+	history_neoadjuvant_treatment varchar(2048),
 	CONSTRAINT fk_tumor_sample_history_neoadjuvant_treatment FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_history_neoadjuvant_treatment` WRITE;
@@ -5475,9 +5150,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_history_of_neoadjuvant_treatment`;
 CREATE TABLE `tumor_sample_history_of_neoadjuvant_treatment` (
-	tumor_sample varchar(128),
-	history_of_neoadjuvant_treatment varchar(2944),
-	CONSTRAINT pk_tumor_sample_history_of_neoadjuvant_treatment PRIMARY KEY(tumor_sample,history_of_neoadjuvant_treatment),
+	tumor_sample varchar(254),
+	history_of_neoadjuvant_treatment varchar(2048),
 	CONSTRAINT fk_tumor_sample_history_of_neoadjuvant_treatment FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_history_of_neoadjuvant_treatment` WRITE;
@@ -5486,9 +5160,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_history_other_malignancy`;
 CREATE TABLE `tumor_sample_history_other_malignancy` (
-	tumor_sample varchar(128),
-	history_other_malignancy varchar(2944),
-	CONSTRAINT pk_tumor_sample_history_other_malignancy PRIMARY KEY(tumor_sample,history_other_malignancy),
+	tumor_sample varchar(254),
+	history_other_malignancy varchar(2048),
 	CONSTRAINT fk_tumor_sample_history_other_malignancy FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_history_other_malignancy` WRITE;
@@ -5497,9 +5170,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_method_of_normal_sample_procurement`;
 CREATE TABLE `tumor_sample_method_of_normal_sample_procurement` (
-	tumor_sample varchar(128),
-	method_of_normal_sample_procurement varchar(2944),
-	CONSTRAINT pk_tumor_sample_method_of_normal_sample_procurement PRIMARY KEY(tumor_sample,method_of_normal_sample_procurement),
+	tumor_sample varchar(254),
+	method_of_normal_sample_procurement varchar(2048),
 	CONSTRAINT fk_tumor_sample_method_of_normal_sample_procurement FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_method_of_normal_sample_procurement` WRITE;
@@ -5508,9 +5180,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_ncedna_dna_conc`;
 CREATE TABLE `tumor_sample_ncedna_dna_conc` (
-	tumor_sample varchar(128),
-	ncedna_dna_conc varchar(2944),
-	CONSTRAINT pk_tumor_sample_ncedna_dna_conc PRIMARY KEY(tumor_sample,ncedna_dna_conc),
+	tumor_sample varchar(254),
+	ncedna_dna_conc varchar(2048),
 	CONSTRAINT fk_tumor_sample_ncedna_dna_conc FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_ncedna_dna_conc` WRITE;
@@ -5519,9 +5190,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_ncedna_dna_qm`;
 CREATE TABLE `tumor_sample_ncedna_dna_qm` (
-	tumor_sample varchar(128),
-	ncedna_dna_qm varchar(2944),
-	CONSTRAINT pk_tumor_sample_ncedna_dna_qm PRIMARY KEY(tumor_sample,ncedna_dna_qm),
+	tumor_sample varchar(254),
+	ncedna_dna_qm varchar(2048),
 	CONSTRAINT fk_tumor_sample_ncedna_dna_qm FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_ncedna_dna_qm` WRITE;
@@ -5530,9 +5200,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_ncedna_dna_qty`;
 CREATE TABLE `tumor_sample_ncedna_dna_qty` (
-	tumor_sample varchar(128),
-	ncedna_dna_qty varchar(2944),
-	CONSTRAINT pk_tumor_sample_ncedna_dna_qty PRIMARY KEY(tumor_sample,ncedna_dna_qty),
+	tumor_sample varchar(254),
+	ncedna_dna_qty varchar(2048),
 	CONSTRAINT fk_tumor_sample_ncedna_dna_qty FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_ncedna_dna_qty` WRITE;
@@ -5541,9 +5210,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_ncedna_dna_vol`;
 CREATE TABLE `tumor_sample_ncedna_dna_vol` (
-	tumor_sample varchar(128),
-	ncedna_dna_vol varchar(2944),
-	CONSTRAINT pk_tumor_sample_ncedna_dna_vol PRIMARY KEY(tumor_sample,ncedna_dna_vol),
+	tumor_sample varchar(254),
+	ncedna_dna_vol varchar(2048),
 	CONSTRAINT fk_tumor_sample_ncedna_dna_vol FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_ncedna_dna_vol` WRITE;
@@ -5552,9 +5220,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_new_non_melanoma_event_histologic_type_text`;
 CREATE TABLE `tumor_sample_new_non_melanoma_event_histologic_type_text` (
-	tumor_sample varchar(128),
-	new_non_melanoma_event_histologic_type_text varchar(2944),
-	CONSTRAINT pk_tumor_sample_new_non_melanoma_event_histologic_type_text PRIMARY KEY(tumor_sample,new_non_melanoma_event_histologic_type_text),
+	tumor_sample varchar(254),
+	new_non_melanoma_event_histologic_type_text varchar(2048),
 	CONSTRAINT fk_tumor_sample_new_non_melanoma_event_histologic_type_text FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_new_non_melanoma_event_histologic_type_text` WRITE;
@@ -5563,9 +5230,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_new_tumor_event_dx_days_to`;
 CREATE TABLE `tumor_sample_new_tumor_event_dx_days_to` (
-	tumor_sample varchar(128),
-	new_tumor_event_dx_days_to varchar(2944),
-	CONSTRAINT pk_tumor_sample_new_tumor_event_dx_days_to PRIMARY KEY(tumor_sample,new_tumor_event_dx_days_to),
+	tumor_sample varchar(254),
+	new_tumor_event_dx_days_to varchar(2048),
 	CONSTRAINT fk_tumor_sample_new_tumor_event_dx_days_to FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_new_tumor_event_dx_days_to` WRITE;
@@ -5574,9 +5240,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_new_tumor_event_melanoma_count`;
 CREATE TABLE `tumor_sample_new_tumor_event_melanoma_count` (
-	tumor_sample varchar(128),
-	new_tumor_event_melanoma_count varchar(2944),
-	CONSTRAINT pk_tumor_sample_new_tumor_event_melanoma_count PRIMARY KEY(tumor_sample,new_tumor_event_melanoma_count),
+	tumor_sample varchar(254),
+	new_tumor_event_melanoma_count varchar(2048),
 	CONSTRAINT fk_tumor_sample_new_tumor_event_melanoma_count FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_new_tumor_event_melanoma_count` WRITE;
@@ -5585,9 +5250,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_new_tumor_event_melanoma_location`;
 CREATE TABLE `tumor_sample_new_tumor_event_melanoma_location` (
-	tumor_sample varchar(128),
-	new_tumor_event_melanoma_location varchar(2944),
-	CONSTRAINT pk_tumor_sample_new_tumor_event_melanoma_location PRIMARY KEY(tumor_sample,new_tumor_event_melanoma_location),
+	tumor_sample varchar(254),
+	new_tumor_event_melanoma_location varchar(2048),
 	CONSTRAINT fk_tumor_sample_new_tumor_event_melanoma_location FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_new_tumor_event_melanoma_location` WRITE;
@@ -5596,9 +5260,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_new_tumor_event_met_site`;
 CREATE TABLE `tumor_sample_new_tumor_event_met_site` (
-	tumor_sample varchar(128),
-	new_tumor_event_met_site varchar(2944),
-	CONSTRAINT pk_tumor_sample_new_tumor_event_met_site PRIMARY KEY(tumor_sample,new_tumor_event_met_site),
+	tumor_sample varchar(254),
+	new_tumor_event_met_site varchar(2048),
 	CONSTRAINT fk_tumor_sample_new_tumor_event_met_site FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_new_tumor_event_met_site` WRITE;
@@ -5607,9 +5270,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_new_tumor_event_met_site_other`;
 CREATE TABLE `tumor_sample_new_tumor_event_met_site_other` (
-	tumor_sample varchar(128),
-	new_tumor_event_met_site_other varchar(2944),
-	CONSTRAINT pk_tumor_sample_new_tumor_event_met_site_other PRIMARY KEY(tumor_sample,new_tumor_event_met_site_other),
+	tumor_sample varchar(254),
+	new_tumor_event_met_site_other varchar(2048),
 	CONSTRAINT fk_tumor_sample_new_tumor_event_met_site_other FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_new_tumor_event_met_site_other` WRITE;
@@ -5618,9 +5280,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_new_tumor_event_pharmaceutical_tx`;
 CREATE TABLE `tumor_sample_new_tumor_event_pharmaceutical_tx` (
-	tumor_sample varchar(128),
-	new_tumor_event_pharmaceutical_tx varchar(2944),
-	CONSTRAINT pk_tumor_sample_new_tumor_event_pharmaceutical_tx PRIMARY KEY(tumor_sample,new_tumor_event_pharmaceutical_tx),
+	tumor_sample varchar(254),
+	new_tumor_event_pharmaceutical_tx varchar(2048),
 	CONSTRAINT fk_tumor_sample_new_tumor_event_pharmaceutical_tx FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_new_tumor_event_pharmaceutical_tx` WRITE;
@@ -5629,9 +5290,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_new_tumor_event_radiation_tx`;
 CREATE TABLE `tumor_sample_new_tumor_event_radiation_tx` (
-	tumor_sample varchar(128),
-	new_tumor_event_radiation_tx varchar(2944),
-	CONSTRAINT pk_tumor_sample_new_tumor_event_radiation_tx PRIMARY KEY(tumor_sample,new_tumor_event_radiation_tx),
+	tumor_sample varchar(254),
+	new_tumor_event_radiation_tx varchar(2048),
 	CONSTRAINT fk_tumor_sample_new_tumor_event_radiation_tx FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_new_tumor_event_radiation_tx` WRITE;
@@ -5640,9 +5300,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_new_tumor_event_site`;
 CREATE TABLE `tumor_sample_new_tumor_event_site` (
-	tumor_sample varchar(128),
-	new_tumor_event_site varchar(2944),
-	CONSTRAINT pk_tumor_sample_new_tumor_event_site PRIMARY KEY(tumor_sample,new_tumor_event_site),
+	tumor_sample varchar(254),
+	new_tumor_event_site varchar(2048),
 	CONSTRAINT fk_tumor_sample_new_tumor_event_site FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_new_tumor_event_site` WRITE;
@@ -5651,9 +5310,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_new_tumor_event_surgery`;
 CREATE TABLE `tumor_sample_new_tumor_event_surgery` (
-	tumor_sample varchar(128),
-	new_tumor_event_surgery varchar(2944),
-	CONSTRAINT pk_tumor_sample_new_tumor_event_surgery PRIMARY KEY(tumor_sample,new_tumor_event_surgery),
+	tumor_sample varchar(254),
+	new_tumor_event_surgery varchar(2048),
 	CONSTRAINT fk_tumor_sample_new_tumor_event_surgery FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_new_tumor_event_surgery` WRITE;
@@ -5662,9 +5320,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_new_tumor_event_surgery_days_to`;
 CREATE TABLE `tumor_sample_new_tumor_event_surgery_days_to` (
-	tumor_sample varchar(128),
-	new_tumor_event_surgery_days_to varchar(2944),
-	CONSTRAINT pk_tumor_sample_new_tumor_event_surgery_days_to PRIMARY KEY(tumor_sample,new_tumor_event_surgery_days_to),
+	tumor_sample varchar(254),
+	new_tumor_event_surgery_days_to varchar(2048),
 	CONSTRAINT fk_tumor_sample_new_tumor_event_surgery_days_to FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_new_tumor_event_surgery_days_to` WRITE;
@@ -5673,9 +5330,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_new_tumor_event_type`;
 CREATE TABLE `tumor_sample_new_tumor_event_type` (
-	tumor_sample varchar(128),
-	new_tumor_event_type varchar(2944),
-	CONSTRAINT pk_tumor_sample_new_tumor_event_type PRIMARY KEY(tumor_sample,new_tumor_event_type),
+	tumor_sample varchar(254),
+	new_tumor_event_type varchar(2048),
 	CONSTRAINT fk_tumor_sample_new_tumor_event_type FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_new_tumor_event_type` WRITE;
@@ -5684,9 +5340,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_normal_tissue_anatomic_site`;
 CREATE TABLE `tumor_sample_normal_tissue_anatomic_site` (
-	tumor_sample varchar(128),
-	normal_tissue_anatomic_site varchar(2944),
-	CONSTRAINT pk_tumor_sample_normal_tissue_anatomic_site PRIMARY KEY(tumor_sample,normal_tissue_anatomic_site),
+	tumor_sample varchar(254),
+	normal_tissue_anatomic_site varchar(2048),
 	CONSTRAINT fk_tumor_sample_normal_tissue_anatomic_site FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_normal_tissue_anatomic_site` WRITE;
@@ -5695,9 +5350,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_normal_tissue_proximity`;
 CREATE TABLE `tumor_sample_normal_tissue_proximity` (
-	tumor_sample varchar(128),
-	normal_tissue_proximity varchar(2944),
-	CONSTRAINT pk_tumor_sample_normal_tissue_proximity PRIMARY KEY(tumor_sample,normal_tissue_proximity),
+	tumor_sample varchar(254),
+	normal_tissue_proximity varchar(2048),
 	CONSTRAINT fk_tumor_sample_normal_tissue_proximity FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_normal_tissue_proximity` WRITE;
@@ -5706,9 +5360,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_other_malignancy_anatomic_site`;
 CREATE TABLE `tumor_sample_other_malignancy_anatomic_site` (
-	tumor_sample varchar(128),
-	other_malignancy_anatomic_site varchar(2944),
-	CONSTRAINT pk_tumor_sample_other_malignancy_anatomic_site PRIMARY KEY(tumor_sample,other_malignancy_anatomic_site),
+	tumor_sample varchar(254),
+	other_malignancy_anatomic_site varchar(2048),
 	CONSTRAINT fk_tumor_sample_other_malignancy_anatomic_site FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_other_malignancy_anatomic_site` WRITE;
@@ -5717,9 +5370,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_other_malignancy_anatomic_site_text`;
 CREATE TABLE `tumor_sample_other_malignancy_anatomic_site_text` (
-	tumor_sample varchar(128),
-	other_malignancy_anatomic_site_text varchar(2944),
-	CONSTRAINT pk_tumor_sample_other_malignancy_anatomic_site_text PRIMARY KEY(tumor_sample,other_malignancy_anatomic_site_text),
+	tumor_sample varchar(254),
+	other_malignancy_anatomic_site_text varchar(2048),
 	CONSTRAINT fk_tumor_sample_other_malignancy_anatomic_site_text FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_other_malignancy_anatomic_site_text` WRITE;
@@ -5728,9 +5380,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_other_malignancy_histological_type`;
 CREATE TABLE `tumor_sample_other_malignancy_histological_type` (
-	tumor_sample varchar(128),
-	other_malignancy_histological_type varchar(2944),
-	CONSTRAINT pk_tumor_sample_other_malignancy_histological_type PRIMARY KEY(tumor_sample,other_malignancy_histological_type),
+	tumor_sample varchar(254),
+	other_malignancy_histological_type varchar(2048),
 	CONSTRAINT fk_tumor_sample_other_malignancy_histological_type FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_other_malignancy_histological_type` WRITE;
@@ -5739,9 +5390,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_other_malignancy_laterality`;
 CREATE TABLE `tumor_sample_other_malignancy_laterality` (
-	tumor_sample varchar(128),
-	other_malignancy_laterality varchar(2944),
-	CONSTRAINT pk_tumor_sample_other_malignancy_laterality PRIMARY KEY(tumor_sample,other_malignancy_laterality),
+	tumor_sample varchar(254),
+	other_malignancy_laterality varchar(2048),
 	CONSTRAINT fk_tumor_sample_other_malignancy_laterality FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_other_malignancy_laterality` WRITE;
@@ -5750,9 +5400,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_prior_dx`;
 CREATE TABLE `tumor_sample_prior_dx` (
-	tumor_sample varchar(128),
-	prior_dx varchar(2944),
-	CONSTRAINT pk_tumor_sample_prior_dx PRIMARY KEY(tumor_sample,prior_dx),
+	tumor_sample varchar(254),
+	prior_dx varchar(2048),
 	CONSTRAINT fk_tumor_sample_prior_dx FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_prior_dx` WRITE;
@@ -5761,9 +5410,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_race1`;
 CREATE TABLE `tumor_sample_race1` (
-	tumor_sample varchar(128),
-	race1 varchar(2944),
-	CONSTRAINT pk_tumor_sample_race1 PRIMARY KEY(tumor_sample,race1),
+	tumor_sample varchar(254),
+	race1 varchar(2048),
 	CONSTRAINT fk_tumor_sample_race1 FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_race1` WRITE;
@@ -5772,9 +5420,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_result`;
 CREATE TABLE `tumor_sample_result` (
-	tumor_sample varchar(128),
-	result varchar(2944),
-	CONSTRAINT pk_tumor_sample_result PRIMARY KEY(tumor_sample,result),
+	tumor_sample varchar(254),
+	result varchar(2048),
 	CONSTRAINT fk_tumor_sample_result FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_result` WRITE;
@@ -5783,9 +5430,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_submitted_tumor_site`;
 CREATE TABLE `tumor_sample_submitted_tumor_site` (
-	tumor_sample varchar(128),
-	submitted_tumor_site varchar(2944),
-	CONSTRAINT pk_tumor_sample_submitted_tumor_site PRIMARY KEY(tumor_sample,submitted_tumor_site),
+	tumor_sample varchar(254),
+	submitted_tumor_site varchar(2048),
 	CONSTRAINT fk_tumor_sample_submitted_tumor_site FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_submitted_tumor_site` WRITE;
@@ -5794,9 +5440,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_tumor_necrosis_percent`;
 CREATE TABLE `tumor_sample_tumor_necrosis_percent` (
-	tumor_sample varchar(128),
-	tumor_necrosis_percent varchar(2944),
-	CONSTRAINT pk_tumor_sample_tumor_necrosis_percent PRIMARY KEY(tumor_sample,tumor_necrosis_percent),
+	tumor_sample varchar(254),
+	tumor_necrosis_percent varchar(2048),
 	CONSTRAINT fk_tumor_sample_tumor_necrosis_percent FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_tumor_necrosis_percent` WRITE;
@@ -5805,9 +5450,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_tumor_nuclei_percent`;
 CREATE TABLE `tumor_sample_tumor_nuclei_percent` (
-	tumor_sample varchar(128),
-	tumor_nuclei_percent varchar(2944),
-	CONSTRAINT pk_tumor_sample_tumor_nuclei_percent PRIMARY KEY(tumor_sample,tumor_nuclei_percent),
+	tumor_sample varchar(254),
+	tumor_nuclei_percent varchar(2048),
 	CONSTRAINT fk_tumor_sample_tumor_nuclei_percent FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_tumor_nuclei_percent` WRITE;
@@ -5816,9 +5460,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_tumor_weight`;
 CREATE TABLE `tumor_sample_tumor_weight` (
-	tumor_sample varchar(128),
-	tumor_weight varchar(2944),
-	CONSTRAINT pk_tumor_sample_tumor_weight PRIMARY KEY(tumor_sample,tumor_weight),
+	tumor_sample varchar(254),
+	tumor_weight varchar(2048),
 	CONSTRAINT fk_tumor_sample_tumor_weight FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_tumor_weight` WRITE;
@@ -5827,9 +5470,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `tumor_sample_vial_number`;
 CREATE TABLE `tumor_sample_vial_number` (
-	tumor_sample varchar(128),
-	vial_number varchar(2944),
-	CONSTRAINT pk_tumor_sample_vial_number PRIMARY KEY(tumor_sample,vial_number),
+	tumor_sample varchar(254),
+	vial_number varchar(2048),
 	CONSTRAINT fk_tumor_sample_vial_number FOREIGN KEY(tumor_sample) REFERENCES `tumor_sample_main`(tumor_sample)
 );
 LOCK TABLES `tumor_sample_vial_number` WRITE;

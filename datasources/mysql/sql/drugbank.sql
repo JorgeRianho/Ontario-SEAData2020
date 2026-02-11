@@ -5,7 +5,7 @@ USE `drugbank`;
 
 DROP TABLE IF EXISTS `drug_interactions_main`;
 CREATE TABLE `drug_interactions_main` (
-	drug_interactions varchar(1000) PRIMARY KEY,
+	drug_interactions varchar(254) PRIMARY KEY,
 	label text,
 	interactionDrug1 text,
 	interactionDrug2 text
@@ -16,7 +16,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_main`;
 CREATE TABLE `drugs_main` (
-	drugs varchar(1000) PRIMARY KEY,
+	drugs varchar(254) PRIMARY KEY,
 	label text,
 	predictedWaterSolubility text,
 	updateDate text,
@@ -95,7 +95,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `enzymes_main`;
 CREATE TABLE `enzymes_main` (
-	enzymes varchar(1000) PRIMARY KEY,
+	enzymes varchar(254) PRIMARY KEY,
 	label text,
 	geneName text,
 	name text,
@@ -109,7 +109,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `references_main`;
 CREATE TABLE `references_main` (
-	`references` varchar(1000) PRIMARY KEY,
+	`references` varchar(254) PRIMARY KEY,
 	label text,
 	sameAs text,
 	page text
@@ -120,7 +120,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `targets_main`;
 CREATE TABLE `targets_main` (
-	targets varchar(1000) PRIMARY KEY,
+	targets varchar(254) PRIMARY KEY,
 	label text,
 	bio2rdfSymbol text,
 	chromosomeLocation text,
@@ -159,9 +159,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drug_interactions_text`;
 CREATE TABLE `drug_interactions_text` (
-	drug_interactions varchar(128),
-	text varchar(2944),
-	CONSTRAINT pk_drug_interactions_text PRIMARY KEY(drug_interactions,text),
+	drug_interactions varchar(254),
+	text varchar(2048),
 	CONSTRAINT fk_drug_interactions_text FOREIGN KEY(drug_interactions) REFERENCES `drug_interactions_main`(drug_interactions)
 );
 LOCK TABLES `drug_interactions_text` WRITE;
@@ -170,9 +169,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_affectedOrganism`;
 CREATE TABLE `drugs_affectedOrganism` (
-	drugs varchar(128),
-	affectedOrganism varchar(2944),
-	CONSTRAINT pk_drugs_affectedOrganism PRIMARY KEY(drugs,affectedOrganism),
+	drugs varchar(254),
+	affectedOrganism varchar(2048),
 	CONSTRAINT fk_drugs_affectedOrganism FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_affectedOrganism` WRITE;
@@ -181,9 +179,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_ahfsCode`;
 CREATE TABLE `drugs_ahfsCode` (
-	drugs varchar(128),
-	ahfsCode varchar(2944),
-	CONSTRAINT pk_drugs_ahfsCode PRIMARY KEY(drugs,ahfsCode),
+	drugs varchar(254),
+	ahfsCode varchar(2048),
 	CONSTRAINT fk_drugs_ahfsCode FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_ahfsCode` WRITE;
@@ -192,9 +189,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_atcCode`;
 CREATE TABLE `drugs_atcCode` (
-	drugs varchar(128),
-	atcCode varchar(2944),
-	CONSTRAINT pk_drugs_atcCode PRIMARY KEY(drugs,atcCode),
+	drugs varchar(254),
+	atcCode varchar(2048),
 	CONSTRAINT fk_drugs_atcCode FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_atcCode` WRITE;
@@ -203,9 +199,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_brandMixture`;
 CREATE TABLE `drugs_brandMixture` (
-	drugs varchar(128),
-	brandMixture varchar(2944),
-	CONSTRAINT pk_drugs_brandMixture PRIMARY KEY(drugs,brandMixture),
+	drugs varchar(254),
+	brandMixture varchar(2048),
 	CONSTRAINT fk_drugs_brandMixture FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_brandMixture` WRITE;
@@ -214,9 +209,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_brandName`;
 CREATE TABLE `drugs_brandName` (
-	drugs varchar(128),
-	brandName varchar(2944),
-	CONSTRAINT pk_drugs_brandName PRIMARY KEY(drugs,brandName),
+	drugs varchar(254),
+	brandName varchar(2048),
 	CONSTRAINT fk_drugs_brandName FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_brandName` WRITE;
@@ -225,9 +219,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_brandedDrug`;
 CREATE TABLE `drugs_brandedDrug` (
-	drugs varchar(128),
-	brandedDrug varchar(2944),
-	CONSTRAINT pk_drugs_brandedDrug PRIMARY KEY(drugs,brandedDrug),
+	drugs varchar(254),
+	brandedDrug varchar(2048),
 	CONSTRAINT fk_drugs_brandedDrug FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_brandedDrug` WRITE;
@@ -237,9 +230,8 @@ CREATE INDEX brandeddrug ON drugs_brandedDrug(brandedDrug(1000));
 
 DROP TABLE IF EXISTS `drugs_dosageForm`;
 CREATE TABLE `drugs_dosageForm` (
-	drugs varchar(128),
-	dosageForm varchar(2944),
-	CONSTRAINT pk_drugs_dosageForm PRIMARY KEY(drugs,dosageForm),
+	drugs varchar(254),
+	dosageForm varchar(2048),
 	CONSTRAINT fk_drugs_dosageForm FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_dosageForm` WRITE;
@@ -248,9 +240,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_drugCategory`;
 CREATE TABLE `drugs_drugCategory` (
-	drugs varchar(128),
-	drugCategory varchar(2944),
-	CONSTRAINT pk_drugs_drugCategory PRIMARY KEY(drugs,drugCategory),
+	drugs varchar(254),
+	drugCategory varchar(2048),
 	CONSTRAINT fk_drugs_drugCategory FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_drugCategory` WRITE;
@@ -259,9 +250,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_drugType`;
 CREATE TABLE `drugs_drugType` (
-	drugs varchar(128),
-	drugType varchar(2944),
-	CONSTRAINT pk_drugs_drugType PRIMARY KEY(drugs,drugType),
+	drugs varchar(254),
+	drugType varchar(2048),
 	CONSTRAINT fk_drugs_drugType FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_drugType` WRITE;
@@ -270,9 +260,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_enzyme`;
 CREATE TABLE `drugs_enzyme` (
-	drugs varchar(128),
-	enzyme varchar(2944),
-	CONSTRAINT pk_drugs_enzyme PRIMARY KEY(drugs,enzyme),
+	drugs varchar(254),
+	enzyme varchar(2048),
 	CONSTRAINT fk_drugs_enzyme FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_enzyme` WRITE;
@@ -281,9 +270,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_foodInteraction`;
 CREATE TABLE `drugs_foodInteraction` (
-	drugs varchar(128),
-	foodInteraction varchar(2944),
-	CONSTRAINT pk_drugs_foodInteraction PRIMARY KEY(drugs,foodInteraction),
+	drugs varchar(254),
+	foodInteraction varchar(2048),
 	CONSTRAINT fk_drugs_foodInteraction FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_foodInteraction` WRITE;
@@ -292,9 +280,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_page`;
 CREATE TABLE `drugs_page` (
-	drugs varchar(128),
-	page varchar(2944),
-	CONSTRAINT pk_drugs_page PRIMARY KEY(drugs,page),
+	drugs varchar(254),
+	page varchar(2048),
 	CONSTRAINT fk_drugs_page FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_page` WRITE;
@@ -303,9 +290,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_possibleDiseaseTarget`;
 CREATE TABLE `drugs_possibleDiseaseTarget` (
-	drugs varchar(128),
-	possibleDiseaseTarget varchar(2944),
-	CONSTRAINT pk_drugs_possibleDiseaseTarget PRIMARY KEY(drugs,possibleDiseaseTarget),
+	drugs varchar(254),
+	possibleDiseaseTarget varchar(2048),
 	CONSTRAINT fk_drugs_possibleDiseaseTarget FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_possibleDiseaseTarget` WRITE;
@@ -316,9 +302,8 @@ CREATE INDEX drugs_possibleDiseaseTarget_drugs ON drugs_possibleDiseaseTarget(dr
 
 DROP TABLE IF EXISTS `drugs_sameAs`;
 CREATE TABLE `drugs_sameAs` (
-	drugs varchar(128),
-	sameAs varchar(2944),
-	CONSTRAINT pk_drugs_sameAs PRIMARY KEY(drugs,sameAs),
+	drugs varchar(254),
+	sameAs varchar(2048),
 	CONSTRAINT fk_drugs_sameAs FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_sameAs` WRITE;
@@ -328,9 +313,8 @@ CREATE INDEX drugs_sameAs ON `drugs_sameAs`(sameAs(1000));
 
 DROP TABLE IF EXISTS `drugs_secondaryAccessionNumber`;
 CREATE TABLE `drugs_secondaryAccessionNumber` (
-	drugs varchar(128),
-	secondaryAccessionNumber varchar(2944),
-	CONSTRAINT pk_drugs_secondaryAccessionNumber PRIMARY KEY(drugs,secondaryAccessionNumber),
+	drugs varchar(254),
+	secondaryAccessionNumber varchar(2048),
 	CONSTRAINT fk_drugs_secondaryAccessionNumber FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_secondaryAccessionNumber` WRITE;
@@ -339,9 +323,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_synonym`;
 CREATE TABLE `drugs_synonym` (
-	drugs varchar(128),
-	synonym varchar(2944),
-	CONSTRAINT pk_drugs_synonym PRIMARY KEY(drugs,synonym),
+	drugs varchar(254),
+	synonym varchar(2048),
 	CONSTRAINT fk_drugs_synonym FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_synonym` WRITE;
@@ -350,9 +333,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_target`;
 CREATE TABLE `drugs_target` (
-	drugs varchar(128),
-	target varchar(2944),
-	CONSTRAINT pk_drugs_target PRIMARY KEY(drugs,target),
+	drugs varchar(254),
+	target varchar(2048),
 	CONSTRAINT fk_drugs_target FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_target` WRITE;
@@ -361,9 +343,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `targets_cellularLocation`;
 CREATE TABLE `targets_cellularLocation` (
-	targets varchar(128),
-	cellularLocation varchar(2944),
-	CONSTRAINT pk_targets_cellularLocation PRIMARY KEY(targets,cellularLocation),
+	targets varchar(254),
+	cellularLocation varchar(2048),
 	CONSTRAINT fk_targets_cellularLocation FOREIGN KEY(targets) REFERENCES `targets_main`(targets)
 );
 LOCK TABLES `targets_cellularLocation` WRITE;
@@ -372,9 +353,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `targets_drugReference`;
 CREATE TABLE `targets_drugReference` (
-	targets varchar(128),
-	drugReference varchar(2944),
-	CONSTRAINT pk_targets_drugReference PRIMARY KEY(targets,drugReference),
+	targets varchar(254),
+	drugReference varchar(2048),
 	CONSTRAINT fk_targets_drugReference FOREIGN KEY(targets) REFERENCES `targets_main`(targets)
 );
 LOCK TABLES `targets_drugReference` WRITE;
@@ -383,9 +363,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `targets_generalReference`;
 CREATE TABLE `targets_generalReference` (
-	targets varchar(128),
-	generalReference varchar(2944),
-	CONSTRAINT pk_targets_generalReference PRIMARY KEY(targets,generalReference),
+	targets varchar(254),
+	generalReference varchar(2048),
 	CONSTRAINT fk_targets_generalReference FOREIGN KEY(targets) REFERENCES `targets_main`(targets)
 );
 LOCK TABLES `targets_generalReference` WRITE;
@@ -394,9 +373,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `targets_goClassificationComponent`;
 CREATE TABLE `targets_goClassificationComponent` (
-	targets varchar(128),
-	goClassificationComponent varchar(2944),
-	CONSTRAINT pk_targets_goClassificationComponent PRIMARY KEY(targets,goClassificationComponent),
+	targets varchar(254),
+	goClassificationComponent varchar(2048),
 	CONSTRAINT fk_targets_goClassificationComponent FOREIGN KEY(targets) REFERENCES `targets_main`(targets)
 );
 LOCK TABLES `targets_goClassificationComponent` WRITE;
@@ -405,9 +383,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `targets_goClassificationFunction`;
 CREATE TABLE `targets_goClassificationFunction` (
-	targets varchar(128),
-	goClassificationFunction varchar(2944),
-	CONSTRAINT pk_targets_goClassificationFunction PRIMARY KEY(targets,goClassificationFunction),
+	targets varchar(254),
+	goClassificationFunction varchar(2048),
 	CONSTRAINT fk_targets_goClassificationFunction FOREIGN KEY(targets) REFERENCES `targets_main`(targets)
 );
 LOCK TABLES `targets_goClassificationFunction` WRITE;
@@ -416,9 +393,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `targets_goClassificationProcess`;
 CREATE TABLE `targets_goClassificationProcess` (
-	targets varchar(128),
-	goClassificationProcess varchar(2944),
-	CONSTRAINT pk_targets_goClassificationProcess PRIMARY KEY(targets,goClassificationProcess),
+	targets varchar(254),
+	goClassificationProcess varchar(2048),
 	CONSTRAINT fk_targets_goClassificationProcess FOREIGN KEY(targets) REFERENCES `targets_main`(targets)
 );
 LOCK TABLES `targets_goClassificationProcess` WRITE;
@@ -427,9 +403,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `targets_pfamDomainFunction`;
 CREATE TABLE `targets_pfamDomainFunction` (
-	targets varchar(128),
-	pfamDomainFunction varchar(2944),
-	CONSTRAINT pk_targets_pfamDomainFunction PRIMARY KEY(targets,pfamDomainFunction),
+	targets varchar(254),
+	pfamDomainFunction varchar(2048),
 	CONSTRAINT fk_targets_pfamDomainFunction FOREIGN KEY(targets) REFERENCES `targets_main`(targets)
 );
 LOCK TABLES `targets_pfamDomainFunction` WRITE;
@@ -438,9 +413,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `targets_pfamDomainFunctionPage`;
 CREATE TABLE `targets_pfamDomainFunctionPage` (
-	targets varchar(128),
-	pfamDomainFunctionPage varchar(2944),
-	CONSTRAINT pk_targets_pfamDomainFunctionPage PRIMARY KEY(targets,pfamDomainFunctionPage),
+	targets varchar(254),
+	pfamDomainFunctionPage varchar(2048),
 	CONSTRAINT fk_targets_pfamDomainFunctionPage FOREIGN KEY(targets) REFERENCES `targets_main`(targets)
 );
 LOCK TABLES `targets_pfamDomainFunctionPage` WRITE;
@@ -449,9 +423,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `targets_sameAs`;
 CREATE TABLE `targets_sameAs` (
-	targets varchar(128),
-	sameAs varchar(2944),
-	CONSTRAINT pk_targets_sameAs PRIMARY KEY(targets,sameAs),
+	targets varchar(254),
+	sameAs varchar(2048),
 	CONSTRAINT fk_targets_sameAs FOREIGN KEY(targets) REFERENCES `targets_main`(targets)
 );
 LOCK TABLES `targets_sameAs` WRITE;
@@ -460,9 +433,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `targets_synonym`;
 CREATE TABLE `targets_synonym` (
-	targets varchar(128),
-	synonym varchar(2944),
-	CONSTRAINT pk_targets_synonym PRIMARY KEY(targets,synonym),
+	targets varchar(254),
+	synonym varchar(2048),
 	CONSTRAINT fk_targets_synonym FOREIGN KEY(targets) REFERENCES `targets_main`(targets)
 );
 LOCK TABLES `targets_synonym` WRITE;
@@ -471,9 +443,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `targets_transmembraneRegions`;
 CREATE TABLE `targets_transmembraneRegions` (
-	targets varchar(128),
-	transmembraneRegions varchar(2944),
-	CONSTRAINT pk_targets_transmembraneRegions PRIMARY KEY(targets,transmembraneRegions),
+	targets varchar(254),
+	transmembraneRegions varchar(2048),
 	CONSTRAINT fk_targets_transmembraneRegions FOREIGN KEY(targets) REFERENCES `targets_main`(targets)
 );
 LOCK TABLES `targets_transmembraneRegions` WRITE;

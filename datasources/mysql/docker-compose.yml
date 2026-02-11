@@ -26,14 +26,18 @@ services:
       retries: 20
       start_period: 20s
 
-  ontop:
+  ontop_affymetrix:
     build: .
     container_name: ontop_affymetrix
     depends_on:
       mysql_affymetrix_idx:
         condition: service_healthy
     ports:
-    - "8080:8080"
+      - "8080:8080"
+    volumes:
+      - ./ontop-configs/affymetrix/ontology.owl:/app/ontology.owl:ro
+      - ./ontop-configs/affymetrix/mapping.ttl:/app/mapping.ttl:ro
+      - ./ontop-configs/affymetrix/ontop.properties:/app/ontop.properties:ro
     restart: always
 
   mysql_chebi_idx:
@@ -43,11 +47,37 @@ services:
       - "9001:3306"
     environment:
       MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: chebi
+      MYSQL_USER: ontop
+      MYSQL_PASSWORD: ontop123
     volumes:
       - ./config:/etc/mysql/conf.d
       - ../tsv:/data/prohde/lslod/tsv
       - ./volumes/chebi:/var/lib/mysql
-      - ./sql/chebi.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./sql/chebi.sql:/docker-entrypoint-initdb.d/chebi.sql:ro
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mysql -uontop -pontop123 -h localhost -e 'SELECT 1' chebi || exit 1"
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+
+  ontop_chebi:
+    build: .
+    container_name: ontop_chebi
+    depends_on:
+      mysql_chebi_idx:
+        condition: service_healthy
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./ontop-configs/chebi/ontology.owl:/app/ontology.owl:ro
+      - ./ontop-configs/chebi/mapping.ttl:/app/mapping.ttl:ro
+      - ./ontop-configs/chebi/ontop.properties:/app/ontop.properties:ro
     restart: always
 
   mysql_dailymed_idx:
@@ -57,11 +87,37 @@ services:
       - "9002:3306"
     environment:
       MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: dailymed
+      MYSQL_USER: ontop
+      MYSQL_PASSWORD: ontop123
     volumes:
       - ./config:/etc/mysql/conf.d
       - ../tsv:/data/prohde/lslod/tsv
       - ./volumes/dailymed:/var/lib/mysql
-      - ./sql/dailymed.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./sql/dailymed.sql:/docker-entrypoint-initdb.d/dailymed.sql:ro
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mysql -uontop -pontop123 -h localhost -e 'SELECT 1' dailymed || exit 1"
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+
+  ontop_dailymed:
+    build: .
+    container_name: ontop_dailymed
+    depends_on:
+      mysql_dailymed_idx:
+        condition: service_healthy
+    ports:
+      - "8082:8080"
+    volumes:
+      - ./ontop-configs/dailymed/ontology.owl:/app/ontology.owl:ro
+      - ./ontop-configs/dailymed/mapping.ttl:/app/mapping.ttl:ro
+      - ./ontop-configs/dailymed/ontop.properties:/app/ontop.properties:ro
     restart: always
 
   mysql_diseasome_idx:
@@ -71,11 +127,37 @@ services:
       - "9003:3306"
     environment:
       MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: diseasome
+      MYSQL_USER: ontop
+      MYSQL_PASSWORD: ontop123
     volumes:
       - ./config:/etc/mysql/conf.d
       - ../tsv:/data/prohde/lslod/tsv
       - ./volumes/diseasome:/var/lib/mysql
-      - ./sql/diseasome.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./sql/diseasome.sql:/docker-entrypoint-initdb.d/diseasome.sql:ro
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mysql -uontop -pontop123 -h localhost -e 'SELECT 1' diseasome || exit 1"
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+
+  ontop_diseasome:
+    build: .
+    container_name: ontop_diseasome
+    depends_on:
+      mysql_diseasome_idx:
+        condition: service_healthy
+    ports:
+      - "8083:8080"
+    volumes:
+      - ./ontop-configs/diseasome/ontology.owl:/app/ontology.owl:ro
+      - ./ontop-configs/diseasome/mapping.ttl:/app/mapping.ttl:ro
+      - ./ontop-configs/diseasome/ontop.properties:/app/ontop.properties:ro
     restart: always
 
   mysql_drugbank_idx:
@@ -85,11 +167,37 @@ services:
       - "9004:3306"
     environment:
       MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: drugbank
+      MYSQL_USER: ontop
+      MYSQL_PASSWORD: ontop123
     volumes:
       - ./config:/etc/mysql/conf.d
       - ../tsv:/data/prohde/lslod/tsv
       - ./volumes/drugbank:/var/lib/mysql
-      - ./sql/drugbank.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./sql/drugbank.sql:/docker-entrypoint-initdb.d/drugbank.sql:ro
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mysql -uontop -pontop123 -h localhost -e 'SELECT 1' drugbank || exit 1"
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+
+  ontop_drugbank:
+    build: .
+    container_name: ontop_drugbank
+    depends_on:
+      mysql_drugbank_idx:
+        condition: service_healthy
+    ports:
+      - "8084:8080"
+    volumes:
+      - ./ontop-configs/drugbank/ontology.owl:/app/ontology.owl:ro
+      - ./ontop-configs/drugbank/mapping.ttl:/app/mapping.ttl:ro
+      - ./ontop-configs/drugbank/ontop.properties:/app/ontop.properties:ro
     restart: always
 
   mysql_kegg_idx:
@@ -99,11 +207,37 @@ services:
       - "9005:3306"
     environment:
       MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: kegg
+      MYSQL_USER: ontop
+      MYSQL_PASSWORD: ontop123
     volumes:
       - ./config:/etc/mysql/conf.d
       - ../tsv:/data/prohde/lslod/tsv
       - ./volumes/kegg:/var/lib/mysql
-      - ./sql/kegg.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./sql/kegg.sql:/docker-entrypoint-initdb.d/kegg.sql:ro
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mysql -uontop -pontop123 -h localhost -e 'SELECT 1' kegg || exit 1"
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+
+  ontop_kegg:
+    build: .
+    container_name: ontop_kegg
+    depends_on:
+      mysql_kegg_idx:
+        condition: service_healthy
+    ports:
+      - "8085:8080"
+    volumes:
+      - ./ontop-configs/kegg/ontology.owl:/app/ontology.owl:ro
+      - ./ontop-configs/kegg/mapping.ttl:/app/mapping.ttl:ro
+      - ./ontop-configs/kegg/ontop.properties:/app/ontop.properties:ro
     restart: always
 
   mysql_linkedct_idx:
@@ -113,11 +247,37 @@ services:
       - "9006:3306"
     environment:
       MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: linkedct
+      MYSQL_USER: ontop
+      MYSQL_PASSWORD: ontop123
     volumes:
       - ./config:/etc/mysql/conf.d
       - ../tsv:/data/prohde/lslod/tsv
       - ./volumes/linkedct:/var/lib/mysql
-      - ./sql/linkedct.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./sql/linkedct.sql:/docker-entrypoint-initdb.d/linkedct.sql:ro
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mysql -uontop -pontop123 -h localhost -e 'SELECT 1' linkedct || exit 1"
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+
+  ontop_linkedct:
+    build: .
+    container_name: ontop_linkedct
+    depends_on:
+      mysql_linkedct_idx:
+        condition: service_healthy
+    ports:
+      - "8086:8080"
+    volumes:
+      - ./ontop-configs/linkedct/ontology.owl:/app/ontology.owl:ro
+      - ./ontop-configs/linkedct/mapping.ttl:/app/mapping.ttl:ro
+      - ./ontop-configs/linkedct/ontop.properties:/app/ontop.properties:ro
     restart: always
 
   mysql_medicare_idx:
@@ -127,11 +287,37 @@ services:
       - "9007:3306"
     environment:
       MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: medicare
+      MYSQL_USER: ontop
+      MYSQL_PASSWORD: ontop123
     volumes:
       - ./config:/etc/mysql/conf.d
       - ../tsv:/data/prohde/lslod/tsv
       - ./volumes/medicare:/var/lib/mysql
-      - ./sql/medicare.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./sql/medicare.sql:/docker-entrypoint-initdb.d/medicare.sql:ro
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mysql -uontop -pontop123 -h localhost -e 'SELECT 1' medicare || exit 1"
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+
+  ontop_medicare:
+    build: .
+    container_name: ontop_medicare
+    depends_on:
+      mysql_medicare_idx:
+        condition: service_healthy
+    ports:
+      - "8087:8080"
+    volumes:
+      - ./ontop-configs/medicare/ontology.owl:/app/ontology.owl:ro
+      - ./ontop-configs/medicare/mapping.ttl:/app/mapping.ttl:ro
+      - ./ontop-configs/medicare/ontop.properties:/app/ontop.properties:ro
     restart: always
 
   mysql_sider_idx:
@@ -141,11 +327,37 @@ services:
       - "9008:3306"
     environment:
       MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: sider
+      MYSQL_USER: ontop
+      MYSQL_PASSWORD: ontop123
     volumes:
       - ./config:/etc/mysql/conf.d
       - ../tsv:/data/prohde/lslod/tsv
       - ./volumes/sider:/var/lib/mysql
-      - ./sql/sider.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./sql/sider.sql:/docker-entrypoint-initdb.d/sider.sql:ro
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mysql -uontop -pontop123 -h localhost -e 'SELECT 1' sider || exit 1"
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+
+  ontop_sider:
+    build: .
+    container_name: ontop_sider
+    depends_on:
+      mysql_sider_idx:
+        condition: service_healthy
+    ports:
+      - "8088:8080"
+    volumes:
+      - ./ontop-configs/sider/ontology.owl:/app/ontology.owl:ro
+      - ./ontop-configs/sider/mapping.ttl:/app/mapping.ttl:ro
+      - ./ontop-configs/sider/ontop.properties:/app/ontop.properties:ro
     restart: always
 
   mysql_tcga_idx:
@@ -155,9 +367,35 @@ services:
       - "9009:3306"
     environment:
       MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: tcga
+      MYSQL_USER: ontop
+      MYSQL_PASSWORD: ontop123
     volumes:
       - ./config:/etc/mysql/conf.d
       - ../tsv:/data/prohde/lslod/tsv
       - ./volumes/tcga:/var/lib/mysql
-      - ./sql/tcga.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./sql/tcga.sql:/docker-entrypoint-initdb.d/tcga.sql:ro
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mysql -uontop -pontop123 -h localhost -e 'SELECT 1' tcga || exit 1"
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+
+  ontop_tcga:
+    build: .
+    container_name: ontop_tcga
+    depends_on:
+      mysql_tcga_idx:
+        condition: service_healthy
+    ports:
+      - "8089:8080"
+    volumes:
+      - ./ontop-configs/tcga/ontology.owl:/app/ontology.owl:ro
+      - ./ontop-configs/tcga/mapping.ttl:/app/mapping.ttl:ro
+      - ./ontop-configs/tcga/ontop.properties:/app/ontop.properties:ro
     restart: always

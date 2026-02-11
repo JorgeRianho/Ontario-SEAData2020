@@ -5,7 +5,7 @@ USE `dailymed`;
 
 DROP TABLE IF EXISTS `drugs_main`;
 CREATE TABLE `drugs_main` (
-	drugs varchar(1000) PRIMARY KEY,
+	drugs varchar(254) PRIMARY KEY,
 	label text,
 	activeIngredient text,
 	activeMoiety text,
@@ -34,7 +34,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ingredients_main`;
 CREATE TABLE `ingredients_main` (
-	ingredients varchar(1000) PRIMARY KEY,
+	ingredients varchar(254) PRIMARY KEY,
 	label text,
 	sameAs text
 );
@@ -44,7 +44,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `organization_main`;
 CREATE TABLE `organization_main` (
-	organization varchar(1000) PRIMARY KEY
+	organization varchar(254) PRIMARY KEY
 );
 LOCK TABLES `organization_main` WRITE;
 LOAD DATA INFILE '/data/prohde/lslod/tsv/dailymed/organization_main.tsv' INTO TABLE `organization_main` FIELDS TERMINATED BY '\t' LINES TERMINATED BY '\n' IGNORE 1 ROWS;
@@ -52,9 +52,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_inactiveIngredient`;
 CREATE TABLE `drugs_inactiveIngredient` (
-	drugs varchar(128),
-	inactiveIngredient varchar(2944),
-	CONSTRAINT pk_drugs_inactiveIngredient PRIMARY KEY(drugs,inactiveIngredient),
+	drugs varchar(254),
+	inactiveIngredient varchar(2048),
 	CONSTRAINT fk_drugs_inactiveIngredient FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_inactiveIngredient` WRITE;
@@ -63,9 +62,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_possibleDiseaseTarget`;
 CREATE TABLE `drugs_possibleDiseaseTarget` (
-	drugs varchar(128),
-	possibleDiseaseTarget varchar(2944),
-	CONSTRAINT pk_drugs_possibleDiseaseTarget PRIMARY KEY(drugs,possibleDiseaseTarget),
+	drugs varchar(254),
+	possibleDiseaseTarget varchar(2048),
 	CONSTRAINT fk_drugs_possibleDiseaseTarget FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_possibleDiseaseTarget` WRITE;
@@ -74,9 +72,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `drugs_sameAs`;
 CREATE TABLE `drugs_sameAs` (
-	drugs varchar(128),
-	sameAs varchar(2944),
-	CONSTRAINT pk_drugs_sameAs PRIMARY KEY(drugs,sameAs),
+	drugs varchar(254),
+	sameAs varchar(2048),
 	CONSTRAINT fk_drugs_sameAs FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_sameAs` WRITE;
@@ -86,9 +83,8 @@ CREATE INDEX drugs_sameAs ON drugs_sameAs(sameAs(1000));
 
 DROP TABLE IF EXISTS `drugs_sideEffect`;
 CREATE TABLE `drugs_sideEffect` (
-	drugs varchar(128),
-	sideEffect varchar(2944),
-	CONSTRAINT pk_drugs_sideEffect PRIMARY KEY(drugs,sideEffect),
+	drugs varchar(254),
+	sideEffect varchar(2048),
 	CONSTRAINT fk_drugs_sideEffect FOREIGN KEY(drugs) REFERENCES `drugs_main`(drugs)
 );
 LOCK TABLES `drugs_sideEffect` WRITE;
@@ -97,9 +93,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `organization_label`;
 CREATE TABLE `organization_label` (
-	organization varchar(128),
-	label varchar(2944),
-	CONSTRAINT pk_organization_label PRIMARY KEY(organization,label),
+	organization varchar(254),
+	label varchar(2048),
 	CONSTRAINT fk_organization_label FOREIGN KEY(organization) REFERENCES `organization_main`(organization)
 );
 LOCK TABLES `organization_label` WRITE;
@@ -108,9 +103,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `organization_producesDrug`;
 CREATE TABLE `organization_producesDrug` (
-	organization varchar(128),
-	producesDrug varchar(2944),
-	CONSTRAINT pk_organization_producesDrug PRIMARY KEY(organization,producesDrug),
+	organization varchar(254),
+	producesDrug varchar(2048),
 	CONSTRAINT fk_organization_producesDrug FOREIGN KEY(organization) REFERENCES `organization_main`(organization)
 );
 LOCK TABLES `organization_producesDrug` WRITE;
@@ -119,9 +113,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `organization_sameAs`;
 CREATE TABLE `organization_sameAs` (
-	organization varchar(128),
-	sameAs varchar(2944),
-	CONSTRAINT pk_organization_sameAs PRIMARY KEY(organization,sameAs),
+	organization varchar(254),
+	sameAs varchar(2048),
 	CONSTRAINT fk_organization_sameAs FOREIGN KEY(organization) REFERENCES `organization_main`(organization)
 );
 LOCK TABLES `organization_sameAs` WRITE;
