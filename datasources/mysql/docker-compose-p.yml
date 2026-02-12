@@ -10,8 +10,15 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
     volumes:
-      - ./volumes/affymetrix:/var/lib/postgresql/data
-      - ./sql/affymetrix.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./postgresql/volumes-v2/affymetrix:/var/lib/postgresql/data
+      - ../tsv:/data/prohde/lslod/tsv:ro
+      - ./postgresql/sql/affymetrix.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d affymetrix"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
     restart: always
 
   postgres_chebi_idx:
@@ -24,8 +31,15 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
     volumes:
-      - ./volumes/chebi:/var/lib/postgresql/data
-      - ./sql/chebi.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./postgresql/volumes-v2/chebi:/var/lib/postgresql/data
+      - ../tsv:/data/prohde/lslod/tsv:ro
+      - ./postgresql/sql/chebi.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d chebi"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
     restart: always
 
   postgres_dailymed_idx:
@@ -38,8 +52,15 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
     volumes:
-      - ./volumes/dailymed:/var/lib/postgresql/data
-      - ./sql/dailymed.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./postgresql/volumes-v2/dailymed:/var/lib/postgresql/data
+      - ../tsv:/data/prohde/lslod/tsv:ro
+      - ./postgresql/sql/dailymed.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d dailymed"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
     restart: always
 
   postgres_diseasome_idx:
@@ -52,9 +73,17 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
     volumes:
-      - ./volumes/diseasome:/var/lib/postgresql/data
-      - ./sql/diseasome.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./postgresql/volumes-v2/diseasome:/var/lib/postgresql/data
+      - ../tsv:/data/prohde/lslod/tsv:ro
+      - ./postgresql/sql/diseasome.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d diseasome"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
     restart: always
+
   postgres_drugbank_idx:
     image: postgres:16
     container_name: prohde_lslod_postgres_drugbank_idx
@@ -65,8 +94,15 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
     volumes:
-      - ./volumes/drugbank:/var/lib/postgresql/data
-      - ./sql/drugbank.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./postgresql/volumes-v2/drugbank:/var/lib/postgresql/data
+      - ../tsv:/data/prohde/lslod/tsv:ro
+      - ./postgresql/sql/drugbank.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d drugbank"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
     restart: always
 
   postgres_kegg_idx:
@@ -79,8 +115,15 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
     volumes:
-      - ./volumes/kegg:/var/lib/postgresql/data
-      - ./sql/kegg.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./postgresql/volumes-v2/kegg:/var/lib/postgresql/data
+      - ../tsv:/data/prohde/lslod/tsv:ro
+      - ./postgresql/sql/kegg.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d kegg"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
     restart: always
 
   postgres_linkedct_idx:
@@ -93,8 +136,15 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
     volumes:
-      - ./volumes/linkedct:/var/lib/postgresql/data
-      - ./sql/linkedct.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./postgresql/volumes-v2/linkedct:/var/lib/postgresql/data
+      - ../tsv:/data/prohde/lslod/tsv:ro
+      - ./postgresql/sql/linkedct.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d linkedct"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
     restart: always
 
   postgres_medicare_idx:
@@ -107,8 +157,15 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
     volumes:
-      - ./volumes/medicare:/var/lib/postgresql/data
-      - ./sql/medicare.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./postgresql/volumes-v2/medicare:/var/lib/postgresql/data
+      - ../tsv:/data/prohde/lslod/tsv:ro
+      - ./postgresql/sql/medicare.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d medicare"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
     restart: always
 
   postgres_sider_idx:
@@ -121,8 +178,15 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
     volumes:
-      - ./volumes/sider:/var/lib/postgresql/data
-      - ./sql/sider.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./postgresql/volumes-v2/sider:/var/lib/postgresql/data
+      - ../tsv:/data/prohde/lslod/tsv:ro
+      - ./postgresql/sql/sider.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d sider"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
     restart: always
 
   postgres_tcga_idx:
@@ -135,6 +199,173 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
     volumes:
-      - ./volumes/tcga:/var/lib/postgresql/data
-      - ./sql/tcga.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./postgresql/volumes-v2/tcga:/var/lib/postgresql/data
+      - ../tsv:/data/prohde/lslod/tsv:ro
+      - ./postgresql/sql/tcga.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d tcga"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+    restart: always
+
+  ontop_affymetrix:
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    container_name: ontop_affymetrix
+    depends_on:
+      postgres_affymetrix_idx:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./ontop-configs/affymetrix/ontology.owl:/app/ontology.owl:ro
+      - ./ontop-configs/affymetrix/mapping.ttl:/app/mapping.ttl:ro
+      - ./ontop-configs-postgres/affymetrix/ontop.properties:/app/ontop.properties:ro
+    restart: always
+
+  ontop_chebi:
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    container_name: ontop_chebi
+    depends_on:
+      postgres_chebi_idx:
+        condition: service_healthy
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./ontop-configs/chebi/ontology.owl:/app/ontology.owl:ro
+      - ./ontop-configs/chebi/mapping.ttl:/app/mapping.ttl:ro
+      - ./ontop-configs-postgres/chebi/ontop.properties:/app/ontop.properties:ro
+    restart: always
+
+  ontop_dailymed:
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    container_name: ontop_dailymed
+    depends_on:
+      postgres_dailymed_idx:
+        condition: service_healthy
+    ports:
+      - "8082:8080"
+    volumes:
+      - ./ontop-configs/dailymed/ontology.owl:/app/ontology.owl:ro
+      - ./ontop-configs/dailymed/mapping.ttl:/app/mapping.ttl:ro
+      - ./ontop-configs-postgres/dailymed/ontop.properties:/app/ontop.properties:ro
+    restart: always
+
+  ontop_diseasome:
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    container_name: ontop_diseasome
+    depends_on:
+      postgres_diseasome_idx:
+        condition: service_healthy
+    ports:
+      - "8083:8080"
+    volumes:
+      - ./ontop-configs/diseasome/ontology.owl:/app/ontology.owl:ro
+      - ./ontop-configs/diseasome/mapping.ttl:/app/mapping.ttl:ro
+      - ./ontop-configs-postgres/diseasome/ontop.properties:/app/ontop.properties:ro
+    restart: always
+
+  ontop_drugbank:
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    container_name: ontop_drugbank
+    depends_on:
+      postgres_drugbank_idx:
+        condition: service_healthy
+    ports:
+      - "8084:8080"
+    volumes:
+      - ./ontop-configs/drugbank/ontology.owl:/app/ontology.owl:ro
+      - ./ontop-configs/drugbank/mapping.ttl:/app/mapping.ttl:ro
+      - ./ontop-configs-postgres/drugbank/ontop.properties:/app/ontop.properties:ro
+    restart: always
+
+  ontop_kegg:
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    container_name: ontop_kegg
+    depends_on:
+      postgres_kegg_idx:
+        condition: service_healthy
+    ports:
+      - "8085:8080"
+    volumes:
+      - ./ontop-configs/kegg/ontology.owl:/app/ontology.owl:ro
+      - ./ontop-configs/kegg/mapping.ttl:/app/mapping.ttl:ro
+      - ./ontop-configs-postgres/kegg/ontop.properties:/app/ontop.properties:ro
+    restart: always
+
+  ontop_linkedct:
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    container_name: ontop_linkedct
+    depends_on:
+      postgres_linkedct_idx:
+        condition: service_healthy
+    ports:
+      - "8086:8080"
+    volumes:
+      - ./ontop-configs/linkedct/ontology.owl:/app/ontology.owl:ro
+      - ./ontop-configs/linkedct/mapping.ttl:/app/mapping.ttl:ro
+      - ./ontop-configs-postgres/linkedct/ontop.properties:/app/ontop.properties:ro
+    restart: always
+
+  ontop_medicare:
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    container_name: ontop_medicare
+    depends_on:
+      postgres_medicare_idx:
+        condition: service_healthy
+    ports:
+      - "8087:8080"
+    volumes:
+      - ./ontop-configs/medicare/ontology.owl:/app/ontology.owl:ro
+      - ./ontop-configs/medicare/mapping.ttl:/app/mapping.ttl:ro
+      - ./ontop-configs-postgres/medicare/ontop.properties:/app/ontop.properties:ro
+    restart: always
+
+  ontop_sider:
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    container_name: ontop_sider
+    depends_on:
+      postgres_sider_idx:
+        condition: service_healthy
+    ports:
+      - "8088:8080"
+    volumes:
+      - ./ontop-configs/sider/ontology.owl:/app/ontology.owl:ro
+      - ./ontop-configs/sider/mapping.ttl:/app/mapping.ttl:ro
+      - ./ontop-configs-postgres/sider/ontop.properties:/app/ontop.properties:ro
+    restart: always
+
+  ontop_tcga:
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    container_name: ontop_tcga
+    depends_on:
+      postgres_tcga_idx:
+        condition: service_healthy
+    ports:
+      - "8089:8080"
+    volumes:
+      - ./ontop-configs/tcga/ontology.owl:/app/ontology.owl:ro
+      - ./ontop-configs/tcga/mapping.ttl:/app/mapping.ttl:ro
+      - ./ontop-configs-postgres/tcga/ontop.properties:/app/ontop.properties:ro
     restart: always
