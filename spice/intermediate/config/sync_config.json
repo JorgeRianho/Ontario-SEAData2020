@@ -1,0 +1,109 @@
+{
+  "tables": [
+    {
+      "name": "mysql_affymetrix_probeset_main",
+      "source_sql": "SELECT Probeset AS id, probe_set_id FROM mysql_affymetrix_probeset_main",
+      "target_schema": "src_affymetrix",
+      "target_table": "probeset_main",
+      "columns": ["id", "probe_set_id"]
+    },
+    {
+      "name": "mysql_chebi_compound_main",
+      "source_sql": "SELECT Compound AS id, label FROM mysql_chebi_compound_main",
+      "target_schema": "src_chebi",
+      "target_table": "compound_main",
+      "columns": ["id", "label"]
+    },
+    {
+      "name": "mysql_dailymed_drugs_main",
+      "source_sql": "SELECT drugs AS id, name, indication FROM mysql_dailymed_drugs_main",
+      "target_schema": "src_dailymed",
+      "target_table": "drugs_main",
+      "columns": ["id", "name", "indication"]
+    },
+    {
+      "name": "mysql_diseasome_diseases_main",
+      "source_sql": "SELECT diseases AS id, name FROM mysql_diseasome_diseases_main",
+      "target_schema": "src_diseasome",
+      "target_table": "diseases_main",
+      "columns": ["id", "name"]
+    },
+    {
+      "name": "mysql_drugbank_drugs_main",
+      "source_sql": "SELECT drugs AS drug_id, casRegistryNumber AS cas_registry_number, genericName AS generic_name, indication, keggCompoundId AS kegg_compound_id FROM mysql_drugbank_drugs_main",
+      "target_schema": "src_drugbank",
+      "target_table": "drugs_main",
+      "columns": ["drug_id", "cas_registry_number", "generic_name", "indication", "kegg_compound_id"]
+    },
+    {
+      "name": "mysql_drugbank_drugs_drugcategory",
+      "source_sql": "SELECT drugs AS drug_id, drugCategory AS drug_category FROM mysql_drugbank_drugs_drugcategory",
+      "target_schema": "src_drugbank",
+      "target_table": "drugs_drugcategory",
+      "columns": ["drug_id", "drug_category"]
+    },
+    {
+      "name": "mysql_drugbank_drugs_target",
+      "source_sql": "SELECT drugs AS drug_id, target AS target_id FROM mysql_drugbank_drugs_target",
+      "target_schema": "src_drugbank",
+      "target_table": "drugs_target",
+      "columns": ["drug_id", "target_id"]
+    },
+    {
+      "name": "mysql_drugbank_targets_main",
+      "source_sql": "SELECT targets AS target_id, label, chromosomeLocation AS chromosome_location FROM mysql_drugbank_targets_main",
+      "target_schema": "src_drugbank",
+      "target_table": "targets_main",
+      "columns": ["target_id", "label", "chromosome_location"]
+    },
+    {
+      "name": "mysql_kegg_compound_main",
+      "source_sql": "SELECT Compound AS compound_id, title FROM mysql_kegg_compound_main",
+      "target_schema": "src_kegg",
+      "target_table": "compound_main",
+      "columns": ["compound_id", "title"]
+    },
+    {
+      "name": "mysql_kegg_drug_main",
+      "source_sql": "SELECT Drug AS drug_id, title FROM mysql_kegg_drug_main",
+      "target_schema": "src_kegg",
+      "target_table": "drug_main",
+      "columns": ["drug_id", "title"]
+    },
+    {
+      "name": "mysql_kegg_drug_xref",
+      "source_sql": "SELECT Drug AS drug_id, xRef AS xref FROM mysql_kegg_drug_xref",
+      "target_schema": "src_kegg",
+      "target_table": "drug_xref",
+      "columns": ["drug_id", "xref"]
+    },
+    {
+      "name": "mysql_linkedct_agency_main",
+      "source_sql": "SELECT agency AS id, agency_name FROM mysql_linkedct_agency_main",
+      "target_schema": "src_linkedct",
+      "target_table": "agency_main",
+      "columns": ["id", "agency_name"]
+    },
+    {
+      "name": "mysql_medicare_drugs_main",
+      "source_sql": "SELECT drugs AS id, label, medicareId AS medicare_id FROM mysql_medicare_drugs_main",
+      "target_schema": "src_medicare",
+      "target_table": "drugs_main",
+      "columns": ["id", "label", "medicare_id"]
+    },
+    {
+      "name": "mysql_sider_drugs_main",
+      "source_sql": "SELECT drugs AS id, label, siderDrugId AS sider_drug_id FROM mysql_sider_drugs_main",
+      "target_schema": "src_sider",
+      "target_table": "drugs_main",
+      "columns": ["id", "label", "sider_drug_id"]
+    },
+    {
+      "name": "mysql_tcga_aliquot_main",
+      "source_sql": "SELECT aliquot AS id, bcr_aliquot_barcode FROM mysql_tcga_aliquot_main",
+      "target_schema": "src_tcga",
+      "target_table": "aliquot_main",
+      "columns": ["id", "bcr_aliquot_barcode"]
+    }
+  ]
+}

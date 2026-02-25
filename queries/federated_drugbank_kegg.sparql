@@ -1,0 +1,15 @@
+PREFIX drugbank: <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugbank/>
+PREFIX purl: <http://purl.org/dc/elements/1.1/>
+
+SELECT DISTINCT ?drug ?keggId ?title
+WHERE {
+  ?drug drugbank:keggCompoundId ?keggId .
+  FILTER(STRLEN(STR(?keggId)) > 0)
+
+  BIND(
+    IRI(CONCAT("http://example.org/kegg/compound/", STR(?keggId))) AS ?keggCompound
+  )
+
+  ?keggCompound purl:title ?title .
+}
+LIMIT 200

@@ -1,202 +1,115 @@
-# Ontario-SEAData2020
+# Ontario-SEAData2020 (unificado)
 
-Repositorio del experimento presentado en **"Optimizing Federated Queries Based on the Data Lake Physical Design" (SEA Data 2020)**.
+Arquitectura objetivo de este repositorio:
 
-Este README esta orientado a usuarios que quieran ejecutar rapidamente los endpoints SPARQL de Ontop sobre las 10 bases del proyecto, tanto en version **MySQL** como en version **PostgreSQL**.
+`SPARQL -> Ontop -> PostgreSQL intermedio -> Spice SQL federado -> 10 BDs MySQL Ontario`
+
+Con este flujo tienes un endpoint SPARQL unico (`Ontop`) sobre una federacion SQL unica (`Spice`) de las 10 fuentes.
 
 ## Requisitos
 
-- Docker + Docker Compose plugin (`docker compose`)
-- 7-Zip (`7z`) para extraer archivos partidos (`.zip.001`, `.zip.002`, ...)
-- Sistema Linux/WSL/macOS con al menos 16 GB RAM recomendados
+- Docker + Docker Compose (`docker compose`)
+- Datos TSV disponibles en `datasources/tsv/` para las 10 fuentes
+  - Si los tienes en partes (`.zip.001`, `.zip.002`, ...), extráelos antes
 
 ## Estructura relevante
 
-- `datasources/tsv/`: datos tabulares (incluye archivos comprimidos)
-- `datasources/mysql/docker-compose.yml`: stack de MySQL + Ontop
-- `datasources/mysql/docker-compose-p.yml`: stack de PostgreSQL + Ontop
-- `datasources/mysql/ontop-configs/<db>/`: configuracion Ontop por base (`mapping.ttl`, `ontology.owl`, `ontop.properties`)
+- `datasources/mysql/`: stack de las 10 BDs MySQL fuente
+- `spice/`: stack de Spice + capa intermedia + Ontop unificado
+- `queries/`: consultas SPARQL listas para validar federacion
 
-## 1) Preparar datos comprimidos
+## 1) Arranque completo (todo en uno)
 
-En GitHub los datos pueden venir comprimidos en partes (`tsv.zip.001`, `tsv.zip.002`, ...).
-
-Desde la raiz del proyecto (`Ontario-SEAData2020`):
+Desde la raiz de `Ontario-SEAData2020`:
 
 ```bash
-cd datasources/tsv
-7z x tsv.zip.001 -y
-cd ../..
+cd spice
+bash intermediate/scripts/start_unified_endpoint.sh
 ```
 
-Esto recrea las carpetas `affymetrix`, `chebi`, `dailymed`, `diseasome`, `drugbank`, `kegg`, `linkedct`, `medicare`, `sider`, `tcga` con sus `.tsv`.
+Este script hace automaticamente:
 
-## 2) Levantar version MySQL + Ontop (10 endpoints)
+1. Levanta las 10 BDs MySQL de `datasources/mysql`.
+2. Activa `spice/spicepod.ontario10.intermediate.yaml`.
+3. Levanta Spice y valida `http://localhost:8090/v1/sql`.
+4. Levanta PostgreSQL intermedio (`localhost:55433`).
+5. Sincroniza datos desde Spice a PostgreSQL.
+6. Levanta Ontop unificado.
+
+## 2) Endpoints
+
+- Spice SQL: `http://localhost:8090/v1/sql`
+- Ontop UI: `http://localhost:18085/`
+- Ontop SPARQL: `http://localhost:18085/sparql`
+
+## 3) Probar consultas SPARQL
+
+Desde `Ontario-SEAData2020/spice`:
+
+```bash
+bash intermediate/scripts/run_unified_sparql.sh ../queries/check_unified_10_sources.sparql
+bash intermediate/scripts/run_unified_sparql.sh ../queries/federated_drugbank_kegg.sparql
+bash intermediate/scripts/run_unified_sparql.sh ../queries/federated_drugbank_dailymed.sparql
+bash intermediate/scripts/run_unified_sparql.sh ../queries/listing2_unified.sparql
+bash intermediate/scripts/run_unified_sparql.sh ../queries/listing3_unified.sparql
+```
+
+## 4) Refrescar datos
+
+Si cambian tablas o datos fuente:
+
+```bash
+cd spice
+bash intermediate/scripts/refresh_intermediate_data.sh
+```
+
+## 5) Parar servicios
+
+```bash
+cd spice
+bash intermediate/scripts/stop_unified_endpoint.sh
+```
+
+## 6) Problemas comunes
+
+### El endpoint SPARQL no responde
+
+Revisa:
+
+```bash
+cd spice
+docker compose logs -f spice
+docker compose -f intermediate/docker-compose.yml logs -f ontop_unified
+```
+
+### Ya tenias un stack Spice antiguo levantado
+
+Si estabas usando `spice-benchmark` por separado, puede haber conflicto de puertos (`8090`, `50051`, `18085`) o contenedores previos.
+
+Para evitarlo, para primero el stack antiguo y vuelve a lanzar el unificado:
+
+```bash
+cd ../spice-benchmark
+docker compose stop spice || true
+cd intermediate
+docker compose down || true
+```
+
+### Spice responde pero SPARQL devuelve vacio
+
+Reejecuta sincronizacion:
+
+```bash
+cd spice
+bash intermediate/scripts/refresh_intermediate_data.sh
+```
+
+### No levantan las BDs MySQL de Ontario
+
+Revisa estado:
 
 ```bash
 cd datasources/mysql
-docker compose up -d --build
-```
-
-Comprobar estado:
-
-```bash
 docker compose ps
-```
-
-Debes ver:
-
-- `mysql_*_idx` en `healthy`
-- `ontop_*` en `Up`
-
-## 3) Levantar version PostgreSQL + Ontop (10 endpoints)
-
-La version PostgreSQL usa:
-
-- archivo `datasources/mysql/docker-compose-p.yml`
-- PostgreSQL en puertos `9100`-`9109`
-- endpoints Ontop tambien en `8080`-`8089`
-
-Comando:
-
-```bash
-cd datasources/mysql
-docker compose -f docker-compose-p.yml up -d --build
-```
-
-Comprobar estado:
-
-```bash
-docker compose -f docker-compose-p.yml ps
-```
-
-Debes ver:
-
-- `postgres_*_idx` en `healthy`
-- `ontop_*` en `Up`
-
-## 4) Nota importante de puertos (MySQL vs PostgreSQL)
-
-Ambas variantes publican Ontop en los mismos puertos `8080`-`8089`.
-
-- Si quieres usar MySQL, levanta `docker-compose.yml`.
-- Si quieres usar PostgreSQL, levanta `docker-compose-p.yml`.
-- No levantes ambas variantes de Ontop al mismo tiempo en la misma maquina, porque chocan los puertos.
-
-## 5) Puertos de los endpoints SPARQL
-
-- `affymetrix`: `http://localhost:8080/sparql`
-- `chebi`: `http://localhost:8081/sparql`
-- `dailymed`: `http://localhost:8082/sparql`
-- `diseasome`: `http://localhost:8083/sparql`
-- `drugbank`: `http://localhost:8084/sparql`
-- `kegg`: `http://localhost:8085/sparql`
-- `linkedct`: `http://localhost:8086/sparql`
-- `medicare`: `http://localhost:8087/sparql`
-- `sider`: `http://localhost:8088/sparql`
-- `tcga`: `http://localhost:8089/sparql`
-
-## 6) Probar un endpoint rapidamente
-
-Ejemplo (Affymetrix):
-
-```bash
-curl -G "http://localhost:8080/sparql" \
-  --data-urlencode "query=ASK { ?s ?p ?o }"
-```
-
-Ejemplo (Drugbank):
-
-```bash
-curl -G "http://localhost:8084/sparql" \
-  --data-urlencode "query=SELECT ?s ?p ?o WHERE { ?s ?p ?o } LIMIT 5"
-```
-
-## 7) Ver logs
-
-Todos los logs:
-
-```bash
-docker compose logs -f
-```
-
-Solo un servicio:
-
-```bash
-docker compose logs -f ontop_drugbank
 docker compose logs -f mysql_drugbank_idx
 ```
-
-Para PostgreSQL:
-
-```bash
-docker compose -f docker-compose-p.yml logs -f
-docker compose -f docker-compose-p.yml logs -f ontop_drugbank
-docker compose -f docker-compose-p.yml logs -f postgres_drugbank_idx
-```
-
-## 8) Parar o reiniciar
-
-Parar stack:
-
-```bash
-docker compose down
-```
-
-Reiniciar solo un endpoint:
-
-```bash
-docker compose restart ontop_kegg
-```
-
-Parar variante PostgreSQL:
-
-```bash
-docker compose -f docker-compose-p.yml down
-```
-
-## 9) Problemas comunes
-
-### `ontop_*` se reinicia con `Cannot find relation ...`
-
-El mapping referencia una tabla que no existe en la BD cargada.
-
-- Revisa: `datasources/mysql/ontop-configs/<db>/mapping.ttl`
-- Verifica tablas reales:
-
-```bash
-docker compose exec mysql_<db>_idx mysql -uontop -pontop123 -e "SHOW TABLES" <db>
-```
-
-- Ajusta el `mapping.ttl` y reinicia ese endpoint:
-
-```bash
-docker compose restart ontop_<db>
-```
-
-En PostgreSQL, equivalente:
-
-```bash
-docker compose -f docker-compose-p.yml exec postgres_<db>_idx psql -U postgres -d <db> -c "\dt"
-docker compose -f docker-compose-p.yml restart ontop_<db>
-```
-
-### MySQL tarda mucho en `tcga`
-
-`tcga` es grande y puede tardar bastante en inicializar/importar. Es normal que `ontop_tcga` tarde mas en estar operativo.
-
-### Quiero reimportar desde cero una BD
-
-```bash
-docker compose stop mysql_<db>_idx ontop_<db>
-# limpiar contenido de datasources/mysql/volumes/<db>
-docker compose up -d mysql_<db>_idx ontop_<db>
-```
-
-## 10) Ejecutar el experimento original
-
-El script disponible es:
-
-- `experiment.sh`
-
-Antes de ejecutarlo, confirma que las rutas y nombres de carpeta usados por el script coinciden con tu entorno local.

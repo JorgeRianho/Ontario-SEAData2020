@@ -1,0 +1,150 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ontu: <http://example.org/ontario/unified#> .
+@prefix drugbankv: <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugbank/> .
+@prefix kegg: <http://bio2rdf.org/ns/kegg#> .
+@prefix bio2rdf: <http://bio2rdf.org/ns/bio2rdf#> .
+@prefix dce: <http://purl.org/dc/elements/1.1/> .
+@prefix dailymedv: <http://www4.wiwiss.fu-berlin.de/dailymed/resource/drugbank/> .
+
+<#AffymetrixMain>
+  a rr:TriplesMap ;
+  rr:logicalTable [ rr:sqlQuery "SELECT id, probe_set_id FROM src_affymetrix.probeset_main" ] ;
+  rr:subjectMap [
+    rr:template "http://example.org/affymetrix/probeset/{id}" ;
+    rr:class ontu:AffymetrixProbeset
+  ] ;
+  rr:predicateObjectMap [ rr:predicate ontu:probeSetId ; rr:objectMap [ rr:column "probe_set_id" ] ] .
+
+<#ChebiMain>
+  a rr:TriplesMap ;
+  rr:logicalTable [ rr:sqlQuery "SELECT id, label FROM src_chebi.compound_main" ] ;
+  rr:subjectMap [
+    rr:template "http://example.org/chebi/compound/{id}" ;
+    rr:class ontu:ChebiCompound
+  ] ;
+  rr:predicateObjectMap [ rr:predicate rdfs:label ; rr:objectMap [ rr:column "label" ] ] .
+
+<#DailymedMain>
+  a rr:TriplesMap ;
+  rr:logicalTable [ rr:sqlQuery "SELECT id, name, indication FROM src_dailymed.drugs_main" ] ;
+  rr:subjectMap [
+    rr:template "http://www4.wiwiss.fu-berlin.de/dailymed/resource/drugs/{id}" ;
+    rr:class ontu:DailymedDrug
+  ] ;
+  rr:predicateObjectMap [ rr:predicate dailymedv:name ; rr:objectMap [ rr:column "name" ] ] ;
+  rr:predicateObjectMap [ rr:predicate dailymedv:indication ; rr:objectMap [ rr:column "indication" ] ] .
+
+<#DiseasomeMain>
+  a rr:TriplesMap ;
+  rr:logicalTable [ rr:sqlQuery "SELECT id, name FROM src_diseasome.diseases_main" ] ;
+  rr:subjectMap [
+    rr:template "http://example.org/diseasome/disease/{id}" ;
+    rr:class ontu:DiseasomeDisease
+  ] ;
+  rr:predicateObjectMap [ rr:predicate ontu:diseaseName ; rr:objectMap [ rr:column "name" ] ] .
+
+<#DrugbankDrugsMain>
+  a rr:TriplesMap ;
+  rr:logicalTable [ rr:sqlQuery "SELECT drug_id, cas_registry_number, generic_name, indication, kegg_compound_id FROM src_drugbank.drugs_main" ] ;
+  rr:subjectMap [
+    rr:template "http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/{drug_id}" ;
+    rr:class ontu:DrugbankDrug
+  ] ;
+  rr:predicateObjectMap [ rr:predicate drugbankv:casRegistryNumber ; rr:objectMap [ rr:column "cas_registry_number" ] ] ;
+  rr:predicateObjectMap [ rr:predicate drugbankv:genericName ; rr:objectMap [ rr:column "generic_name" ] ] ;
+  rr:predicateObjectMap [ rr:predicate drugbankv:indication ; rr:objectMap [ rr:column "indication" ] ] ;
+  rr:predicateObjectMap [ rr:predicate drugbankv:keggCompoundId ; rr:objectMap [ rr:column "kegg_compound_id" ] ] .
+
+<#DrugbankDrugCategory>
+  a rr:TriplesMap ;
+  rr:logicalTable [ rr:sqlQuery "SELECT drug_id, drug_category FROM src_drugbank.drugs_drugcategory" ] ;
+  rr:subjectMap [ rr:template "http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/{drug_id}" ] ;
+  rr:predicateObjectMap [
+    rr:predicate drugbankv:drugCategory ;
+    rr:objectMap [ rr:column "drug_category" ]
+  ] .
+
+<#DrugbankDrugsTarget>
+  a rr:TriplesMap ;
+  rr:logicalTable [ rr:sqlQuery "SELECT drug_id, target_id FROM src_drugbank.drugs_target" ] ;
+  rr:subjectMap [ rr:template "http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugs/{drug_id}" ] ;
+  rr:predicateObjectMap [
+    rr:predicate drugbankv:target ;
+    rr:objectMap [ rr:template "http://www4.wiwiss.fu-berlin.de/drugbank/resource/targets/{target_id}" ]
+  ] .
+
+<#DrugbankTargetsMain>
+  a rr:TriplesMap ;
+  rr:logicalTable [ rr:sqlQuery "SELECT target_id, label, chromosome_location FROM src_drugbank.targets_main" ] ;
+  rr:subjectMap [
+    rr:template "http://www4.wiwiss.fu-berlin.de/drugbank/resource/targets/{target_id}" ;
+    rr:class ontu:DrugbankTarget
+  ] ;
+  rr:predicateObjectMap [ rr:predicate rdfs:label ; rr:objectMap [ rr:column "label" ] ] ;
+  rr:predicateObjectMap [ rr:predicate drugbankv:chromosomeLocation ; rr:objectMap [ rr:column "chromosome_location" ] ] .
+
+<#KeggCompoundMain>
+  a rr:TriplesMap ;
+  rr:logicalTable [ rr:sqlQuery "SELECT compound_id, title FROM src_kegg.compound_main" ] ;
+  rr:subjectMap [
+    rr:template "http://example.org/kegg/compound/{compound_id}" ;
+    rr:class ontu:KeggCompound
+  ] ;
+  rr:predicateObjectMap [ rr:predicate dce:title ; rr:objectMap [ rr:column "title" ] ] .
+
+<#KeggDrugMain>
+  a rr:TriplesMap ;
+  rr:logicalTable [ rr:sqlQuery "SELECT drug_id, title FROM src_kegg.drug_main" ] ;
+  rr:subjectMap [
+    rr:template "http://example.org/kegg/drug/{drug_id}" ;
+    rr:class kegg:Drug
+  ] ;
+  rr:predicateObjectMap [ rr:predicate dce:title ; rr:objectMap [ rr:column "title" ] ] .
+
+<#KeggDrugXref>
+  a rr:TriplesMap ;
+  rr:logicalTable [
+    rr:sqlQuery "SELECT drug_id, CASE WHEN xref LIKE 'http://bio2rdf.org/cas:%' THEN REPLACE(xref, 'http://bio2rdf.org/cas:', '') ELSE xref END AS xref FROM src_kegg.drug_xref"
+  ] ;
+  rr:subjectMap [ rr:template "http://example.org/kegg/drug/{drug_id}" ] ;
+  rr:predicateObjectMap [ rr:predicate bio2rdf:xRef ; rr:objectMap [ rr:column "xref" ] ] .
+
+<#LinkedctAgencyMain>
+  a rr:TriplesMap ;
+  rr:logicalTable [ rr:sqlQuery "SELECT id, agency_name FROM src_linkedct.agency_main" ] ;
+  rr:subjectMap [
+    rr:template "http://example.org/linkedct/agency/{id}" ;
+    rr:class ontu:LinkedctAgency
+  ] ;
+  rr:predicateObjectMap [ rr:predicate ontu:agencyName ; rr:objectMap [ rr:column "agency_name" ] ] .
+
+<#MedicareDrugsMain>
+  a rr:TriplesMap ;
+  rr:logicalTable [ rr:sqlQuery "SELECT id, label, medicare_id FROM src_medicare.drugs_main" ] ;
+  rr:subjectMap [
+    rr:template "http://example.org/medicare/drugs/{id}" ;
+    rr:class ontu:MedicareDrug
+  ] ;
+  rr:predicateObjectMap [ rr:predicate rdfs:label ; rr:objectMap [ rr:column "label" ] ] ;
+  rr:predicateObjectMap [ rr:predicate ontu:medicareId ; rr:objectMap [ rr:column "medicare_id" ] ] .
+
+<#SiderDrugsMain>
+  a rr:TriplesMap ;
+  rr:logicalTable [ rr:sqlQuery "SELECT id, label, sider_drug_id FROM src_sider.drugs_main" ] ;
+  rr:subjectMap [
+    rr:template "http://example.org/sider/drugs/{id}" ;
+    rr:class ontu:SiderDrug
+  ] ;
+  rr:predicateObjectMap [ rr:predicate rdfs:label ; rr:objectMap [ rr:column "label" ] ] ;
+  rr:predicateObjectMap [ rr:predicate ontu:siderDrugId ; rr:objectMap [ rr:column "sider_drug_id" ] ] .
+
+<#TcgaAliquotMain>
+  a rr:TriplesMap ;
+  rr:logicalTable [ rr:sqlQuery "SELECT id, bcr_aliquot_barcode FROM src_tcga.aliquot_main" ] ;
+  rr:subjectMap [
+    rr:template "http://example.org/tcga/aliquot/{id}" ;
+    rr:class ontu:TcgaAliquot
+  ] ;
+  rr:predicateObjectMap [ rr:predicate ontu:bcrAliquotBarcode ; rr:objectMap [ rr:column "bcr_aliquot_barcode" ] ] .

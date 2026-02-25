@@ -1,0 +1,11 @@
+PREFIX drugbank: <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugbank/>
+PREFIX dailymed: <http://www4.wiwiss.fu-berlin.de/dailymed/resource/drugbank/>
+
+SELECT DISTINCT ?genericName ?drugbankDrug ?dailymedDrug
+WHERE {
+  ?drugbankDrug drugbank:genericName ?genericName .
+  ?dailymedDrug dailymed:name ?dmName .
+
+  FILTER(LCASE(STR(?genericName)) = LCASE(STR(?dmName)))
+}
+LIMIT 200

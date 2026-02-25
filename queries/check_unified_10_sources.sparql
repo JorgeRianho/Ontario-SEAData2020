@@ -1,0 +1,47 @@
+PREFIX ontu: <http://example.org/ontario/unified#>
+
+SELECT ?source (COUNT(?s) AS ?n)
+WHERE {
+  {
+    BIND("affymetrix" AS ?source)
+    ?s a ontu:AffymetrixProbeset .
+  }
+  UNION {
+    BIND("chebi" AS ?source)
+    ?s a ontu:ChebiCompound .
+  }
+  UNION {
+    BIND("dailymed" AS ?source)
+    ?s a ontu:DailymedDrug .
+  }
+  UNION {
+    BIND("diseasome" AS ?source)
+    ?s a ontu:DiseasomeDisease .
+  }
+  UNION {
+    BIND("drugbank" AS ?source)
+    ?s a ontu:DrugbankDrug .
+  }
+  UNION {
+    BIND("kegg" AS ?source)
+    ?s a ontu:KeggCompound .
+  }
+  UNION {
+    BIND("linkedct" AS ?source)
+    ?s a ontu:LinkedctAgency .
+  }
+  UNION {
+    BIND("medicare" AS ?source)
+    ?s a ontu:MedicareDrug .
+  }
+  UNION {
+    BIND("sider" AS ?source)
+    ?s a ontu:SiderDrug .
+  }
+  UNION {
+    BIND("tcga" AS ?source)
+    ?s a ontu:TcgaAliquot .
+  }
+}
+GROUP BY ?source
+ORDER BY ?source

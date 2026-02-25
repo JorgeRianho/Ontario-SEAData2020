@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:ontu="http://example.org/ontario/unified#"
+  xml:base="http://example.org/ontario/unified#"
+>
+  <owl:Ontology rdf:about="http://example.org/ontario/unified"/>
+
+  <owl:Class rdf:about="http://example.org/ontario/unified#AffymetrixProbeset"/>
+  <owl:Class rdf:about="http://example.org/ontario/unified#ChebiCompound"/>
+  <owl:Class rdf:about="http://example.org/ontario/unified#DailymedDrug"/>
+  <owl:Class rdf:about="http://example.org/ontario/unified#DiseasomeDisease"/>
+  <owl:Class rdf:about="http://example.org/ontario/unified#DrugbankDrug"/>
+  <owl:Class rdf:about="http://example.org/ontario/unified#DrugbankTarget"/>
+  <owl:Class rdf:about="http://example.org/ontario/unified#KeggCompound"/>
+  <owl:Class rdf:about="http://example.org/ontario/unified#LinkedctAgency"/>
+  <owl:Class rdf:about="http://example.org/ontario/unified#MedicareDrug"/>
+  <owl:Class rdf:about="http://example.org/ontario/unified#SiderDrug"/>
+  <owl:Class rdf:about="http://example.org/ontario/unified#TcgaAliquot"/>
+</rdf:RDF>

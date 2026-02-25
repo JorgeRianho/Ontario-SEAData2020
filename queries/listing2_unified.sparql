@@ -3,12 +3,16 @@ PREFIX kegg: <http://bio2rdf.org/ns/kegg#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX bio2RDF: <http://bio2rdf.org/ns/bio2rdf#>
 PREFIX purl: <http://purl.org/dc/elements/1.1/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX dailymed: <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/>
-SELECT DISTINCT ?drug ?label ?loc
-WHERE {
-?drug drugbank:target ?target .
-?target rdfs:label ?label .
-?target drugbank:chromosomeLocation ?loc .
-}
 
+SELECT DISTINCT ?drug ?id ?title
+WHERE {
+  ?drug drugbank:drugCategory ?cat .
+  FILTER(CONTAINS(LCASE(STR(?cat)), "micronutrient"))
+
+  ?drug drugbank:casRegistryNumber ?id .
+
+  ?keggDrug rdf:type kegg:Drug .
+  ?keggDrug bio2RDF:xRef ?id .
+  ?keggDrug purl:title ?title .
+}
+LIMIT 200
