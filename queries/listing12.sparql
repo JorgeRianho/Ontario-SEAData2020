@@ -1,0 +1,14 @@
+PREFIX dailymed: <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/>
+PREFIX linkedCT: <http://data.linkedct.org/resource/linkedct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT *
+WHERE{
+    ?intervention a linkedCT:intervention ;
+    linkedCT:intervention_name ?intervention_name ;
+    linkedCT:intervention_id ?intervention_id ;
+    rdfs:seeAlso ?dailymedDrug .
+    ?dailymedDrug dailymed:dosage ?dosage;
+    dailymed:description ?description ;
+    dailymed:inactiveIngredient ?inactiveIngredient ;
+    dailymed:possibleDiseaseTarget ?possibleDiseaseTarget .
+}

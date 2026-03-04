@@ -3,13 +3,494 @@ kind: Spicepod
 name: ontario-benchmark-10db-intermediate
 
 datasets:
-  # 10 MySQL databases from Ontario-SEAData2020/datasources/mysql/docker-compose.yml
+  # affymetrix
+  - from: mysql:affymetrix.Probeset_alignments
+    name: mysql_affymetrix_probeset_alignments
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_annotation_date
+    name: mysql_affymetrix_probeset_annotation_date
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_annotation_description
+    name: mysql_affymetrix_probeset_annotation_description
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_annotation_notes
+    name: mysql_affymetrix_probeset_annotation_notes
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_chromosomal_location
+    name: mysql_affymetrix_probeset_chromosomal_location
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_function
+    name: mysql_affymetrix_probeset_function
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_gene_title
+    name: mysql_affymetrix_probeset_gene_title
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_genechip_array
+    name: mysql_affymetrix_probeset_genechip_array
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_genome_version
+    name: mysql_affymetrix_probeset_genome_version
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_label
+    name: mysql_affymetrix_probeset_label
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_location
+    name: mysql_affymetrix_probeset_location
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
   - from: mysql:affymetrix.Probeset_main
     name: mysql_affymetrix_probeset_main
     params:
       mysql_host: host.docker.internal
       mysql_tcp_port: 9000
       mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_pathway
+    name: mysql_affymetrix_probeset_pathway
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_process
+    name: mysql_affymetrix_probeset_process
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_qtl
+    name: mysql_affymetrix_probeset_qtl
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_representative_public_id
+    name: mysql_affymetrix_probeset_representative_public_id
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_sequence_source
+    name: mysql_affymetrix_probeset_sequence_source
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_sequence_type
+    name: mysql_affymetrix_probeset_sequence_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_species_scientific_name
+    name: mysql_affymetrix_probeset_species_scientific_name
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_target_description
+    name: mysql_affymetrix_probeset_target_description
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_trans_membrane
+    name: mysql_affymetrix_probeset_trans_membrane
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_transcript
+    name: mysql_affymetrix_probeset_transcript
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_transcript_assignment
+    name: mysql_affymetrix_probeset_transcript_assignment
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_unigene_cluster_type
+    name: mysql_affymetrix_probeset_unigene_cluster_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_x_agi
+    name: mysql_affymetrix_probeset_x_agi
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_x_ec
+    name: mysql_affymetrix_probeset_x_ec
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_x_ensembl
+    name: mysql_affymetrix_probeset_x_ensembl
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_x_flybase
+    name: mysql_affymetrix_probeset_x_flybase
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_x_geneid
+    name: mysql_affymetrix_probeset_x_geneid
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_x_interpro
+    name: mysql_affymetrix_probeset_x_interpro
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_x_omim
+    name: mysql_affymetrix_probeset_x_omim
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_x_refseq
+    name: mysql_affymetrix_probeset_x_refseq
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_x_sgd
+    name: mysql_affymetrix_probeset_x_sgd
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_x_symbol
+    name: mysql_affymetrix_probeset_x_symbol
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_x_unigene
+    name: mysql_affymetrix_probeset_x_unigene
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_x_uniprot
+    name: mysql_affymetrix_probeset_x_uniprot
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:affymetrix.Probeset_x_wormbase
+    name: mysql_affymetrix_probeset_x_wormbase
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9000
+      mysql_db: affymetrix
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  # chebi
+  - from: mysql:chebi.Compound_comment
+    name: mysql_chebi_compound_comment
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9001
+      mysql_db: chebi
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:chebi.Compound_formula
+    name: mysql_chebi_compound_formula
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9001
+      mysql_db: chebi
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:chebi.Compound_has_functional_parent
+    name: mysql_chebi_compound_has_functional_parent
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9001
+      mysql_db: chebi
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:chebi.Compound_has_parent_hydride
+    name: mysql_chebi_compound_has_parent_hydride
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9001
+      mysql_db: chebi
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:chebi.Compound_has_part
+    name: mysql_chebi_compound_has_part
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9001
+      mysql_db: chebi
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:chebi.Compound_has_role
+    name: mysql_chebi_compound_has_role
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9001
+      mysql_db: chebi
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:chebi.Compound_is_a
+    name: mysql_chebi_compound_is_a
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9001
+      mysql_db: chebi
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:chebi.Compound_is_conjugate_acid_of
+    name: mysql_chebi_compound_is_conjugate_acid_of
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9001
+      mysql_db: chebi
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:chebi.Compound_is_conjugate_base_of
+    name: mysql_chebi_compound_is_conjugate_base_of
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9001
+      mysql_db: chebi
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:chebi.Compound_is_substituent_group_from
+    name: mysql_chebi_compound_is_substituent_group_from
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9001
+      mysql_db: chebi
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:chebi.Compound_is_tautomer_of
+    name: mysql_chebi_compound_is_tautomer_of
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9001
+      mysql_db: chebi
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:chebi.Compound_iupacName
+    name: mysql_chebi_compound_iupacname
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9001
+      mysql_db: chebi
       mysql_user: ontop
       mysql_pass: ontop123
       mysql_sslmode: disabled
@@ -24,12 +505,144 @@ datasets:
       mysql_pass: ontop123
       mysql_sslmode: disabled
 
+  - from: mysql:chebi.Compound_synonym
+    name: mysql_chebi_compound_synonym
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9001
+      mysql_db: chebi
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:chebi.Compound_xRef
+    name: mysql_chebi_compound_xref
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9001
+      mysql_db: chebi
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:chebi.Compound_xReferencedBy
+    name: mysql_chebi_compound_xreferencedby
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9001
+      mysql_db: chebi
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  # dailymed
+  - from: mysql:dailymed.drugs_inactiveIngredient
+    name: mysql_dailymed_drugs_inactiveingredient
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9002
+      mysql_db: dailymed
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
   - from: mysql:dailymed.drugs_main
     name: mysql_dailymed_drugs_main
     params:
       mysql_host: host.docker.internal
       mysql_tcp_port: 9002
       mysql_db: dailymed
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:dailymed.drugs_possibleDiseaseTarget
+    name: mysql_dailymed_drugs_possiblediseasetarget
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9002
+      mysql_db: dailymed
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:dailymed.drugs_sameAs
+    name: mysql_dailymed_drugs_sameas
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9002
+      mysql_db: dailymed
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:dailymed.drugs_sideEffect
+    name: mysql_dailymed_drugs_sideeffect
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9002
+      mysql_db: dailymed
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:dailymed.ingredients_main
+    name: mysql_dailymed_ingredients_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9002
+      mysql_db: dailymed
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:dailymed.organization_label
+    name: mysql_dailymed_organization_label
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9002
+      mysql_db: dailymed
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:dailymed.organization_main
+    name: mysql_dailymed_organization_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9002
+      mysql_db: dailymed
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:dailymed.organization_producesDrug
+    name: mysql_dailymed_organization_producesdrug
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9002
+      mysql_db: dailymed
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:dailymed.organization_sameAs
+    name: mysql_dailymed_organization_sameas
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9002
+      mysql_db: dailymed
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  # diseasome
+  - from: mysql:diseasome.diseases_associatedGene
+    name: mysql_diseasome_diseases_associatedgene
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9003
+      mysql_db: diseasome
       mysql_user: ontop
       mysql_pass: ontop123
       mysql_sslmode: disabled
@@ -44,6 +657,177 @@ datasets:
       mysql_pass: ontop123
       mysql_sslmode: disabled
 
+  - from: mysql:diseasome.diseases_possibleDrug
+    name: mysql_diseasome_diseases_possibledrug
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9003
+      mysql_db: diseasome
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:diseasome.diseases_sameAs
+    name: mysql_diseasome_diseases_sameas
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9003
+      mysql_db: diseasome
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:diseasome.genes_main
+    name: mysql_diseasome_genes_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9003
+      mysql_db: diseasome
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:diseasome.genes_sameAs
+    name: mysql_diseasome_genes_sameas
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9003
+      mysql_db: diseasome
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  # drugbank
+  - from: mysql:drugbank.drug_interactions_main
+    name: mysql_drugbank_drug_interactions_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.drug_interactions_text
+    name: mysql_drugbank_drug_interactions_text
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.drugs_affectedOrganism
+    name: mysql_drugbank_drugs_affectedorganism
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.drugs_ahfsCode
+    name: mysql_drugbank_drugs_ahfscode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.drugs_atcCode
+    name: mysql_drugbank_drugs_atccode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.drugs_brandedDrug
+    name: mysql_drugbank_drugs_brandeddrug
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.drugs_brandMixture
+    name: mysql_drugbank_drugs_brandmixture
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.drugs_brandName
+    name: mysql_drugbank_drugs_brandname
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.drugs_dosageForm
+    name: mysql_drugbank_drugs_dosageform
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.drugs_drugCategory
+    name: mysql_drugbank_drugs_drugcategory
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.drugs_drugType
+    name: mysql_drugbank_drugs_drugtype
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.drugs_enzyme
+    name: mysql_drugbank_drugs_enzyme
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.drugs_foodInteraction
+    name: mysql_drugbank_drugs_foodinteraction
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
   - from: mysql:drugbank.drugs_main
     name: mysql_drugbank_drugs_main
     params:
@@ -54,8 +838,48 @@ datasets:
       mysql_pass: ontop123
       mysql_sslmode: disabled
 
-  - from: mysql:drugbank.targets_main
-    name: mysql_drugbank_targets_main
+  - from: mysql:drugbank.drugs_page
+    name: mysql_drugbank_drugs_page
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.drugs_possibleDiseaseTarget
+    name: mysql_drugbank_drugs_possiblediseasetarget
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.drugs_sameAs
+    name: mysql_drugbank_drugs_sameas
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.drugs_secondaryAccessionNumber
+    name: mysql_drugbank_drugs_secondaryaccessionnumber
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.drugs_synonym
+    name: mysql_drugbank_drugs_synonym
     params:
       mysql_host: host.docker.internal
       mysql_tcp_port: 9004
@@ -74,9 +898,8 @@ datasets:
       mysql_pass: ontop123
       mysql_sslmode: disabled
 
-  # Extra tables required for listing2/listing4-like SPARQL
-  - from: mysql:drugbank.drugs_drugCategory
-    name: mysql_drugbank_drugs_drugcategory
+  - from: mysql:drugbank.enzymes_main
+    name: mysql_drugbank_enzymes_main
     params:
       mysql_host: host.docker.internal
       mysql_tcp_port: 9004
@@ -85,8 +908,159 @@ datasets:
       mysql_pass: ontop123
       mysql_sslmode: disabled
 
+  - from: mysql:drugbank.references_main
+    name: mysql_drugbank_references_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.targets_cellularLocation
+    name: mysql_drugbank_targets_cellularlocation
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.targets_drugReference
+    name: mysql_drugbank_targets_drugreference
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.targets_generalReference
+    name: mysql_drugbank_targets_generalreference
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.targets_goClassificationComponent
+    name: mysql_drugbank_targets_goclassificationcomponent
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.targets_goClassificationFunction
+    name: mysql_drugbank_targets_goclassificationfunction
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.targets_goClassificationProcess
+    name: mysql_drugbank_targets_goclassificationprocess
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.targets_main
+    name: mysql_drugbank_targets_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.targets_pfamDomainFunction
+    name: mysql_drugbank_targets_pfamdomainfunction
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.targets_pfamDomainFunctionPage
+    name: mysql_drugbank_targets_pfamdomainfunctionpage
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.targets_sameAs
+    name: mysql_drugbank_targets_sameas
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.targets_synonym
+    name: mysql_drugbank_targets_synonym
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:drugbank.targets_transmembraneRegions
+    name: mysql_drugbank_targets_transmembraneregions
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9004
+      mysql_db: drugbank
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  # kegg
   - from: mysql:kegg.Compound_main
     name: mysql_kegg_compound_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9005
+      mysql_db: kegg
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:kegg.Compound_synonym
+    name: mysql_kegg_compound_synonym
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9005
+      mysql_db: kegg
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:kegg.Compound_xRef
+    name: mysql_kegg_compound_xref
     params:
       mysql_host: host.docker.internal
       mysql_tcp_port: 9005
@@ -105,6 +1079,16 @@ datasets:
       mysql_pass: ontop123
       mysql_sslmode: disabled
 
+  - from: mysql:kegg.Drug_synonym
+    name: mysql_kegg_drug_synonym
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9005
+      mysql_db: kegg
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
   - from: mysql:kegg.Drug_xRef
     name: mysql_kegg_drug_xref
     params:
@@ -115,6 +1099,127 @@ datasets:
       mysql_pass: ontop123
       mysql_sslmode: disabled
 
+  - from: mysql:kegg.Enzyme_isA
+    name: mysql_kegg_enzyme_isa
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9005
+      mysql_db: kegg
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:kegg.Enzyme_main
+    name: mysql_kegg_enzyme_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9005
+      mysql_db: kegg
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:kegg.Enzyme_synonym
+    name: mysql_kegg_enzyme_synonym
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9005
+      mysql_db: kegg
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:kegg.Enzyme_xCofactor
+    name: mysql_kegg_enzyme_xcofactor
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9005
+      mysql_db: kegg
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:kegg.Enzyme_xGene
+    name: mysql_kegg_enzyme_xgene
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9005
+      mysql_db: kegg
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:kegg.Enzyme_xProduct
+    name: mysql_kegg_enzyme_xproduct
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9005
+      mysql_db: kegg
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:kegg.Enzyme_xSubstrate
+    name: mysql_kegg_enzyme_xsubstrate
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9005
+      mysql_db: kegg
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:kegg.Reaction_main
+    name: mysql_kegg_reaction_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9005
+      mysql_db: kegg
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:kegg.Reaction_xEnzyme
+    name: mysql_kegg_reaction_xenzyme
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9005
+      mysql_db: kegg
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:kegg.Reaction_xPathway
+    name: mysql_kegg_reaction_xpathway
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9005
+      mysql_db: kegg
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:kegg.Reaction_xProduct
+    name: mysql_kegg_reaction_xproduct
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9005
+      mysql_db: kegg
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:kegg.Reaction_xSubstrate
+    name: mysql_kegg_reaction_xsubstrate
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9005
+      mysql_db: kegg
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  # linkedct
   - from: mysql:linkedct.agency_main
     name: mysql_linkedct_agency_main
     params:
@@ -125,12 +1230,334 @@ datasets:
       mysql_pass: ontop123
       mysql_sslmode: disabled
 
+  - from: mysql:linkedct.collaborator_agency_main
+    name: mysql_linkedct_collaborator_agency_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.condition_main
+    name: mysql_linkedct_condition_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.condition_sameAs
+    name: mysql_linkedct_condition_sameas
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.condition_seeAlso
+    name: mysql_linkedct_condition_seealso
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.intervention_main
+    name: mysql_linkedct_intervention_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.intervention_seeAlso
+    name: mysql_linkedct_intervention_seealso
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.location_based_near
+    name: mysql_linkedct_location_based_near
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.location_main
+    name: mysql_linkedct_location_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.overall_official_main
+    name: mysql_linkedct_overall_official_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.oversight_main
+    name: mysql_linkedct_oversight_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.primary_outcomes_main
+    name: mysql_linkedct_primary_outcomes_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.reference_main
+    name: mysql_linkedct_reference_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.results_reference_main
+    name: mysql_linkedct_results_reference_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.secondary_outcomes_main
+    name: mysql_linkedct_secondary_outcomes_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.trial_arm_group_main
+    name: mysql_linkedct_trial_arm_group_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.trials_arm_group
+    name: mysql_linkedct_trials_arm_group
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.trials_collaborator_agency
+    name: mysql_linkedct_trials_collaborator_agency
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.trials_condition
+    name: mysql_linkedct_trials_condition
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.trials_intervention
+    name: mysql_linkedct_trials_intervention
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.trials_location
+    name: mysql_linkedct_trials_location
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.trials_main
+    name: mysql_linkedct_trials_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.trials_nct_alias
+    name: mysql_linkedct_trials_nct_alias
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.trials_overall_official
+    name: mysql_linkedct_trials_overall_official
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.trials_oversight
+    name: mysql_linkedct_trials_oversight
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.trials_primary_outcomes
+    name: mysql_linkedct_trials_primary_outcomes
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.trials_reference
+    name: mysql_linkedct_trials_reference
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.trials_results_reference
+    name: mysql_linkedct_trials_results_reference
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.trials_secondary_id
+    name: mysql_linkedct_trials_secondary_id
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:linkedct.trials_secondary_outcomes
+    name: mysql_linkedct_trials_secondary_outcomes
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9006
+      mysql_db: linkedct
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  # medicare
   - from: mysql:medicare.drugs_main
     name: mysql_medicare_drugs_main
     params:
       mysql_host: host.docker.internal
       mysql_tcp_port: 9007
       mysql_db: medicare
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:medicare.drugs_name
+    name: mysql_medicare_drugs_name
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9007
+      mysql_db: medicare
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:medicare.drugs_sameAs
+    name: mysql_medicare_drugs_sameas
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9007
+      mysql_db: medicare
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  # sider
+  - from: mysql:sider.drugs_drugName
+    name: mysql_sider_drugs_drugname
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9008
+      mysql_db: sider
       mysql_user: ontop
       mysql_pass: ontop123
       mysql_sslmode: disabled
@@ -145,8 +1572,3879 @@ datasets:
       mysql_pass: ontop123
       mysql_sslmode: disabled
 
+  - from: mysql:sider.drugs_page
+    name: mysql_sider_drugs_page
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9008
+      mysql_db: sider
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:sider.drugs_sameAs
+    name: mysql_sider_drugs_sameas
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9008
+      mysql_db: sider
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:sider.drugs_seeAlso
+    name: mysql_sider_drugs_seealso
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9008
+      mysql_db: sider
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:sider.drugs_sideEffect
+    name: mysql_sider_drugs_sideeffect
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9008
+      mysql_db: sider
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:sider.side_effects_main
+    name: mysql_sider_side_effects_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9008
+      mysql_db: sider
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:sider.side_effects_sameAs
+    name: mysql_sider_side_effects_sameas
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9008
+      mysql_db: sider
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:sider.side_effects_sideEffectName
+    name: mysql_sider_side_effects_sideeffectname
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9008
+      mysql_db: sider
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  # tcga
   - from: mysql:tcga.aliquot_main
     name: mysql_tcga_aliquot_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.analyte_main
+    name: mysql_tcga_analyte_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_anatomic_neoplasm_subdivision
+    name: mysql_tcga_biospecimen_cqcf_anatomic_neoplasm_subdivision
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_bcr_aliquot_barcode
+    name: mysql_tcga_biospecimen_cqcf_bcr_aliquot_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_bcr_analyte_barcode
+    name: mysql_tcga_biospecimen_cqcf_bcr_analyte_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_bcr_drug_barcode
+    name: mysql_tcga_biospecimen_cqcf_bcr_drug_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_bcr_followup_barcode
+    name: mysql_tcga_biospecimen_cqcf_bcr_followup_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_bcr_omf_barcode
+    name: mysql_tcga_biospecimen_cqcf_bcr_omf_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_bcr_omf_uuid
+    name: mysql_tcga_biospecimen_cqcf_bcr_omf_uuid
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_bcr_radiation_barcode
+    name: mysql_tcga_biospecimen_cqcf_bcr_radiation_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_bcr_sample_barcode
+    name: mysql_tcga_biospecimen_cqcf_bcr_sample_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_bcr_sample_uuid
+    name: mysql_tcga_biospecimen_cqcf_bcr_sample_uuid
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_bcr_shipment_barcode
+    name: mysql_tcga_biospecimen_cqcf_bcr_shipment_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_bcr_slide_barcode
+    name: mysql_tcga_biospecimen_cqcf_bcr_slide_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_consent_or_death_status
+    name: mysql_tcga_biospecimen_cqcf_consent_or_death_status
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_days_to_death
+    name: mysql_tcga_biospecimen_cqcf_days_to_death
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_days_to_normal_sample_procurement
+    name: mysql_tcga_biospecimen_cqcf_days_to_normal_sample_procurement
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_ethnicity1
+    name: mysql_tcga_biospecimen_cqcf_ethnicity1
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_form_completion_date
+    name: mysql_tcga_biospecimen_cqcf_form_completion_date
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_histologic_diagnosis
+    name: mysql_tcga_biospecimen_cqcf_histologic_diagnosis
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_histological_type
+    name: mysql_tcga_biospecimen_cqcf_histological_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_history_neoadjuvant_treatment
+    name: mysql_tcga_biospecimen_cqcf_history_neoadjuvant_treatment
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_history_of_neoadjuvant_treatment
+    name: mysql_tcga_biospecimen_cqcf_history_of_neoadjuvant_treatment
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_history_other_malignancy
+    name: mysql_tcga_biospecimen_cqcf_history_other_malignancy
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_main
+    name: mysql_tcga_biospecimen_cqcf_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_method_of_normal_sample_procurement
+    name: mysql_tcga_biospecimen_cqcf_method_of_normal_sample_procurement
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_ncedna_dna_conc
+    name: mysql_tcga_biospecimen_cqcf_ncedna_dna_conc
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_ncedna_dna_qm
+    name: mysql_tcga_biospecimen_cqcf_ncedna_dna_qm
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_ncedna_dna_qty
+    name: mysql_tcga_biospecimen_cqcf_ncedna_dna_qty
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_ncedna_dna_vol
+    name: mysql_tcga_biospecimen_cqcf_ncedna_dna_vol
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_new_non_melanoma_event_histologic_type_text
+    name: mysql_tcga_biospecimen_cqcf_new_non_melanoma_event_histologic_type_text
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_new_tumor_event_dx_days_to
+    name: mysql_tcga_biospecimen_cqcf_new_tumor_event_dx_days_to
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_new_tumor_event_melanoma_count
+    name: mysql_tcga_biospecimen_cqcf_new_tumor_event_melanoma_count
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_new_tumor_event_melanoma_location
+    name: mysql_tcga_biospecimen_cqcf_new_tumor_event_melanoma_location
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_new_tumor_event_met_site
+    name: mysql_tcga_biospecimen_cqcf_new_tumor_event_met_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_new_tumor_event_met_site_other
+    name: mysql_tcga_biospecimen_cqcf_new_tumor_event_met_site_other
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_new_tumor_event_pharmaceutical_tx
+    name: mysql_tcga_biospecimen_cqcf_new_tumor_event_pharmaceutical_tx
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_new_tumor_event_radiation_tx
+    name: mysql_tcga_biospecimen_cqcf_new_tumor_event_radiation_tx
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_new_tumor_event_site
+    name: mysql_tcga_biospecimen_cqcf_new_tumor_event_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_new_tumor_event_surgery
+    name: mysql_tcga_biospecimen_cqcf_new_tumor_event_surgery
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_new_tumor_event_surgery_days_to
+    name: mysql_tcga_biospecimen_cqcf_new_tumor_event_surgery_days_to
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_new_tumor_event_type
+    name: mysql_tcga_biospecimen_cqcf_new_tumor_event_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_normal_tissue_anatomic_site
+    name: mysql_tcga_biospecimen_cqcf_normal_tissue_anatomic_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_normal_tissue_proximity
+    name: mysql_tcga_biospecimen_cqcf_normal_tissue_proximity
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_other_malignancy_anatomic_site
+    name: mysql_tcga_biospecimen_cqcf_other_malignancy_anatomic_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_other_malignancy_anatomic_site_text
+    name: mysql_tcga_biospecimen_cqcf_other_malignancy_anatomic_site_text
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_other_malignancy_histological_type
+    name: mysql_tcga_biospecimen_cqcf_other_malignancy_histological_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_other_malignancy_laterality
+    name: mysql_tcga_biospecimen_cqcf_other_malignancy_laterality
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_prior_dx
+    name: mysql_tcga_biospecimen_cqcf_prior_dx
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_race1
+    name: mysql_tcga_biospecimen_cqcf_race1
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_result
+    name: mysql_tcga_biospecimen_cqcf_result
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_submitted_tumor_site
+    name: mysql_tcga_biospecimen_cqcf_submitted_tumor_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_tumor_necrosis_percent
+    name: mysql_tcga_biospecimen_cqcf_tumor_necrosis_percent
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_tumor_nuclei_percent
+    name: mysql_tcga_biospecimen_cqcf_tumor_nuclei_percent
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_tumor_weight
+    name: mysql_tcga_biospecimen_cqcf_tumor_weight
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.biospecimen_cqcf_vial_number
+    name: mysql_tcga_biospecimen_cqcf_vial_number
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_anatomic_neoplasm_subdivision
+    name: mysql_tcga_clinical_cqcf_anatomic_neoplasm_subdivision
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_bcr_aliquot_barcode
+    name: mysql_tcga_clinical_cqcf_bcr_aliquot_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_bcr_analyte_barcode
+    name: mysql_tcga_clinical_cqcf_bcr_analyte_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_bcr_drug_barcode
+    name: mysql_tcga_clinical_cqcf_bcr_drug_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_bcr_followup_barcode
+    name: mysql_tcga_clinical_cqcf_bcr_followup_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_bcr_omf_barcode
+    name: mysql_tcga_clinical_cqcf_bcr_omf_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_bcr_omf_uuid
+    name: mysql_tcga_clinical_cqcf_bcr_omf_uuid
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_bcr_radiation_barcode
+    name: mysql_tcga_clinical_cqcf_bcr_radiation_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_bcr_sample_barcode
+    name: mysql_tcga_clinical_cqcf_bcr_sample_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_bcr_sample_uuid
+    name: mysql_tcga_clinical_cqcf_bcr_sample_uuid
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_bcr_shipment_barcode
+    name: mysql_tcga_clinical_cqcf_bcr_shipment_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_bcr_slide_barcode
+    name: mysql_tcga_clinical_cqcf_bcr_slide_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_consent_or_death_status
+    name: mysql_tcga_clinical_cqcf_consent_or_death_status
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_days_to_death
+    name: mysql_tcga_clinical_cqcf_days_to_death
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_days_to_normal_sample_procurement
+    name: mysql_tcga_clinical_cqcf_days_to_normal_sample_procurement
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_disease_acronym
+    name: mysql_tcga_clinical_cqcf_disease_acronym
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_ethnicity1
+    name: mysql_tcga_clinical_cqcf_ethnicity1
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_form_completion_date
+    name: mysql_tcga_clinical_cqcf_form_completion_date
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_histologic_diagnosis
+    name: mysql_tcga_clinical_cqcf_histologic_diagnosis
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_histological_type
+    name: mysql_tcga_clinical_cqcf_histological_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_history_neoadjuvant_treatment
+    name: mysql_tcga_clinical_cqcf_history_neoadjuvant_treatment
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_history_of_neoadjuvant_treatment
+    name: mysql_tcga_clinical_cqcf_history_of_neoadjuvant_treatment
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_history_other_malignancy
+    name: mysql_tcga_clinical_cqcf_history_other_malignancy
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_main
+    name: mysql_tcga_clinical_cqcf_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_method_of_normal_sample_procurement
+    name: mysql_tcga_clinical_cqcf_method_of_normal_sample_procurement
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_ncedna_dna_conc
+    name: mysql_tcga_clinical_cqcf_ncedna_dna_conc
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_ncedna_dna_qm
+    name: mysql_tcga_clinical_cqcf_ncedna_dna_qm
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_ncedna_dna_qty
+    name: mysql_tcga_clinical_cqcf_ncedna_dna_qty
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_ncedna_dna_vol
+    name: mysql_tcga_clinical_cqcf_ncedna_dna_vol
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_new_non_melanoma_event_histologic_type_text
+    name: mysql_tcga_clinical_cqcf_new_non_melanoma_event_histologic_type_text
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_new_tumor_event_dx_days_to
+    name: mysql_tcga_clinical_cqcf_new_tumor_event_dx_days_to
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_new_tumor_event_melanoma_count
+    name: mysql_tcga_clinical_cqcf_new_tumor_event_melanoma_count
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_new_tumor_event_melanoma_location
+    name: mysql_tcga_clinical_cqcf_new_tumor_event_melanoma_location
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_new_tumor_event_met_site
+    name: mysql_tcga_clinical_cqcf_new_tumor_event_met_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_new_tumor_event_met_site_other
+    name: mysql_tcga_clinical_cqcf_new_tumor_event_met_site_other
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_new_tumor_event_pharmaceutical_tx
+    name: mysql_tcga_clinical_cqcf_new_tumor_event_pharmaceutical_tx
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_new_tumor_event_radiation_tx
+    name: mysql_tcga_clinical_cqcf_new_tumor_event_radiation_tx
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_new_tumor_event_site
+    name: mysql_tcga_clinical_cqcf_new_tumor_event_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_new_tumor_event_surgery
+    name: mysql_tcga_clinical_cqcf_new_tumor_event_surgery
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_new_tumor_event_surgery_days_to
+    name: mysql_tcga_clinical_cqcf_new_tumor_event_surgery_days_to
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_new_tumor_event_type
+    name: mysql_tcga_clinical_cqcf_new_tumor_event_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_normal_tissue_anatomic_site
+    name: mysql_tcga_clinical_cqcf_normal_tissue_anatomic_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_normal_tissue_proximity
+    name: mysql_tcga_clinical_cqcf_normal_tissue_proximity
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_other_malignancy_anatomic_site
+    name: mysql_tcga_clinical_cqcf_other_malignancy_anatomic_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_other_malignancy_anatomic_site_text
+    name: mysql_tcga_clinical_cqcf_other_malignancy_anatomic_site_text
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_other_malignancy_histological_type
+    name: mysql_tcga_clinical_cqcf_other_malignancy_histological_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_other_malignancy_laterality
+    name: mysql_tcga_clinical_cqcf_other_malignancy_laterality
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_prior_dx
+    name: mysql_tcga_clinical_cqcf_prior_dx
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_race1
+    name: mysql_tcga_clinical_cqcf_race1
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_result
+    name: mysql_tcga_clinical_cqcf_result
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_submitted_tumor_site
+    name: mysql_tcga_clinical_cqcf_submitted_tumor_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_tumor_necrosis_percent
+    name: mysql_tcga_clinical_cqcf_tumor_necrosis_percent
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_tumor_nuclei_percent
+    name: mysql_tcga_clinical_cqcf_tumor_nuclei_percent
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_tumor_weight
+    name: mysql_tcga_clinical_cqcf_tumor_weight
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_cqcf_vial_number
+    name: mysql_tcga_clinical_cqcf_vial_number
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_anatomic_neoplasm_subdivision
+    name: mysql_tcga_clinical_nte_anatomic_neoplasm_subdivision
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_bcr_aliquot_barcode
+    name: mysql_tcga_clinical_nte_bcr_aliquot_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_bcr_analyte_barcode
+    name: mysql_tcga_clinical_nte_bcr_analyte_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_bcr_drug_barcode
+    name: mysql_tcga_clinical_nte_bcr_drug_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_bcr_omf_barcode
+    name: mysql_tcga_clinical_nte_bcr_omf_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_bcr_omf_uuid
+    name: mysql_tcga_clinical_nte_bcr_omf_uuid
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_bcr_radiation_barcode
+    name: mysql_tcga_clinical_nte_bcr_radiation_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_bcr_sample_barcode
+    name: mysql_tcga_clinical_nte_bcr_sample_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_bcr_sample_uuid
+    name: mysql_tcga_clinical_nte_bcr_sample_uuid
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_bcr_shipment_barcode
+    name: mysql_tcga_clinical_nte_bcr_shipment_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_bcr_slide_barcode
+    name: mysql_tcga_clinical_nte_bcr_slide_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_days_to_death
+    name: mysql_tcga_clinical_nte_days_to_death
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_days_to_normal_sample_procurement
+    name: mysql_tcga_clinical_nte_days_to_normal_sample_procurement
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_disease_acronym
+    name: mysql_tcga_clinical_nte_disease_acronym
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_ethnicity1
+    name: mysql_tcga_clinical_nte_ethnicity1
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_form_completion_date
+    name: mysql_tcga_clinical_nte_form_completion_date
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_histological_type
+    name: mysql_tcga_clinical_nte_histological_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_history_neoadjuvant_treatment
+    name: mysql_tcga_clinical_nte_history_neoadjuvant_treatment
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_main
+    name: mysql_tcga_clinical_nte_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_method_of_normal_sample_procurement
+    name: mysql_tcga_clinical_nte_method_of_normal_sample_procurement
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_ncedna_dna_conc
+    name: mysql_tcga_clinical_nte_ncedna_dna_conc
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_ncedna_dna_qm
+    name: mysql_tcga_clinical_nte_ncedna_dna_qm
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_ncedna_dna_qty
+    name: mysql_tcga_clinical_nte_ncedna_dna_qty
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_ncedna_dna_vol
+    name: mysql_tcga_clinical_nte_ncedna_dna_vol
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_new_non_melanoma_event_histologic_type_text
+    name: mysql_tcga_clinical_nte_new_non_melanoma_event_histologic_type_text
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_new_tumor_event_dx_days_to
+    name: mysql_tcga_clinical_nte_new_tumor_event_dx_days_to
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_new_tumor_event_melanoma_count
+    name: mysql_tcga_clinical_nte_new_tumor_event_melanoma_count
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_new_tumor_event_melanoma_location
+    name: mysql_tcga_clinical_nte_new_tumor_event_melanoma_location
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_new_tumor_event_met_site
+    name: mysql_tcga_clinical_nte_new_tumor_event_met_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_new_tumor_event_met_site_other
+    name: mysql_tcga_clinical_nte_new_tumor_event_met_site_other
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_new_tumor_event_pharmaceutical_tx
+    name: mysql_tcga_clinical_nte_new_tumor_event_pharmaceutical_tx
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_new_tumor_event_radiation_tx
+    name: mysql_tcga_clinical_nte_new_tumor_event_radiation_tx
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_new_tumor_event_site
+    name: mysql_tcga_clinical_nte_new_tumor_event_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_new_tumor_event_surgery
+    name: mysql_tcga_clinical_nte_new_tumor_event_surgery
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_new_tumor_event_surgery_days_to
+    name: mysql_tcga_clinical_nte_new_tumor_event_surgery_days_to
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_new_tumor_event_type
+    name: mysql_tcga_clinical_nte_new_tumor_event_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_normal_tissue_anatomic_site
+    name: mysql_tcga_clinical_nte_normal_tissue_anatomic_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_normal_tissue_proximity
+    name: mysql_tcga_clinical_nte_normal_tissue_proximity
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_other_malignancy_anatomic_site
+    name: mysql_tcga_clinical_nte_other_malignancy_anatomic_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_other_malignancy_anatomic_site_text
+    name: mysql_tcga_clinical_nte_other_malignancy_anatomic_site_text
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_other_malignancy_histological_type
+    name: mysql_tcga_clinical_nte_other_malignancy_histological_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_other_malignancy_laterality
+    name: mysql_tcga_clinical_nte_other_malignancy_laterality
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_prior_dx
+    name: mysql_tcga_clinical_nte_prior_dx
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_race1
+    name: mysql_tcga_clinical_nte_race1
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_result
+    name: mysql_tcga_clinical_nte_result
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_submitted_tumor_site
+    name: mysql_tcga_clinical_nte_submitted_tumor_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_tumor_necrosis_percent
+    name: mysql_tcga_clinical_nte_tumor_necrosis_percent
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_tumor_nuclei_percent
+    name: mysql_tcga_clinical_nte_tumor_nuclei_percent
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_tumor_weight
+    name: mysql_tcga_clinical_nte_tumor_weight
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_nte_vial_number
+    name: mysql_tcga_clinical_nte_vial_number
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_bcr_aliquot_barcode
+    name: mysql_tcga_clinical_omf_bcr_aliquot_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_bcr_analyte_barcode
+    name: mysql_tcga_clinical_omf_bcr_analyte_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_bcr_drug_barcode
+    name: mysql_tcga_clinical_omf_bcr_drug_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_bcr_followup_barcode
+    name: mysql_tcga_clinical_omf_bcr_followup_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_bcr_omf_barcode
+    name: mysql_tcga_clinical_omf_bcr_omf_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_bcr_omf_uuid
+    name: mysql_tcga_clinical_omf_bcr_omf_uuid
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_bcr_sample_barcode
+    name: mysql_tcga_clinical_omf_bcr_sample_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_bcr_sample_uuid
+    name: mysql_tcga_clinical_omf_bcr_sample_uuid
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_bcr_slide_barcode
+    name: mysql_tcga_clinical_omf_bcr_slide_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_days_to_normal_sample_procurement
+    name: mysql_tcga_clinical_omf_days_to_normal_sample_procurement
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_disease_acronym
+    name: mysql_tcga_clinical_omf_disease_acronym
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_form_completion_date
+    name: mysql_tcga_clinical_omf_form_completion_date
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_history_neoadjuvant_treatment
+    name: mysql_tcga_clinical_omf_history_neoadjuvant_treatment
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_history_other_malignancy
+    name: mysql_tcga_clinical_omf_history_other_malignancy
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_main
+    name: mysql_tcga_clinical_omf_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_method_of_normal_sample_procurement
+    name: mysql_tcga_clinical_omf_method_of_normal_sample_procurement
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_ncedna_dna_conc
+    name: mysql_tcga_clinical_omf_ncedna_dna_conc
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_new_non_melanoma_event_histologic_type_text
+    name: mysql_tcga_clinical_omf_new_non_melanoma_event_histologic_type_text
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_new_tumor_event_dx_days_to
+    name: mysql_tcga_clinical_omf_new_tumor_event_dx_days_to
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_new_tumor_event_melanoma_count
+    name: mysql_tcga_clinical_omf_new_tumor_event_melanoma_count
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_new_tumor_event_melanoma_location
+    name: mysql_tcga_clinical_omf_new_tumor_event_melanoma_location
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_new_tumor_event_met_site
+    name: mysql_tcga_clinical_omf_new_tumor_event_met_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_new_tumor_event_met_site_other
+    name: mysql_tcga_clinical_omf_new_tumor_event_met_site_other
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_new_tumor_event_pharmaceutical_tx
+    name: mysql_tcga_clinical_omf_new_tumor_event_pharmaceutical_tx
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_new_tumor_event_radiation_tx
+    name: mysql_tcga_clinical_omf_new_tumor_event_radiation_tx
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_new_tumor_event_site
+    name: mysql_tcga_clinical_omf_new_tumor_event_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_new_tumor_event_surgery
+    name: mysql_tcga_clinical_omf_new_tumor_event_surgery
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_new_tumor_event_surgery_days_to
+    name: mysql_tcga_clinical_omf_new_tumor_event_surgery_days_to
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_new_tumor_event_type
+    name: mysql_tcga_clinical_omf_new_tumor_event_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_normal_tissue_anatomic_site
+    name: mysql_tcga_clinical_omf_normal_tissue_anatomic_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_normal_tissue_proximity
+    name: mysql_tcga_clinical_omf_normal_tissue_proximity
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_other_malignancy_anatomic_site
+    name: mysql_tcga_clinical_omf_other_malignancy_anatomic_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_other_malignancy_anatomic_site_text
+    name: mysql_tcga_clinical_omf_other_malignancy_anatomic_site_text
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_other_malignancy_histological_type
+    name: mysql_tcga_clinical_omf_other_malignancy_histological_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_other_malignancy_laterality
+    name: mysql_tcga_clinical_omf_other_malignancy_laterality
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_result
+    name: mysql_tcga_clinical_omf_result
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_submitted_tumor_site
+    name: mysql_tcga_clinical_omf_submitted_tumor_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.clinical_omf_vial_number
+    name: mysql_tcga_clinical_omf_vial_number
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.copy_number_result_main
+    name: mysql_tcga_copy_number_result_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.drug_main
+    name: mysql_tcga_drug_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.drug_new_tumor_event_surgery
+    name: mysql_tcga_drug_new_tumor_event_surgery
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.expression_gene_lookup_main
+    name: mysql_tcga_expression_gene_lookup_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.expression_gene_result_main
+    name: mysql_tcga_expression_gene_result_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.expression_protein_result_main
+    name: mysql_tcga_expression_protein_result_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.follow_up_main
+    name: mysql_tcga_follow_up_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.follow_up_new_tumor_event_surgery
+    name: mysql_tcga_follow_up_new_tumor_event_surgery
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.miRNA_result_main
+    name: mysql_tcga_mirna_result_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_anatomic_neoplasm_subdivision
+    name: mysql_tcga_normal_control_anatomic_neoplasm_subdivision
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_bcr_aliquot_barcode
+    name: mysql_tcga_normal_control_bcr_aliquot_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_bcr_analyte_barcode
+    name: mysql_tcga_normal_control_bcr_analyte_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_bcr_drug_barcode
+    name: mysql_tcga_normal_control_bcr_drug_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_bcr_followup_barcode
+    name: mysql_tcga_normal_control_bcr_followup_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_bcr_omf_barcode
+    name: mysql_tcga_normal_control_bcr_omf_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_bcr_omf_uuid
+    name: mysql_tcga_normal_control_bcr_omf_uuid
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_bcr_radiation_barcode
+    name: mysql_tcga_normal_control_bcr_radiation_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_bcr_sample_barcode
+    name: mysql_tcga_normal_control_bcr_sample_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_bcr_sample_uuid
+    name: mysql_tcga_normal_control_bcr_sample_uuid
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_bcr_shipment_barcode
+    name: mysql_tcga_normal_control_bcr_shipment_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_bcr_slide_barcode
+    name: mysql_tcga_normal_control_bcr_slide_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_days_to_death
+    name: mysql_tcga_normal_control_days_to_death
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_days_to_normal_sample_procurement
+    name: mysql_tcga_normal_control_days_to_normal_sample_procurement
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_ethnicity1
+    name: mysql_tcga_normal_control_ethnicity1
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_form_completion_date
+    name: mysql_tcga_normal_control_form_completion_date
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_histologic_diagnosis
+    name: mysql_tcga_normal_control_histologic_diagnosis
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_histological_type
+    name: mysql_tcga_normal_control_histological_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_history_neoadjuvant_treatment
+    name: mysql_tcga_normal_control_history_neoadjuvant_treatment
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_history_of_neoadjuvant_treatment
+    name: mysql_tcga_normal_control_history_of_neoadjuvant_treatment
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_history_other_malignancy
+    name: mysql_tcga_normal_control_history_other_malignancy
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_main
+    name: mysql_tcga_normal_control_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_method_of_normal_sample_procurement
+    name: mysql_tcga_normal_control_method_of_normal_sample_procurement
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_ncedna_dna_conc
+    name: mysql_tcga_normal_control_ncedna_dna_conc
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_ncedna_dna_qm
+    name: mysql_tcga_normal_control_ncedna_dna_qm
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_ncedna_dna_qty
+    name: mysql_tcga_normal_control_ncedna_dna_qty
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_ncedna_dna_vol
+    name: mysql_tcga_normal_control_ncedna_dna_vol
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_new_non_melanoma_event_histologic_type_text
+    name: mysql_tcga_normal_control_new_non_melanoma_event_histologic_type_text
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_new_tumor_event_dx_days_to
+    name: mysql_tcga_normal_control_new_tumor_event_dx_days_to
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_new_tumor_event_melanoma_count
+    name: mysql_tcga_normal_control_new_tumor_event_melanoma_count
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_new_tumor_event_melanoma_location
+    name: mysql_tcga_normal_control_new_tumor_event_melanoma_location
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_new_tumor_event_met_site
+    name: mysql_tcga_normal_control_new_tumor_event_met_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_new_tumor_event_met_site_other
+    name: mysql_tcga_normal_control_new_tumor_event_met_site_other
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_new_tumor_event_pharmaceutical_tx
+    name: mysql_tcga_normal_control_new_tumor_event_pharmaceutical_tx
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_new_tumor_event_radiation_tx
+    name: mysql_tcga_normal_control_new_tumor_event_radiation_tx
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_new_tumor_event_site
+    name: mysql_tcga_normal_control_new_tumor_event_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_new_tumor_event_surgery
+    name: mysql_tcga_normal_control_new_tumor_event_surgery
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_new_tumor_event_surgery_days_to
+    name: mysql_tcga_normal_control_new_tumor_event_surgery_days_to
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_new_tumor_event_type
+    name: mysql_tcga_normal_control_new_tumor_event_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_normal_tissue_anatomic_site
+    name: mysql_tcga_normal_control_normal_tissue_anatomic_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_normal_tissue_proximity
+    name: mysql_tcga_normal_control_normal_tissue_proximity
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_other_malignancy_anatomic_site
+    name: mysql_tcga_normal_control_other_malignancy_anatomic_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_other_malignancy_anatomic_site_text
+    name: mysql_tcga_normal_control_other_malignancy_anatomic_site_text
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_other_malignancy_histological_type
+    name: mysql_tcga_normal_control_other_malignancy_histological_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_other_malignancy_laterality
+    name: mysql_tcga_normal_control_other_malignancy_laterality
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_prior_dx
+    name: mysql_tcga_normal_control_prior_dx
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_race1
+    name: mysql_tcga_normal_control_race1
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_result
+    name: mysql_tcga_normal_control_result
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_submitted_tumor_site
+    name: mysql_tcga_normal_control_submitted_tumor_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_tumor_necrosis_percent
+    name: mysql_tcga_normal_control_tumor_necrosis_percent
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_tumor_nuclei_percent
+    name: mysql_tcga_normal_control_tumor_nuclei_percent
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_tumor_weight
+    name: mysql_tcga_normal_control_tumor_weight
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.normal_control_vial_number
+    name: mysql_tcga_normal_control_vial_number
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_anatomic_neoplasm_subdivision
+    name: mysql_tcga_patient_anatomic_neoplasm_subdivision
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_bcr_aliquot_barcode
+    name: mysql_tcga_patient_bcr_aliquot_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_bcr_analyte_barcode
+    name: mysql_tcga_patient_bcr_analyte_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_bcr_drug_barcode
+    name: mysql_tcga_patient_bcr_drug_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_bcr_followup_barcode
+    name: mysql_tcga_patient_bcr_followup_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_bcr_omf_barcode
+    name: mysql_tcga_patient_bcr_omf_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_bcr_omf_uuid
+    name: mysql_tcga_patient_bcr_omf_uuid
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_bcr_radiation_barcode
+    name: mysql_tcga_patient_bcr_radiation_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_bcr_sample_barcode
+    name: mysql_tcga_patient_bcr_sample_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_bcr_sample_uuid
+    name: mysql_tcga_patient_bcr_sample_uuid
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_bcr_shipment_barcode
+    name: mysql_tcga_patient_bcr_shipment_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_bcr_slide_barcode
+    name: mysql_tcga_patient_bcr_slide_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_consent_or_death_status
+    name: mysql_tcga_patient_consent_or_death_status
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_days_to_death
+    name: mysql_tcga_patient_days_to_death
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_days_to_normal_sample_procurement
+    name: mysql_tcga_patient_days_to_normal_sample_procurement
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_disease_acronym
+    name: mysql_tcga_patient_disease_acronym
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_ethnicity1
+    name: mysql_tcga_patient_ethnicity1
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_form_completion_date
+    name: mysql_tcga_patient_form_completion_date
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_histologic_diagnosis
+    name: mysql_tcga_patient_histologic_diagnosis
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_histological_type
+    name: mysql_tcga_patient_histological_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_history_neoadjuvant_treatment
+    name: mysql_tcga_patient_history_neoadjuvant_treatment
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_history_of_neoadjuvant_treatment
+    name: mysql_tcga_patient_history_of_neoadjuvant_treatment
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_history_other_malignancy
+    name: mysql_tcga_patient_history_other_malignancy
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_main
+    name: mysql_tcga_patient_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_method_of_normal_sample_procurement
+    name: mysql_tcga_patient_method_of_normal_sample_procurement
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_ncedna_dna_conc
+    name: mysql_tcga_patient_ncedna_dna_conc
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_ncedna_dna_qm
+    name: mysql_tcga_patient_ncedna_dna_qm
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_ncedna_dna_qty
+    name: mysql_tcga_patient_ncedna_dna_qty
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_ncedna_dna_vol
+    name: mysql_tcga_patient_ncedna_dna_vol
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_new_non_melanoma_event_histologic_type_text
+    name: mysql_tcga_patient_new_non_melanoma_event_histologic_type_text
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_new_tumor_event_dx_days_to
+    name: mysql_tcga_patient_new_tumor_event_dx_days_to
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_new_tumor_event_melanoma_count
+    name: mysql_tcga_patient_new_tumor_event_melanoma_count
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_new_tumor_event_melanoma_location
+    name: mysql_tcga_patient_new_tumor_event_melanoma_location
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_new_tumor_event_met_site
+    name: mysql_tcga_patient_new_tumor_event_met_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_new_tumor_event_met_site_other
+    name: mysql_tcga_patient_new_tumor_event_met_site_other
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_new_tumor_event_pharmaceutical_tx
+    name: mysql_tcga_patient_new_tumor_event_pharmaceutical_tx
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_new_tumor_event_radiation_tx
+    name: mysql_tcga_patient_new_tumor_event_radiation_tx
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_new_tumor_event_site
+    name: mysql_tcga_patient_new_tumor_event_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_new_tumor_event_surgery
+    name: mysql_tcga_patient_new_tumor_event_surgery
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_new_tumor_event_surgery_days_to
+    name: mysql_tcga_patient_new_tumor_event_surgery_days_to
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_new_tumor_event_type
+    name: mysql_tcga_patient_new_tumor_event_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_normal_tissue_anatomic_site
+    name: mysql_tcga_patient_normal_tissue_anatomic_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_normal_tissue_proximity
+    name: mysql_tcga_patient_normal_tissue_proximity
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_other_malignancy_anatomic_site
+    name: mysql_tcga_patient_other_malignancy_anatomic_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_other_malignancy_anatomic_site_text
+    name: mysql_tcga_patient_other_malignancy_anatomic_site_text
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_other_malignancy_histological_type
+    name: mysql_tcga_patient_other_malignancy_histological_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_other_malignancy_laterality
+    name: mysql_tcga_patient_other_malignancy_laterality
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_prior_dx
+    name: mysql_tcga_patient_prior_dx
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_race1
+    name: mysql_tcga_patient_race1
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_result
+    name: mysql_tcga_patient_result
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_submitted_tumor_site
+    name: mysql_tcga_patient_submitted_tumor_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_tumor_necrosis_percent
+    name: mysql_tcga_patient_tumor_necrosis_percent
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_tumor_nuclei_percent
+    name: mysql_tcga_patient_tumor_nuclei_percent
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_tumor_weight
+    name: mysql_tcga_patient_tumor_weight
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.patient_vial_number
+    name: mysql_tcga_patient_vial_number
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.portion_main
+    name: mysql_tcga_portion_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.protocol_bcr_analyte_barcode
+    name: mysql_tcga_protocol_bcr_analyte_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.protocol_experimental_protocol_type
+    name: mysql_tcga_protocol_experimental_protocol_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.protocol_main
+    name: mysql_tcga_protocol_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.radiation_main
+    name: mysql_tcga_radiation_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.radiation_new_tumor_event_surgery
+    name: mysql_tcga_radiation_new_tumor_event_surgery
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.sample_bcr_analyte_barcode
+    name: mysql_tcga_sample_bcr_analyte_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.sample_experimental_protocol_type
+    name: mysql_tcga_sample_experimental_protocol_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.sample_main
+    name: mysql_tcga_sample_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.shipment_main
+    name: mysql_tcga_shipment_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.slide_main
+    name: mysql_tcga_slide_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.snp_result_main
+    name: mysql_tcga_snp_result_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_anatomic_neoplasm_subdivision
+    name: mysql_tcga_tumor_sample_anatomic_neoplasm_subdivision
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_bcr_aliquot_barcode
+    name: mysql_tcga_tumor_sample_bcr_aliquot_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_bcr_analyte_barcode
+    name: mysql_tcga_tumor_sample_bcr_analyte_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_bcr_drug_barcode
+    name: mysql_tcga_tumor_sample_bcr_drug_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_bcr_followup_barcode
+    name: mysql_tcga_tumor_sample_bcr_followup_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_bcr_omf_barcode
+    name: mysql_tcga_tumor_sample_bcr_omf_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_bcr_omf_uuid
+    name: mysql_tcga_tumor_sample_bcr_omf_uuid
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_bcr_radiation_barcode
+    name: mysql_tcga_tumor_sample_bcr_radiation_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_bcr_sample_barcode
+    name: mysql_tcga_tumor_sample_bcr_sample_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_bcr_sample_uuid
+    name: mysql_tcga_tumor_sample_bcr_sample_uuid
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_bcr_shipment_barcode
+    name: mysql_tcga_tumor_sample_bcr_shipment_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_bcr_slide_barcode
+    name: mysql_tcga_tumor_sample_bcr_slide_barcode
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_days_to_death
+    name: mysql_tcga_tumor_sample_days_to_death
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_days_to_normal_sample_procurement
+    name: mysql_tcga_tumor_sample_days_to_normal_sample_procurement
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_ethnicity1
+    name: mysql_tcga_tumor_sample_ethnicity1
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_form_completion_date
+    name: mysql_tcga_tumor_sample_form_completion_date
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_histologic_diagnosis
+    name: mysql_tcga_tumor_sample_histologic_diagnosis
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_histological_type
+    name: mysql_tcga_tumor_sample_histological_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_history_neoadjuvant_treatment
+    name: mysql_tcga_tumor_sample_history_neoadjuvant_treatment
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_history_of_neoadjuvant_treatment
+    name: mysql_tcga_tumor_sample_history_of_neoadjuvant_treatment
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_history_other_malignancy
+    name: mysql_tcga_tumor_sample_history_other_malignancy
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_main
+    name: mysql_tcga_tumor_sample_main
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_method_of_normal_sample_procurement
+    name: mysql_tcga_tumor_sample_method_of_normal_sample_procurement
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_ncedna_dna_conc
+    name: mysql_tcga_tumor_sample_ncedna_dna_conc
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_ncedna_dna_qm
+    name: mysql_tcga_tumor_sample_ncedna_dna_qm
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_ncedna_dna_qty
+    name: mysql_tcga_tumor_sample_ncedna_dna_qty
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_ncedna_dna_vol
+    name: mysql_tcga_tumor_sample_ncedna_dna_vol
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_new_non_melanoma_event_histologic_type_text
+    name: mysql_tcga_tumor_sample_new_non_melanoma_event_histologic_type_text
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_new_tumor_event_dx_days_to
+    name: mysql_tcga_tumor_sample_new_tumor_event_dx_days_to
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_new_tumor_event_melanoma_count
+    name: mysql_tcga_tumor_sample_new_tumor_event_melanoma_count
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_new_tumor_event_melanoma_location
+    name: mysql_tcga_tumor_sample_new_tumor_event_melanoma_location
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_new_tumor_event_met_site
+    name: mysql_tcga_tumor_sample_new_tumor_event_met_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_new_tumor_event_met_site_other
+    name: mysql_tcga_tumor_sample_new_tumor_event_met_site_other
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_new_tumor_event_pharmaceutical_tx
+    name: mysql_tcga_tumor_sample_new_tumor_event_pharmaceutical_tx
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_new_tumor_event_radiation_tx
+    name: mysql_tcga_tumor_sample_new_tumor_event_radiation_tx
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_new_tumor_event_site
+    name: mysql_tcga_tumor_sample_new_tumor_event_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_new_tumor_event_surgery
+    name: mysql_tcga_tumor_sample_new_tumor_event_surgery
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_new_tumor_event_surgery_days_to
+    name: mysql_tcga_tumor_sample_new_tumor_event_surgery_days_to
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_new_tumor_event_type
+    name: mysql_tcga_tumor_sample_new_tumor_event_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_normal_tissue_anatomic_site
+    name: mysql_tcga_tumor_sample_normal_tissue_anatomic_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_normal_tissue_proximity
+    name: mysql_tcga_tumor_sample_normal_tissue_proximity
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_other_malignancy_anatomic_site
+    name: mysql_tcga_tumor_sample_other_malignancy_anatomic_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_other_malignancy_anatomic_site_text
+    name: mysql_tcga_tumor_sample_other_malignancy_anatomic_site_text
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_other_malignancy_histological_type
+    name: mysql_tcga_tumor_sample_other_malignancy_histological_type
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_other_malignancy_laterality
+    name: mysql_tcga_tumor_sample_other_malignancy_laterality
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_prior_dx
+    name: mysql_tcga_tumor_sample_prior_dx
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_race1
+    name: mysql_tcga_tumor_sample_race1
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_result
+    name: mysql_tcga_tumor_sample_result
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_submitted_tumor_site
+    name: mysql_tcga_tumor_sample_submitted_tumor_site
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_tumor_necrosis_percent
+    name: mysql_tcga_tumor_sample_tumor_necrosis_percent
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_tumor_nuclei_percent
+    name: mysql_tcga_tumor_sample_tumor_nuclei_percent
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_tumor_weight
+    name: mysql_tcga_tumor_sample_tumor_weight
+    params:
+      mysql_host: host.docker.internal
+      mysql_tcp_port: 9009
+      mysql_db: tcga
+      mysql_user: ontop
+      mysql_pass: ontop123
+      mysql_sslmode: disabled
+
+  - from: mysql:tcga.tumor_sample_vial_number
+    name: mysql_tcga_tumor_sample_vial_number
     params:
       mysql_host: host.docker.internal
       mysql_tcp_port: 9009

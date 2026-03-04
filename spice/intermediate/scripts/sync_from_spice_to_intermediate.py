@@ -3,8 +3,10 @@ import argparse
 import csv
 import json
 import pathlib
+import re
 import subprocess
 import sys
+import time
 import urllib.error
 import urllib.request
 
@@ -40,6 +42,36 @@ def post_sql(spice_url: str, sql: str, timeout: int) -> list[dict]:
         else:
             raise RuntimeError(f"Fila no es objeto JSON: {row!r}")
     return normalized
+
+
+def show_tables(spice_url: str, timeout: int) -> set[str]:
+    rows = post_sql(spice_url, "SHOW TABLES;", timeout)
+    tables = set()
+    for row in rows:
+        name = row.get("table_name")
+        if isinstance(name, str):
+            tables.add(name)
+    return tables
+
+
+def source_dataset_name(source_sql: str) -> str | None:
+    match = re.search(r"\bFROM\s+([A-Za-z0-9_]+)\b", source_sql, flags=re.IGNORECASE)
+    if not match:
+        return None
+    return match.group(1)
+
+
+def wait_for_dataset(spice_url: str, timeout: int, dataset: str, max_wait_s: int, poll_s: int) -> None:
+    deadline = time.time() + max_wait_s
+    while time.time() < deadline:
+        tables = show_tables(spice_url, timeout)
+        if dataset in tables:
+            return
+        time.sleep(poll_s)
+    raise RuntimeError(
+        f"Dataset no visible en Spice tras {max_wait_s}s: {dataset}. "
+        f"Verifica logs de Spice y limites de conexion en MySQL."
+    )
 
 
 def quote_ident(identifier: str) -> str:
@@ -178,6 +210,18 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--pg-user", default="postgres")
     parser.add_argument("--data-dir", required=True, help="Directorio local montado en /sync")
     parser.add_argument("--container-sync-dir", default="/sync")
+    parser.add_argument(
+        "--dataset-wait-seconds",
+        type=int,
+        default=900,
+        help="Tiempo maximo a esperar por dataset visible en SHOW TABLES de Spice",
+    )
+    parser.add_argument(
+        "--dataset-poll-seconds",
+        type=int,
+        default=5,
+        help="Intervalo de polling para esperar datasets en Spice",
+    )
     return parser.parse_args()
 
 
@@ -207,10 +251,21 @@ def main() -> int:
             return 1
 
         name = spec["name"]
+        dataset_name = source_dataset_name(spec["source_sql"])
         schema = spec["target_schema"]
         table = spec["target_table"]
         tsv_name = f"{name}.tsv"
         tsv_path = data_dir / tsv_name
+
+        if dataset_name:
+            print(f"[{idx}/{len(specs)}] Esperando dataset en Spice: {dataset_name}...")
+            wait_for_dataset(
+                spice_url=args.spice_url,
+                timeout=args.timeout,
+                dataset=dataset_name,
+                max_wait_s=args.dataset_wait_seconds,
+                poll_s=args.dataset_poll_seconds,
+            )
 
         print(f"[{idx}/{len(specs)}] Exportando {name} desde Spice...")
         rows, columns = export_table(

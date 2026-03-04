@@ -1,0 +1,18 @@
+PREFIX drugbank: <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugbank/>
+PREFIX medicare: <http://www4.wiwiss.fu-berlin.de/medicare/resource/medicare/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT *
+WHERE {
+    ?medicareDrug a medicare:drugs;
+    medicare:drugType ?drugType;
+    owl:sameAs ?drugbankDrug.
+    ?drugbankDrug drugbank:dpdDrugIdNumber ?drugNumber;
+    drugbank:inchiIdentifier ?inchiIdentifier;
+    drugbank:inchiKey ?inchiKey.
+    OPTIONAL {
+        ?drugbankDrug drugbank:foodInteraction ?foodInteraction;
+        drugbank:biotransformation ?biotransformation;
+        drugbank:drugCategory ?drugCategory;
+        drugbank:dosageForm ?dosageForm.
+    }
+}

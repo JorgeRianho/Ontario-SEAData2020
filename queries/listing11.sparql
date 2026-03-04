@@ -1,0 +1,9 @@
+PREFIX drugbank: <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugbank/>
+PREFIX diseasome: <http://www4.wiwiss.fu-berlin.de/diseasome/resource/diseasome/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?drug ?disease ?label
+WHERE{
+    ?disease diseasome:name ?diseasename .
+    ?disease drugbank:possibleDiseaseTarget ?drug .
+    ?drug rdfs:lable ?lable .
+}

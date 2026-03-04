@@ -1,0 +1,13 @@
+PREFIX db: <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugbank/>
+PREFIX dm: <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/>
+PREFIX sider: <http://bio2rdf.org/ns/sider#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT ?dgcf ?sen 
+WHERE {
+    ?dg dm:activeIngredient ?dgai .
+    ?dg dm:genericDrug ?gdg .
+    ?dg owl:sameAs ?sa .
+    ?sa sider:sideEffect ?se .
+    ?se sider:sideEffectName ?sen .
+    ?gdg db:chemicalFormula ?dgcf .
+}

@@ -1,0 +1,21 @@
+PREFIX drugbank: <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugbank/>
+PREFIX medicare: <http://www4.wiwiss.fu-berlin.de/medicare/resource/medicare/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX bio2RDF: <http://bio2rdf.org/ns/bio2rdf#>
+SELECT *
+WHERE {
+    ?medicareDrug a medicare:drugs;
+    medicare:drugType ?drugType;
+    owl:sameAs ?drugbankDrug.
+    ?drugbankDrug drugbank:description ?description;
+    drugbank:chemicalFormula ?chemicalFormula;
+    drugbank:keggCompoundId ?keggCompoundId.
+    ?keggCompoundId bio2RDF:mass ?keggmass.
+    OPTIONAL{
+        ?drugbankDrug drugbank:brandName ?brandName;
+        drugbank:chemicalIupacName ?chemicalIupacName;
+        drugbank:genericName ?genericName;
+        drugbank:brandName ?brandName;
+        drugbank:creationDate ?creationDate;
+    }
+}

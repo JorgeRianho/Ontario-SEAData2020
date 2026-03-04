@@ -1,0 +1,10 @@
+PREFIX drugbank: <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugbank/>
+PREFIX diseasome: <http://www4.wiwiss.fu-berlin.de/diseasome/resource/diseasome/>
+
+SELECT ?drug ?diseasome ?name
+
+WHERE{
+    ?drug drugbank:molecularWeightAverage ?weight .
+    ?drug drugbank:possibleDiseaseTarget ?disease .
+    ?diseasome diseasome:name ?name
+}

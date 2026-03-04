@@ -1,0 +1,16 @@
+PREFIX dailymed: <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sider: <http://bio2rdf.org/ns/sider#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+
+SELECT DISTINCT ?drug ?sidereffect ?label
+WHERE {
+  ?drug dailymed:name  'Sodium Phosphates'
+  OPTIONAL {
+    ?drug owl:sameAs ?drugAlt .
+    ?drugAlt sider:sideEffect ?sidereffect .
+    ?sidereffect rdfs:label ?label .
+  }
+}
+LIMIT 200

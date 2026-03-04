@@ -1,0 +1,17 @@
+PREFIX dailymed: <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT *
+WHERE {
+    ?medicareDrug foaf:name ?name;
+    owl:sameAs ?dailymedDrug.
+  	?dailymedDrug dailymed:dosage ?dosage;
+  	dailymed:activeIngredient ?activeIngredient;
+    dailymed:inactiveIngredient ?inactiveIngredient;
+    dailymed:possibleDiseaseTarget ?possibleDiseaseTarget.
+    OPTIONAL{
+        ?dailymedDrug dailymed:representedOrganization ?representedOrganization;
+        dailymed:routeOfAdministration ?routeOfAdministration;
+        dailymed:genericMedicine ?genericMedicine.
+    }
+}

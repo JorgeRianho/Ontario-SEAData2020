@@ -1,0 +1,18 @@
+PREFIX drugbank: <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugbank/>
+PREFIX diseasome: <http://www4.wiwiss.fu-berlin.de/diseasome/resource/diseasome/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT DISTINCT *
+WHERE{
+    ?x1_drugs a drugbank:drugs .
+    ?x0_disease a diseasome:diseases ;
+    diseasome:possibleDrug ?x1_drugs;
+    rdfs:label ?x2_label .
+    ?x1_drugs rdfs:label ?x4_label;
+    drugbank:chemicalFormula ?x5_chemicalFormula;
+    drugbank:chemicalIupacName ?x7_chemicalIupacName;
+    drugbank:predictedLogpHydrophobicity ?x8_predictedLogpHydrophobicity;
+    drugbank:state ?x9_state;
+    drugbank:predictedWaterSolubility ?x6_predictedWaterSolubility
+    FILTER regex (xsd:string(?x2_label), "colon cancer", "is")
+}

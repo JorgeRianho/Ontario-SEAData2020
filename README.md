@@ -63,6 +63,23 @@ cd spice
 bash intermediate/scripts/refresh_intermediate_data.sh
 ```
 
+## 4.1) Regenerar mapping legacy completo (recomendado)
+
+Para exponer automaticamente la mayor cantidad posible de predicados legacy (sin ir query por query):
+
+```bash
+cd spice
+python3 intermediate/scripts/generate_legacy_compat_mapping.py
+docker compose -f intermediate/docker-compose.yml restart ontop_unified
+```
+
+Para ejecutar listings legacy con correcciones de sintaxis al vuelo (sin editar los `.sparql`):
+
+```bash
+cd spice
+bash intermediate/scripts/run_legacy_sparql.sh ../queries/listing22.sparql
+```
+
 ## 5) Parar servicios
 
 ```bash

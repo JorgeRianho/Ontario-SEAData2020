@@ -1,0 +1,13 @@
+PREFIX drugbank: <http://www4.wiwiss.fu-berlin.de/drugbank/resource/drugbank/>
+PREFIX bio2RDF: <http://bio2rdf.org/ns/bio2rdf#>
+
+SELECT ?drug ?transform ?mass
+WHERE {
+    ?drug drugbank:affectedOrganism 'Humans and other mammals' .
+    ?drug drugbank:casRegistryNumber ?cas .
+    ?keggDrug bio2RDF:xRef ?cas .
+    ?keggDrug bio2RDF:mass ?mass .
+    OPTIONAL {
+        ?drug drugbank:biotransformation ?transform 
+        }
+}
